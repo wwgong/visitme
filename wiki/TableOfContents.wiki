@@ -1,0 +1,4 @@
+#sidebar Sidebar for wiki
+
+  * Schedule
+  * Meetings
