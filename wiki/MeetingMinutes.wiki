@@ -1,4 +1,4 @@
 #summary Index of team meetings.
 
 = Past Meetings =
-  * [Meeting#1 09/29/2009]
+  * [Meeting1 09/29/2009]
