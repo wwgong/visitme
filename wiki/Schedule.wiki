@@ -1,4 +1,5 @@
 #summary This page contains the current schedule for the project.
+#labels Featured
 
 = Schedule =
 
