@@ -35,4 +35,4 @@ Small talk about how Facebook apps work, plus discussing languages and APIs used
 
 We decided we need a team name and a vision statement, both of which we can all put in contributions to.
 
-Any and all other conclusions are reflected in the [schedule]
+Any and all other conclusions are reflected in the [Schedule schedule]
