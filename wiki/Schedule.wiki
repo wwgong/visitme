@@ -6,8 +6,8 @@
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
 ||Agenda for 1st meeting		||Henrik||09/28/09||09/28/09||<font color="green">Done</font>||
 ||Set up google code			||Henrik||09/29/09||09/29/09||<font color="green">Done</font>||
-||Contact [client]				||Henrik||        ||09/29/09|| ||
+||Contact [client]				||Henrik||09/29/09||09/29/09||<font color="green">Done</font>||
 ||Port schedule to Google Code	||Henrik||09/29/09||09/29/09||<font color="green">Done</font>||
-||Post meeting #1 minutes		||Henrik||        ||09/29/09|| ||
+||Post meeting #1 minutes		||Henrik||09/29/09||09/29/09||<font color="green">Done</font>||
 ||Vision statement				||Group ||        ||10/06/09|| ||
 ||Team name						||Group ||        ||10/06/09|| ||
