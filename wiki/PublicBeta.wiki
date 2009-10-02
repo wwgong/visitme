@@ -1,0 +1,13 @@
+#summary Description of how we will go public
+
+= Introduction =
+Any application on a social network is pointless if people do not use it. It is for this reason that we will have to get as many people as possible to test VisitMe.
+
+= Details =
+While the temptation is strong to let people try it out as soon as we have _anything_ running, there are several things that must be done before we can deploy the application to more users:
+
+  * Application must be relatively stable
+  * The core functionality must be complete
+  * We need to make sure we have access rights to make a large number of API calls
+  * We need a way to keep track of how many people are using the application
+  * User feedback
