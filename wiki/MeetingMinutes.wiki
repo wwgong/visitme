@@ -2,6 +2,7 @@
 
 = Future meetings =
   * [Meeting3 10/05/2009] _(in the UNIX lab)_
+  * [Meeting4 10/08/2009]
 
 = Past Meetings =
   * [Meeting1 09/29/2009]
