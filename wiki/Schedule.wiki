@@ -19,6 +19,7 @@ Because the source text looks crap on Google Code, copy the schedule part and pa
 ||Team name	(2 suggestions each)	||Group  ||        ||10/05/09|| ||
 ||Document Facebook location info	||Vasudev||        ||10/05/09|| ||
 ||Document Hello World application	||Henrik ||10/02/09||10/05/09||<font color="green">Done</font>||
+||Register VisitMe application		||Henrik ||10/02/09||10/05/09||<font color="green">Done</font>||
 ||Make decision on webserver		||Henrik ||        ||10/05/09|| ||
 ||VisitMe logo (sketch)				||Charlie||        ||10/05/09|| ||
 ||SVN client installed				||Group  ||        ||10/06/09|| ||
