@@ -17,3 +17,6 @@ In this meeting we concluded the deadlines and responsibilities for completing t
   * A hello world application
 
 All items and deadlines are detailed in the [Schedule schedule]
+
+== Absentees ==
+  * Khanh
