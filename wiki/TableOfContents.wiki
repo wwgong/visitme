@@ -1,3 +1,4 @@
   * [Schedule]
   * [MeetingMinutes Meetings]
+  * [TeamName Team name]
   * [ProfessorsComments Professor's comments]
