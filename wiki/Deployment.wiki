@@ -1,0 +1,8 @@
+#summary Summary of the deployment of VisitMe
+#labels Phase-Deploy
+
+= Server requirements =
+
+= Milestones =
+
+  * [HelloWorld Hello World]
