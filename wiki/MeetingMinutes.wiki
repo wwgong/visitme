@@ -1,5 +1,8 @@
 #summary Index of team meetings.
 
+= Future meetings =
+  * [Meeting3 10/05/2009] _(in the UNIX lab)_
+
 = Past Meetings =
   * [Meeting1 09/29/2009]
   * [Meeting2 10/01/2009]
