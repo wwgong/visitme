@@ -2,3 +2,4 @@
 
 = Past Meetings =
   * [Meeting1 09/29/2009]
+  * [Meeting2 10/01/2009]
