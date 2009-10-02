@@ -1,0 +1,11 @@
+#summary Discussion of the Team's name
+
+= Team Name =
+To be determined.
+
+= Candidate names =
+The names put on this list should not be already taken by .com addresses.
+
+== Henrik ==
+  * Flying-Pandas
+  * OtterBomb
