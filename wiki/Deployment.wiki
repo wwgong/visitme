@@ -6,3 +6,4 @@
 = Milestones =
 
   * [HelloWorld Hello World]
+  * [PublicBeta Public Beta]
