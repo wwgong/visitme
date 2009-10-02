@@ -26,7 +26,12 @@ Because the source text looks crap on Google Code, copy the schedule part and pa
 ||Set up webserver					||Henrik ||        ||10/12/09|| ||
 ||Install Facebook sample app		||Henrik ||        ||10/12/09|| ||
 ||Register Team domain				||       ||        ||10/12/09|| ||
+||Short stories (titles)			||       ||        ||10/15/09|| ||
+||Use cases (titles)				||       ||        ||10/15/09|| ||
+||Risk Analysis						||       ||        ||10/15/09|| ||
 || <font color=#0000BB>*Hello World*</font> ([HelloWorld details])	||Weiwei ||        ||10/19/09|| ||
+||Short stories						||       ||        ||10/22/09|| ||
+||Use cases							||       ||        ||10/29/09|| ||
 || <font color=#0000BB>*Requirements Specification*</font> ([RequirementsSpecification details])||       ||        ||11/02/09|| ||
 || <font color=#0000BB>*Public Beta*</font> ([PublicBeta details])	|| || ||12/01/09|| ||
 || || || || || ||
