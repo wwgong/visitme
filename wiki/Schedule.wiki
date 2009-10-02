@@ -1,6 +1,10 @@
 #summary This page contains the current schedule for the project.
 #labels Featured
 
+= Editing the schedule =
+
+Because the source text looks crap on Google Code, copy the schedule part and paste it into Notepad++, edit it, and paste it back in here.
+
 = Schedule =
 
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
@@ -22,9 +26,8 @@
 ||Set up webserver					||Henrik ||        ||10/12/09|| ||
 ||Install Facebook sample app		||Henrik ||        ||10/12/09|| ||
 ||Register Team domain				||       ||        ||10/12/09|| ||
-||Hello Kayak						||Weiwei ||        ||10/19/09|| ||
-|| *Requirements Specification*		||       ||        ||11/02/09|| ||
-
-= Editing the schedule =
-
-Because the source text looks crap on Google Code, copy the schedule part and paste it into Notepad++, edit it, and paste it back in here.
+|| <font color=#0000BB>*Hello World*</font> ([HelloWorld details])	||Weiwei ||        ||10/19/09|| ||
+|| <font color=#0000BB>*Requirements Specification*</font> ([RequirementsSpecification details])||       ||        ||11/02/09|| ||
+|| <font color=#0000BB>*Public Beta*</font> ([PublicBeta details])	|| || ||12/01/09|| ||
+|| || || || || ||
+|| <font color=#0000BB>*Code freeze for event presentations*</font>	|| || ||04/20/10|| ||
