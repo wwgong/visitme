@@ -1,0 +1,9 @@
+#summary Index for documentation of the actual software development
+#labels Phase-Implementation
+
+More stuff here later
+
+= Third party documentation =
+  * [http://www.w3schools.com/PHP/DEfaULT.asP PHP tutorial]
+  * [http://www.smarty.net/manual/en/ Smarty documentation]
+  * [http://wiki.developers.facebook.com/index.php/Main_Page Facebook API]
