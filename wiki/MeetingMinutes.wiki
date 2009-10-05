@@ -1,4 +1,5 @@
 #summary Index of team meetings.
+#labels Featured
 
 = Future meetings =
   * [Meeting3 10/05/2009] _(2:30pm, in the UNIX lab)_
