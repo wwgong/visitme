@@ -1,7 +1,9 @@
 #summary Index for documentation of the actual software development
 #labels Phase-Implementation
 
-More stuff here later
+= Considerations =
+  * [BrowserCompatibility Browser Compatibility]
+  * [FacebookLocations Facebook locations in profiles]
 
 = Third party documentation =
   * [http://www.w3schools.com/PHP/DEfaULT.asP PHP tutorial]
