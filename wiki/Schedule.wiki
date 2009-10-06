@@ -14,18 +14,18 @@
 ||Post meeting #1 minutes			||Henrik ||09/29/09||09/29/09||<font color="green">Done</font>||
 ||Post meeting #2 minutes			||Henrik ||10/01/09||10/01/09||<font color="green">Done</font>||
 ||Vision statement draft			||Brian  ||10/01/09||10/01/09||<font color="green">Done</font>||
-||Vision statement final			||Henrik ||        ||10/05/09|| ||
-||Team name	(2 suggestions each)	||Group  ||        ||10/05/09|| ||
+||Vision statement final			||Brian  ||10/05/09||10/05/09||<font color="green">Done</font>||
+||[TeamName Team name]	(2 suggestions each)	||Group  ||10/05/09||10/05/09||<font color="green">Done</font>||
 ||Document Facebook location info	||Vasudev||10/05/09||10/05/09||<font color="green">Done</font>||
 ||Document Web server requirements	||Vasudev||10/05/09||10/05/09||<font color="green">Done</font>||
 ||Document Hello World application	||Henrik ||10/02/09||10/05/09||<font color="green">Done</font>||
 ||Register VisitMe application		||Henrik ||10/02/09||10/05/09||<font color="green">Done</font>||
-||Make decision on webserver		||Henrik ||        ||10/05/09|| ||
-||VisitMe logo (sketch)				||Charlie||        ||10/05/09|| ||
+||Make decision on webserver		||Henrik ||10/05/09||10/05/09||<font color="green">Done</font>||
+||VisitMe logo (sketch)				||Charlie||10/05/09||10/05/09||<font color="green">Done</font>||
 ||SVN client installed				||Group  ||        ||10/06/09|| ||
 ||VisitMe logo (photoshop)			||Brian  ||        ||10/12/09|| ||
 ||Set up webserver					||Henrik ||        ||10/12/09|| ||
-||Register Team domain				||       ||        ||10/12/09|| ||
+||Register Team domain				||Henrik ||        ||10/12/09|| ||
 
 == Hello World ==
 For more information, [HelloWorld click here].
