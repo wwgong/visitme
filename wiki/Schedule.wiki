@@ -51,4 +51,4 @@ For more information, [RequirementsSpecification click here].
 
 = Editing the schedule =
 
-Because the source text looks crap on Google Code, copy the schedule part and paste it into Notepad++, edit it, and paste it back in here.
+Because the source text looks ugly and is hard to edit on Google Code, copy the schedule part and paste it into Notepad++, edit it, and paste it back in here.
