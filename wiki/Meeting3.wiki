@@ -4,7 +4,7 @@ Meeting #3 took place on 10/05/2009.
 
 == Summary ==
 
-In this meeting we made discussed and finalized the following things:
+In this meeting we discussed and finalized the following things:
 
   * [TeamName Team Name]
   * Team Domain (same as Team Name)
