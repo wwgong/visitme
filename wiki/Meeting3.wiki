@@ -1,0 +1,18 @@
+#summary Summary of the third meeting
+
+Meeting #3 took place on 10/05/2009.
+
+== Summary ==
+
+In this meeting we made discussed and finalized the following things:
+
+  * [TeamName Team Name]
+  * Team Domain (same as Team Name)
+  * A rough sketch of the logo
+  * [Deployment Server Requirements]
+  * Meeting the client on Wednesday, Oct 7, 2009.
+
+All items and deadlines are detailed in the [Schedule schedule]
+
+== Absentees ==
+  * None
