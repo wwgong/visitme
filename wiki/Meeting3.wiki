@@ -9,6 +9,7 @@ In this meeting we made discussed and finalized the following things:
   * [TeamName Team Name]
   * Team Domain (same as Team Name)
   * A rough sketch of the logo
+  * [VisionStatement Vision Statement]
   * [Deployment Server Requirements]
   * Meeting the client on Wednesday, Oct 7, 2009.
 
