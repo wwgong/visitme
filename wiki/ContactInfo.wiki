@@ -1,0 +1,11 @@
+#summary Contact Information of Team Members
+
+<wiki:toc max_depth="2" />
+
+|| *Name* || *Email* || *SkypeID* || *Phone Number* ||
+|| Brian ||  ||  ||  ||
+|| Cuong (Charlie) || cpham@cs.umb.edu || hongcuong83 || 617-257-6868 ||
+|| Henrik ||  ||  ||  ||
+|| Khanh ||  ||  ||  ||
+|| Vasudev ||  ||  ||  ||
+|| Wei ||  ||  ||  ||
