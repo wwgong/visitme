@@ -1,0 +1,17 @@
+#summary Index of short stories detailing VisitMe
+
+= VisitMe =
+_Unless otherwise specified, we assume that initially Paul has VisitMe installed and Jim does not. The names are conveniently based on the CTO and VP of Technology of Kayak, though any behavior described may or may not have any actual resemblance to the real Paul and Jim._
+
+  * Paul visits Jim's profile
+  * Jim visits Paul's profile
+  * Paul visits his own profile (random)
+  * Paul visits his own profile (suggest)
+  * Paul visits his own profile (most common)
+  * Paul goes to VisitMe (search)
+
+= Spring Break =
+_The functionality these short stories imply is part of a later iteration not planned for the initial application_
+
+  * Paul wants to host an event locally
+  * Paul wants to host an event conveniently
