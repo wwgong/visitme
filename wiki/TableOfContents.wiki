@@ -1,7 +1,7 @@
   * [Schedule]
   * [Deployment]
   * [Development]
-     * [Short Stories]
+     * [ShortStories Short Stories]
   * [MeetingMinutes Meetings]
   * [TeamName Team name]
   * [ProfessorsComments Professor's comments]
