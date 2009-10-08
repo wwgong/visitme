@@ -7,5 +7,5 @@
 || Cuong (Charlie) || cpham@cs.umb.edu || hongcuong83 || 617-257-6868 || [http://www.cs.umb.edu/~cpham/ visitME ] ||
 || Henrik || hvolckm@cs.umb.edu || danorux || 620-332-6678 || [http://www.cs.umb.edu/~hvolckm/ visitME] ||
 || Khanh ||  ||  ||  ||  ||
-|| Vasudev ||  ||  ||  ||  ||
-|| Wei ||  ||  ||  ||  ||
+|| Vasudev || vgadge@cs.umb.edu || vgadge  || || [http://www.cs.umb.edu/~vgadge/ visitME] ||
+|| Weiwei ||  ||  ||  ||  ||
