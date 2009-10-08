@@ -3,7 +3,7 @@
 <wiki:toc max_depth="2" />
 
 || *Name* || *Email* || *SkypeID* || *Phone Number* || *CS Homepage* ||
-|| Brian ||  ||  ||  ||  ||
+|| Brian || bmoy@cs.umb.edu ||  || 857-991-8551 || [http://www.cs.umb.edu/~bmoy/ visitME] ||
 || Cuong (Charlie) || cpham@cs.umb.edu || hongcuong83 || 617-257-6868 || [http://www.cs.umb.edu/~cpham/ visitME ] ||
 || Henrik || hvolckm@cs.umb.edu || danorux || 620-332-6678 || [http://www.cs.umb.edu/~hvolckm/ visitME] ||
 || Khanh ||  ||  ||  ||  ||
