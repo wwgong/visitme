@@ -23,10 +23,11 @@
 ||Make decision on webserver		||Henrik ||10/05/09||10/05/09||<font color="green">Done</font>||
 ||VisitMe logo (sketch)				||Charlie||10/05/09||10/05/09||<font color="green">Done</font>||
 ||Post meeting #3 minutes			||Vasudev||10/05/09||10/05/09||<font color="green">Done</font>||
-||SVN client installed				||Group  ||        ||10/06/09|| ||
+||Create team info page				||Charlie||        ||10/07/09|| ||
+||SVN client installed				||Group  ||        ||10/08/09|| ||
 ||VisitMe logo (photoshop)			||Brian  ||        ||10/12/09|| ||
 ||Set up webserver					||Henrik ||        ||10/12/09|| ||
-||Register Team domain				||Henrik ||        ||10/12/09|| ||
+||Register Team domain				||Henrik ||10/07/09||10/12/09||<font color="green">Done</font>||
 
 == Hello World ==
 For more information, [HelloWorld click here].
@@ -38,9 +39,9 @@ For more information, [HelloWorld click here].
 == Requirements Specification ==
 For more information, [RequirementsSpecification click here].
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
+||Risk Analysis						||Weiwei ||        ||10/15/09|| ||
 ||Short stories (titles)			||       ||        ||10/15/09|| ||
 ||Use cases (titles)				||       ||        ||10/15/09|| ||
-||Risk Analysis						||       ||        ||10/15/09|| ||
 ||Short stories						||       ||        ||10/22/09|| ||
 ||Use cases							||       ||        ||10/29/09|| ||
 || <font color=#0000BB>*Requirements Specification*</font> ([RequirementsSpecification details])||       ||        ||11/02/09|| ||
@@ -49,6 +50,7 @@ For more information, [RequirementsSpecification click here].
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
 || <font color=#0000BB>*Public Beta*</font> ([PublicBeta details])	|| || ||12/01/09|| ||
 || <font color=#0000BB>*Code freeze for event presentations*</font>	|| || ||04/20/10|| ||
+
 
 = Editing the schedule =
 
