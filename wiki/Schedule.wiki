@@ -39,18 +39,23 @@ For more information, [HelloWorld click here].
 == Requirements Specification ==
 For more information, [RequirementsSpecification click here].
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
-||Risk Analysis						||Weiwei ||        ||10/15/09|| ||
-||Short stories (titles)			||       ||        ||10/15/09|| ||
-||Use cases (titles)				||       ||        ||10/15/09|| ||
-||Short stories						||       ||        ||10/22/09|| ||
-||Use cases							||       ||        ||10/29/09|| ||
-|| <font color=#0000BB>*Requirements Specification*</font> ([RequirementsSpecification details])||       ||        ||11/02/09|| ||
+||Risk Analysis											||Weiwei ||        ||10/15/09|| ||
+||Short stories (titles)								||Henrik ||10/07/09||10/08/09|| ||
+||Short Story: Paul visits Jim's profile				||       ||        ||10/15/09|| ||
+||Short Story: Paul visits Jim's profile				||       ||        ||10/15/09|| ||
+||Short Story: Jim visits Paul's profile				||       ||        ||10/15/09|| ||
+||Short Story: Paul visits his own profile (random)		||       ||        ||10/15/09|| ||
+||Short Story: Paul visits his own profile (suggest)	||       ||        ||10/15/09|| ||
+||Short Story: Paul visits his own profile (most common)||       ||        ||10/15/09|| ||
+||Short Story: Paul goes to VisitMe? (search) 			||       ||        ||10/15/09|| ||
+||Use cases (titles)									||       ||        ||10/15/09|| ||
+|| *Use cases*											||       ||        ||10/22/09|| ||
+|| <font color=#0000BB>*Requirements Specification*</font> ([RequirementsSpecification details])||       ||        ||10/29/09|| ||
 
 == Future ==
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
 || <font color=#0000BB>*Public Beta*</font> ([PublicBeta details])	|| || ||12/01/09|| ||
 || <font color=#0000BB>*Code freeze for event presentations*</font>	|| || ||04/20/10|| ||
-
 
 = Editing the schedule =
 
