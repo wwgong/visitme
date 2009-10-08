@@ -24,6 +24,7 @@
 ||VisitMe logo (sketch)				||Charlie||10/05/09||10/05/09||<font color="green">Done</font>||
 ||Post meeting #3 minutes			||Vasudev||10/05/09||10/05/09||<font color="green">Done</font>||
 ||Post client meeting #1 minutes	||Vasudev||10/07/09||10/07/09||<font color="green">Done</font>||
+||Post meeting #3 minutes       	||Vasudev||10/07/09||10/07/09||<font color="green">Done</font>||
 ||Create team info page				||Charlie||        ||10/07/09|| ||
 ||SVN client installed				||Group  ||        ||10/08/09|| ||
 ||VisitMe logo (photoshop)			||Brian  ||        ||10/12/09|| ||
