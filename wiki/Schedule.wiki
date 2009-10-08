@@ -50,6 +50,7 @@ For more information, [RequirementsSpecification click here].
 ||Short Story: Paul visits his own profile (suggest)	||       ||        ||10/15/09|| ||
 ||Short Story: Paul visits his own profile (most common)||       ||        ||10/15/09|| ||
 ||Short Story: Paul goes to VisitMe? (search) 			||       ||        ||10/15/09|| ||
+||Sample UI's with feedback from Kayak					||       ||        ||10/15/09|| ||
 ||Use cases (titles)									||       ||        ||10/15/09|| ||
 || *Use cases*											||       ||        ||10/22/09|| ||
 || <font color=#0000BB>*Requirements Specification*</font> ([RequirementsSpecification details])||       ||        ||10/29/09|| ||
