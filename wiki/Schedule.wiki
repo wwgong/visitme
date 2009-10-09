@@ -30,6 +30,7 @@
 ||VisitMe logo (photoshop)			||Brian  ||        ||10/12/09|| ||
 ||Set up webserver					||Henrik ||        ||10/12/09|| ||
 ||Register Team domain				||Henrik ||10/07/09||10/12/09||<font color="green">Done</font>||
+||Document Team Roles				||Khanh  ||        ||10/13/09|| ||
 
 == Hello World ==
 For more information, [HelloWorld click here].
@@ -44,16 +45,20 @@ For more information, [RequirementsSpecification click here].
 ||Risk Analysis											||Weiwei ||        ||10/15/09|| ||
 ||Short stories (titles)								||Henrik ||10/07/09||10/08/09||<font color="green">Done</font>||
 ||Short Story: Paul visits Jim's profile				||       ||        ||10/15/09|| ||
-||Short Story: Paul visits Jim's profile				||       ||        ||10/15/09|| ||
 ||Short Story: Jim visits Paul's profile				||       ||        ||10/15/09|| ||
 ||Short Story: Paul visits his own profile (random)		||       ||        ||10/15/09|| ||
 ||Short Story: Paul visits his own profile (suggest)	||       ||        ||10/15/09|| ||
-||Short Story: Paul visits his own profile (most common)||       ||        ||10/15/09|| ||
+||Short Story: Paul visits his own profile (most common)||Henrik ||        ||10/15/09|| ||
 ||Short Story: Paul goes to VisitMe? (search) 			||       ||        ||10/15/09|| ||
 ||Sample UI's with feedback from Kayak					||       ||        ||10/15/09|| ||
 ||Use cases (titles)									||       ||        ||10/15/09|| ||
 || *Use cases*											||       ||        ||10/22/09|| ||
 || <font color=#0000BB>*Requirements Specification*</font> ([RequirementsSpecification details])||       ||        ||10/29/09|| ||
+
+== Venture Capitalist Presentation ==
+|| *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
+|| Presentation materials	|| || ||11/05/09|| ||
+|| <font color="#0000BB">*Presentation*</font> ([VCPresentation details])||       ||        ||11/12/09|| ||
 
 == Future ==
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
