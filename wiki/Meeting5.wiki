@@ -16,6 +16,7 @@ In this meeting we discussed [ShortStories 6 short story titles] in detail that 
 || Programmers    || Group ||
 || QA             || Vasudev, Brian, Khanh ||
 
+*Next Meeting* : In class, 10/15/2009
 
 All items and deadlines are detailed in the [Schedule schedule]
 
