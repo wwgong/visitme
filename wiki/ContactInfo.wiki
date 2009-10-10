@@ -6,6 +6,6 @@
 || Brian || bmoy@cs.umb.edu ||  || 857-991-8551 || [http://www.cs.umb.edu/~bmoy/ visitME] ||
 || Cuong (Charlie) || cpham@cs.umb.edu || hongcuong83 || 617-257-6868 || [http://www.cs.umb.edu/~cpham/ visitME ] ||
 || Henrik || hvolckm@cs.umb.edu || danorux || 620-332-6678 || [http://www.cs.umb.edu/~hvolckm/ visitME] ||
-|| Khanh ||  ||  ||  ||  ||
+|| Khanh || knguyen@cs.umb.edu || N/A ||  || [http://www.cs.umb.edu/~knguyen/ visitME] ||
 || Vasudev || vgadge@cs.umb.edu || vgadge  || || [http://www.cs.umb.edu/~vgadge/ visitME] ||
 || Weiwei || wwgong@cs.umb.edu || weiwei.gong || 617-320-4153 || [http://www.cs.umb.edu/~wwgong/ visitME] ||
