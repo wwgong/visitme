@@ -1,0 +1,3 @@
+= Short Story: Paul visits Jim's profile =
+
+Paul goes to Facebook and decides to click on Jim's profile, who was one of his fraternity brother in college. Both of them have VisitMe installed. In Jim's profile, Paul sees VisitMe window that displays the cost of a flight from Paul to Jim for the next 7 days and the lowest price during a 2 week period, and a month period. 
