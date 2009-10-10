@@ -29,12 +29,10 @@ This page details the overview and responsibilities of each roles.
   * Be able to answer all Kayak API related questions during development
 == Graphic Design - Henrik, Charlie ==
   * Design the logo for the application
-  * Usability and user-interface design
-  
+  * Usability and user-interface design 
 == Programmers - Group ==
+  * Architecture design
+  * Implement the design
 == QA - Vasudev, Brian, Khanh ==
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+  * Project requirements and specifications
+  * Try to break the application
