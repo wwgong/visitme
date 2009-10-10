@@ -2,6 +2,7 @@
   * [Deployment]
   * [Development]
      * [ShortStories Short Stories]
+     * [TeamRoles]
   * [MeetingMinutes Meetings]
   * [TeamName Team name]
   * [ProfessorsComments Professor's comments]
