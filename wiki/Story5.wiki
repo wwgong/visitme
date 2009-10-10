@@ -1,0 +1,12 @@
+#summary Paul visits his own profile (most common)
+#labels Phase-Requirements
+
+_DRAFT_
+
+= Introduction =
+
+While Paul normally wants to see how much it would cost for a random friend to visit him, he changed his preference on VisitMe to show how much it would cost for his closest friends, according to Facebook at least, to visit him.
+
+One slow day Paul is bored at work, so he decides to check his Facebook profile. Because Paul has friends located all over the world, he still has the VisitMe application installed. On his profile page, he sees the VisitMe box showing that it would cost his friend and former classmate Jane, who visits Paul's profile a lot, $387 to fly to Boston from LAX.
+
+= Use cases =
