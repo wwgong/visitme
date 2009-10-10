@@ -1,5 +1,3 @@
-#summary One-sentence summary of this page.
-
 = Team Roles =
 
 This page details the overview and responsibilities of each roles. 
