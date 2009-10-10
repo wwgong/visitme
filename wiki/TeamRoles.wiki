@@ -1,0 +1,40 @@
+#summary One-sentence summary of this page.
+
+= Team Roles =
+
+This page details the overview and responsibilities of each roles. 
+
+*Role Distribution*
+
+|| *Role*         || *Role Assigned to* ||
+|| Team Lead      || Henrik ||
+|| Facebook API   || Vasudev , Weiwei, Brian ||
+|| Kayak API      || Weiwei, Khanh ||
+|| Graphic Design || Henrik, Charlie ||
+|| Programmers    || Group ||
+|| QA             || Vasudev, Brian, Khanh ||
+
+
+= Details =
+
+== Team Lead - Henrik ==
+  * Responsible for the underlying architecture and design of the project 
+  * Oversee the work being done by the team 
+  * _Usually_ have the final say on all matters 
+== Facebook API - Vasudev , Weiwei, Brian ==
+  * Acquire sufficient working knowledge of the Facebook API
+  * Be able to answer all Facebook API related questions during development
+== Kayak API - Weiwei, Khanh ==
+  * Acquire sufficient working knowledge of the Kayak API
+  * Be able to answer all Kayak API related questions during development
+== Graphic Design - Henrik, Charlie ==
+  * Design the logo for the application
+  * Usability and user-interface design
+  
+== Programmers - Group ==
+== QA - Vasudev, Brian, Khanh ==
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
