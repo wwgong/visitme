@@ -6,7 +6,7 @@ This page details the overview and responsibilities of each roles.
 
 || *Role*         || *Role Assigned to* ||
 || Team Lead      || Henrik ||
-|| Facebook API   || Vasudev , Weiwei, Brian ||
+|| Facebook API   || Vasudev , Weiwei, Brian, Charlie ||
 || Kayak API      || Weiwei, Khanh ||
 || Graphic Design || Henrik, Charlie ||
 || Programmers    || Group ||
@@ -19,7 +19,7 @@ This page details the overview and responsibilities of each roles.
   * Responsible for the underlying architecture and design of the project 
   * Oversee the work being done by the team 
   * _Usually_ have the final say on all matters 
-== Facebook API - Vasudev , Weiwei, Brian ==
+== Facebook API - Vasudev , Weiwei, Brian, Charlie ==
   * Acquire sufficient working knowledge of the Facebook API
   * Be able to answer all Facebook API related questions during development
 == Kayak API - Weiwei, Khanh ==
