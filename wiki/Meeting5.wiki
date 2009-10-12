@@ -10,7 +10,7 @@ In this meeting we discussed [ShortStories 6 short story titles] in detail that 
 
 || *Role*         || *Role Assigned to* ||
 || Team Lead      || Henrik ||
-|| Facebook API   || Vasudev , Weiwei, Brian ||
+|| Facebook API   || Vasudev , Weiwei, Brian, Charlie ||
 || Kayak API      || Weiwei, Khanh ||
 || Graphic Design || Henrik, Charlie ||
 || Programmers    || Group ||
