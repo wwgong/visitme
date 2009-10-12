@@ -28,7 +28,7 @@
 ||Create team info page				||Charlie||10/07/09||10/07/09||<font color="green">Done</font>||
 ||SVN client installed				||Group  ||        ||10/08/09|| ||
 ||Post meeting #5 minutes       	||Vasudev||10/09/09||10/08/09||<font color="green">Done</font>||
-||VisitMe logo (photoshop)			||Brian  ||        ||10/12/09|| ||
+||VisitMe logo (photoshop)			||Brian  || 10/12/09 ||10/12/09||  <font color="green">Done</font> ||
 ||Set up webserver					||Henrik ||        ||10/12/09|| ||
 ||Register Team domain				||Henrik ||10/07/09||10/12/09||<font color="green">Done</font>||
 ||Document Team Roles				||Khanh  ||        ||10/13/09|| ||
