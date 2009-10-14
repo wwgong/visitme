@@ -4,6 +4,7 @@
 <wiki:toc max_depth="2" />
 
 = Schedule =
+_For completed batches, [ScheduleOld click here]._
 
 == Hello World ==
 For more information, [HelloWorld click here].
