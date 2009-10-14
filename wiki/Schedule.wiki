@@ -18,8 +18,8 @@ For more information, [HelloWorld click here].
 For more information, [RequirementsSpecification click here]. Short story items on this list are considered DRAFT, the final versions will be incorporated into the requirements specification document, which will then be propagated to the wiki.
 
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
-||Risk Analysis											||Weiwei ||        ||10/15/09|| ||
 ||[ShortStories Short stories] (titles)					||Henrik ||10/07/09||10/08/09||<font color="green">Done</font>||
+||Risk Analysis											||Weiwei ||        ||10/15/09|| ||
 ||Short Story: Paul visits Jim's profile				||Khanh  ||        ||10/15/09|| ||
 ||Short Story: Jim visits Paul's profile				||Weiwei ||        ||10/15/09|| ||
 ||Short Story: Paul visits his own profile (random)		||Vasudev||        ||10/15/09|| ||
