@@ -1,0 +1,32 @@
+#summary This page contains the completed schedule objectives for the project.
+
+<wiki:toc max_depth="2" />
+
+= Schedule =
+
+== Preparation and setup ==
+|| *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
+||Agenda for 1st meeting			||Henrik ||09/28/09||09/28/09||<font color="green">Done</font>||
+||Set up google code				||Henrik ||09/29/09||09/29/09||<font color="green">Done</font>||
+||Contact [client]					||Henrik ||09/29/09||09/29/09||<font color="green">Done</font>||
+||Port schedule to Google Code		||Henrik ||09/29/09||09/29/09||<font color="green">Done</font>||
+||Post meeting #1 minutes			||Henrik ||09/29/09||09/29/09||<font color="green">Done</font>||
+||Post meeting #2 minutes			||Henrik ||10/01/09||10/01/09||<font color="green">Done</font>||
+||Vision statement draft			||Brian  ||10/01/09||10/01/09||<font color="green">Done</font>||
+||Vision statement final			||Brian  ||10/05/09||10/05/09||<font color="green">Done</font>||
+||[TeamName Team name]	(2 suggestions each)	||Group  ||10/05/09||10/05/09||<font color="green">Done</font>||
+||Document Facebook location info	||Vasudev||10/05/09||10/05/09||<font color="green">Done</font>||
+||Document Web server requirements	||Vasudev||10/05/09||10/05/09||<font color="green">Done</font>||
+||Document [Hello World] application	||Henrik ||10/02/09||10/05/09||<font color="green">Done</font>||
+||Register VisitMe application		||Henrik ||10/02/09||10/05/09||<font color="green">Done</font>||
+||Make decision on webserver		||Henrik ||10/05/09||10/05/09||<font color="green">Done</font>||
+||VisitMe logo (sketch)				||Charlie||10/05/09||10/05/09||<font color="green">Done</font>||
+||Post meeting #3 minutes			||Vasudev||10/05/09||10/05/09||<font color="green">Done</font>||
+||Post client meeting #1 minutes	||Vasudev||10/07/09||10/07/09||<font color="green">Done</font>||
+||Post meeting #4 minutes       	||Vasudev||10/07/09||10/07/09||<font color="green">Done</font>||
+||Create team info page				||Charlie||10/07/09||10/07/09||<font color="green">Done</font>||
+||SVN client installed				||Group  ||10/12/09||10/08/09||<font color="green">Done</font>||
+||Post meeting #5 minutes       	||Vasudev||10/09/09||10/08/09||<font color="green">Done</font>||
+||VisitMe logo (photoshop)			||Brian  || 10/12/09 ||10/12/09||  <font color="green">Done</font> ||
+||Register Team domain				||Henrik ||10/07/09||10/12/09||<font color="green">Done</font>||
+||Document Team Roles				||Khanh  ||10/10/09||10/13/09||<font color="green">Done</font>||
