@@ -1,4 +1,5 @@
 #summary Contact Information of Team Members
+#labels Deprecated
 
 <wiki:toc max_depth="2" />
 
