@@ -9,4 +9,6 @@
      * [Team]
      * [UI]
      * [Deployment]
+        * [HelloWorld Hello World]
+        * [PublicBeta Public Beta]
   * [ProfessorsComments Professor's comments]
