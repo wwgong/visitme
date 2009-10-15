@@ -1,0 +1,16 @@
+#summary UI mockups and screenshots
+#labels Phase-Design,Phase-Implementation
+
+= Introduction =
+Since regular people will be using VisitME, it is important to make the UI as simple as possible.
+
+The two integration points in Facebook that we will focus on are the canvas page, which will act as a place to get the core functionality working, as well as act as a hub for users to change their preferences, and the profile page, where we will place a box on the left column underneath the information box.
+
+== Canvas ==
+
+||<a href="http://img185.imageshack.us/img185/139/mockuph.jpg"><img src="http://img185.imageshack.us/img185/139/mockuph.jpg" height="300" /></a>||
+||<p align="center">Photoshop mockup</p>||
+
+== Profile ==
+
+Coming soon.
