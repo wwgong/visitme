@@ -1,17 +1,4 @@
-= Team Roles =
-
-This page details the overview and responsibilities of each roles. 
-
-*Role Distribution*
-
-|| *Role*         || *Role Assigned to* ||
-|| Team Lead      || Henrik ||
-|| Facebook API   || Vasudev , Weiwei, Brian, Charlie ||
-|| Kayak API      || Weiwei, Khanh ||
-|| Graphic Design || Henrik, Charlie ||
-|| Programmers    || Group ||
-|| QA             || Vasudev, Brian, Khanh ||
-
+This page details the overview and responsibilities of each role. 
 
 = Details =
 
