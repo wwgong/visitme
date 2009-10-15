@@ -1,0 +1,15 @@
+#summary Jim visits Paul's profile
+#labels Phase-Requirements
+
+_DRAFT_
+
+= Introduction =
+
+As usual, Jim opened firefox and logged in to facebook to check his friends' news in the morning. The first news feed in his homepage was from his college roommate Paul, it said "Paul is missing all my old friends". Jim smiled, "hey, dude, I miss you too". 
+
+Jim clicked Paul's name to his profile page. He viewed Paul's newly added photos of his trip to Santa Barbara. And suddenly, he found there is a small blue button on the left column of Paul's profile page, just below the information box. It displayed "VisitMe-$188". "Interesting", Jim thought, and after he clicked this button, a window popped out and there is a calender(or trend figure) displaying the best fares found by Kayak 30 days from now. From calender(or trend figure), he saw the lowest fare in next 30 days to fly from Durham, NC to Boston, MA is $188 on Nov. 13th. 
+
+Jim checked his schedule, it is a Friday and he would be free that weekend, "hmm... I haven't seen Paul since graduate, maybe it's a good time to visit him", so he followed the link to Kayak.com and booked a round-trip to Boston.
+
+
+= Use cases =
