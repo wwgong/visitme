@@ -1,6 +1,6 @@
 #summary The page contains a summary of all team information.
 
-= GoPandas =
+= !GoPandas =
 For discussion on how we came up with the team name, [TeamName click here].
 
 == Contact information ==
