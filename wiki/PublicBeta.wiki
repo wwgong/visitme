@@ -1,4 +1,5 @@
 #summary Description of how we will go public
+#labels Phase-Deploy
 
 = Introduction =
 Any application on a social network is pointless if people do not use it. It is for this reason that we will have to get as many people as possible to test VisitMe. During development the application is not visible to the general public, only the developers can test it.
