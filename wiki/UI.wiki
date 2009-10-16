@@ -9,4 +9,4 @@ The two integration points in Facebook that we will focus on are the canvas page
 = Mockups =
 
 ||<a href="http://img185.imageshack.us/img185/139/mockuph.jpg"><img src="http://img185.imageshack.us/img185/139/mockuph.jpg" height="300" /></a>||<a href="http://img202.imageshack.us/img202/6629/mockup2.jpg"><img src="http://img202.imageshack.us/img202/6629/mockup2.jpg" height="300" /></a>||
-||<p align="center">Canvas</p>||<p align="center">Profile box</p>||
+||<p align="center">Canvas (click image to enlarge)</p>||<p align="center">Profile box</p>||
