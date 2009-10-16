@@ -1,0 +1,9 @@
+#summary Overview of the Requirements Specification
+#labels Phase-Requirements
+
+= Introduction =
+The requirements specification details the functional requirements of the application, along with use cases and a risk analysis. When completed, this page will host a downloadable PDF file containing the complete spec.
+
+= Details =
+  * [ShortStories Short Stories]
+  * [RiskAnalysis Risk Analysis]
