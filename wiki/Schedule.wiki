@@ -8,8 +8,8 @@ _For completed batches, [ScheduleOld click here]._
 
 == Misc II ==
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
-|| Meeting Minutes 6	|| Vasudev ||          ||10/14/2009|| ||
-|| Meeting Minutes 7	|| Vasudev ||          ||10/16/2009|| ||
+|| Meeting Minutes 6	|| Vasudev ||10/16/2009||10/14/2009||<font color="green">Done</font>  ||
+|| Meeting Minutes 7	|| Vasudev ||10/16/2009||10/16/2009||<font color="green">Done</font>  ||
 || Team website			||         ||          ||11/05/2009|| ||
 
 == Hello World ==
