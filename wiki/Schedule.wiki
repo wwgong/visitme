@@ -6,6 +6,8 @@
 = Schedule =
 _For completed batches, [ScheduleOld click here]._
 
+WOC = Wait on client
+
 == Misc II ==
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
 || Meeting Minutes 6	|| Vasudev ||10/16/2009||10/14/2009||<font color="green">Done</font>  ||
@@ -15,9 +17,9 @@ _For completed batches, [ScheduleOld click here]._
 == Hello World ==
 For more information, [HelloWorld click here].
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
-||Set up webserver			||Henrik ||        ||10/16/09|| ||
-||Install Facebook sample app		||Henrik ||        ||10/16/09|| ||
-||Kayak API							||Weiwei ||        ||10/23/09|| ||
+||Set up webserver			||Henrik ||        || WOC || ||
+||Install Facebook sample app		||Henrik ||        || WOC || ||
+||Kayak API							||Weiwei ||        || || WOC ||
 || <font color=#0000BB>*Hello World*</font> ([HelloWorld details])||       ||        ||10/23/09|| ||
 
 == Requirements Specification ==
@@ -32,9 +34,9 @@ For more information, [RequirementsSpecification click here]. Short story items 
 ||[Story4 Short Story]: Paul visits his own profile (suggest)	||Brian  || 10/15/09 ||10/15/09||<font color="green">Done</font>||
 ||[Story5 Short Story]: Paul visits his own profile (most common)||Henrik ||10/15/09||10/15/09||<font color="green">Done</font>||
 ||[Story6 Short Story]: Paul goes to VisitMe? (search) 			||Charlie||10/15/09||10/15/09||<font color="green">Done</font>||
-||Sample [UI]'s with feedback from Kayak					||       ||        ||10/15/09|| ||
-||Use cases (titles)									||       ||        ||10/15/09|| ||
-|| *Use cases*											||       ||        ||10/22/09|| ||
+||Sample [UI]'s with feedback from Kayak					||Henrik||10/15/09||10/15/09||<font color="green">Done</font>||
+||UI revision based on client feedback						||Henrik||        ||10/29/09|| ||
+|| *Use cases*												||      ||        ||10/22/09|| ||
 || <font color="#0000BB">*Requirements Specification*</font> ([RequirementsSpecification details])||       ||        ||10/29/09|| ||
 
 == Venture Capitalist Presentation ==
