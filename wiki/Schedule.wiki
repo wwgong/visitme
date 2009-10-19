@@ -28,8 +28,8 @@ For more information, [RequirementsSpecification click here]. Short story items 
 ||Risk Analysis											||Weiwei ||10/16/09||10/15/09||<font color="green">Done</font>||
 ||[Story1 Short Story]: Paul visits Jim's profile				||Khanh  ||10/14/09||10/15/09||<font color="green">Done</font> ||
 ||[Story2 Short Story]: Jim visits Paul's profile				||Weiwei ||10/15/09||10/15/09||<font color="green">Done</font>||
-||[Story3 Short Story]: Paul visits his own profile (random)	||Vasudev||        ||10/15/09|| ||
-||[Story4 Short Story]: Paul visits his own profile (suggest)	||Brian  || 10/15/09 ||10/15/09|| <font color="green">Done</font>||
+||[Story3 Short Story]: Paul visits his own profile (random)	||Vasudev||10/19/09||10/15/09||<font color="green">Done</font>||
+||[Story4 Short Story]: Paul visits his own profile (suggest)	||Brian  || 10/15/09 ||10/15/09||<font color="green">Done</font>||
 ||[Story5 Short Story]: Paul visits his own profile (most common)||Henrik ||10/15/09||10/15/09||<font color="green">Done</font>||
 ||[Story6 Short Story]: Paul goes to VisitMe? (search) 			||Charlie||10/15/09||10/15/09||<font color="green">Done</font>||
 ||Sample [UI]'s with feedback from Kayak					||       ||        ||10/15/09|| ||
