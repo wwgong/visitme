@@ -19,7 +19,7 @@ For more information, [HelloWorld click here].
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
 ||Set up webserver			||Henrik ||        || WOC || ||
 ||Install Facebook sample app		||Henrik ||        || WOC || ||
-||Kayak API							||Weiwei ||        || || WOC ||
+||Kayak API							||Weiwei ||        || WOC ||  ||
 || <font color=#0000BB>*Hello World*</font> ([HelloWorld details])||       ||        ||10/23/09|| ||
 
 == Requirements Specification ==
