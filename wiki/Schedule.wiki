@@ -33,7 +33,7 @@ For more information, [RequirementsSpecification click here]. Short story items 
 ||[Story3 Short Story]: Paul visits his own profile (random)	||Vasudev||10/19/09||10/15/09||<font color="green">Done</font>||
 ||[Story4 Short Story]: Paul visits his own profile (suggest)	||Brian  || 10/15/09 ||10/15/09||<font color="green">Done</font>||
 ||[Story5 Short Story]: Paul visits his own profile (most common)||Henrik ||10/15/09||10/15/09||<font color="green">Done</font>||
-||[Story6 Short Story]: Paul goes to VisitMe? (search) 			||Charlie||10/15/09||10/15/09||<font color="green">Done</font>||
+||[Story6 Short Story]: Paul goes to VisitMe (search) 			||Charlie||10/15/09||10/15/09||<font color="green">Done</font>||
 ||Sample [UI]'s with feedback from Kayak					||Henrik||10/15/09||10/15/09||<font color="green">Done</font>||
 ||UI revision based on client feedback						||Henrik||        ||10/29/09|| ||
 || *Use cases*												||      ||        ||10/22/09|| ||
