@@ -1,5 +1,10 @@
 #summary Space for Professor Bolker to inform the team of how awesome it is.
 
+October 20. Why have dates in Hello World on the schedule been changed to WOC (waiting on client)? I can see why you might need that for the Kayak API, but for a simple facebook app hello world?
+
+You should probably have dates even for the items that depend on things beyond your control (like client input) so you can record when you need or expect them by. That way you can track their effects on the rest of your schedule.
+
+----
 October 2. You are awesome.
 
 October 2. I think your schedule should distinguish between major milestones and the intermediate milestones along the way. Perhaps color or font could do that without too much trouble. And you should schedule a few more of the major milestones so the schedule reaches out more than just a week or two.
