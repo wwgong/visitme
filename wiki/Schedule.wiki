@@ -6,7 +6,7 @@
 = Schedule =
 _For completed batches, [ScheduleOld click here]._
 
-WOC = Wait on client
+WOC = Waiting on client
 
 == Misc II ==
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
@@ -20,7 +20,7 @@ For more information, [HelloWorld click here].
 ||Set up webserver			||Henrik ||        || WOC || ||
 ||Install Facebook sample app		||Henrik ||        || WOC || ||
 ||Kayak API							||Weiwei ||        || WOC ||  ||
-|| <font color=#0000BB>*Hello World*</font> ([HelloWorld details])||       ||        ||10/23/09|| ||
+|| <font color=#0000BB>*Hello World*</font> ([HelloWorld details])||       ||        ||WOC|| ||
 
 == Requirements Specification ==
 For more information, [RequirementsSpecification click here]. Short story items on this list are considered DRAFT, the final versions will be incorporated into the requirements specification document, which will then be propagated to the wiki.
@@ -33,20 +33,22 @@ For more information, [RequirementsSpecification click here]. Short story items 
 ||[Story3 Short Story]: Paul visits his own profile (random)	||Vasudev||10/19/09||10/15/09||<font color="green">Done</font>||
 ||[Story4 Short Story]: Paul visits his own profile (suggest)	||Brian  || 10/15/09 ||10/15/09||<font color="green">Done</font>||
 ||[Story5 Short Story]: Paul visits his own profile (most common)||Henrik ||10/15/09||10/15/09||<font color="green">Done</font>||
-||[Story6 Short Story]: Paul goes to VisitMe (search) 			||Charlie||10/15/09||10/15/09||<font color="green">Done</font>||
+||[Story6 Short Story]: Paul goes to VisitME (search) 			||Charlie||10/15/09||10/15/09||<font color="green">Done</font>||
 ||Sample [UI]'s with feedback from Kayak					||Henrik||10/15/09||10/15/09||<font color="green">Done</font>||
+|| *Use cases*												||      ||        ||10/26/09|| ||
 ||UI revision based on client feedback						||Henrik||        ||10/29/09|| ||
-|| *Use cases*												||      ||        ||10/22/09|| ||
 || <font color="#0000BB">*Requirements Specification*</font> ([RequirementsSpecification details])||       ||        ||10/29/09|| ||
 
 == Venture Capitalist Presentation ==
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
+|| Design props					|| || ||10/27/09|| ||
 || Order props					|| || ||10/29/09|| ||
 || Powerpoint presentation		|| || ||11/05/09|| ||
 || <font color="#0000BB">*Presentation*</font> ([VCPresentation details])||       ||        ||11/12/09|| ||
 
 == Future ==
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
+|| Prototype || || || 11/16/09 || ||
 || <font color="#0000BB">*Public Beta*</font> ([PublicBeta details])	|| || ||12/01/09|| ||
 || <font color=#0000BB>*Code freeze for event presentations*</font>	|| || ||04/20/10|| ||
 
