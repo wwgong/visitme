@@ -10,9 +10,17 @@ WOC = Waiting on client
 
 == Misc II ==
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
-|| Meeting Minutes 6	|| Vasudev ||10/16/2009||10/14/2009||<font color="green">Done</font>  ||
-|| Meeting Minutes 7	|| Vasudev ||10/16/2009||10/16/2009||<font color="green">Done</font>  ||
-|| Team website			||         ||          ||11/05/2009|| ||
+|| Meeting Minutes 6			||Vasudev ||10/16/09||10/14/09||<font color="green">Done</font>  ||
+|| Meeting Minutes 7			||Vasudev ||10/16/09||10/16/09||<font color="green">Done</font>  ||
+|| Meeting Minutes 8			||Henrik  ||10/20/09||10/20/09||<font color="green">Done</font>  ||
+|| Coding conventions			||Henrik  ||        ||10/20/09|| ||
+|| Design notes					||Henrik  ||        ||10/21/09|| ||
+|| Split code 6 ways			||Henrik  ||        ||10/26/09|| ||
+|| Get SSH access for webserver ||Henrik  ||        ||10/26/09|| ||
+|| Set up test server			||Khanh   ||        ||10/26/09|| ||
+|| Tweak vision statement		||Charlie ||        ||10/26/09|| ||
+|| Negotiate client meeting 2	||Henrik  ||        ||10/27/09|| ||
+|| Team website					||        ||        ||11/12/09|| ||
 
 == Hello World ==
 For more information, [HelloWorld click here].
@@ -34,13 +42,19 @@ For more information, [RequirementsSpecification click here]. Short story items 
 ||[Story4 Short Story]: Paul visits his own profile (suggest)	||Brian  || 10/15/09 ||10/15/09||<font color="green">Done</font>||
 ||[Story5 Short Story]: Paul visits his own profile (most common)||Henrik ||10/15/09||10/15/09||<font color="green">Done</font>||
 ||[Story6 Short Story]: Paul goes to VisitME (search) 			||Charlie||10/15/09||10/15/09||<font color="green">Done</font>||
-||Sample [UI]'s with feedback from Kayak					||Henrik||10/15/09||10/15/09||<font color="green">Done</font>||
-|| *Use cases*												||      ||        ||10/26/09|| ||
-||UI revision based on client feedback						||Henrik||        ||10/29/09|| ||
+||Sample [UI]'s with feedback from Kayak						||Henrik ||10/15/09||10/15/09||<font color="green">Done</font>||
+||Post UI revision 1											||Henrik ||        ||10/20/09|| ||
+||[Story1 Use cases]: Paul visits Jim's profile					||Khanh  ||        ||10/26/09|| ||
+||[Story2 Use cases]: Jim visits Paul's profile					||Weiwei ||        ||10/26/09|| ||
+||[Story3 Use cases]: Paul visits his own profile (random)		||Vasudev||        ||10/26/09|| ||
+||[Story4 Use cases]: Paul visits his own profile (suggest)		||Brian  ||        ||10/26/09|| ||
+||[Story5 Use cases]: Paul visits his own profile (most common)	||Henrik ||        ||10/26/09|| ||
+||[Story6 Use cases]: Paul goes to VisitME (search) 			||Charlie||        ||10/26/09|| ||
 || <font color="#0000BB">*Requirements Specification*</font> ([RequirementsSpecification details])||       ||        ||10/29/09|| ||
 
 == Venture Capitalist Presentation ==
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
+|| Presentation summary			||Charlie, Henrik|| ||10/27/09|| ||
 || Design props					|| || ||10/27/09|| ||
 || Order props					|| || ||10/29/09|| ||
 || Powerpoint presentation		|| || ||11/05/09|| ||
@@ -48,9 +62,8 @@ For more information, [RequirementsSpecification click here]. Short story items 
 
 == Future ==
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
-|| Prototype || || || 11/16/09 || ||
-|| <font color="#0000BB">*Public Beta*</font> ([PublicBeta details])	|| || ||12/01/09|| ||
-|| <font color=#0000BB>*Code freeze for event presentations*</font>	|| || ||04/20/10|| ||
+|| <font color="#0000BB">*Public Beta*</font> ([PublicBeta details])	|| || ||11/12/09|| ||
+|| <font color=#0000BB>*Code freeze for event presentations*</font>		|| || ||04/20/10|| ||
 
 = Editing the schedule =
 
