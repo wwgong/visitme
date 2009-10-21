@@ -25,10 +25,10 @@ WOC = Waiting on client
 == Hello World ==
 For more information, [HelloWorld click here].
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
-||Set up webserver			||Henrik ||        || WOC || ||
-||Install Facebook sample app		||Henrik ||        || WOC || ||
-||Kayak API							||Weiwei ||        || WOC ||  ||
-|| <font color=#0000BB>*Hello World*</font> ([HelloWorld details])||       ||        ||WOC|| ||
+||Set up webserver			||Henrik ||        || WOC - 10/31/09 || ||
+||Install Facebook sample app		||Henrik ||        || WOC - 10/31/09 || ||
+||Kayak API							||Weiwei ||        || WOC - 10/31/09 ||  ||
+|| <font color=#0000BB>*Hello World*</font> ([HelloWorld details])||       ||        ||WOC - 10/31/09 || ||
 
 == Requirements Specification ==
 For more information, [RequirementsSpecification click here]. Short story items on this list are considered DRAFT, the final versions will be incorporated into the requirements specification document, which will then be propagated to the wiki.
@@ -43,7 +43,7 @@ For more information, [RequirementsSpecification click here]. Short story items 
 ||[Story5 Short Story]: Paul visits his own profile (most common)||Henrik ||10/15/09||10/15/09||<font color="green">Done</font>||
 ||[Story6 Short Story]: Paul goes to VisitME (search) 			||Charlie||10/15/09||10/15/09||<font color="green">Done</font>||
 ||Sample [UI]'s with feedback from Kayak						||Henrik ||10/15/09||10/15/09||<font color="green">Done</font>||
-||Post UI revision 1											||Henrik ||        ||10/20/09|| ||
+||Post UI revision 1											||Henrik ||10/20/09||10/20/09||<font color="green">Done</font>||
 ||[Story1 Use cases]: Paul visits Jim's profile					||Khanh  ||        ||10/26/09|| ||
 ||[Story2 Use cases]: Jim visits Paul's profile					||Weiwei ||        ||10/26/09|| ||
 ||[Story3 Use cases]: Paul visits his own profile (random)		||Vasudev||        ||10/26/09|| ||
