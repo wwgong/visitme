@@ -1,7 +1,7 @@
 #summary Coding guidelines for the project
 #labels Phase-Implementation
 
-<wiki:toc max_depth="2" />
+<wiki:toc max_depth="3" />
 
 = Introduction =
 
@@ -69,7 +69,7 @@ class panda
 
 = Whitespace =
 
-=== Comments ===
+== Comments ==
 Right:
 {{{
 // This is a well formatted comment
@@ -100,6 +100,7 @@ multi-line comment
 }}}
 
 == Tabbing ==
+Anyone editing code should set their environment to use 4 spaces per tab.
 
 === Indentation ===
 Always indent code properly.
