@@ -19,6 +19,7 @@ The following is a list of topics mentioned:
   * Client meeting
   * Public beta
   * Tweak vision statement
+  * Backup server
 
 All deadlines new and changed are reflected in the [Schedule schedule].
 
