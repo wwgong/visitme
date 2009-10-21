@@ -9,22 +9,22 @@ Because this is an open source project with multiple contributors, we need to ha
 
 = Names =
 == Variables ==
-In general, use lowercase with underscores for naming variables. Variable names should be meaningful, but not too long.
+In general, use mixed case for variable names, with no underscores. Variable names should be meaningful, but not too long.
 
 Right:
 {{{
-$max_iterations
+$maxIterations
 $zebra
-$is_available
-$is_awesome
-$eating_coolwhip
+$isAvailable
+$isAwesome
+$eatingCoolWhip
 }}}
 
 Wrong:
 {{{
 $mItr
 $ZeBrA
-$isAvailable
+$is_available
 $iuwehdfiuahfikuaskdjsnkajd
 $eating_CoolWhip
 }}}
@@ -34,7 +34,7 @@ Functions follow the same convention as variables.
 
 Right:
 {{{
-function compute_something()
+function computeSomething()
 {
 	echo "something";
 }
@@ -42,7 +42,7 @@ function compute_something()
 
 Wrong:
 {{{
-function computeSomething()
+function compute_something()
 {
 	echo "something";
 }
@@ -81,7 +81,7 @@ Right:
 /* This is a well formatted
  * multi-line comment for a
  * function or class */
-function do_something()
+function doSomething()
 {
 	echo "Hi!"
 } 
@@ -190,8 +190,8 @@ function($apple,$banana, $cake)
 The Java coding convention for brackets is like this:
 
 {{{
-if ($some_boolean) {
-	if ($some_other_boolean) {
+if ($someBoolean) {
+	if ($someOtherBoolean) {
 		echo "Hello, world!";
 	}
 }
@@ -200,9 +200,9 @@ if ($some_boolean) {
 However it's much more legible to line up the opening brackets with their level of indentation:
 
 {{{
-if ($some_boolean)
+if ($someBoolean)
 {
-	if ($some_other_boolean)
+	if ($someOtherBoolean)
 	{
 		echo "Hello, world!";
 	}
