@@ -8,6 +8,7 @@
         * [RiskAnalysis Risk Analysis]
      * [Team]
      * [UI]
+     * [CodingGuidelines Coding Guidelines]
      * [Deployment]
         * [HelloWorld Hello World]
         * [PublicBeta Public Beta]
