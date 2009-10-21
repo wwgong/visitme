@@ -1,11 +1,11 @@
 #summary Coding guidelines for the project
 #labels Phase-Implementation
 
-<wiki:toc max_depth="3" />
-
 = Introduction =
 
 Because this is an open source project with multiple contributors, we need to have certain coding guidelines in place to keep things consistent and organized. Originally the guidelines were going to be near carbon copies of the PHPBB guidelines, but it is better to have something custom to our project.
+
+<wiki:toc max_depth="3" />
 
 = Names =
 == Variables ==
