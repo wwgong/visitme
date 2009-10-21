@@ -69,6 +69,36 @@ class panda
 
 = Whitespace =
 
+=== Comments ===
+Right:
+{{{
+// This is a well formatted comment
+
+/* This is a well formatted
+ * multi-line comment 
+ */
+
+/* This is a well formatted
+ * multi-line comment for a
+ * function or class */
+function do_something()
+{
+	echo "Hi!"
+} 
+}}}
+
+Wrong:
+{{{
+//This is a poorly formatted comment
+
+/*This is a poorly formatted
+multi-line comment */
+
+/*This is another poorly formatted
+multi-line comment
+*/
+}}}
+
 == Tabbing ==
 
 === Indentation ===
@@ -120,6 +150,36 @@ $orange	= "orange";		// is
 $pineapple	= "pineapple";	// not nice
 $max  = 1728368;// commenting
 
+}}}
+
+=== Spacing ===
+
+The following are all the right way of doing things:
+
+{{{
+switch ($type)
+{
+	default: echo "unknown";
+}
+
+function ($apple, $banana, $cake)
+{
+	echo "omnom";
+}
+}}}
+
+And this is how not to code:
+
+{{{
+switch($type)
+{
+	default: echo "unknown";
+}
+
+function($apple,$banana, $cake)
+{
+	echo "omnom";
+}
 }}}
 
 == Newlines ==
