@@ -1,6 +1,8 @@
 #summary Space for Professor Bolker to inform the team of how awesome it is.
 
-October 22. I like the CodingGuidelines. The fact that they are so well done and so complete suggests that they were cut from somewhere else and pasted here, not written just now on the fly. I've no problem with that - but if it's true, you should identify the source. Maybe simply link to it rather than copy it, unless you've customized it.
+October 22. I like the CodingGuidelines. You acknowledge that they're a customization of some you got from PHPBB. You should link to the original, and perhaps write a few words about the changes you made, and why.
+
+Do you have a plan to enforce these guidelines? 
 
 ----
 
