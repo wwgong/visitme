@@ -1,5 +1,9 @@
 #summary Space for Professor Bolker to inform the team of how awesome it is.
 
+October 22. I like the CodingGuidelines. The fact that they are so well done and so complete suggests that they were cut from somewhere else and pasted here, not written just now on the fly. I've no problem with that - but if it's true, you should identify the source. Maybe simply link to it rather than copy it, unless you've customized it.
+
+----
+
 October 20. Why have dates in Hello World on the schedule been changed to WOC (waiting on client)? I can see why you might need that for the Kayak API, but for a simple facebook app hello world?
 
 You should probably have dates even for the items that depend on things beyond your control (like client input) so you can record when you need or expect them by. That way you can track their effects on the rest of your schedule.
