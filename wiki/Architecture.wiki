@@ -1,0 +1,28 @@
+#summary Overall software architecture of the application
+#labels Phase-Design,Phase-Implementation
+
+<wiki:toc max_depth="2" />
+
+= Languages and APIs =
+
+Many different technologies go into the creation of a web application. For VisitME, the following diagram represents the underlying interaction between client and server technologies:
+
+<img src="http://img42.imageshack.us/img42/783/codex.png"/>
+
+== HTML ==
+HTML 4 is the dominant version of the popular markup language being used today to describe how elements of webpages are layed out. Because HTML 5 is still in its infancy, we will not take advantage of any new features it provides.
+
+== CSS ==
+CSS provides a way of customizing how each element on a webpage is represented in the users browser. Because different browsers interpret CSS slightly differently, care attention is required when writing such files.
+
+== Javascript ==
+While Javascript used to be a big taboo on the internet ten years ago, the popularization of AJAX has made it into one of the most fundamental technologies in building dynamic websites.
+
+== PHP ==
+On the back end we will be using PHP, as the Facebook API natively uses the language and is the easiest to deploy out of any pre-processing language (PHP, JSP, ASP, etc.).
+
+== Smarty ==
+Because the separation of logic and UI is important in maintaining good code, the Smarty templating engine will provide us with an easy way to do so. Smarty is written in PHP and runs server side as an include for all PHP files used in the application.
+
+== MySQL ==
+Any application that needs to keep track of its users will need some database for it. MySQL is free and easy to get working with PHP.
