@@ -1,7 +1,7 @@
 #summary Index of short stories detailing VisitMe
 #labels Phase-Requirements
 
-= VisitMe =
+= VisitME =
 _Unless otherwise specified, we assume that initially Paul has VisitMe installed and Jim does not. The names are conveniently based on the CTO and VP of Technology of Kayak, though any behavior described may or may not have any actual resemblance to the real Paul and Jim._
 
   # [Story1 Paul visits Jim's profile]
