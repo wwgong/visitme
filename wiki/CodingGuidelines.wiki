@@ -1,11 +1,16 @@
 #summary Coding guidelines for the project
 #labels Phase-Implementation
 
+<wiki:toc max_depth="3" />
+
 = Introduction =
 
-Because this is an open source project with multiple contributors, we need to have certain coding guidelines in place to keep things consistent and organized. Originally the guidelines were going to be near carbon copies of the PHPBB guidelines, but it is better to have something custom to our project.
+Because this is an open source project with multiple contributors, we need to have certain coding guidelines in place to keep things consistent and organized. Originally the guidelines were going to be near carbon copies of the [http://area51.phpbb.com/docs/coding-guidelines.html PHPBB guidelines], but it is better to have something custom to our project. 
 
-<wiki:toc max_depth="3" />
+Key differences are:
+  * The use of mixed case variable and function names instead of using lowercase names with underscores, to be more in line with what most of the team is used to.
+  * Specific tab length
+  * No rules that are more beneficial to coding for PHPBB than anything else.
 
 = Names =
 == Variables ==
