@@ -1,7 +1,8 @@
+#summary Risk Analysis for VisitME
 #labels Phase-Requirements
-Risk Analysis
 
-<br><br>
+<wiki:toc max_depth="2" />
+
 = *Human* =
 
 == Client ==
@@ -22,7 +23,6 @@ Risk Analysis
         * Default: Client will give us another project to do.
         * No more projects: We will be left without a client, but we can continue the project independently, since Kayak API is open.
 
-<br>
 == Team ==
 === _Team (sick)_ ===
 ||			||Probability	||Severity	||Possible solution||
@@ -34,9 +34,9 @@ Risk Analysis
 ||			||Probability	||Severity	||Possible solution||
 ||1 person	||1/10			||3/10		||Reassign tasks to other team members or reschedule.	||
 ||1 role	||0/10			||7/10		||Other people on the team have to cover the role.		||
-||Whole Team||0/10			||10/10		||None, project is dead.								||
+||Whole Team||0/10			||10/10		||None, project is dead.||
 
-<br><br><br>
+<br/>
 = *Servers* =
 
 == Servers go down ==
@@ -54,8 +54,7 @@ Risk Analysis
 ||Kayak		||3/10			||4/10		||In the middle of coding/testing stage, set up a server on unix system at UMB; after published, stop VisitME service on Facebook temporarily.||
 ||Internet	||0/10			||8/10		||In the middle of project, can meet physically or via phone and backup documentations and synchronize code on local machines, but have to wait for testing.||
 
-
-<br><br><br>
+<br/>
 = *Technology* = 
 
 == API Upgrade ==
@@ -73,8 +72,6 @@ Risk Analysis
 	    * Default: Client would inform us at least one month before they release new API, so we have enough time for adjustment.
 	    * Otherwise: If it is downward compatible, we can choose optimize our code or do nothing; if not, retest the whole project and rewrite necessary part.
 
-
-<br><br><br>
 = *Other* =
 === _Natural disaster = combination of people and server problems_ ===
     * Probability: 1/10
