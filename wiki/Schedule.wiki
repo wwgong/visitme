@@ -16,6 +16,7 @@ WOC = Waiting on client
 || [CodingGuidelines Coding Guidelines]		||Henrik  ||10/20/09||10/20/09||<font color="green">Done</font>||
 || [Meeting9 Meeting Minutes 9]			||Vasudev ||10/23/09||10/23/09||<font color="green">Done</font>||
 || [Architecture]				||Henrik  ||10/22/09||10/23/09||<font color="green">Done</font>||
+|| [ServerList Server List]                     ||Brian   ||10/25/09||10/25/09||<font color="green">Done</font>||
 || [FileSystem File System]			||Henrik  ||        ||10/26/09||<font color="green">Done</font>||
 || Get SSH access for webserver 		||Henrik  ||        ||10/26/09|| ||
 || Set up test server				||Khanh   ||        ||10/26/09|| ||
