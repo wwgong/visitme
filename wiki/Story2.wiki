@@ -13,3 +13,49 @@ Jim checked his schedule, it is a Friday and he would be free that weekend, "hmm
 
 
 = Use cases =
+
+*Description*: Book air ticket via VisitME on one friend's profile page in Facebook.
+
+
+*Actor*: Facebook user.
+
+
+*Preconditions*: A and B are both Facebook users with connection; and B has installed VisitME application.
+
+
+*Success Guarantee(or Postconditions)*: not applicable
+
+
+*Main Success Scenario(or Basic Flow)*: 
+	# User A logs in Facebook.
+	# User A visits user B'profile page.
+	# VisitME displays the lowest fare for flying from A's city to B's city in next 30 days.
+	# User A clicks on VisitME button.
+	# VisitME redirects to kayak.com.
+	# kayak.com searches all flights in next 30 days and highlights 10 lowest fares.
+	# User A chooses a flight from them.
+	# kayak.com redirects to the ticket booking site of the flight user chosen.
+	# User A books the flight ticket.
+
+
+
+*Extensions(or Alternative Flows)*:
+	6a. If user changes their constraint, such as departure or return date, and start city or destination:
+		6a1. kayak.com searches the flights based on new requirements again.<br>
+		6a2. The use case continues from step 7.
+
+
+*Exception*:
+	4. If user A is not interested at the price and doesn't click on VisitME button, the use case ends.<br>
+	7. If no flight satisfies user A and the user doesn't choose any flight but leaving kayak.com, the use case ends.<br>
+	9. If user A changes mind before actually booking the ticket, the use case ends.
+
+
+*Special Requirements*: not applicable
+
+
+*Technology and Data Variations List*:
+	3. When user A visits user B's profile, VisitME will connect to kayak.com to retrieve latest flight quotes and displays them.
+
+
+*Frequency of Occurence*: Occasionally, once per 2-3 months.
