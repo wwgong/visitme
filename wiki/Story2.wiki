@@ -9,7 +9,7 @@ Jim clicked Paul's name to his profile page. He viewed Paul's newly added photos
 
 Jim checked his schedule and found that November 13th is a Friday and he would be free that weekend, "hmm... I haven't seen Paul since graduation, maybe it's a good time to visit him", so he followed the link to Kayak.com and booked a round-trip to Boston.
 
-= Use cases =
+= Use case =
 
 *Description*: Book air ticket via VisitME on one friend's profile page in Facebook.
 
