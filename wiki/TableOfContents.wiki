@@ -12,5 +12,6 @@
      * [Deployment]
         * [HelloWorld Hello World]
         * [PublicBeta Public Beta]
+     * [ServerList Server List]
      * [Team]
   * [ProfessorsComments Professor's comments]
