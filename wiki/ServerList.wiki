@@ -1,4 +1,4 @@
-#The following is the server list that we will use them for testing, deploying, and running our VisitMe application.
+#The following is the server list that we will use them for testing, deploying, and running our VisitME application.
 
 
 =Server List=
