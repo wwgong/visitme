@@ -1,0 +1,18 @@
+#The following is the server list that we will use them for testing, deploying, and running our VisitMe application.
+
+
+=Server List=
+
+==Primary Server==
+  * Account owner's name: Kayak
+  * Location: http://www.kayak.com
+
+==Backup Server==
+  * Account owner's name: Department of Computer Science, UMass Boston
+  * Location: http://www.fatcow.com
+ 
+==Test Server==
+  * Account owner's name: Department of Computer Science, UMass Boston
+  * Location: http://pele.cs.umb.edu
+
+	
