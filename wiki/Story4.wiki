@@ -1,9 +1,46 @@
-#Draft
-
 = Paul visits his own profile (suggest) = 
 
-Thanksgiving day is around the corner. It will be Paul's family's reunion time. Paul's parents, Mr. Jack and Ms. Susan will come to visit Boston from London. Paul's eldest daughter, Jennifer who is studying at UCLA, will come back to Boston for the holiday. Paul knows that it will be very expensive to buy tickets for them at the last minutes. So, Paul installs the Facebook's application, VisitMe, and he sets his preferences (selecting his parents and daughter) to show how much it will cost for them to visit him for that period. Both of his parents as well as his daughter have their Facebook's profiles, and they are on Paul's family list. They may or may not have installed the VisitMe.
+Thanksgiving day is around the corner. It will be Paul's family's reunion time. Paul's parents, Mr. Jack and Ms. Susan will come to visit Boston from London. Paul's eldest daughter, Jennifer, who is studying at UCLA, will come back to Boston for the holiday. Paul knows that it will be very expensive to buy tickets for them at the last minutes. So, Paul installs the Facebook's application, VisitMe, and he sets his preferences (selecting his parents and daughter) to show how much it will cost for them to visit him for that period. Both of his parents as well as his daughter have their Facebook's profiles, and they are on Paul's family list. They may or may not have installed the VisitMe.
 
 After that, Paul pays a visit to his own Facebook's profile. He sees the VisitMe box at the left side, near the middle of the page, and it shows how much it will cost for them to fly to Boston and then, fly back to their places (round-trip). For his parents, the lowest round-trip price is $807 each with American Airlines. For his daughter, the lowest round-trip price is $399 with Virgin America. 
 
 Paul thinks the prices are somewhat reasonable, but he has decided not to buy them now since they may not be the best deals. He is wondering, "I will check it again after I get back home from work. Maybe, I will check it again even tomorrow as well to see whether I can find a better deal or not since I do not need to re-enter information again for subsequent check(s). Thanks to VisitMe, it simplifies and makes my life a lot easier." 
+
+
+
+
+
+
+
+= Use case =
+*Description*: Book air tickets via VisitME on one's profile page in Facebook. 
+
+*Primary Actor*: Facebook user A
+
+*Secondary Actors*: Facebook users, B, C, and D. 
+
+*Preconditions*: A, B, C, and D are Facebook users with connection; and A has installed VisitME application. 
+
+*Success Guarantee(or Postconditions)*: not applicable 
+
+*Main Success Scenario(or Basic Flow)*: 
+  # User A logs in Facebook. 
+  # User A visits own profile page. 
+  # VisitME displays the lowest fares for flying from B's, C's, and D's cities to A's city. 
+  # User A clicks on VisitME's airfare link. 
+  # VisitME redirects to the search for the appropriate flight at Kayak.com. 
+
+*Extensions(or Alternative Flows)*: 
+none 
+
+*Exception*:
+ 
+  4. If user A is not interested at the price and doesn't click on VisitME button, the use case ends.
+
+*Special Requirements*: not applicable 
+
+*Technology and Data Variations List*:
+  3. When user A visits own profile, VisitME will connect to kayak.com to retrieve latest flight quotes and display them. 
+
+*Frequency of Occurence*: Normal. 
+
