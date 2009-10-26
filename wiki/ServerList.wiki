@@ -4,15 +4,15 @@
 =Server List=
 
 ==Primary Server==
-  * Account owner's name: Kayak
+  * Account owner: Kayak
   * Location: http://www.kayak.com
 
 ==Backup Server==
-  * Account owner's name: Department of Computer Science, UMass Boston
+  * Account owner: Department of Computer Science, UMass Boston
   * Location: http://www.fatcow.com
  
 ==Test Server==
-  * Account owner's name: Department of Computer Science, UMass Boston
+  * Account owner: Department of Computer Science, UMass Boston
   * Location: http://pele.cs.umb.edu
 
 	
