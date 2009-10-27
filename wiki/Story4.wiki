@@ -1,6 +1,6 @@
 = Paul visits his own profile (suggest) = 
 
-Thanksgiving day is around the corner and Paul's family is going to have a reunion. Paul's parents will come to visit Boston from London. Paul's eldest daughter, Jennifer, who is studying at UCLA, will come back to Boston for the holiday. Paul knows that it will be very expensive to buy tickets for them at the last minute. So, Paul installs VisitME to his Facebook account and sets his preferences to show how much it will cost for family members to visit him. Both of his parents as well as his daughter have Facebook's profiles and are on Paul's friend list. They may or may not have installed VisitME.
+Thanksgiving day is around the corner, and Paul's family is going to have a reunion. Paul's parents will come to visit Boston from London. Paul's eldest daughter, Jennifer, who is studying at UCLA, will come back to Boston for the holiday. Paul knows that it will be very expensive to buy tickets for them at the last minute. So, Paul installs VisitME to his Facebook account and sets his preferences to show how much it will cost for family members to visit him. Both of his parents as well as his daughter have Facebook's profiles and are on Paul's friend list. They may or may not have installed VisitME.
 
 After that Paul pays a visit to his own profile. He sees the VisitME box on the left column near the middle of the page, showing how much it will cost for them to fly to Boston round-trip. For his parents, the lowest round-trip price is $807 each with American Airlines. For his daughter, the lowest round-trip price is $399 with Virgin America. 
 
@@ -34,6 +34,6 @@ none
 *Special Requirements*: not applicable 
 
 *Technology and Data Variations List*:
-  3. When user A visits own profile, VisitME will connect to kayak.com to retrieve latest flight quotes and display them. 
+  3. When user A visits own profile, VisitME will connect to kayak.com to retrieve latest flight quotes and display them. The number of secondary actors may vary from one to maximum number of people on one's friend list. 
 
 *Frequency of Occurence*: Normal. 
