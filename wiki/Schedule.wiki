@@ -58,7 +58,7 @@ For more information, [RequirementsSpecification click here]. Short story items 
 
 == Venture Capitalist Presentation ==
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
-|| Presentation summary			||Charlie, Henrik|| ||10/27/09|| ||
+|| Presentation summary			||Charlie, Henrik||10/25/09||10/27/09||<font color="green">Done</font> (on Google Wave)||
 || Design props					|| || ||10/27/09|| ||
 || Order props					|| || ||10/29/09|| ||
 || Powerpoint presentation finalized		|| || ||11/05/09|| ||
