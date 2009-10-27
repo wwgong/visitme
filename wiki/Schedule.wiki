@@ -50,7 +50,7 @@ For more information, [RequirementsSpecification click here]. Short story items 
 ||Post UI revision 1											||Henrik ||10/20/09||10/20/09||<font color="green">Done</font>||
 ||[Story1 Use cases]: Paul visits Jim's profile					||Khanh  ||        ||10/26/09|| ||
 ||[Story2 Use cases]: Jim visits Paul's profile					||Weiwei ||        ||10/26/09|| ||
-||[Story3 Use cases]: Paul visits his own profile (random)		||Vasudev||        ||10/26/09|| ||
+||[Story3 Use cases]: Paul visits his own profile (random)		||Vasudev||10/26/09||10/26/09||<font color="green">Done</font>||
 ||[Story4 Use cases]: Paul visits his own profile (suggest)		||Brian  ||        ||10/26/09|| ||
 ||[Story5 Use cases]: Paul visits his own profile (most common)	||Henrik ||        ||10/26/09|| ||
 ||[Story6 Use cases]: Paul goes to VisitME (search) 			||Charlie||        ||10/26/09|| ||
