@@ -1,16 +1,10 @@
 = Paul visits his own profile (suggest) = 
 
-Thanksgiving day is around the corner. It will be Paul's family's reunion time. Paul's parents, Mr. Jack and Ms. Susan will come to visit Boston from London. Paul's eldest daughter, Jennifer, who is studying at UCLA, will come back to Boston for the holiday. Paul knows that it will be very expensive to buy tickets for them at the last minutes. So, Paul installs the Facebook's application, VisitMe, and he sets his preferences (selecting his parents and daughter) to show how much it will cost for them to visit him for that period. Both of his parents as well as his daughter have their Facebook's profiles, and they are on Paul's friend list. They may or may not have installed the VisitMe.
+Thanksgiving day is around the corner and Paul's family is going to have a reunion. Paul's parents will come to visit Boston from London. Paul's eldest daughter, Jennifer, who is studying at UCLA, will come back to Boston for the holiday. Paul knows that it will be very expensive to buy tickets for them at the last minute. So, Paul installs VisitME to his Facebook account and sets his preferences to show how much it will cost for family members to visit him. Both of his parents as well as his daughter have Facebook's profiles and are on Paul's friend list. They may or may not have installed VisitME.
 
-After that, Paul pays a visit to his own Facebook's profile. He sees the VisitMe box at the left side, near the middle of the page, and it shows how much it will cost for them to fly to Boston and then, fly back to their places (round-trip). For his parents, the lowest round-trip price is $807 each with American Airlines. For his daughter, the lowest round-trip price is $399 with Virgin America. 
+After that Paul pays a visit to his own profile. He sees the VisitME box on the left column near the middle of the page, showing how much it will cost for them to fly to Boston round-trip. For his parents, the lowest round-trip price is $807 each with American Airlines. For his daughter, the lowest round-trip price is $399 with Virgin America. 
 
-Paul thinks the prices are somewhat reasonable, but he has decided not to buy them now since they may not be the best deals. He is wondering, "I will check it again after I get back home from work. Maybe, I will check it again even tomorrow as well to see whether I can find a better deal or not since I do not need to re-enter information again for subsequent check(s). Thanks to VisitMe, it simplifies and makes my life a lot easier." 
-
-
-
-
-
-
+Paul thinks the prices are somewhat reasonable, and decides to buy them on the spot so as not to miss out on what is probably the best deal he can get.
 
 = Use case =
 *Description*: Book air tickets via VisitME on one's profile page in Facebook. 
