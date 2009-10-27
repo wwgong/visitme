@@ -3,7 +3,8 @@
 
 = Future meetings =
   * [Meeting10 10/27/2009] _(in class)_
-  * [Meeting10 10/29/2009] _(in class)_
+  * [Meeting11 10/29/2009] _(in class)_
+  * [ClientMeeting2 10/30/2009] _(10:00am, Kayak)_
   
 = Past Meetings =
   * [Meeting1 09/29/2009] _(in class)_
