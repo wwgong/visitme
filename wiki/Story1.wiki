@@ -1,3 +1,33 @@
 = Short Story: Paul visits Jim's profile =
 
 Paul goes to Facebook and decides to click on Jim's profile, who was one of his fraternity brother in college and doesn't have VisitMe installed. In Jim's profile, Paul sees VisitMe window that displays the cost of a flight from Paul to Jim for the next 7 days and the lowest price during a 2 week period, and a month period and also a link/button to 'ask Jim to install VisitMe'
+
+= Use case =
+*Description*: Book air tickets via VisitME on one's profile page in Facebook. 
+
+*Actors*: Facebook user A, B.
+
+*Preconditions*: A, B are Facebook users. A has VisitMe, while B doesn't
+
+*Success Guarantee(or Postconditions)*: not applicable 
+
+*Main Success Scenario(or Basic Flow)*: 
+  # User A logs in Facebook. 
+  # User A visits B's profile. 
+  # VisitME displays the lowest fares for flying from A to B for the next 7 days and the lowest price during a 2 week period, and a month period and also a link/button to 'ask Jim to install VisitMe' 
+  # User A clicks on VisitME's airfare link. 
+  # VisitME redirects to the search for the appropriate flight at Kayak.com. 
+
+*Extensions(or Alternative Flows)*: 
+none 
+
+*Exception*:
+ 
+  4. If user A is not interested at the price and doesn't click on VisitME button, the use case ends.
+
+*Special Requirements*: not applicable 
+
+*Technology and Data Variations List*:
+  3. When user A visits own profile, VisitME will connect to kayak.com to retrieve latest flight quotes and display them. 
+
+*Frequency of Occurence*: Normal. 
