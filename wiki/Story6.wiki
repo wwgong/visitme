@@ -7,3 +7,36 @@ Clicking on the VisitMe icon, typing in the pop up search bar the name of his fr
 Three days later, the price went down to $268, which was very reasonable. He was notified from his facebook page. Being so excited, he booked the ticket right away. And one week later, he had a great time during the peak of autumn foliage in the White Mountains with his friends.
 
 Just one click, and VisitMe helps planning your amazing journey in an economical way...
+
+= Use cases =
+
+*Description*: Book air ticket via VisitME on ones own profile page in Facebook.
+
+
+*Actor*: Facebook user A.
+
+
+*Preconditions*: A is a Facebook user with the VisitME application installed.
+
+
+*Success Guarantee(or Postconditions)*: not applicable
+
+
+*Main Success Scenario(or Basic Flow)*: 
+	# User A logs in Facebook.
+	# User A visits own profile page.
+	# User A clicks on VisitME application
+	# User A fills in friend's name, dates of departure and return, selection of direct flight, etc.
+	# VisitME returns the lowest price to visit A's friend given search criteria.
+
+
+*Extensions(or Alternative Flows)*:
+	# VisitME saves the query, and notify A later anytime it can find a cheaper deal to visit A's friend given search criteria until the departure date.
+
+
+*Exception*:
+        none	
+
+*Special Requirements*: not applicable
+
+*Frequency of Occurence*: Daily.
