@@ -19,7 +19,7 @@ Paul thinks the prices are somewhat reasonable, but he has decided not to buy th
 
 *Secondary Actors*: Facebook users, B, C, and D. 
 
-*Preconditions*: A, B, C, and D are Facebook users with connection (on each other friend list); and A has installed VisitME application. 
+*Preconditions*: A, B, C, and D are Facebook users with connection (on A's friend list); and A has installed VisitME application. 
 
 *Success Guarantee(or Postconditions)*: not applicable 
 
