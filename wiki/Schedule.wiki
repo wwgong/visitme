@@ -19,7 +19,7 @@ WOC = Waiting on client
 || [ServerList Server List]                     ||Brian   ||10/25/09||10/25/09||<font color="green">Done</font>||
 || [FileSystem File System]			||Henrik  ||        ||10/26/09||<font color="green">Done</font>||
 || Get SSH access for webserver 		||Henrik  ||        ||10/26/09|| ||
-|| Set up test server				||Khanh   ||        ||10/26/09|| ||
+|| Set up test server <font color="red">Server is accessible only from campus. Fixing it. Need to push completion date, possibly 10/30/09. Khanh</font>				||Khanh   ||        ||<strike>10/26/09 </strike>  || ||
 || Revise vision statement (needs multiple, shorter sentences)	||Charlie ||        ||10/26/09|| ||
 || Negotiate client meeting 2			||Henrik  ||        ||10/27/09|| ||
 || Get vision statement approved by client	||        ||        ||10/31/09|| ||
