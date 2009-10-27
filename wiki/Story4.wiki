@@ -34,6 +34,6 @@ none
 *Special Requirements*: not applicable 
 
 *Technology and Data Variations List*:
-  3. When user A visits own profile, VisitME will connect to kayak.com to retrieve latest flight quotes and display them. The number of secondary actors may vary from one to maximum number of people on one's friend list. 
+  3. When user A visits own profile, VisitME will connect to kayak.com to retrieve latest flight quotes and display them. The number of secondary actors may vary from one to maximum number of people on A's friend list. 
 
 *Frequency of Occurence*: Normal. 
