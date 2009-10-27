@@ -19,7 +19,7 @@ Paul thinks the prices are somewhat reasonable, but he has decided not to buy th
 
 *Secondary Actors*: Facebook users, B, C, and D. 
 
-*Preconditions*: A, B, C, and D are Facebook users. B, C, and D are on A's friend list. A has installed VisitME application. A has selected B, C, and D from A's friend list as well as A has chosen the flight directions from B's, C's, and D's locations to A's location at VisitME's preferences.
+*Preconditions*: A, B, C, and D are Facebook users. B, C, and D are on A's friend list. A has installed VisitME application. A has selected B, C, and D from A's friend list as well as A has chosen the flight directions from B's, C's, and D's cities to A's city at VisitME's preferences.
 
 *Success Guarantee(or Postconditions)*: not applicable 
 
