@@ -26,7 +26,7 @@ Just one click, and VisitMe helps planning your amazing journey in an economical
 	# User A logs in Facebook.
 	# User A visits own profile page.
 	# User A clicks on VisitME application
-	# User A fills in friend's name, dates of departure and return, selection of direct flight, etc.
+	# User A fills in friend's name from A's facebook friends' list, dates of departure and return, selection of direct flight, number of passenger, etc.
 	# VisitME returns the lowest price to visit A's friend given search criteria.
 
 
@@ -37,6 +37,7 @@ Just one click, and VisitMe helps planning your amazing journey in an economical
 *Exception*:
         none	
 
-*Special Requirements*: not applicable
+*Special Requirements*: 
+	# A's friend's location information should be available.
 
 *Frequency of Occurence*: Daily.
