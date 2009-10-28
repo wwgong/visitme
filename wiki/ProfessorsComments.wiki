@@ -1,5 +1,14 @@
 #summary Space for Professor Bolker to inform the team of how awesome it is.
 
+
+October 27.
+
+The use case for Story6 doesn't seem to me to match the sample UI. The former calls for much more information than the latter has fields for.
+
+Use cases should be separate from short stories (since one use case may be part of several stories, and a story may need more than one use case). You should also use a more traditional template, in which the user's actions and the system's responses are clearly separate.
+
+----
+
 October 22. I like the CodingGuidelines. You acknowledge that they're a customization of some you got from PHPBB. You should link to the original, and perhaps write a few words about the changes you made, and why.
 
 Do you have a plan to enforce these guidelines? 
