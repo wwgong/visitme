@@ -40,4 +40,4 @@ Just one click, and VisitMe helps planning your amazing journey in an economical
 *Special Requirements*: 
 	# A's friend's location information should be available.
 
-*Frequency of Occurence*: Daily.
+*Frequency of Occurrence*: Daily.
