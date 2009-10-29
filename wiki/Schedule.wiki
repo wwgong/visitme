@@ -17,7 +17,7 @@ WOC = Waiting on client
 || [Meeting9 Meeting Minutes 9]			||Vasudev ||10/23/09||10/23/09||<font color="green">Done</font>||
 || [Architecture]				||Henrik  ||10/22/09||10/23/09||<font color="green">Done</font>||
 || [ServerList Server List]                     ||Brian   ||10/25/09||10/25/09||<font color="green">Done</font>||
-|| Revise vision statement (needs multiple, shorter sentences)	||Charlie ||        ||10/26/09|| ||
+|| Revise vision statement (needs multiple, shorter sentences)	||Charlie || 10/26/09       ||10/26/09|| <font color="green">Done</font>||
 || Negotiate client meeting 2			||Henrik  ||10/26/09||10/27/09||<font color="green">Done</font>||
 || [Meeting10 Meeting Minutes 10]			||Vasudev ||10/29/09||10/27/09||<font color="green">Done</font>||
 || [Meeting11 Meeting Minutes 11]			||Vasudev ||10/29/09||10/29/09||<font color="green">Done</font>||
