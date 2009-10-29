@@ -1,8 +1,7 @@
 #summary Index of team meetings.
 #labels Featured
 
-= Future meetings =
-  * [Meeting10 10/27/2009] _(in class)_
+= Future meetings =  
   * [Meeting11 10/29/2009] _(in class)_
   * [ClientMeeting2 10/30/2009] _(10:00am, Kayak)_
   
@@ -17,3 +16,4 @@
   * [Meeting7 10/15/2009] _(in class)_
   * [Meeting8 10/20/2009] _(in class)_
   * [Meeting9 10/22/2009] _(in class)_
+  * [Meeting10 10/27/2009] _(in class)_
