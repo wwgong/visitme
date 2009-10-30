@@ -1,6 +1,6 @@
 = Short Story: Paul visits Jim's profile =
 
-Paul goes to Facebook and decides to click on Jim's profile, who was one of his fraternity brother in college and doesn't have VisitMe installed. In Jim's profile, Paul sees VisitMe window that displays the cost of a flight from Paul to Jim for the next 7 days and the lowest price during a 2 week period, and a month period and also a link/button to 'ask Jim to install VisitMe'
+Paul goes to Facebook and decides to click on Jim's profile, who was one of his fraternity brother in college and doesn't have VisitME installed. When viewing Jim's profile, Paul sees that Jim does not have VisitME installed. He then goes on to the VisitME application, where he can find a link to invite his friends to use the application as well as simply search for the flight cost by typing in Jim's name into the search bar.
 
 = Use case =
 *Description*: Book air tickets via VisitME on one's profile page in Facebook. 
@@ -13,13 +13,17 @@ Paul goes to Facebook and decides to click on Jim's profile, who was one of his 
 
 *Main Success Scenario(or Basic Flow)*: 
   # User A logs in Facebook. 
-  # User A visits B's profile. 
-  # VisitME displays the lowest fares for flying from A to B for the next 7 days and the lowest price during a 2 week period, and a month period and also a link/button to 'ask Jim to install VisitMe' 
-  # User A clicks on VisitME's airfare link. 
-  # VisitME redirects to the search for the appropriate flight at Kayak.com. 
+  # User A visits B's profile.
+  # Facebook does not display VisitME information on B's profile.
+  # User A goes to VisitME application.
+  # User A enters B's name in search bar and hits enter.
+  # VisitME returns the lowest cost flight for B to visit A.
 
 *Extensions(or Alternative Flows)*: 
-none 
+  5a. A goes to "invite friends" link
+  6a. Facebook-based invite box shows up
+  7a. A invites B to VisitME
+  8a. A notification is sent to B
 
 *Exception*:
  
