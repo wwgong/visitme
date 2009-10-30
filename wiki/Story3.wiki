@@ -8,42 +8,6 @@ On a beautiful summer morning, Paul logs into his facebook profile to check upda
 
 Paul finds that there is an event invitation from his friend Jim in Las Vegas for his 1st Marriage Anniversary Party. At the same time, VisitME displays the cost to visit Jim in LA which is $175 and it is 40% less than a regular air ticket to LA. He decides to attend the party, so he follows the link to Kayak.com and plans his round trip to LA to attend the party.
 
+= Use cases =
 
-= Use case =
-
-*Description*: Book air ticket via VisitME on ones own profile page in Facebook.
-
-
-*Actor*: Facebook user A.
-
-
-*Preconditions*: A is a Facebook user with the VisitME application installed.
-
-
-*Success Guarantee(or Postconditions)*: not applicable
-
-
-*Main Success Scenario(or Basic Flow)*: 
-	# User A logs in Facebook.
-	# User A visits own profile page.
-	# VisitME displays the lowest fare for flying from A's city to random friend of A's city.
-	# User A clicks on VisitME's airfare link.
-	# VisitME redirects to the search for the appropriate flight at Kayak.com.
-
-
-*Extensions(or Alternative Flows)*:
-	none
-
-
-*Exception*:
-	4. If user A is not interested at the price and doesn't click the VisitME link, the use case ends.<br>
-	
-
-*Special Requirements*: not applicable
-
-
-*Technology and Data Variations List*:
-	3. When user A visits user B's profile, VisitME will connect to Kayak.com to retrieve latest flight quotes and display them.
-
-
-*Frequency of Occurence*: Rare.
+  * [Usecase31 Book air ticket via VisitME on ones own profile page in Facebook.]
