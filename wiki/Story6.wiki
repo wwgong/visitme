@@ -1,12 +1,8 @@
-#summary Draft Story: Paul goes to VisitMe (search)
+#summary Paul goes to VisitME (search)
 
-Paul had VisitMe application installed in his facebook home page. One day, he went to his facebook page and looked at his friends' updates. He saw Jim's pictures taken on his trip to the White Mountains, New Hampshire for autumn foliage. Paul realized that autumn in New England is so beautiful. So he decided to visit Jim, and to see the foliage this season in Jim's place. 
+One day, Paul went to his Facebook page and looked at his friends' updates. He saw Jim's pictures taken on his trip to the White Mountains, New Hampshire for autumn foliage. Paul realized that autumn in New England is so beautiful. So he decided to visit Jim, and to see the foliage this season in Jim's place. 
 
-Clicking on the VisitMe icon, typing in the pop up search bar the name of his friend "Jim", filling in some search criteria, VisitMe showed him the cheapest price he could get instantly. It was about $450 from Houston, Texas to Boston, Massachusetts, given the departure and return dates he chose. He thought the price was quite expensive for him, so he saved his search, and requested for notification each time the price becomes cheaper in a week from the date he started searching. 
-
-Three days later, the price went down to $268, which was very reasonable. He was notified from his facebook page. Being so excited, he booked the ticket right away. And one week later, he had a great time during the peak of autumn foliage in the White Mountains with his friends.
-
-Just one click, and VisitMe helps planning your amazing journey in an economical way...
+Upon going to the VisitME application, Paul entered his friend's name in the search bar. VisitME showed him the cheapest price he could get instantly. It was $453 from Houston, Texas to Boston, Massachusetts. He thought the price was quite expensive for him, so he decided to put the idea away for a bit. Three days later he did the same search and noted that the price went down to $268, which was very reasonable. Very excited, he booked the ticket right away. One week later, he had a great time during the peak of autumn foliage in the White Mountains with his friends.
 
 = Use cases =
 
@@ -26,13 +22,8 @@ Just one click, and VisitMe helps planning your amazing journey in an economical
 	# User A logs in Facebook.
 	# User A visits own profile page.
 	# User A clicks on VisitME application
-	# User A fills in friend's name from A's facebook friends' list, dates of departure and return, selection of direct flight, number of passenger, etc.
+	# User A fills in friend's name from A's facebook friends' list.
 	# VisitME returns the lowest price to visit A's friend given search criteria.
-
-
-*Extensions(or Alternative Flows)*:
-	# VisitME saves the query, and notify A later anytime it can find a cheaper deal to visit A's friend given search criteria until the departure date.
-
 
 *Exception*:
         none	
