@@ -19,11 +19,11 @@ WOC = Waiting on client
 || [ServerList Server List]                     ||Brian   ||10/25/09||10/25/09||<font color="green">Done</font>||
 || Revise vision statement (needs multiple, shorter sentences)	||Charlie || 10/26/09       ||10/26/09|| <font color="green">Done</font>||
 || Negotiate client meeting 2			||Henrik  ||10/26/09||10/27/09||<font color="green">Done</font>||
-|| [Meeting10 Meeting Minutes 10]			||Vasudev ||10/29/09||10/27/09||<font color="green">Done</font>||
-|| [Meeting11 Meeting Minutes 11]			||Vasudev ||10/29/09||10/29/09||<font color="green">Done</font>||
+|| [Meeting10 Meeting Minutes 10]		||Vasudev ||10/29/09||10/27/09||<font color="green">Done</font>||
+|| [Meeting11 Meeting Minutes 11]		||Vasudev ||10/29/09||10/29/09||<font color="green">Done</font>||
 || Set up test server				||Khanh   ||        ||10/30/09|| ||
 || [FileSystem File System]			||Henrik  ||        ||10/30/09|| ||
-|| Get SSH access for webserver 		||Henrik  ||        ||10/30/09|| ||
+|| Get SSH access for webserver (and test it)	||Henrik  ||10/29/09||10/30/09||<font color="green">Done</font>||
 || Get vision statement approved by client	||        ||        ||10/31/09|| ||
 || Get requirements specification approved by client	|| || ||10/31/09|| ||
 || [http://gopandas.com Team website]		||        ||        ||11/12/09|| ||
@@ -31,9 +31,9 @@ WOC = Waiting on client
 == Hello World ==
 For more information, [HelloWorld click here].
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
-||Set up webserver			||Henrik ||        || WOC - 10/31/09 || ||
-||Install Facebook sample app		||Henrik ||        || WOC - 10/31/09 || ||
-||Kayak API				||Weiwei ||        || WOC - 10/31/09 ||  ||
+||Set up webserver			||Henrik ||        || WOC - 11/07/09 || ||
+||Install Facebook sample app		||Henrik ||        || WOC - 11/07/09 || ||
+||Kayak API				||Weiwei ||        || WOC - 11/07/09 ||  ||
 || <font color=#0000BB>*Hello World*</font> ([HelloWorld details])||       ||        ||WOC - 10/31/09 || ||
 
 == Requirements Specification ==
@@ -42,10 +42,10 @@ For more information, [RequirementsSpecification click here]. Short story items 
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
 ||[ShortStories Short stories] (titles)					||Henrik ||10/07/09||10/08/09||<font color="green">Done</font>||
 ||[RiskAnalysis Risk Analysis]						||Weiwei ||10/16/09||10/15/09||<font color="green">Done</font>||
-||[Story1 Short Story]: Paul visits Jim's profile			||Khanh  ||10/14/09||10/15/09||<font color="green">Done</font> ||
+||[Story1 Short Story]: Paul visits Jim's profile			||Khanh  ||10/14/09||10/15/09||<font color="green">Done</font>||
 ||[Story2 Short Story]: Jim visits Paul's profile			||Weiwei ||10/15/09||10/15/09||<font color="green">Done</font>||
 ||[Story3 Short Story]: Paul visits his own profile (random)		||Vasudev||10/19/09||10/15/09||<font color="green">Done</font>||
-||[Story4 Short Story]: Paul visits his own profile (suggest)		||Brian  || 10/15/09 ||10/15/09||<font color="green">Done</font>||
+||[Story4 Short Story]: Paul visits his own profile (suggest)		||Brian  ||10/15/09||10/15/09||<font color="green">Done</font>||
 ||[Story5 Short Story]: Paul visits his own profile (most common)	||Henrik ||10/15/09||10/15/09||<font color="green">Done</font>||
 ||[Story6 Short Story]: Paul goes to VisitME (search) 			||Charlie||10/15/09||10/15/09||<font color="green">Done</font>||
 ||Sample [UI]'s with feedback from Kayak				||Henrik ||10/15/09||10/15/09||<font color="green">Done</font>||
@@ -56,13 +56,14 @@ For more information, [RequirementsSpecification click here]. Short story items 
 ||[Story4 Use cases]: Paul visits his own profile (suggest)		||Brian  ||10/26/09||10/26/09||<font color="green">Done</font>||
 ||[Story5 Use cases]: Paul visits his own profile (most common)		||Henrik ||10/26/09||10/26/09||<font color="green">Done</font>||
 ||[Story6 Use cases]: Paul goes to VisitME (search) 			||Charlie||10/26/09||10/26/09||<font color="green">Done</font>||
-|| <font color="#0000BB">*Requirements Specification*</font> ([RequirementsSpecification details])||       ||        ||10/29/09|| ||
+|| <font color="#0000BB">*Requirements Specification*</font> ([RequirementsSpecification details])||Group||10/29/09||10/29/09||<font color="green">Done</font>||
+||[RequirementsSpecification Spec PDF]	 				||Henrik ||        ||10/31/09|| ||
 
 == Venture Capitalist Presentation ==
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
 || Presentation summary			||Charlie, Henrik||10/25/09||10/27/09||<font color="green">Done</font> (on Google Wave)||
-|| Design props					|| || ||10/27/09|| ||
-|| Order props					|| || ||10/29/09|| ||
+|| Design props					||Group ||10/27/09||10/27/09||<font color="green">Done</font>||
+|| Order props					||Henrik||10/29/09||10/29/09||<font color="green">Done</font>||
 || Powerpoint presentation finalized		|| || ||11/05/09|| ||
 || <font color="#0000BB">*Presentation*</font> ([VCPresentation details])||       ||        ||11/12/09|| ||
 
