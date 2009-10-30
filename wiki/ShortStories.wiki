@@ -5,11 +5,17 @@
 _Unless otherwise specified, we assume that initially Paul has VisitME installed and Jim does not. The names are conveniently based on the CTO and VP of Technology of Kayak, though any behavior described may or may not have any actual resemblance to the real Paul and Jim._
 
   # [Story1 Paul visits Jim's profile]
+    # [Usecase11 Use case: Book air tickets via VisitME on one's profile page in Facebook]
   # [Story2 Jim visits Paul's profile]
+    # [Usecase21 Use case: Book air ticket via VisitME on one friend's profile page in Facebook]
   # [Story3 Paul visits his own profile (random)]
+    # [Usecase31 Use case: Book air ticket via VisitME on ones own profile page in Facebook]
   # [Story4 Paul visits his own profile (suggest)]
+    # [Usecase41 Use case: Book air ticket via VisitME on ones own profile page in Facebook]
   # [Story5 Paul visits his own profile (most common)]
+    # [Usecase51 Use case: Book air ticket via VisitME on ones own profile page in Facebook]
   # [Story6 Paul goes to VisitMe (search)]
+    # [Usecase61 Use case: Book air ticket via VisitME search function]
 
 = Spring Break =
 _The functionality these short stories imply is part of a later iteration not planned for the initial application_
