@@ -1,4 +1,4 @@
-=== Client meeting #2 ===
+#summary Summary of the second client meeting
 
 Meeting took place on 10/30/2009, 10:00AM at Kayak in West Concord.
 
@@ -6,7 +6,8 @@ Meeting took place on 10/30/2009, 10:00AM at Kayak in West Concord.
 == Summary ==
 
 === Short Stories ===
-   * 
+   * We showed our short stories to clients, discussed, and got feedbacks from them. 
+
 === UI ===
    * Change the logo of our Facebook application from VisitME to Kayak VisitME with same ratio of sizes.
    * Add the info of how long ago we found the flight.
