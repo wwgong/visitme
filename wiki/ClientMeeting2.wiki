@@ -1,0 +1,29 @@
+=== Client meeting #2 ===
+
+Meeting took place on 10/30/2009, 10:00AM at Kayak in West Concord.
+
+
+== Summary ==
+
+=== Short Stories ===
+   * 
+=== UI ===
+   * Change the logo of our Facebook application from VisitME to Kayak VisitME with same ratio of sizes.
+   * Add the info of how long ago we found the flight.
+   * Add trailing dots after the sentences with actors, such as “Paul can visit you for...” and “You can visit Paul for...”.
+
+=== Access for Kayak's API ===
+  * Discussed and requested a special Kayak's account to overcome the limit of 1000 searches/day for our Facebook application. Joel will get back to us.
+
+=== Features ===
+  * Add optional feature of sending notification and/or publishing on friend's wall about search performed for that person.
+  * Add “share” feature in news feed message.
+  * Investigate for adding image animation in news feed.
+  * Check if a profile visitor does not have VisitMe, show a link to install.
+  * Provide documentation/help info for all available features on VisitME application
+  * Add fare alert for friend on the main page (VisitME application page).
+
+=== Attendees(Optional) ===
+  * Henrik
+  * Wei Wei
+  * Brian
