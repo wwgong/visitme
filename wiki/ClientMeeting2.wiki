@@ -19,7 +19,7 @@ In this meeting, we discussed the following topics with Joel and Jennifer.
   * Discussed and requested a special Kayak's account to overcome the limit of 1000 searches/day for our Facebook application. Joel will get back to us.
 
 === Features ===
-  * Add optional feature of sending notification and/or publishing on Facebook friend's wall about search performed for that person.
+  * Add optional feature of sending notification and/or publishing on Facebook friend's wall about search performed for a person.
   * Add “share” feature in news feed message.
   * Investigate for adding image animation in news feed.
   * Check if a profile visitor does not have VisitMe, show a link to install.
