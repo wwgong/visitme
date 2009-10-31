@@ -21,7 +21,7 @@ Meeting took place on 10/30/2009, 10:00AM at Kayak in West Concord.
   * Add “share” feature in news feed message.
   * Investigate for adding image animation in news feed.
   * Check if a profile visitor does not have VisitMe, show a link to install.
-  * Provide documentation/help info for all available features on VisitME application
+  * Provide documentation/help info for all available features on VisitME application.
   * Add fare alert for friend on the main page (VisitME application page).
 
 === Attendees(Optional) ===
