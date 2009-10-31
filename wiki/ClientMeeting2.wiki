@@ -12,7 +12,7 @@ In this meeting, we discussed the following topics with Joel and Jennifer.
 
 === UI ===
 Clients recommended for the following design changes of our UI.
-   * Change the logo of our Facebook application from VisitME to Kayak VisitME with same ratio of sizes.
+   * Change the logo of our Facebook application from "VisitME" to "Kayak VisitME" with same ratio of sizes.
    * Add the info of how long ago we found the flight.
    * Add trailing dots after the sentences with actors, such as “Paul can visit you for...” and “You can visit Paul for...”.
 
