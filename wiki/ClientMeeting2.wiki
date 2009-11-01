@@ -11,13 +11,13 @@ In this meeting, we discussed the following topics with Joelle and Jennifer.
    * We showed our short stories to clients, discussed, and got feedbacks from them. 
 
 === UI ===
-Clients gave us recommendations for the following design changes to our UI.
+Clients requested the following modifications being made to our UI.
    * Change the logo of our Facebook application from "VisitME" to "Kayak VisitME" with same ratio of sizes.
    * Add the info of how long ago we found the flight.
    * Add trailing dots after the sentences with actors, such as “Paul can visit you for...” and “You can visit Paul for...”.
    * Add greater marks after after visit more friends link, such as "Visit more friends >>>".
 
-=== Access for Kayak's API ===
+=== Kayak's API Access ===
   * Discussed and requested a special Kayak's account to overcome the limit of 1000 searches/day for our Facebook application. Joel will get back to us.
 
 === Features ===
