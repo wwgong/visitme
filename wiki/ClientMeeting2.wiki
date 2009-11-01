@@ -5,7 +5,7 @@ Meeting took place on 10/30/2009, 10:00AM at Kayak in West Concord.
 
 == Summary ==
 
-In this meeting, we discussed the following topics with Joel and Jennifer.
+In this meeting, we discussed the following topics with Joelle and Jennifer.
 
 === Short Stories ===
    * We showed our short stories to clients, discussed, and got feedbacks from them. 
@@ -15,17 +15,18 @@ Clients gave us recommendations for the following design changes to our UI.
    * Change the logo of our Facebook application from "VisitME" to "Kayak VisitME" with same ratio of sizes.
    * Add the info of how long ago we found the flight.
    * Add trailing dots after the sentences with actors, such as “Paul can visit you for...” and “You can visit Paul for...”.
+   * Add greater marks after after visit more friends link, such as "Visit more friends >>>".
 
 === Access for Kayak's API ===
   * Discussed and requested a special Kayak's account to overcome the limit of 1000 searches/day for our Facebook application. Joel will get back to us.
 
 === Features ===
-  * Add optional feature of sending notification and/or publishing on Facebook friend's wall about search performed for a person.
-  * Add “share” feature in news feed message.
+  * Add optional feature of sending notification of search results to friend he/she wants to visit.
+  * Add optional feature of publishing the search results on his/her own wall.
   * Investigate for adding image animation in news feed.
-  * Check if a profile visitor does not have VisitMe, show a link to install.
+  * Add feature of sending invitation to install VisitME to single friend or multiple friends who haven't had it.
   * Provide documentation/help info for all available features on VisitME application.
-  * Add fare alert for friend on the main page (VisitME application page).
+  * Add feature of fare alert for friends on the search result.
 
 === Attendees(Optional) ===
   * Henrik
