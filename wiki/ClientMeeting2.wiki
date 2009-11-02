@@ -5,17 +5,17 @@ Meeting took place on 10/30/2009, 10:00AM at Kayak in West Concord.
 
 == Summary ==
 
-In this meeting, we discussed the following topics with Joelle and Jennifer.
+In this meeting, we discussed various issues with Joelle Skaff and Jennifer Milano.
 
 === Short Stories ===
-   * We showed our short stories to clients, discussed, and got feedbacks from them. 
+  * We showed our short stories to clients, discussed, and got feedbacks from them. Stories 2 through 6 were accepted, with the first one needing revision for the new additions discussed in the meeting, such as sharing and notification.
 
 === UI ===
 Clients requested the following modifications be made to VisitME UI.
-   * Change the logo of our Facebook application from "VisitME" to "Kayak VisitME" with same ratio of sizes.
-   * Add the info of how long ago we found the flight.
-   * Add trailing dots after the sentences with actors, such as “Paul can visit you for...” and “You can visit Paul for...”.
-   * Add greater marks after after visit more friends link, such as "Visit more friends >>>".
+  * Change the logo of our Facebook application from "VisitME" to "Kayak VisitME" with same ratio of sizes.
+  * Add the info of how recent the ticket data is.
+  * Add trailing dots after the sentences with actors, such as “Paul can visit you for...” and “You can visit Paul for...”.
+  * Add greater marks after after visit more friends link, such as "Visit more friends >>>".
 
 === Kayak API Access ===
   * Discussed and requested a special Kayak account to overcome the limit of 1000 searches/day for our Facebook application. Joel will get back to us.
@@ -28,7 +28,9 @@ Clients requested the following modifications be made to VisitME UI.
   * Provide documentation/help info for all available features on VisitME application.
   * Add feature of fare alert for friends on the search result.
 
-=== Attendees(Optional) ===
+=== Attendees ===
+_Note: Coming to this meeting was optional._
+
   * Henrik
-  * Wei Wei
+  * Weiwei
   * Brian
