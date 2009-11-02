@@ -2,7 +2,7 @@
 #labels Featured
 
 = Future meetings =  
-  * [Meeting11 11/3/2009] _(in class)_
+  * [Meeting12 11/3/2009] _(in class)_
   
 = Past Meetings =
   * [Meeting1 09/29/2009] _(in class)_
