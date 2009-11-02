@@ -15,7 +15,7 @@ Clients requested the following modifications be made to VisitME UI.
   * Change the logo of our Facebook application from "VisitME" to "Kayak VisitME" with same ratio of sizes.
   * Add the info of how recent the ticket data is.
   * Add trailing dots after the sentences with actors, such as “Paul can visit you for...” and “You can visit Paul for...”.
-  * Add greater marks after after visit more friends link, such as "Visit more friends >>>".
+  * Add greater marks after visit more friends link, such as "Visit more friends >>>".
 
 === Kayak API Access ===
   * Discussed and requested a special Kayak account to overcome the limit of 1000 searches/day for our Facebook application. Joel will get back to us.
