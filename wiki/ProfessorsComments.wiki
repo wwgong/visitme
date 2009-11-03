@@ -1,5 +1,10 @@
 #summary Space for Professor Bolker to inform the team of how awesome it is.
 
+November 2.
+
+I see lots of new functionality requested at the October 30 client meeting. Do those all go into your first release? Consider maintaining a list of requested features in a single place so that you can prioritize and schedule them.
+
+----
 
 October 27.
 
