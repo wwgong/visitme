@@ -1,0 +1,43 @@
+#summary Details on the file structure of the project
+
+_This page needs expansion._
+
+= Introduction =
+
+The file structure is largely based on the overall [Architecture architecture] of the application.
+
+= Common stuff =
+
+== common.css ==
+Common style properties across the whole application.
+
+== common.js ==
+Common javascript across the whole application, such as functions for retrieving flight data.
+
+= Profile Box =
+
+== profile.php ==
+Sets up the variables necessary for the profile box.
+
+== profile.tpl ==
+Smarty template for the profile box.
+
+== profile.css ==
+Style properties unique to the profile box.
+
+== profile.js ==
+Javascript functions unique to the profile box.
+
+= Canvas =
+
+== canvas.php ==
+Sets up the variables necessary for the canvas.
+
+== canvas.tpl ==
+Smarty template for the canvas.
+
+== canvas.css ==
+Style properties unique to the canvas.
+
+== canvas.js ==
+Javascript functions unique to the canvas.
