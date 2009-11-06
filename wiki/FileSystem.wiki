@@ -8,10 +8,10 @@ The file structure is largely based on the overall [Architecture architecture] o
 
 = Common stuff =
 
-== common.css ==
+== includes/common.css ==
 Common style properties across the whole application.
 
-== common.js ==
+== include/common.js ==
 Common javascript across the whole application, such as functions for retrieving flight data.
 
 = Profile Box =
@@ -19,13 +19,13 @@ Common javascript across the whole application, such as functions for retrieving
 == profile.php ==
 Sets up the variables necessary for the profile box.
 
-== profile.tpl ==
+== templates/profile.tpl ==
 Smarty template for the profile box.
 
-== profile.css ==
+== style/profile.css ==
 Style properties unique to the profile box.
 
-== profile.js ==
+== js/profile.js ==
 Javascript functions unique to the profile box.
 
 = Canvas =
@@ -33,11 +33,14 @@ Javascript functions unique to the profile box.
 == canvas.php ==
 Sets up the variables necessary for the canvas.
 
-== canvas.tpl ==
+== templates/canvas.tpl ==
 Smarty template for the canvas.
 
-== canvas.css ==
+== style/canvas.css ==
 Style properties unique to the canvas.
 
-== canvas.js ==
+== js/canvas.js ==
 Javascript functions unique to the canvas.
+
+=APIs=
+The Facebook and Smarty APIs go into their respective subfolders.
