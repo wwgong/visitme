@@ -127,9 +127,9 @@
 
    function searchFlightResults($params, $url, $userAgent)
    {
-       /* Send HTTP GET */
+       /* Send HTTP POST */
        $ch = curl_init();
-       curl_setopt($ch, CURLOPT_GET,1);
+       curl_setopt($ch, CURLOPT_POST,1);
        curl_setopt($ch, CURLOPT_POSTFIELDS,$params);
        curl_setopt($ch, CURLOPT_URL,$url);
        curl_setopt($ch, CURLOPT_USERAGENT, $userAgent);
