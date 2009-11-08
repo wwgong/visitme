@@ -71,7 +71,7 @@
     {
         exit(1);
     }
-   
+
    $fileName = "http://www.kayak.com/labs/api/search/airports.txt";
    $file = fopen($fileName, "r");
    $origin = "";
@@ -115,7 +115,7 @@
        }
    }
    fclose($file);
-  
+
 
    /************** Airport-to-Airport RSS feeds **************/
    //$tm = "200911"; // Travel month,  YYYYMM format, Optional parameter
@@ -124,7 +124,7 @@
    $url = "http://www.kayak.com/h/rss/fare";
    $userAgent = "Mozilla/5.0 (compatible; MSIE 5.01; Windows NT 5.0)";
    $params = "code=".$origin."&dest=".$destination."&mc=".$mc;
-   
+
    function searchFlightResults($params, $url, $userAgent)
    {
        /* Send HTTP GET */
@@ -132,7 +132,7 @@
        curl_setopt($ch, CURLOPT_GET,1);
        curl_setopt($ch, CURLOPT_POSTFIELDS,$params);
        curl_setopt($ch, CURLOPT_URL,$url);
-       curl_setopt($ch, CURLOPT_USERAGENT, $user_agent);
+       curl_setopt($ch, CURLOPT_USERAGENT, $userAgent);
        curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
        $result=curl_exec ($ch);
        curl_close ($ch);
