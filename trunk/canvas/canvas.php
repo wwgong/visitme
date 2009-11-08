@@ -72,11 +72,6 @@
         exit(1);
     }
 
-   $fileName = "http://www.kayak.com/labs/api/search/airports.txt";
-   $file = fopen($fileName, "r");
-   $origin = "";
-   $destination = "";
-
    if((($data['current_location']['city']=="") || ($targetData['current_location']['city']=="")) && ($targetedFriendId!=""))
    {
        echo "<center><br />";
@@ -86,12 +81,17 @@
        echo "</center>";
        exit(1);
    }
-   else if(($data['current_location']['city']==$targetData['current_location']['city']) && ($targetedFriendId!=""))
+   else if($data['current_location']['city']==$targetData['current_location']['city'])
    {
        echo "<center><br />";
        echo "You and ".$targetData['first_name']." are in the same city!<br />";
        exit(0);
    }
+
+   $fileName = "http://www.kayak.com/labs/api/search/airports.txt";
+   $file = fopen($fileName, "r");
+   $origin = "";
+   $destination = "";
 
    while(! feof($file))
    {
