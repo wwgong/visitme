@@ -1,7 +1,7 @@
 <?php
 // Author: Surya Nyayapati
 // email: surenrao@cs.umb.edu
-require_once "constants.inc";
+require_once("config.php");
 
 //odbc errors
 //http://msdn.microsoft.com/library/default.asp?url=/library/en-us/trblsql/tr_err_odbc_5stz.asp
