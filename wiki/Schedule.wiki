@@ -71,6 +71,7 @@ For more information, [RequirementsSpecification click here]. Short story items 
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
 || ~~Profile box~~			|| || ||11/10/09||[http://wiki.developers.facebook.com/index.php/Tabbed_Profile#The_Boxes_Tab Profile Boxes are deprecated as of November 2009]||
 || Canvas page search functionality	||Brian||11/08/09||11/10/09||<font color="green">Done</font>||
+|| Application tab			||Henrik, Weiwei, Vasudev||11/09/09||11/10/09||<font color="green">Done</font>||
 || Facebook directory			|| || ||11/11/09|| ||
 || <font color="#0000BB">*Public Beta*</font> ([PublicBeta details])	|| || ||11/12/09|| ||
 
