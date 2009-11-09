@@ -30,3 +30,12 @@
 ||VisitME logo (photoshop)			||Brian  || 10/12/09 ||10/12/09||  <font color="green">Done</font> ||
 ||Register Team domain				||Henrik ||10/07/09||10/12/09||<font color="green">Done</font>||
 ||Document [TeamRoles Team Roles]		||Khanh  ||10/10/09||10/13/09||<font color="green">Done</font>||
+
+= Deprecated =
+== Hello World ==
+_*<font color="red">Hello World has been deprecated.</font>*_ For more information, [HelloWorld click here].
+|| *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
+||Set up webserver			||Henrik ||        || WOC - 11/07/09 || ||
+||Install Facebook sample app		||Henrik ||        || WOC - 11/07/09 || ||
+||Kayak API				||Weiwei ||        || WOC - 11/07/09 ||  ||
+|| <font color=#0000BB>*Hello World*</font> ([HelloWorld details])||       ||        ||WOC - 11/07/09 || ||
