@@ -1,5 +1,7 @@
 #summary Description of a basic application to demonstrate all necessary technologies working together
-#labels Phase-Deploy,Phase-Implementation
+#labels Phase-Deploy,Phase-Implementation,Deprecated
+
+_*This page is deprecated as it does not represent our current deployment strategy, which has rapidly advanced beyond the scope of the application described on this page.*_
 
 = Introduction =
 Before implementing our actual VisitME we need to get a basic application running to verify all the hardware and software we will be using can and does work together.
