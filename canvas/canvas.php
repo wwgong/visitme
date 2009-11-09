@@ -77,7 +77,7 @@
        echo "<center><br />";
        echo "Your current location: ".$data['current_location']['city']."<br />";
        echo $targetData['first_name']."'s current location: ".$targetData['current_location']['city']."<br />";
-       echo "Unable to perform search! Both you and ".$targetData['first_name']."'s current locations are required to search for flight information!";
+       echo "Unable to perform search! ADDED BY KHANH Both you and ".$targetData['first_name']."'s current locations are required to search for flight information!";
        echo "</center>";
        exit(1);
    }
