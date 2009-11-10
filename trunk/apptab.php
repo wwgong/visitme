@@ -19,12 +19,20 @@ $sql	= 'SELECT code FROM airports WHERE city = "'.$uid1Location['city'].'"';
 $result	= sql_result($sql);
 $dest = sql_fetch_obj($result);
 
-$rssURL = 'http://www.kayak.com/h/rss/fare?dest='.$dest->code;
+$dest_codes = get_airport_codes($uid1Location['city']);
+	
+$rssURL = 'http://www.kayak.com/h/rss/fare?dest=';
+for ($i = 0; $i < sizeof($dest_codes) - 1; $i++)
+{
+	$rssURL = $rssURL.$dest_codes[$i].",";
+}
+$rssURL = $rssURL.$dest_codes[sizeof($dest_codes) - 1];
 $rss	= fetch_rss($rssURL);
 
 $code	= $rss->items[0]['kyk']['origincode'];
+$dest_code = $rss->items[0]['kyk']['destcode'];
 
-$rssURL2 = 'http://www.kayak.com/h/rss/fare?code='.$dest->code.'&dest='.$code;
+$rssURL2 = 'http://www.kayak.com/h/rss/fare?code='.$dest_code.'&dest='.$code;
 $rss2	= fetch_rss($rssURL2);
 
 $uid2Location = $rss2->items[0]['kyk']['destlocation'];
@@ -35,7 +43,7 @@ $smarty->assign('uid1',$uid1);
 $smarty->assign('uid2',$uid2);
 
 $smarty->assign('uid1Location',$uid1Location);
-$smarty->assign('uid1AirportCode',$dest->code);
+$smarty->assign('uid1AirportCode',$dest_code);
 $smarty->assign('uid2Location',$uid2Location);
 $smarty->assign('uid2AirportCode',$code);
 

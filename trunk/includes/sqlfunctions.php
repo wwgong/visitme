@@ -100,17 +100,16 @@ require_once("config.php");
 	
 	function get_airport_codes($city)
 	{
-		/*$sql	= 'SELECT code FROM airports WHERE city = "'.$city.'"';
+		$sql	= 'SELECT code FROM airports WHERE city = "'.$city.'"';
 		$result	= sql_result($sql);
 		
 		$count = 0;
 		$codes = array();
 		while ($dest = sql_fetch_obj($result))
 		{
-			$codes[$count] = $dest;
-			//echo "($codes[$count]) ";
+			$codes[$count] = $dest->code;
 			$count++;
-		}*/
+		}
 		return $codes;
 	}
 	

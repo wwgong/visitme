@@ -39,6 +39,8 @@ if ($targetedFriendId != "")
 	$targetLastName		= $targetUserInfo[0]['last_name'];
 	$targetCurrentLocation	= $targetUserInfo[0]['current_location'];
 
+	echo $targetedFriendId." Name: (".$targetFirstName.") City: (".$targetCurrentLocation['city'].") State: (".$targetCurrentLocation['state'].") Country: (".$targetCurrentLocation['country'].")\n";
+	
 	if ($userCurrentLocation['city'] != "" && $targetCurrentLocation['city'] != "")
 	{
 		// Get origin code
@@ -51,22 +53,31 @@ if ($targetedFriendId != "")
 		$result	= sql_result($sql);
 		$dest = sql_fetch_obj($result);
 		
+		$dest_codes = get_airport_codes($targetCurrentLocation['city']);
 		
-		$rssURL = 'http://www.kayak.com/h/rss/fare?dest='.$dest->code;
+		$rssURL = 'http://www.kayak.com/h/rss/fare?dest=';
+		for ($i = 0; $i < sizeof($dest_codes) - 1; $i++)
+		{
+			$rssURL = $rssURL.$dest_codes[$i].",";
+		}
+		$rssURL = $rssURL.$dest_codes[sizeof($dest_codes) - 1];
+		
+		echo $rssURL;
 		$rss	= fetch_rss($rssURL);
 		
 		$origin_code	= $rss->items[0]['kyk']['origincode'];
-
-		$rssURL2 = 'http://www.kayak.com/h/rss/fare?code='.$dest->code.'&dest='.$origin_code;
+		$dest_code	= $rss->items[0]['kyk']['destcode'];
+		
+		$rssURL2 = 'http://www.kayak.com/h/rss/fare?code='.$dest_code.'&dest='.$origin_code;
 		$rss2	= fetch_rss($rssURL2);
 
 		$smarty->assign('uid1',$user);
 		$smarty->assign('uid2',$targetedFriendId);
 
-		$smarty->assign('uid1Location',$userCurrentLocation);
-		$smarty->assign('uid1AirportCode',$origin->code);
-		$smarty->assign('uid2Location',$targetCurrentLocation);
-		$smarty->assign('uid2AirportCode',$dest->code);
+		$smarty->assign('uid1Location',$rss2->items[0]['kyk']['originlocation']);
+		$smarty->assign('uid1AirportCode',$rss2->items[0]['kyk']['origincode']);
+		$smarty->assign('uid2Location',$rss->items[0]['kyk']['originlocation']);
+		$smarty->assign('uid2AirportCode',$rss->items[0]['kyk']['origincode']);
 
 		$smarty->assign('flight1_cost',$rss->items[0]['kyk']['price']);
 		$smarty->assign('flight1_departure',100);
