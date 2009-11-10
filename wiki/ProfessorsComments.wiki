@@ -14,7 +14,9 @@ on our facebook page should be named a KAYAK app. don't you think that
 sounds fair?
 }}}
 
-So make sure the UI you design for Kayak meets Kayak's spec - but design the interface between the UI and the code so that it's easy to rebrand (whether or not you ever get around to doing that). You'll want to keep at least "powered by Kayak" in any version.
+So make sure the UI you design for Kayak meets Kayak's spec - but design the interface between the UI and the code so that it's easy to rebrand (whether or not you ever get around to doing that). Your smarty architecture should make that easy.
+
+You'll want to keep at least "powered by Kayak" in any version.
 
 ----
 
