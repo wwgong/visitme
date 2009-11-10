@@ -64,9 +64,9 @@ if ($targetedFriendId != "")
 		$smarty->assign('uid2',$targetedFriendId);
 
 		$smarty->assign('uid1Location',$userCurrentLocation);
-		$smarty->assign('uid1AirportCode',$dest->code);
+		$smarty->assign('uid1AirportCode',$origin->code);
 		$smarty->assign('uid2Location',$targetCurrentLocation);
-		$smarty->assign('uid2AirportCode',$origin->code);
+		$smarty->assign('uid2AirportCode',$dest->code);
 
 		$smarty->assign('flight1_cost',$rss->items[0]['kyk']['price']);
 		$smarty->assign('flight1_departure',100);
