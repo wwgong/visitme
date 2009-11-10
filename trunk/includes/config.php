@@ -1,7 +1,6 @@
 <?php
 
 require_once('magpierss/rss_fetch.inc');
-//require_once('lastRSS.php');
 require_once('facebook/facebook.php');
 require_once('smarty/libs/Smarty.class.php');
 
@@ -15,7 +14,7 @@ define("DATABASE", "mysql"); // or "odbc"
 $db_host	= 'ebolker.fatcowmysql.com';
 $db_db		= 'visitme';
 $db_user	= 'gopandas';
-$db_pass	= 'umbgopandas';
+$db_pass	= 'UMBpandas';
 
 
 ?>

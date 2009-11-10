@@ -15,7 +15,6 @@ $uid1Locale = $_POST['fb_sig_locale'];
 
 $uid2 = $_POST['fb_sig_user'];
 
-
 $sql	= 'SELECT code FROM airports WHERE city = "'.$uid1Location['city'].'"';
 $result	= sql_result($sql);
 $dest = sql_fetch_obj($result);
