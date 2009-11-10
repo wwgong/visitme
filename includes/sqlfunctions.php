@@ -85,16 +85,33 @@ require_once("config.php");
 	function Filter($RecordSet,$FilterField,$FilterCriteria)
 	{
 		$ReturnArray = array();
-		while($row = mysql_fetch_assoc($RecordSet)){
-			foreach($row as $key => $value){				
-				if(trim($key)==trim($FilterField)&&trim($value)==trim($FilterCriteria)){
+		while($row = mysql_fetch_assoc($RecordSet))
+		{
+			foreach($row as $key => $value)
+			{				
+				if(trim($key)==trim($FilterField)&&trim($value)==trim($FilterCriteria))
+				{
 					array_push($ReturnArray,$row);
 				}
-        }
-    }
-return $ReturnArray;
-}
+			}
+		}
+		return $ReturnArray;
+	}
 	
-	
+	function get_airport_codes($city)
+	{
+		/*$sql	= 'SELECT code FROM airports WHERE city = "'.$city.'"';
+		$result	= sql_result($sql);
+		
+		$count = 0;
+		$codes = array();
+		while ($dest = sql_fetch_obj($result))
+		{
+			$codes[$count] = $dest;
+			//echo "($codes[$count]) ";
+			$count++;
+		}*/
+		return $codes;
+	}
 	
 ?>
