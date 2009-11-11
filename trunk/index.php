@@ -39,7 +39,11 @@ if ($targetedFriendId != "")
 	$targetLastName		= $targetUserInfo[0]['last_name'];
 	$targetCurrentLocation	= $targetUserInfo[0]['current_location'];
 
-	echo $targetedFriendId." Name: (".$targetFirstName.") City: (".$targetCurrentLocation['city'].") State: (".$targetCurrentLocation['state'].") Country: (".$targetCurrentLocation['country'].")\n";
+	// Debug output
+	if ($debug)
+	{
+		echo $targetedFriendId." Name: (".$targetFirstName.") City: (".$targetCurrentLocation['city'].") State: (".$targetCurrentLocation['state'].") Country: (".$targetCurrentLocation['country'].")\n";
+	}
 	
 	if ($userCurrentLocation['city'] != "" && $targetCurrentLocation['city'] != "")
 	{
