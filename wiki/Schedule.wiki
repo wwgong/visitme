@@ -28,6 +28,8 @@ WOC = Waiting on client
 || Set up test server				||Khanh   ||11/09/09||11/08/09||<font color="red">Deprecated</font>||
 || [FileSystem File System] (draft)		||Henrik  ||11/06/09||11/08/09||<font color="green">Done</font>||
 || [http://gopandas.com Team website]		||Weiwei  ||11/10/09||11/12/09||<font color="green">Done</font>||
+|| [Meeting13 Meeting Minutes 13]			||Charlie ||11/10/09||11/10/09||<font color="green">Done</font>||
+
 || Get requirements specification approved by client	|| || ||11/16/09|| ||
 
 == Requirements Specification ==
