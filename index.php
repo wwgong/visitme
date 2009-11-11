@@ -38,12 +38,6 @@ if ($targetedFriendId != "")
 	$targetFirstName	= $targetUserInfo[0]['first_name'];
 	$targetLastName		= $targetUserInfo[0]['last_name'];
 	$targetCurrentLocation	= $targetUserInfo[0]['current_location'];
-
-	// Debug output
-	if ($debug)
-	{
-		echo $targetedFriendId." Name: (".$targetFirstName.") City: (".$targetCurrentLocation['city'].") State: (".$targetCurrentLocation['state'].") Country: (".$targetCurrentLocation['country'].")\n";
-	}
 	
 	if ($userCurrentLocation['city'] != "" && $targetCurrentLocation['city'] != "")
 	{
@@ -66,7 +60,6 @@ if ($targetedFriendId != "")
 		}
 		$rssURL = $rssURL.$dest_codes[sizeof($dest_codes) - 1];
 		
-		echo $rssURL;
 		$rss	= fetch_rss($rssURL);
 		
 		$origin_code	= $rss->items[0]['kyk']['origincode'];
@@ -103,7 +96,12 @@ if ($targetedFriendId != "")
 	}	
 }
 
-//$originCodes = get_airport_codes($userCurrentLocation['city']);
+// Debug output
+if ($debug)
+{
+	echo $targetedFriendId." Name: (".$targetFirstName.") City: (".$targetCurrentLocation['city'].") State: (".$targetCurrentLocation['state'].") Country: (".$targetCurrentLocation['country'].")\n";
+	echo $rssURL;
+}
 
 // Smarty
 
