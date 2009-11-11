@@ -22,7 +22,7 @@ $result	= sql_result($sql);
 $dest = sql_fetch_obj($result);
 
 $dest_codes = get_airport_codes($uid1Location['city']);
-	
+
 $rssURL = 'http://www.kayak.com/h/rss/fare?dest=';
 for ($i = 0; $i < sizeof($dest_codes) - 1; $i++)
 {
@@ -41,8 +41,8 @@ $uid2Location = $rss2->items[0]['kyk']['destlocation'];
 $uid1Location = $rss2->items[0]['kyk']['originlocation'];
 // Smarty
 $smarty = new Smarty();
-$smarty->assign('uid1',$uid1);
-$smarty->assign('uid2',$uid2);
+$smarty->assign('uid1',$uid2); // In app tab, uid1 is profile owner (friend's); uid2 is profile visitor (you) which are in reversed order, compared to canvas
+$smarty->assign('uid2',$uid1);
 
 $smarty->assign('uid1Location',$uid1Location);
 $smarty->assign('uid1AirportCode',$dest_code);
