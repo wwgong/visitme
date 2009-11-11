@@ -11,6 +11,8 @@ $uid1 = $_POST['fb_sig_profile_user'];
 $uid1Details = $facebook->api_client->users_getInfo($uid1, 'first_name, last_name, current_location');
 $uid1Location = $uid1Details[0]['current_location'];
 
+$savedUid1Location = $uid1Location; /* Save the uid1Location's value in $savedUid1Location variable for later use... */
+
 $uid1Locale = $_POST['fb_sig_locale'];
 
 $uid2 = $_POST['fb_sig_user'];
@@ -61,5 +63,19 @@ $smarty->assign('flight2_airline',100);
 $smarty->assign('flight2_description',$rss2->items[0]['description']);
 $smarty->assign('flight2_buzz',$rss2->items[0]['guid']);
 
+$smarty->assign('sameCity', $savedUid1Location['city']);
+$smarty->assign('sameState', $savedUid1Location['state']);
+$smarty->assign('sameCountry', $savedUid1Location['country']);
+
 $smarty->display('apptab.tpl');
+
+if($uid1Location != $uid2Location)
+{
+    $smarty->display('youToFriendMsg.tpl');
+    $smarty->display('friendToYouMsg.tpl');
+}
+else
+{
+    $smarty->display('sameLocationMsg.tpl');
+}
 ?>

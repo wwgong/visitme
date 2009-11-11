@@ -92,6 +92,10 @@ if ($targetedFriendId != "")
 		$smarty->assign('flight2_airline',100);
 		$smarty->assign('flight2_description',$rss2->items[0]['description']);
 		$smarty->assign('flight2_buzz',$rss2->items[0]['guid']);
+
+                $smarty->assign('sameCity', $targetCurrentLocation['city']);
+                $smarty->assign('sameState', $targetCurrentLocation['state']);
+                $smarty->assign('sameCountry', $targetCurrentLocation['country']);
 	}	
 }
 
@@ -105,7 +109,14 @@ $smarty->display('canvas.tpl');
 
 if ($targetedFriendId != "")
 {
-    $smarty->display('youToFriendMsg.tpl');
-    $smarty->display('friendToYouMsg.tpl');
+    if($userCurrentLocation != $targetCurrentLocation)
+    {
+        $smarty->display('youToFriendMsg.tpl');
+        $smarty->display('friendToYouMsg.tpl');
+    }
+    else
+    {   
+        $smarty->display('sameLocationMsg.tpl');
+    }
 }
 ?>
