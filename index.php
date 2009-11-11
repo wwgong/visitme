@@ -102,4 +102,10 @@ if ($targetedFriendId != "")
 $smarty->assign('name', $user_details[0]['first_name']);
 $smarty->assign('originCodes', $originCodes);
 $smarty->display('canvas.tpl');
+
+if ($targetedFriendId != "")
+{
+    $smarty->display('youToFriendMsg.tpl');
+    $smarty->display('friendToYouMsg.tpl');
+}
 ?>
