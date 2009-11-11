@@ -1,8 +1,3 @@
-<fb:if-section-not-added section="profile">  
-	Display our box on your profile!<br />  
-	<fb:add-section-button section="profile" /> 
-</fb:if-section-not-added>
-
 <center>
     <img src="http://www.umbcs.org/gopandas/visitme/images/logo.jpg" alt="logo" />
 
