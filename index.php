@@ -101,6 +101,7 @@ if ($debug)
 {
 	echo $targetedFriendId." Name: (".$targetFirstName.") City: (".$targetCurrentLocation['city'].") State: (".$targetCurrentLocation['state'].") Country: (".$targetCurrentLocation['country'].")\n";
 	echo $rssURL;
+        echo "<br />Origin Code: (".$origin_code.") Destination Code: (".$dest_code.")";
 }
 
 // Smarty
@@ -126,7 +127,7 @@ if ($targetedFriendId != null)
     }
     else if(sizeof($dest_codes) >= 1)
     {
-        $smarty->display('sameLocationMsg.tpl');
+        $smarty->display('noFlightInfoMsg.tpl');
     }
 }
 ?>
