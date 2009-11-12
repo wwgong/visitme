@@ -69,6 +69,12 @@ $smarty->assign('targetCountry', $savedUid1Location['country']);
 
 $smarty->display('apptab.tpl');
 
+/////////////
+if($debug){
+    echo "code: (".$code.") dest_code: (".$dest_code.") rssURL: (".$rssURL.") flight1_buzz: (".$rss->items[0]['guid'].")";
+    echo " flight1_description: (".$rss->items[0]['description'].") rss2URL: (".$rss2URL.")<br /><br />";
+}
+
 if((sizeof($dest_codes) < 1) && ($savedUid1Location != null))
 {
      $smarty->display('noDestAirportMsg.tpl');
@@ -84,6 +90,6 @@ else if($code != $dest_code)
 }
 else if(sizeof($dest_codes) >= 1)
 {
-    $smarty->display('sameLocationMsg.tpl');
+    $smarty->display('noFlightInfoMsg.tpl');
 }
 ?>
