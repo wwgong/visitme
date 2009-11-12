@@ -63,18 +63,26 @@ $smarty->assign('flight2_airline',100);
 $smarty->assign('flight2_description',$rss2->items[0]['description']);
 $smarty->assign('flight2_buzz',$rss2->items[0]['guid']);
 
-$smarty->assign('sameCity', $savedUid1Location['city']);
-$smarty->assign('sameState', $savedUid1Location['state']);
-$smarty->assign('sameCountry', $savedUid1Location['country']);
+$smarty->assign('targetCity', $savedUid1Location['city']);
+$smarty->assign('targetState', $savedUid1Location['state']);
+$smarty->assign('targetCountry', $savedUid1Location['country']);
 
 $smarty->display('apptab.tpl');
 
-if($uid1Location != $uid2Location)
+if((sizeof($dest_codes) < 1) && ($savedUid1Location != null))
+{
+     $smarty->display('noDestAirportMsg.tpl');
+}
+else if($savedUid1Location == null)
+{
+    $smarty->display('noDestLocationMsg.tpl');
+}
+else if($code != $dest_code)
 {
     $smarty->display('youToFriendMsg.tpl');
     $smarty->display('friendToYouMsg.tpl');
 }
-else
+else if(sizeof($dest_codes) >= 1)
 {
     $smarty->display('sameLocationMsg.tpl');
 }
