@@ -31,6 +31,14 @@
 ||Register Team domain				||Henrik ||10/07/09||10/12/09||<font color="green">Done</font>||
 ||Document [TeamRoles Team Roles]		||Khanh  ||10/10/09||10/13/09||<font color="green">Done</font>||
 
+== Venture Capitalist Presentation ==
+|| *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
+|| Presentation summary				||Charlie, Henrik||10/25/09||10/27/09||<font color="green">Done</font> (on Google Wave)||
+|| Design props					||Group ||10/27/09||10/27/09||<font color="green">Done</font>||
+|| Order props					||Henrik||10/29/09||10/29/09||<font color="green">Done</font>||
+|| Powerpoint presentation finalized		||Charlie, Weiwei||11/11/09||11/11/09||<font color="green">Done</font>||
+|| <font color="#0000BB">*Presentation*</font> ([VCPresentation details])||Charlie, Weiwei, Henrik||11/11/09||11/12/09||<font color="green">Done</font>||
+
 = Deprecated =
 == Hello World ==
 _*<font color="red">Hello World has been deprecated.</font>*_ For more information, [HelloWorld click here].
