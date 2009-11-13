@@ -39,6 +39,14 @@
 || Powerpoint presentation finalized		||Charlie, Weiwei||11/11/09||11/11/09||<font color="green">Done</font>||
 || <font color="#0000BB">*Presentation*</font> ([VCPresentation details])||Charlie, Weiwei, Henrik||11/11/09||11/12/09||<font color="green">Done</font>||
 
+== Public Beta ==
+|| *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
+|| ~~Profile box~~			|| || ||11/10/09||[http://wiki.developers.facebook.com/index.php/Tabbed_Profile#The_Boxes_Tab Profile Boxes are deprecated as of November 2009]||
+|| Canvas page search functionality	||Brian||11/08/09||11/10/09||<font color="green">Done</font>||
+|| Application tab			||Henrik, Weiwei, Vasudev||11/09/09||11/10/09||<font color="green">Done</font>||
+|| Facebook directory submission	||Henrik||11/11/09||11/11/09||<font color="green">Done</font>||
+|| <font color="#0000BB">*Public Beta launch*</font> ([PublicBeta details])	|| ||11/12/09||11/12/09||<font color="green">Done</font>||
+
 = Deprecated =
 == Hello World ==
 _*<font color="red">Hello World has been deprecated.</font>*_ For more information, [HelloWorld click here].
