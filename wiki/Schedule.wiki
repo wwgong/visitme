@@ -65,7 +65,7 @@ For more information, [RequirementsSpecification click here]. Short story items 
 || Presentation summary				||Charlie, Henrik||10/25/09||10/27/09||<font color="green">Done</font> (on Google Wave)||
 || Design props					||Group ||10/27/09||10/27/09||<font color="green">Done</font>||
 || Order props					||Henrik||10/29/09||10/29/09||<font color="green">Done</font>||
-|| Powerpoint presentation finalized		||Charlie|| ||11/11/09||<font color="green">Done</font>||
+|| Powerpoint presentation finalized		||Charlie, Weiwei|| ||11/11/09||<font color="green">Done</font>||
 || <font color="#0000BB">*Presentation*</font> ([VCPresentation details])||       ||        ||11/12/09|| ||
 
 == Public Beta ==
