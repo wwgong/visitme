@@ -75,11 +75,11 @@ if($debug){
     echo " flight1_description: (".$rss->items[0]['description'].") rss2URL: (".$rss2URL.")<br /><br />";
 }
 
-if((sizeof($dest_codes) < 1) && ($savedUid1Location != null))
+if((sizeof($dest_codes) < 1) && ($savedUid1Location != NULL))
 {
      $smarty->display('noDestAirportMsg.tpl');
 }
-else if($savedUid1Location == null)
+else if($savedUid1Location == NULL)
 {
     $smarty->display('noDestLocationMsg.tpl');
 }

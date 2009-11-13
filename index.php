@@ -33,16 +33,16 @@ $userCurrentLocation = $userDetails[0]['current_location'];
 $facebook->api_client->profile_setFBML(NULL, $user, 'profile', NULL, NULL, 'deprecated');
 
 $targetedFriendId = $_POST['friend_sel'];
-if ($targetedFriendId != "")
+if ($targetedFriendId != NULL)
 {
 	$targetUserInfo		= $facebook->api_client->users_getInfo($targetedFriendId, 'last_name, first_name, current_location');
 	$targetFirstName	= $targetUserInfo[0]['first_name'];
 	$targetLastName		= $targetUserInfo[0]['last_name'];
 	$targetCurrentLocation	= $targetUserInfo[0]['current_location'];
 
-    $smarty->assign('uid2',$targetedFriendId);
+        $smarty->assign('uid2',$targetedFriendId);
 
-	if ($userCurrentLocation['city'] != "" && $targetCurrentLocation['city'] != "")
+	if ($targetCurrentLocation['city'] != NULL) 
 	{
 		// Get origin code
 		$sql	= 'SELECT code FROM airports WHERE city = "'.$userCurrentLocation['city'].'"';
@@ -110,13 +110,13 @@ $smarty->assign('name', $user_details[0]['first_name']);
 $smarty->assign('originCodes', $originCodes);
 $smarty->display('canvas.tpl');
 
-if ($targetedFriendId != null)
+if ($targetedFriendId != NULL)
 {
-    if((sizeof($dest_codes) < 1) && ($targetCurrentLocation != null))
+    if((sizeof($dest_codes) < 1) && ($targetCurrentLocation != NULL))
     {
         $smarty->display('noDestAirportMsg.tpl');
     }
-    else if($targetCurrentLocation == null)
+    else if($targetCurrentLocation == NULL)
     {
         $smarty->display('noDestLocationMsg.tpl');
     }
