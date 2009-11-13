@@ -60,22 +60,6 @@ For more information, [RequirementsSpecification click here]. Short story items 
 ||Revision of Canvas UI							||Henrik ||        ||11/16/09|| ||
 ||[RequirementsSpecification Spec PDF]	 				||Henrik ||        ||11/16/09|| ||
 
-== Venture Capitalist Presentation ==
-|| *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
-|| Presentation summary				||Charlie, Henrik||10/25/09||10/27/09||<font color="green">Done</font> (on Google Wave)||
-|| Design props					||Group ||10/27/09||10/27/09||<font color="green">Done</font>||
-|| Order props					||Henrik||10/29/09||10/29/09||<font color="green">Done</font>||
-|| Powerpoint presentation finalized		||Charlie, Weiwei|| ||11/11/09||<font color="green">Done</font>||
-|| <font color="#0000BB">*Presentation*</font> ([VCPresentation details])||       ||        ||11/12/09|| ||
-
-== Public Beta ==
-|| *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
-|| ~~Profile box~~			|| || ||11/10/09||[http://wiki.developers.facebook.com/index.php/Tabbed_Profile#The_Boxes_Tab Profile Boxes are deprecated as of November 2009]||
-|| Canvas page search functionality	||Brian||11/08/09||11/10/09||<font color="green">Done</font>||
-|| Application tab			||Henrik, Weiwei, Vasudev||11/09/09||11/10/09||<font color="green">Done</font>||
-|| Facebook directory			|| || ||11/11/09|| ||
-|| <font color="#0000BB">*Public Beta*</font> ([PublicBeta details])	|| || ||11/12/09|| ||
-
 == Future ==
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
 || [FanPage Facebook fan page]			|| || ||11/30/09|| ||
