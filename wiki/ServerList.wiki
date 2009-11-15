@@ -11,8 +11,8 @@
   * Account owner: Department of Computer Science, UMass Boston
   * Location: http://www.fatcow.com
  
-==Test Server==
-  * Account owner: Department of Computer Science, UMass Boston
-  * Location: http://pele.cs.umb.edu
+==~~Test Server~~==
+  * ~~Account owner: Department of Computer Science, UMass Boston~~
+  * ~~Location: http://pele.cs.umb.edu~~
 
 	
