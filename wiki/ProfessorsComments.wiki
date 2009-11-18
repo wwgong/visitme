@@ -1,6 +1,21 @@
 #summary Space for Professor Bolker to inform the team of how awesome it is.
 
 
+
+November 2.
+
+Nice job on the beta release! 
+
+The page at
+http://code.google.com/p/visitme/wiki/PublicBeta
+has good bullets about what needs to be done before going public to a wider audience. I'd like to see these items scheduled.
+
+I think it's time for a little more long range planning for the spring. The Future category on the schedule goes only as far as the end of November.
+
+I don't see a one step build or a deployment description anywhere on the wiki (perhaps I haven't looked carefully enough). If the project were to stop suddenly right now (perhaps because the entire gopandas team got a team job offer they couldn't refuse) then Paul or anyone else ought to be able to come to this google code site and see immediately how to get and install the latest stable version of VisitMe. That should probably be a single file on the Downloads tab, created by a script if possible, or by easy to follow instructions if not, containing the latest version automatically checked out from svn and a readme with instructions, also checked out of svn. And of course the script itself should be from svn. (It could be on the wiki, since the wiki is backed up by the same svn as the code.)
+
+----
+
 November 9.
 
 I've corresponded with Paul about Kayak branding and the IP questions. Here's the resolution:
