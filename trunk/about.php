@@ -14,6 +14,10 @@
     <br /><br /><br />
     <table>
         <tr>
+            <td>Beta release version:</td>
+            <td>0.2</td>
+        </tr>
+        <tr>
             <td>Project's website:</td>
             <td><a href="http://code.google.com/p/visitme/" target="showframe">VisitME</a></td>
         </tr>
