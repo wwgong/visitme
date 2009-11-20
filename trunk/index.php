@@ -1,20 +1,22 @@
 <?php
-/*******************************************************************************************
+/***********************************************************************************************
  *    Project's Name: VisitME
  *            School: University of Massachusetts Boston
  *        Department: Computer Science
  * Project's website: http://code.google.com/p/visitme/
  *             Class: CS682 - Software Development Laboratory I
- * -----------------------------------------------------------------------------------------
- * Status    Date        Authors       Comments
- * -----------------------------------------------------------------------------------------
- * Created   11/06/2009  Brian Moy       Successfully run on Facebook
+ * ---------------------------------------------------------------------------------------------
+ * Status    Date        Authors         Comments
+ * ---------------------------------------------------------------------------------------------
+ * Created   11/06/2009  Brian Moy       Successfully run on Facebook.
  * Modified  11/08/2009  Brian Moy       Able to extract users' info, query Kayak RSS Feeds,
- *                                       and print out info on canvas
+ *                                       and print out info on canvas.
  * Modified  11/09/2009  Henrik Volckmer Merged code with application tab code format, RSS
  *                       Vasudev Gadge   handling, and database queries.
+ * Modified  11/20/2009  Brian Moy       Added tabs, friends-invitation function, and detect
+ *                                       and prompt unset user's current location msg on canvas.
  *
- * *****************************************************************************************/
+ * *********************************************************************************************/
 
 require_once('includes/sqlfunctions.php');
 
@@ -108,7 +110,18 @@ if ($debug)
 
 $smarty->assign('name', $user_details[0]['first_name']);
 $smarty->assign('originCodes', $originCodes);
+
 $smarty->display('canvas.tpl');
+if($userCurrentLocation == NULL)
+{
+   $smarty->display('noUserLocationMsg.tpl');
+}
+else
+{
+    echo "<br /><br />";
+}
+$smarty->display('searchForm.tpl');
+ 
 
 if ($targetedFriendId != NULL)
 {
@@ -125,9 +138,11 @@ if ($targetedFriendId != NULL)
         $smarty->display('youToFriendMsg.tpl');
         $smarty->display('friendToYouMsg.tpl');
     }
-    else if(sizeof($dest_codes) >= 1)
+    else
     {
         $smarty->display('noFlightInfoMsg.tpl');
     }
 }
+
 ?>
+
