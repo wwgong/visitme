@@ -1,11 +1,39 @@
 .warning
+ 
 {
-    color:red;
-    font-weight:bold;
+    
+	
+	color:red;
+    
+	
+	font-weight:bold;
+
+
 }
 
+
+
+
+
 .textAlignCenter
+
+
 {
-    text-align:center;
+    
+	
+	text-align:center;
+
+
+}
+
+
+
+
+.bold
+
+{
+	
+	font-weight:bold;
+
 }
 

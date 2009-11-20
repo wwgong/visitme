@@ -88,7 +88,7 @@ else if($code != $dest_code)
     $smarty->display('youToFriendMsg.tpl');
     $smarty->display('friendToYouMsg.tpl');
 }
-else if(sizeof($dest_codes) >= 1)
+else
 {
     $smarty->display('noFlightInfoMsg.tpl');
 }
