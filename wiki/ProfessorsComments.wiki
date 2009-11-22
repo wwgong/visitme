@@ -1,8 +1,14 @@
 #summary Space for Professor Bolker to inform the team of how awesome it is.
 
 
+November 22.
 
-November 2.
+OK I've responded to Henrik's invitation and joined facebook. What I've seen so far confirms my impression that this is not a place where I want to spend any time. But as long as I have a presence there I might as well try VisitMe. But I have no clue how to set it up. I can't find any help on this wiki.
+
+Nor do I see the one step build (check out and deploy to the VisitMe server(s)) yet.
+----
+
+November 12.
 
 Nice job on the beta release! 
 
