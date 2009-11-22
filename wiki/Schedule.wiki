@@ -63,7 +63,7 @@ For more information, [RequirementsSpecification click here]. Short story items 
 == Future ==
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
 || [FanPage Facebook fan page]			|| || ||11/30/09|| ||
-|| Invite friends				||Brian||||11/30/09|| ||
+|| Invite friends				||Brian||| || |11/30/09|| ||
 || Notify friends on search			|| || ||11/30/09|| ||
 || "Share this app" functionality		|| || ||11/30/09|| ||
 || AJAX results					|| || ||12/15/09|| ||
