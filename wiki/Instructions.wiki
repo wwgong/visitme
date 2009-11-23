@@ -6,5 +6,5 @@ This page describes necessary steps to deploy the program
 
 = Details =
 
-* Download the source code, and upload it to your host
-* Register a facebook application and follow Facebook's instruction here (http://developers.facebook.com/get_started.php) in order to get your application visible to Facebook
+     * Download the source code, and upload it to your host
+     * Register a facebook application and follow Facebook's instruction here (http://developers.facebook.com/get_started.php) in order to get your application visible to Facebook
