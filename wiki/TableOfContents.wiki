@@ -1,4 +1,5 @@
   * [About]
+  * [Instructions]
   * [Schedule]
      * [ScheduleOld Completed]
   * [MeetingMinutes Meetings]
