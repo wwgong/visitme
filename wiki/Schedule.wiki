@@ -30,7 +30,7 @@ WOC = Waiting on client
 || [http://gopandas.com Team website]		||Weiwei  ||11/10/09||11/12/09||<font color="green">Done</font>||
 || [Meeting13 Meeting Minutes 13]			||Charlie ||11/10/09||11/10/09||<font color="green">Done</font>||
 || Get requirements specification approved by client	|| || ||12/01/09|| ||
-|| Deployment instructions for client (draft)	||Khanh   || ||11/24/09|| ||
+|| [Instructions Deployment instructions] (draft)	||Khanh   || ||11/24/09|| ||
 
 == Requirements Specification ==
 For more information, [RequirementsSpecification click here]. Short story items on this list are considered DRAFT, the final versions will be incorporated into the requirements specification document, which will then be propagated to the wiki.
