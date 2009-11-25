@@ -20,7 +20,6 @@
 
 require_once('includes/sqlfunctions.php');
 
-$facebook = new Facebook($api_key, $secret);
 $facebook->require_frame();
 $user = $facebook->require_login();
 
@@ -46,7 +45,7 @@ if ($targetedFriendId != NULL)
 
         $smarty->assign('uid2',$targetedFriendId);
 
-	if ($targetCurrentLocation['city'] != NULL) 
+	if ($targetCurrentLocation['city'] != NULL)
 	{
 		// Get destination code
 		$dest_codes = get_airport_codes($targetCurrentLocation['city']);
@@ -115,7 +114,7 @@ else
     echo "<br /><br />";
 }
 $smarty->display('searchForm.tpl');
- 
+
 
 if ($targetedFriendId != NULL)
 {
