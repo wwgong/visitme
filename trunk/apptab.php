@@ -73,6 +73,8 @@ $smarty->display('apptab.tpl');
 if($debug){
     echo "code: (".$code.") dest_code: (".$dest_code.") rssURL: (".$rssURL.") flight1_buzz: (".$rss->items[0]['guid'].")";
     echo " flight1_description: (".$rss->items[0]['description'].") rss2URL: (".$rss2URL.")<br /><br />";
+    
+    echo "<br/><br/>$uid1 | $uid2<br/>";
 }
 
 if((sizeof($dest_codes) < 1) && ($savedUid1Location != NULL))
@@ -85,8 +87,7 @@ else if($savedUid1Location == NULL)
 }
 else if($code != $dest_code)
 {
-    $smarty->display('youToFriendMsg.tpl');
-    $smarty->display('friendToYouMsg.tpl');
+    $smarty->display('resultMsg.tpl');
 }
 else
 {
