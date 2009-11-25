@@ -13,10 +13,7 @@ We are not going into hardware requirements since that will vary based on how mu
 
 == Hosting ==
 
-We currently believe that hosting the application on a machine at Kayak, if possible, would be a vastly superior alternative to using a third party hosting solution on the grounds that it would be more reliable and easier to access.
-
-*Update*:
-Kayak has agreed to provide us with a server to host VisitMe.
+VisitME is currently hosted on FatCow and is scheduled to change host in the beginning of December, with FatCow as a testing and backup server.
  
 = Milestones =
 
