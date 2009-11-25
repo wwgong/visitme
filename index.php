@@ -135,8 +135,7 @@ if ($targetedFriendId != NULL)
     }
     else if($origin_code != $dest_code)
     {
-        $smarty->display('youToFriendMsg.tpl');
-        $smarty->display('friendToYouMsg.tpl');
+        $smarty->display('result.tpl');
     }
     else
     {
