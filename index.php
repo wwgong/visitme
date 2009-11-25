@@ -15,7 +15,7 @@
  *                       Vasudev Gadge   handling, and database queries.
  * Modified  11/20/2009  Brian Moy       Added tabs, friends-invitation function, and detect
  *                                       and prompt unset user's current location msg on canvas.
- *
+ * Modified  11/24/2009  Henrik Volckmer Single result template.
  * *********************************************************************************************/
 
 require_once('includes/sqlfunctions.php');
@@ -26,6 +26,7 @@ $user = $facebook->require_login();
 
 // Create Smarty object
 $smarty = new Smarty();
+$smarty->assign('app_name',$app_name);
 $smarty->assign('uid1',$user);
 
 // Logic
@@ -135,7 +136,7 @@ if ($targetedFriendId != NULL)
     }
     else if($origin_code != $dest_code)
     {
-        $smarty->display('result.tpl');
+        $smarty->display('resultMsg.tpl');
     }
     else
     {
