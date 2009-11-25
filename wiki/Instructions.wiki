@@ -1,10 +1,11 @@
-#summary One-sentence summary of this page.
+#summary How to deploy VisitME using our source code
+#labels Phase-Support
 
 = Introduction =
 
-This page describes necessary steps to deploy the program
+While VisitME is an open source project, we currently offer no support for application developers who want to use our code. This is because our architecture is constantly changing during the course of development and as such will only cause confusion and misery for third parties using it. Once we reach a stable state we will provide a downloadable package, complete with source code and an API for developers to customize the way their application looks and performs.
 
 = Details =
 
-     * Download the source code, and upload it to your host
-     * Register a facebook application and follow Facebook's instruction here (http://developers.facebook.com/get_started.php) in order to get your application visible to Facebook
+  * Download the source code, and upload it to your host.
+  * Register a facebook application and follow Facebook's instruction here (http://developers.facebook.com/get_started.php) in order to get your application visible to Facebook
