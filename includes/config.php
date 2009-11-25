@@ -16,6 +16,7 @@ $db_user	= '';
 $db_pass	= '';
 
 $app_name	= 'visitme';
+$version	= '0.2';
 
 // Settings
 $debug = false;
