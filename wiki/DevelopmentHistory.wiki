@@ -5,6 +5,8 @@
 
 We began the project in October 2009 with nobody on the team having developed a Facebook application before, and with only two people having PHP experience. None of the APIs used on VisitME have been used by team members on previous projects. All code was written from scratch.
 
+<wiki:toc max_depth="1" />
+
 = October =
 The month of October was all about defining VisitME and figuring out how we were going to implement it.
 
@@ -12,6 +14,7 @@ The month of October was all about defining VisitME and figuring out how we were
   * It was decided that we were going to create a canvas page and a profile box.
   * Created mockups.
   * Created software architecture.
+  * Risk analysis.
   * Short stories and use cases.
  
 = November =
@@ -36,6 +39,7 @@ In preparing for the mock venture capitalist presentation we spent a lot of time
   * Had to fix a swarm of bugs for the presentation.
   * Prep for the event took away time from coding.
   * We got the most funny-money!
+  * Launched the [PublicBeta beta]!
 
 == Social features ==
   * Got invites working.
