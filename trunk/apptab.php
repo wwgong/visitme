@@ -1,5 +1,18 @@
 <?php
-
+/***********************************************************************************************
+ *    Project's Name: VisitME
+ *            School: University of Massachusetts Boston
+ *        Department: Computer Science
+ * Project's website: http://code.google.com/p/visitme/
+ *             Class: CS682 - Software Development Laboratory I
+ * ---------------------------------------------------------------------------------------------
+ * Status    Date        Authors          Comments
+ * ---------------------------------------------------------------------------------------------
+ * Created   11/07/2009  Henrik Volckmer  Created application tab page using PHP, Smarty and
+ *                       Weiwei Gong      HTML template. Works for getting people to and from
+ *                       Vasudev Gadge    cities in the airport database.
+ * *********************************************************************************************/
+ 
 // Includes
 require_once('includes/sqlfunctions.php');
 
@@ -39,6 +52,7 @@ $rss2	= fetch_rss($rssURL2);
 
 $uid2Location = $rss2->items[0]['kyk']['destlocation'];
 $uid1Location = $rss2->items[0]['kyk']['originlocation'];
+
 // Smarty
 $smarty = new Smarty();
 $smarty->assign('uid1',$uid2); // In app tab, uid1 is profile owner (friend's); uid2 is profile visitor (you) which are in reversed order, compared to canvas
@@ -69,7 +83,7 @@ $smarty->assign('targetCountry', $savedUid1Location['country']);
 
 $smarty->display('apptab.tpl');
 
-/////////////
+// Debug
 if($debug){
     echo "code: (".$code.") dest_code: (".$dest_code.") rssURL: (".$rssURL.") flight1_buzz: (".$rss->items[0]['guid'].")";
     echo " flight1_description: (".$rss->items[0]['description'].") rss2URL: (".$rss2URL.")<br /><br />";
@@ -77,6 +91,7 @@ if($debug){
     echo "<br/><br/>$uid1 | $uid2<br/>";
 }
 
+// Result
 if((sizeof($dest_codes) < 1) && ($savedUid1Location != NULL))
 {
      $smarty->display('noDestAirportMsg.tpl');
