@@ -17,5 +17,6 @@ While the temptation is strong to let people try it out as soon as we have _anyt
 
 Facebook allows the developers to keep track of how many people are using the application, as well as how many people have used it in the past month.
 
+
 = Procedure on Facebook =
 Going public involves one simple step - submitting the application to the directory.
