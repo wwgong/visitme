@@ -48,18 +48,10 @@ if ($targetedFriendId != NULL)
 
 	if ($targetCurrentLocation['city'] != NULL) 
 	{
-		// Get origin code
-		$sql	= 'SELECT code FROM airports WHERE city = "'.$userCurrentLocation['city'].'"';
-		$result	= sql_result($sql);
-		$origin = sql_fetch_obj($result);
-
 		// Get destination code
-		$sql	= 'SELECT code FROM airports WHERE city = "'.$targetCurrentLocation['city'].'"';
-		$result	= sql_result($sql);
-		$dest = sql_fetch_obj($result);
-
 		$dest_codes = get_airport_codes($targetCurrentLocation['city']);
 
+		// Create URL string
 		$rssURL = 'http://www.kayak.com/h/rss/fare?dest=';
 		for ($i = 0; $i < sizeof($dest_codes) - 1; $i++)
 		{
@@ -67,8 +59,8 @@ if ($targetedFriendId != NULL)
 		}
 		$rssURL = $rssURL.$dest_codes[sizeof($dest_codes) - 1];
 
+		// Get RSS Feed
 		$rss	= fetch_rss($rssURL);
-
 		$origin_code	= $rss->items[0]['kyk']['origincode'];
 		$dest_code	= $rss->items[0]['kyk']['destcode'];
 
