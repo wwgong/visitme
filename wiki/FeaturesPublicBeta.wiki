@@ -1,4 +1,5 @@
 #summary Incremental Features of the Public Beta Version
+#labels Phase-Deploy
 
 = Features As of 11/12/2009 =
 Following are the features for Public Beta version
