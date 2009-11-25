@@ -1,3 +1,6 @@
+<?php
+    require_once('includes/config.php');
+?>
 
 <div style="text-align:right;">
      <img src="http://www.kayak.com/v283/images/logos/kayak-175px-static.png" id="logo" />
@@ -7,7 +10,7 @@
     <fb:tabs>
         <fb:tab-item href='index.php' title='Home' selected='false'/>
         <fb:tab-item href='invite.php' title='Invite Friends' selected='false'/>
-	<fb:tab-item href='about.php' title='About' selected='true' />
+		<fb:tab-item href='about.php' title='About' selected='true' />
     </fb:tabs>
 
 
@@ -15,7 +18,7 @@
     <table>
         <tr>
             <td>Beta release version:</td>
-            <td>0.2</td>
+            <td><?php echo $version ?></td>
         </tr>
         <tr>
             <td>Project's website:</td>

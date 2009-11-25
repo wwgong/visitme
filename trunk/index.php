@@ -27,6 +27,7 @@ $user = $facebook->require_login();
 // Create Smarty object
 $smarty = new Smarty();
 $smarty->assign('app_name',$app_name);
+$smarty->assign('version', $version);
 $smarty->assign('uid1',$user);
 
 // Logic
