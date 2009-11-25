@@ -12,12 +12,9 @@
  *                       Weiwei Gong      HTML template. Works for getting people to and from
  *                       Vasudev Gadge    cities in the airport database.
  * *********************************************************************************************/
- 
+
 // Includes
 require_once('includes/sqlfunctions.php');
-
-// Get facebook stuff
-$facebook = new Facebook($api_key, $secret);
 
 $uid1 = $_POST['fb_sig_profile_user'];
 
@@ -87,7 +84,7 @@ $smarty->display('apptab.tpl');
 if($debug){
     echo "code: (".$code.") dest_code: (".$dest_code.") rssURL: (".$rssURL.") flight1_buzz: (".$rss->items[0]['guid'].")";
     echo " flight1_description: (".$rss->items[0]['description'].") rss2URL: (".$rss2URL.")<br /><br />";
-    
+
     echo "<br/><br/>$uid1 | $uid2<br/>";
 }
 
