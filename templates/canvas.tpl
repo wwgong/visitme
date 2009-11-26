@@ -9,5 +9,5 @@
     </fb:tabs>
 
     <br />
-    <img src="http://www.umbcs.org/gopandas/visitme/images/logo.jpg" alt="logo" />
+    <img src="{$host_url}images/logo.jpg" alt="logo" />
 </div>
