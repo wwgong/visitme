@@ -31,7 +31,7 @@ $sql	= 'SELECT code FROM airports WHERE city = "'.$uid1Location['city'].'"';
 $result	= sql_result($sql);
 $dest = sql_fetch_obj($result);
 
-$dest_codes = get_airport_codes($uid1Location['city']);
+$dest_codes = get_airport_codes($uid1Location['city'], $uid1Location['state'], $uid1Location['country']);
 
 $rssURL = 'http://www.kayak.com/h/rss/fare?dest=';
 for ($i = 0; $i < sizeof($dest_codes) - 1; $i++)

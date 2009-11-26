@@ -15,8 +15,7 @@ $db_db		= '';
 $db_user	= '';
 $db_pass	= '';
 
-$facebook = new Facebook($api_key, $secret);
-
+$host_url	= '';
 $app_name	= 'visitme';
 $version	= '0.2';
 

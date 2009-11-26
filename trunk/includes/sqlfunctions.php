@@ -98,7 +98,7 @@ require_once("config.php");
 		return $ReturnArray;
 	}
 	
-	function get_airport_codes($city)
+	function get_airport_codes($city, $state, $country)
 	{
 		$sql	= 'SELECT code FROM airports WHERE city = "'.$city.'"';
 		$result	= sql_result($sql);
@@ -110,6 +110,88 @@ require_once("config.php");
 			$codes[$count] = $dest->code;
 			$count++;
 		}
+		
+		// If city is not in database
+		if ($count == 0)
+		{
+			$composite = $city;
+			if ($state != "")
+			{
+				$composite = $composite.",".$state;
+			}
+			$composite = $composite.",".$country;
+			
+			$url = "http://maps.google.com/maps/geo?q=".$composite;
+			$url = str_replace(" ","%20",$url);
+			//echo "$url<br/>";
+			
+			//echo "<br/>Something:".file_get_contents($url)."<br/>";
+			
+			// create a new cURL resource
+			$ch = curl_init();
+
+			// set URL and other appropriate options
+			curl_setopt($ch, CURLOPT_URL, $url);
+			curl_setopt($ch, CURLOPT_HEADER, 0);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+			// grab URL and pass it to the browser
+			curl_exec($ch);
+			$output = curl_multi_getcontent($ch);
+			// close cURL resource, and free up system resources
+			curl_close($ch);
+
+			//echo "<br/>Output:".strstr($output,"coordinates")."<br/>";
+			
+			// Get x, y of city
+			$x = 0;
+			$y = 0;
+			
+			$output = strstr($output,"coordinates");
+			$output = substr(strstr($output,"["),2);
+			$x = substr($output, 0, strpos($output, ","));
+			
+			$y = substr(strstr($output,", "),2);
+			$y = substr($y, 0, strpos($y, ","));
+			/*$f = fopen($url,"r");
+			if($f)
+			{
+				echo 'Output:<br/>';
+				while($output = fgets($f))
+				{
+					echo "$output<br/>";
+					if (strstr($output,"coordinates"))
+					{
+						$output = substr(strstr($output,"["),2);
+						$x = substr($output, 0, strpos($output, ","));
+						
+						$y = substr(strstr($output,", "),2);
+						$y = substr($y, 0, strpos($y, ","));
+					}
+				}
+			}*/
+			if ($state != "")
+			{
+				$state = " and state = '".$state."' ";
+			}
+			//echo "X:$x Y:$y<br/>";
+			
+			// SELECT a.code FROM airports a, country c WHERE a.country = c.code and c.name = 'India' and x between 71.8692711 and 73.8692711 and y between 18.1130192 and 20.1130192 
+			$sql = "SELECT a.code FROM airports a, country c WHERE a.country = c.code and c.name = '".$country.
+					"' and x between ".($x - 0.5)." and ".($x + 0.5)." and y between ".($y - 0.5)." and ".($y + 0.5);
+			//echo $sql;
+			$result	= sql_result($sql);
+		
+			$count = 0;
+			$codes = array();
+			while ($dest = sql_fetch_obj($result))
+			{
+				$codes[$count] = $dest->code;
+				$count++;
+			}
+			
+			//print_r($codes);
+		}
+		
 		return $codes;
 	}
 	

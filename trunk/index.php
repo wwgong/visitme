@@ -20,12 +20,14 @@
 
 require_once('includes/sqlfunctions.php');
 
+$facebook = new Facebook($api_key, $secret);
 $facebook->require_frame();
 $user = $facebook->require_login();
 
 // Create Smarty object
 $smarty = new Smarty();
 $smarty->assign('app_name',$app_name);
+$smarty->assign('host_url',$host_url);
 $smarty->assign('version', $version);
 $smarty->assign('uid1',$user);
 
@@ -38,17 +40,29 @@ $facebook->api_client->profile_setFBML(NULL, $user, 'profile', NULL, NULL, 'depr
 $targetedFriendId = $_POST['friend_sel'];
 if ($targetedFriendId != NULL)
 {
-	$targetUserInfo		= $facebook->api_client->users_getInfo($targetedFriendId, 'last_name, first_name, current_location');
+	$targetUserInfo		= $facebook->api_client->users_getInfo($targetedFriendId, 'last_name, first_name, current_location, hometown_location, work_history');
 	$targetFirstName	= $targetUserInfo[0]['first_name'];
 	$targetLastName		= $targetUserInfo[0]['last_name'];
-	$targetCurrentLocation	= $targetUserInfo[0]['current_location'];
+	
+	// Try to get the target's location
+	$targetLocation		= $targetUserInfo[0]['current_location'];
+	if ($targetLocation == NULL)
+    {
+		$targetLocation = $targetUserInfo[0]['hometown_location'];
+	}
+	/*if ($targetLocation == NULL)
+	{
+		echo "Work history: ";
+		print_r($targetUserInfo[0]['work_history'][0]);
+		$targetLocation = $targetUserInfo[0]['work_history'][0]['location'];
+	}*/
+	
+    $smarty->assign('uid2',$targetedFriendId);
 
-        $smarty->assign('uid2',$targetedFriendId);
-
-	if ($targetCurrentLocation['city'] != NULL)
+	if ($targetLocation['city'] != NULL) 
 	{
 		// Get destination code
-		$dest_codes = get_airport_codes($targetCurrentLocation['city']);
+		$dest_codes = get_airport_codes($targetLocation['city'], $targetLocation['state'], $targetLocation['country']);
 
 		// Create URL string
 		$rssURL = 'http://www.kayak.com/h/rss/fare?dest=';
@@ -85,16 +99,16 @@ if ($targetedFriendId != NULL)
 		$smarty->assign('flight2_description',$rss2->items[0]['description']);
 		$smarty->assign('flight2_buzz',$rss2->items[0]['guid']);
 
-		$smarty->assign('targetCity', $targetCurrentLocation['city']);
-		$smarty->assign('targetState', $targetCurrentLocation['state']);
-		$smarty->assign('targetCountry', $targetCurrentLocation['country']);
+		$smarty->assign('targetCity', $targetLocation['city']);
+		$smarty->assign('targetState', $targetLocation['state']);
+		$smarty->assign('targetCountry', $targetLocation['country']);
 	}
 }
 
 // Debug output
 if ($debug)
 {
-	echo $targetedFriendId." Name: (".$targetFirstName.") City: (".$targetCurrentLocation['city'].") State: (".$targetCurrentLocation['state'].") Country: (".$targetCurrentLocation['country'].")\n";
+	echo $targetedFriendId." Name: (".$targetFirstName.") City: (".$targetLocation['city'].") State: (".$targetLocation['state'].") Country: (".$targetLocation['country'].")\n";
 	echo $rssURL;
         echo "<br />Origin Code: (".$origin_code.") Destination Code: (".$dest_code.")";
 }
@@ -114,15 +128,15 @@ else
     echo "<br /><br />";
 }
 $smarty->display('searchForm.tpl');
-
+ 
 
 if ($targetedFriendId != NULL)
 {
-    if((sizeof($dest_codes) < 1) && ($targetCurrentLocation != NULL))
+    if((sizeof($dest_codes) < 1) && ($targetLocation != NULL))
     {
         $smarty->display('noDestAirportMsg.tpl');
     }
-    else if($targetCurrentLocation == NULL)
+    else if($targetLocation == NULL)
     {
         $smarty->display('noDestLocationMsg.tpl');
     }
