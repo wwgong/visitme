@@ -16,6 +16,7 @@ The month of October was all about defining VisitME and figuring out how we were
   * Created software architecture.
   * Risk analysis.
   * Short stories and use cases.
+  * Negotiating hosting plans.
  
 = November =
 
@@ -53,4 +54,10 @@ We solved all of these questions before the following coding marathon:
   * What do we need to get analytics on Facebook working?
 
 == Coding Marathon, November 25 - 26, 2009 ==
+  * Got "nearest airport" functionality working by performing some magic on Google.
+    * Required parsing a dynamic Google page
+    * Found out that fopen() doesn't work, used curl instead
+    * Coordinate lookup table
+    * Some MySQL queries
+    * Finding a suitable search radius
   * Happy Thanksgiving @ UMass Boston!
