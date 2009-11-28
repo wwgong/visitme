@@ -3,7 +3,7 @@
 
 = Introduction =
 
-We began the project in October 2009 with nobody on the team having developed a Facebook application before, and with only two people having PHP experience. None of the APIs used on VisitME have been used by team members on previous projects. All code was written from scratch.
+We began the project in October 2009 with nobody on the team having developed a Facebook application before, and with only two people having PHP experience. None of the APIs used on VisitME have been used by team members on previous projects. All code (minus listed APIs) was written from scratch.
 
 <wiki:toc max_depth="1" />
 
