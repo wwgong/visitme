@@ -1,5 +1,7 @@
+<center>
 <table>
 <tr>
+	<td rowspan="2"><fb:profile-pic uid="{$uid2}" linked="true" height="60"/></td>
 	<td>You can visit <fb:name uid="{$uid2}"/> in {$uid1Location} ({$uid1AirportCode}) for...
 		<br/><font color="#00AA00">{$flight1_description}</font>
 	</td>
@@ -15,4 +17,4 @@
 	</td>
 </tr>
 </table>
-
+</center>

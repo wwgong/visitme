@@ -32,9 +32,12 @@ $smarty->assign('version', $version);
 $smarty->assign('uid1',$user);
 
 // Logic
-$userDetails = $facebook->api_client->users_getInfo($user, 'last_name, first_name, current_location');
-$userCurrentLocation = $userDetails[0]['current_location'];
-
+$userDetails = $facebook->api_client->users_getInfo($user, 'last_name, first_name, current_location, hometown_location');
+$userLocation = $userDetails[0]['current_location'];
+if ($userLocation == NULL)
+{
+	$userLocation = $userDetails[0]['hometown_location'];
+}
 $facebook->api_client->profile_setFBML(NULL, $user, 'profile', NULL, NULL, 'deprecated');
 
 $targetedFriendId = $_POST['friend_sel'];
@@ -47,7 +50,7 @@ if ($targetedFriendId != NULL)
 	// Try to get the target's location
 	$targetLocation		= $targetUserInfo[0]['current_location'];
 	if ($targetLocation == NULL)
-    {
+	{
 		$targetLocation = $targetUserInfo[0]['hometown_location'];
 	}
 	/*if ($targetLocation == NULL)
@@ -61,7 +64,16 @@ if ($targetedFriendId != NULL)
 
 	if ($targetLocation['city'] != NULL) 
 	{
-		// Get destination code
+		// Get origin codes
+		$orig_codes = array();
+		$orig_info = false;
+		if ($userLocation != NULL)
+		{
+			$orig_codes = get_airport_codes($userLocation['city'], $userLocation['state'], $userLocation['country']);
+			$orig_info = true;
+		}
+		
+		// Get destination codes
 		$dest_codes = get_airport_codes($targetLocation['city'], $targetLocation['state'], $targetLocation['country']);
 
 		// Create URL string
@@ -71,7 +83,16 @@ if ($targetedFriendId != NULL)
 			$rssURL = $rssURL.$dest_codes[$i].",";
 		}
 		$rssURL = $rssURL.$dest_codes[sizeof($dest_codes) - 1];
-
+		if (false)
+		{
+			$rssURL = $rssURL.'&code=';
+			for ($i = 0; $i < sizeof($orig_codes) - 1; $i++)
+			{
+				$rssURL = $rssURL.$orig_codes[$i].",";
+			}
+			$rssURL = $rssURL.$orig_codes[sizeof($orig_codes) - 1];
+		}
+		
 		// Get RSS Feed
 		$rss	= fetch_rss($rssURL);
 		$origin_code	= $rss->items[0]['kyk']['origincode'];
@@ -119,7 +140,7 @@ $smarty->assign('name', $user_details[0]['first_name']);
 $smarty->assign('originCodes', $originCodes);
 
 $smarty->display('canvas.tpl');
-if($userCurrentLocation == NULL)
+if($userLocation == NULL)
 {
    $smarty->display('noUserLocationMsg.tpl');
 }
