@@ -103,13 +103,15 @@ require_once("config.php");
 		$sql	= 'SELECT code FROM airports WHERE city = "'.$city.'"';
 		$result	= sql_result($sql);
 		
+		//echo "SQL: $sql<br/>";
+				
 		$count = 0;
 		$codes = array();
-		while ($dest = sql_fetch_obj($result))
+		/*while ($dest = sql_fetch_obj($result))
 		{
 			$codes[$count] = $dest->code;
 			$count++;
-		}
+		}*/
 		
 		// If city is not in database
 		if ($count == 0)
@@ -177,8 +179,10 @@ require_once("config.php");
 			
 			// SELECT a.code FROM airports a, country c WHERE a.country = c.code and c.name = 'India' and x between 71.8692711 and 73.8692711 and y between 18.1130192 and 20.1130192 
 			$sql = "SELECT a.code FROM airports a, country c WHERE a.country = c.code and c.name = '".$country.
-					"' and x between ".($x - 0.5)." and ".($x + 0.5)." and y between ".($y - 0.5)." and ".($y + 0.5);
-			//echo $sql;
+					"' and x between ".($x - 1.0)." and ".($x + 1.0)." and y between ".($y - 1.0)." and ".($y + 1.0);
+			
+			//echo "<br/>X: $x Y: $y<br/>SQL: $sql<br/>";
+			
 			$result	= sql_result($sql);
 		
 			$count = 0;
