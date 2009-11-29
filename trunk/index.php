@@ -101,10 +101,11 @@ if ($targetedFriendId != NULL)
 		$rssURL2 = 'http://www.kayak.com/h/rss/fare?code='.$dest_code.'&dest='.$origin_code;
 		$rss2	= fetch_rss($rssURL2);
 
-		$smarty->assign('uid1Location',$rss2->items[0]['kyk']['originlocation']);
-		$smarty->assign('uid1AirportCode',$rss2->items[0]['kyk']['origincode']);
-		$smarty->assign('uid2Location',$rss->items[0]['kyk']['originlocation']);
-		$smarty->assign('uid2AirportCode',$rss->items[0]['kyk']['origincode']);
+		//$smarty->assign('uid1Location',$rss2->items[0]['kyk']['originlocation']);
+		$smarty->assign('targetLocation',$targetLocation['city']);
+		$smarty->assign('targetAirportCode',$rss2->items[0]['kyk']['origincode']);
+		$smarty->assign('userLocation',$rss->items[0]['kyk']['originlocation']);
+		$smarty->assign('userAirportCode',$rss->items[0]['kyk']['origincode']);
 
 		$smarty->assign('flight1_cost',$rss->items[0]['kyk']['price']);
 		$smarty->assign('flight1_departure',100);
