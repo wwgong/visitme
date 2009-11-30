@@ -20,6 +20,7 @@ $app_name	= 'visitme';
 $version	= '0.2';
 
 // Settings
-$debug = false;
+$debug	= false;
+$radius	= 1.0;
 
 ?>
