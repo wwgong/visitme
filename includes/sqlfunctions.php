@@ -98,6 +98,42 @@ require_once("config.php");
 		return $ReturnArray;
 	}
 	
+	// Takes a location string, returns x and y for that location
+	function get_lola($location)
+	{
+		$url = "http://maps.google.com/maps/geo?q=".$location;
+		$url = str_replace(" ","%20",$url);
+		//echo "$url<br/>";
+		
+		// create a new cURL resource
+		$ch = curl_init();
+
+		// set URL and other appropriate options
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_HEADER, 0);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		// grab URL and pass it to the browser
+		curl_exec($ch);
+		$output = curl_multi_getcontent($ch);
+		// close cURL resource, and free up system resources
+		curl_close($ch);
+
+		//echo "<br/>Output:".strstr($output,"coordinates")."<br/>";
+		
+		// Get x, y of city
+		$x = 0;
+		$y = 0;
+		
+		$output = strstr($output,"coordinates");
+		$output = substr(strstr($output,"["),2);
+		$x = substr($output, 0, strpos($output, ","));
+		
+		$y = substr(strstr($output,", "),2);
+		$y = substr($y, 0, strpos($y, ","));
+		
+		return array($x, $y);
+	}
+	
 	function get_airport_codes($city, $state, $country)
 	{
 		$sql	= 'SELECT code FROM airports WHERE city = "'.$city.'"';
@@ -123,54 +159,9 @@ require_once("config.php");
 			}
 			$composite = $composite.",".$country;
 			
-			$url = "http://maps.google.com/maps/geo?q=".$composite;
-			$url = str_replace(" ","%20",$url);
-			//echo "$url<br/>";
+			// Get lola of location
+			$lola = get_lola($composite);
 			
-			//echo "<br/>Something:".file_get_contents($url)."<br/>";
-			
-			// create a new cURL resource
-			$ch = curl_init();
-
-			// set URL and other appropriate options
-			curl_setopt($ch, CURLOPT_URL, $url);
-			curl_setopt($ch, CURLOPT_HEADER, 0);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-			// grab URL and pass it to the browser
-			curl_exec($ch);
-			$output = curl_multi_getcontent($ch);
-			// close cURL resource, and free up system resources
-			curl_close($ch);
-
-			//echo "<br/>Output:".strstr($output,"coordinates")."<br/>";
-			
-			// Get x, y of city
-			$x = 0;
-			$y = 0;
-			
-			$output = strstr($output,"coordinates");
-			$output = substr(strstr($output,"["),2);
-			$x = substr($output, 0, strpos($output, ","));
-			
-			$y = substr(strstr($output,", "),2);
-			$y = substr($y, 0, strpos($y, ","));
-			/*$f = fopen($url,"r");
-			if($f)
-			{
-				echo 'Output:<br/>';
-				while($output = fgets($f))
-				{
-					echo "$output<br/>";
-					if (strstr($output,"coordinates"))
-					{
-						$output = substr(strstr($output,"["),2);
-						$x = substr($output, 0, strpos($output, ","));
-						
-						$y = substr(strstr($output,", "),2);
-						$y = substr($y, 0, strpos($y, ","));
-					}
-				}
-			}*/
 			if ($state != "")
 			{
 				$state = " and state = '".$state."' ";
@@ -179,7 +170,7 @@ require_once("config.php");
 			
 			// SELECT a.code FROM airports a, country c WHERE a.country = c.code and c.name = 'India' and x between 71.8692711 and 73.8692711 and y between 18.1130192 and 20.1130192 
 			$sql = "SELECT a.code FROM airports a, country c WHERE a.country = c.code and c.name = '".$country.
-					"' and x between ".($x - 1.0)." and ".($x + 1.0)." and y between ".($y - 1.0)." and ".($y + 1.0);
+					"' and x between ".($lola[0] - 1.0)." and ".($lola[0] + 1.0)." and y between ".($lola[1] - 1.0)." and ".($lola[1] + 1.0);
 			
 			//echo "<br/>X: $x Y: $y<br/>SQL: $sql<br/>";
 			
