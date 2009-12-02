@@ -53,21 +53,21 @@ For more information, [RequirementsSpecification click here]. Short story items 
 ||[Story5 Use cases]: Paul visits his own profile (most common)		||Henrik ||10/26/09||10/26/09||<font color="green">Done</font>||
 ||[Story6 Use cases]: Paul goes to VisitME (search) 			||Charlie||10/26/09||10/26/09||<font color="green">Done</font>||
 || <font color="#0000BB">*Requirements Specification*</font> ([RequirementsSpecification details])||Group||10/29/09||10/29/09||<font color="green">Done</font>||
-||Revision of Story 1							||Henrik ||        ||12/01/09|| ||
-||Revision of Story 2							||Henrik ||        ||12/01/09|| ||
-||Revision of Story 3							||Henrik ||        ||12/01/09|| ||
-||Revision of Story 4							||Henrik ||        ||12/01/09|| ||
-||Revision of Story 5							||Henrik ||        ||12/01/09|| ||
-||Revision of Canvas UI							||Henrik ||        ||12/01/09|| ||
+||Revision of Story 1							||Henrik ||        ||12/05/09|| ||
+||Revision of Story 2							||Henrik ||        ||12/05/09|| ||
+||Revision of Story 3							||Henrik ||        ||12/05/09|| ||
+||Revision of Story 4							||Henrik ||        ||12/05/09|| ||
+||Revision of Story 5							||Henrik ||        ||12/05/09|| ||
+||Revision of Canvas UI							||Henrik ||        ||12/05/09|| ||
 ||[RequirementsSpecification Spec PDF]	 				||Henrik ||        ||12/15/09|| ||
 
 == Future ==
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
-|| [FanPage Facebook fan page]			|| || ||11/30/09|| ||
+|| [FanPage Facebook fan page]			|| || ||12/05/09|| ||
 || Invite friends (function deprecated; will re-implement)||Brian||11/20/09 || 11/30/09||<font color="green">Done</font> ||
-|| Invite friends				||Brian|| || 11/30/09|| ||
-|| Notify friends on search			|| || ||11/30/09|| ||
-|| "Share this app" functionality		|| || ||11/30/09|| ||
+|| Invite friends				||Brian||11/28/09||11/30/09||<font color="green">Done</font>||
+|| Notify friends on search			|| || ||12/05/09|| ||
+|| "Share this app" functionality		|| || ||12/05/09|| ||
 || AJAX results					|| || ||12/15/09|| ||
 || Complete location coverage			|| || ||12/15/09|| ||
 || Compile usage statistics #1			|| || ||02/01/10|| ||
