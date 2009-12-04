@@ -16,9 +16,12 @@
  * Modified  11/20/2009  Brian Moy       Added tabs, friends-invitation function, and detect
  *                                       and prompt unset user's current location msg on canvas.
  * Modified  11/24/2009  Henrik Volckmer Single result template.
+ * Modified  11/26/2009  Henrik Volckmer Coding marathon, see
+ *                       Weiwei Gong     http://code.google.com/p/visitme/wiki/DevelopmentHistory
+ *                       Vasudev Gadge
  * *********************************************************************************************/
 
-require_once('includes/sqlfunctions.php');
+require_once('includes/common.php');
 
 $facebook = new Facebook($api_key, $secret);
 $facebook->require_frame();
@@ -41,7 +44,7 @@ if ($userLocation == NULL)
 $facebook->api_client->profile_setFBML(NULL, $user, 'profile', NULL, NULL, 'deprecated');
 
 // flag for whether user and friend are closeby.
-$near_distance = true;
+$nearby = true;
 
 $targetedFriendId = $_POST['friend_sel'];
 if ($targetedFriendId != NULL)
@@ -64,7 +67,7 @@ if ($targetedFriendId != NULL)
 	}*/
 	
 	$smarty->assign('uid2',$targetedFriendId);
-
+	
 	if ($targetLocation['city'] != NULL) 
 	{
 		// Check distance between user and friend
@@ -109,7 +112,7 @@ if ($targetedFriendId != NULL)
 			
 		if ($distance > 2 * $radius)
 		{
-			$near_distance = false;
+			$nearby = false;
 			
 			// Get origin codes
 			$orig_codes = array();
@@ -122,28 +125,40 @@ if ($targetedFriendId != NULL)
 			
 			// Get destination codes
 			$dest_codes = get_airport_codes($targetLocation['city'], $targetLocation['state'], $targetLocation['country']);
-
-			// Create URL string
-			$rssURL = 'http://www.kayak.com/h/rss/fare?dest=';
-			for ($i = 0; $i < sizeof($dest_codes) - 1; $i++)
+	
+			$fares = array();
+			if (sizeof($orig_codes) > 0)
 			{
-				$rssURL = $rssURL.$dest_codes[$i].",";
-			}
-			$rssURL = $rssURL.$dest_codes[sizeof($dest_codes) - 1];
-			if (false)
-			{
-				$rssURL = $rssURL.'&code=';
-				for ($i = 0; $i < sizeof($orig_codes) - 1; $i++)
+				foreach ($orig_codes as $code)
 				{
-					$rssURL = $rssURL.$orig_codes[$i].",";
+					$rss = get_fares_code_to_city($code,$dest_codes,$debug);
+					if ($debug)
+					{
+						//echo "<br/>".sizeof($rss->items)."<br/>";
+						//print_r($rss);
+					}
+					if (sizeof($rss->items) > 0)
+					{
+						if (sizeof($fares->items) < 1 || $rss->items[0]['kyk']['price'] < $fares->items[0]['kyk']['price'])
+						{
+							$fares = $rss;
+						}
+					}
 				}
-				$rssURL = $rssURL.$orig_codes[sizeof($orig_codes) - 1];
+			}
+			if ($debug)
+			{
+				echo "RSS values: ".sizeof($fares);
+				
+				print_r($fares);
+				echo "<br/><br/><br/>";
+				echo $_SERVER['HTTP_X_FB_USER_REMOTE_ADDR'];
+				echo "<br/><br/><br/>";
+				
 			}
 			
-			// Get RSS Feed
-			$rss	= fetch_rss($rssURL);
-			$origin_code	= $rss->items[0]['kyk']['origincode'];
-			$dest_code	= $rss->items[0]['kyk']['destcode'];
+			$origin_code	= $fares->items[0]['kyk']['origincode'];
+			$dest_code	= $fares->items[0]['kyk']['destcode'];
 
 			$rssURL2 = 'http://www.kayak.com/h/rss/fare?code='.$dest_code.'&dest='.$origin_code;
 			$rss2	= fetch_rss($rssURL2);
@@ -151,15 +166,15 @@ if ($targetedFriendId != NULL)
 			//$smarty->assign('uid1Location',$rss2->items[0]['kyk']['originlocation']);
 			$smarty->assign('targetLocation',$targetLocation['city']);
 			$smarty->assign('targetAirportCode',$rss2->items[0]['kyk']['origincode']);
-			$smarty->assign('userLocation',$rss->items[0]['kyk']['originlocation']);
-			$smarty->assign('userAirportCode',$rss->items[0]['kyk']['origincode']);
+			$smarty->assign('userLocation',$fares->items[0]['kyk']['originlocation']);
+			$smarty->assign('userAirportCode',$fares->items[0]['kyk']['origincode']);
 
-			$smarty->assign('flight1_cost',$rss->items[0]['kyk']['price']);
+			$smarty->assign('flight1_cost',$fares->items[0]['kyk']['price']);
 			$smarty->assign('flight1_departure',100);
 			$smarty->assign('flight1_arrival',100);
 			$smarty->assign('flight1_airline',100);
-			$smarty->assign('flight1_description',$rss->items[0]['description']);
-			$smarty->assign('flight1_buzz',$rss->items[0]['guid']);
+			$smarty->assign('flight1_description',$fares->items[0]['description']);
+			$smarty->assign('flight1_buzz',$fares->items[0]['guid']);
 
 			$smarty->assign('flight2_cost',$rss2->items[0]['kyk']['price']);
 			$smarty->assign('flight2_departure',100);
@@ -183,7 +198,7 @@ if ($debug)
 
 $smarty->assign('name', $user_details[0]['first_name']);
 $smarty->assign('originCodes', $originCodes);
-$smarty->assign('nearby', $near_distance);
+$smarty->assign('nearby', $nearby);
 		
 $smarty->display('canvas.tpl');
 if($userLocation == NULL)
@@ -198,11 +213,11 @@ else
 
 if ($targetedFriendId != NULL)
 {
-	if ($near_distance)
+	if ($nearby)
 	{
 		$smarty->display('resultMsg.tpl');
 	}
-	else if((sizeof($dest_codes) < 1) && ($targetLocation != NULL))
+	else if((sizeof($fares) < 1) && ($targetLocation != NULL))
 	{
 		$smarty->display('noDestAirportMsg.tpl');
 	}
@@ -221,4 +236,3 @@ if ($targetedFriendId != NULL)
 }
 
 ?>
-
