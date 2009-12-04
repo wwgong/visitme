@@ -65,9 +65,9 @@ For more information, [RequirementsSpecification click here]. Short story items 
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
 || [FanPage Facebook fan page]			|| || ||12/05/09|| ||
 || Invite friends (function deprecated; will re-implement)||Brian||11/20/09 || 11/30/09||<font color="green">Done</font> ||
-|| Invite friends				||Brian||11/28/09||12/15/09||||
 || Notify friends on search			|| || ||12/05/09|| ||
 || "Share this app" functionality		|| || ||12/05/09|| ||
+|| Invite friends				||Brian||||12/15/09||||
 || AJAX results					|| || ||12/15/09|| ||
 || Complete location coverage			|| || ||12/15/09|| ||
 || Compile usage statistics #1			|| || ||02/01/10|| ||
