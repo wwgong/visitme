@@ -119,12 +119,12 @@ if ($targetedFriendId != NULL)
 			$orig_info = false;
 			if ($userLocation != NULL)
 			{
-				$orig_codes = get_airport_codes($userLocation['city'], $userLocation['state'], $userLocation['country']);
+				$orig_codes = get_airport_codes($userLocation['city'], $userLocation['state'], $userLocation['country'], $radius);
 				$orig_info = true;
 			}
 			
 			// Get destination codes
-			$dest_codes = get_airport_codes($targetLocation['city'], $targetLocation['state'], $targetLocation['country']);
+			$dest_codes = get_airport_codes($targetLocation['city'], $targetLocation['state'], $targetLocation['country'], $radius);
 	
 			$fares = array();
 			if (sizeof($orig_codes) > 0)
@@ -160,6 +160,14 @@ if ($targetedFriendId != NULL)
 			$origin_code	= $fares->items[0]['kyk']['origincode'];
 			$dest_code	= $fares->items[0]['kyk']['destcode'];
 
+			if ($debug)
+			{
+				echo "<br/><br/><br/>";
+				print_r($orig_codes);
+				echo "<br/><br/><br/>";
+				print_r($dest_codes);
+				echo "<br/><br/><br/>";
+			}
 			$rssURL2 = 'http://www.kayak.com/h/rss/fare?code='.$dest_code.'&dest='.$origin_code;
 			$rss2	= fetch_rss($rssURL2);
 
