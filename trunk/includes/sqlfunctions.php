@@ -134,7 +134,7 @@ require_once("config.php");
 		return array($x, $y);
 	}
 	
-	function get_airport_codes($city, $state, $country)
+	function get_airport_codes($city, $state, $country, $radius)
 	{
 		$sql	= 'SELECT code FROM airports WHERE city = "'.$city.'"';
 		$result	= sql_result($sql);
@@ -170,7 +170,7 @@ require_once("config.php");
 			
 			// SELECT a.code FROM airports a, country c WHERE a.country = c.code and c.name = 'India' and x between 71.8692711 and 73.8692711 and y between 18.1130192 and 20.1130192 
 			$sql = "SELECT a.code FROM airports a, country c WHERE a.country = c.code and c.name = '".$country.
-					"' and x between ".($lola[0] - 1.0)." and ".($lola[0] + 1.0)." and y between ".($lola[1] - 1.0)." and ".($lola[1] + 1.0);
+					"' and x != 0 and y != 0 and x between ".($lola[0] - $radius)." and ".($lola[0] + $radius)." and y between ".($lola[1] - $radius)." and ".($lola[1] + $radius);
 			
 			//echo "<br/>X: $x Y: $y<br/>SQL: $sql<br/>";
 			
