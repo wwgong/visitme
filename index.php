@@ -44,7 +44,7 @@ if ($userLocation == NULL)
 $facebook->api_client->profile_setFBML(NULL, $user, 'profile', NULL, NULL, 'deprecated');
 
 // flag for whether user and friend are closeby.
-$nearby = true;
+$nearby = -1;	// -1 = default, 0 = far, 1 = nearby
 
 $targetedFriendId = $_POST['friend_sel'];
 if ($targetedFriendId != NULL)
@@ -112,7 +112,7 @@ if ($targetedFriendId != NULL)
 			
 		if ($distance > 2 * $radius)
 		{
-			$nearby = false;
+			$nearby = 0;
 			
 			// Get origin codes
 			$orig_codes = array();
@@ -191,6 +191,10 @@ if ($targetedFriendId != NULL)
 			$smarty->assign('flight2_description',$rss2->items[0]['description']);
 			$smarty->assign('flight2_buzz',$rss2->items[0]['guid']);
 		}
+		else	// User is within 2x the radius
+		{
+			$nearby = 1;
+		}
 	}
 }
 
@@ -221,11 +225,7 @@ else
 
 if ($targetedFriendId != NULL)
 {
-	if ($nearby)
-	{
-		$smarty->display('resultMsg.tpl');
-	}
-	else if((sizeof($fares) < 1) && ($targetLocation != NULL))
+	if(!$nearby && (sizeof($fares) < 1) && ($targetLocation != NULL))
 	{
 		$smarty->display('noDestAirportMsg.tpl');
 	}
@@ -233,7 +233,7 @@ if ($targetedFriendId != NULL)
 	{
 		$smarty->display('noDestLocationMsg.tpl');
 	}
-	else if($origin_code != $dest_code)
+	else if($nearby == 1 || $origin_code != $dest_code)
 	{
 		$smarty->display('resultMsg.tpl');
 	}

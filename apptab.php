@@ -40,4 +40,7 @@ if ($debug)
 {
 	echo "<br/>Visitor ip: $visitor_ip";
 }
+
+$smarty = new Smarty();
+$smarty->display("apptab.tpl");
 ?>
