@@ -1,7 +1,10 @@
 <center>
 <table>
 <tr>
-	<td rowspan="2"><fb:profile-pic uid="{$uid2}" linked="true" height="60"/></td>
+	<td rowspan="2"><div style="height:100px"><div style="clip:rect(0px 100px 100px 0px);">
+		<fb:profile-pic uid="{$uid2}" linked="true" size="small" />
+	</div></div></td>
+	
 	{if not $nearby}
 	<td>You can visit <fb:name uid="{$uid2}"/> in {$targetLocation} ({$targetAirportCode}) for...
 		<br/><font color="#00AA00">{$flight1_description}</font>

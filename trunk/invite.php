@@ -1,7 +1,11 @@
 <?php
-    require_once('includes/config.php');
+	require_once('includes/config.php');
     $facebook = new Facebook($api_key, $secret);
-    $appUserList = $facebook->api_client->friends_getAppUsers();
+	$facebook = new Facebook($api_key, $secret);
+	$facebook->require_frame();
+	$user = $facebook->require_login();
+
+	$appUserList = $facebook->api_client->friends_getAppUsers();
 
     $excludeFriendList = NULL;
 
