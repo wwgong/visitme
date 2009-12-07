@@ -8,7 +8,7 @@
 Because this is an open source project with multiple contributors, we need to have certain coding guidelines in place to keep things consistent and organized. Originally the guidelines were going to be near carbon copies of the [http://area51.phpbb.com/docs/coding-guidelines.html PHPBB guidelines], but it is better to have something custom to our project. 
 
 Key differences are:
-  * The use of mixed case variable and function names instead of using lowercase names with underscores, to be more in line with what most of the team is used to.
+  * ~~The use of mixed case variable and function names instead of using lowercase names with underscores, to be more in line with what most of the team is used to.~~ <font color="red"><b>Upon review, we have decided to change our guidelines to use lower case names with underscores in order to be more consistent with the various 3rd party APIs we are using.</b></font>
   * Specific tab length
   * No rules that are more beneficial to coding for PHPBB than anything else.
 
@@ -18,18 +18,18 @@ In general, use mixed case for variable names, with no underscores. Variable nam
 
 Right:
 {{{
-$maxIterations
+$max_iterations
 $zebra
-$isAvailable
-$isAwesome
-$eatingCoolWhip
+$is_available
+$is_awesome
+$eating_cool_whip
 }}}
 
 Wrong:
 {{{
 $mItr
 $ZeBrA
-$is_available
+$isAvailable
 $iuwehdfiuahfikuaskdjsnkajd
 $eating_CoolWhip
 }}}
@@ -39,7 +39,7 @@ Functions follow the same convention as variables.
 
 Right:
 {{{
-function computeSomething()
+function compute_something()
 {
 	echo "something";
 }
@@ -47,7 +47,7 @@ function computeSomething()
 
 Wrong:
 {{{
-function compute_something()
+function computeSomething()
 {
 	echo "something";
 }
@@ -86,7 +86,7 @@ Right:
 /* This is a well formatted
  * multi-line comment for a
  * function or class */
-function doSomething()
+function do_something()
 {
 	echo "Hi!"
 } 
@@ -205,9 +205,9 @@ if ($someBoolean) {
 However it's much more legible to line up the opening brackets with their level of indentation:
 
 {{{
-if ($someBoolean)
+if ($some_boolean)
 {
-	if ($someOtherBoolean)
+	if ($some_other_boolean)
 	{
 		echo "Hello, world!";
 	}
