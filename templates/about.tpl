@@ -13,7 +13,7 @@
     <br /><br /><br />
     <table>
         <tr>
-            <td>Beta release version:</td>
+            <td>Version:</td>
             <td>{$version}</td>
         </tr>
         <tr>
