@@ -1,5 +1,12 @@
 #summary Space for Professor Bolker to inform the team of how awesome it is.
 
+December 12.
+
+Browsing the code, I found the location of the VisitMe server and database and the database username and password hard coded in the php config file. That feels wrong to me. It should be easy to keep this information external, private, and supplied at installation time - i.e. when you move the php to the server. The readme file for deployment can explain it all.
+
+I've entered this an an issue, too.
+
+----
 
 November 22.
 
