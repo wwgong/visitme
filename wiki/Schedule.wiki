@@ -57,17 +57,17 @@ For more information, [RequirementsSpecification click here]. Short story items 
 ||Revision of Story 3							||Henrik ||12/06/09||12/06/09||<font color="green">Done</font>||
 ||Revision of Story 4							||Henrik ||12/06/09||12/06/09||<font color="green">Done</font>||
 ||Revision of Story 5							||Henrik ||12/06/09||12/06/09||<font color="green">Done</font>||
-||Update UI page							||Henrik ||        ||12/15/09|| ||
-||[RequirementsSpecification Spec PDF]	 				||Henrik ||        ||12/15/09|| ||
+||Update UI page							||Henrik ||        ||12/28/09|| ||
+||[RequirementsSpecification Spec PDF]	 				||Henrik || 12/22/09 ||12/15/09|| <font color="green">Done</font> ||
 
 == Future ==
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
 || Invite friends (function deprecated; will re-implement)||Brian||11/20/09 || 11/30/09||<font color="green">Done</font> ||
 || Complete location coverage			||Vasudev, Brian, Weiwei, Henrik||12/04/09||12/15/09||<font color="green">Done</font>||
-|| [FanPage Facebook fan page]			|| || ||12/20/09|| ||
-|| Notify friends on search			|| || ||12/20/09|| ||
-|| Wall Posting					|| || ||12/20/09|| ||
-|| AJAX results					|| || ||12/20/09|| ||
+|| [FanPage Facebook fan page]			|| || ||12/28/09|| ||
+|| Notify friends on search			|| || ||12/28/09|| ||
+|| Wall Posting					|| || ||12/28/09|| ||
+|| AJAX results					|| || ||12/28/09|| ||
 || Compile usage statistics #1			|| || ||02/01/10|| ||
 || Invite friends (Post-deprecated API)		||Brian|| ||03/01/10|| ||
 || <font color=#0000BB>*Code freeze for event presentations*</font>		|| || ||04/20/10|| ||
