@@ -42,7 +42,7 @@ if ($userLocation == NULL)
 	$userLocation = $userDetails[0]['hometown_location'];
 }
 
-$smarty->assign('userLocation',$userLocation);
+$smarty->assign('search',$userLocation == NULL);
 
 $facebook->api_client->profile_setFBML(NULL, $user, 'profile', NULL, NULL, 'deprecated');
 
