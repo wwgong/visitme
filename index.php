@@ -206,41 +206,16 @@ if ($debug)
         echo "<br />Origin Code: (".$origin_code.") Destination Code: (".$dest_code.")";
 }
 
-// Smarty
+// Prep
+$dest_airport_exists = !(!$nearby && (sizeof($fares) < 1) && ($targetLocation != NULL));
 
+// Smarty
 $smarty->assign('name', $user_details[0]['first_name']);
 $smarty->assign('originCodes', $originCodes);
 $smarty->assign('nearby', $nearby);
-		
+
+$smarty->assign('dest_airport_exists', $dest_airport_exists);
+
 $smarty->display('canvas.tpl');
-if($userLocation == NULL)
-{
-	$smarty->display('noUserLocationMsg.tpl');
-}
-else
-{
-	$smarty->display('searchForm.tpl');
-}
-
-
-if ($targetedFriendId != NULL)
-{
-	if(!$nearby && (sizeof($fares) < 1) && ($targetLocation != NULL))
-	{
-		$smarty->display('noDestAirportMsg.tpl');
-	}
-	else if($targetLocation == NULL)
-	{
-		$smarty->display('noDestLocationMsg.tpl');
-	}
-	else if($nearby == 1 || $origin_code != $dest_code)
-	{
-		$smarty->display('resultMsg.tpl');
-	}
-	else
-	{
-		$smarty->display('noFlightInfoMsg.tpl');
-	}
-}
 
 ?>
