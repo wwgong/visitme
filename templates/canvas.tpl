@@ -12,7 +12,7 @@
     <img src="{$host_url}images/logo.jpg" alt="logo" />
 </div>
 
-{if $userLocation == NULL && $targetCity == NULL}
+{if $search}
 	<div class="textAlignCenter">
 		<span class="warning">Your current location or hometown is not set yet. Your friend(s) will not be able to find you.</span> <br />
 		<a href="http://www.facebook.com/profile.php?ref=profile&id={$uid1}#/profile.php?v=info&ref=profile&id={$uid1}" target="showframe">
