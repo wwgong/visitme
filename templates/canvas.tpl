@@ -12,19 +12,19 @@
     <img src="{$host_url}images/logo.jpg" alt="logo" />
 </div>
 
-{if $userLocation != NULL}
-	<div class="textAlignCenter">
-		<form action="http://apps.facebook.com/{$app_name}/" id="searchForm" method="post">
-			Search friend: <fb:friend-selector uid="#request.userID#" name="uid" idname="friend_sel" />
-			<input type="submit" value="Go!" />
-		</form>
-	</div>
-{else}
+{if $userLocation == NULL && $targetCity == NULL}
 	<div class="textAlignCenter">
 		<span class="warning">Your current location or hometown is not set yet. Your friend(s) will not be able to find you.</span> <br />
 		<a href="http://www.facebook.com/profile.php?ref=profile&id={$uid1}#/profile.php?v=info&ref=profile&id={$uid1}" target="showframe">
 			Please set your current location or hometown under "Info" tab, "Contact Information" section...
 		</a>
+	</div>
+{else}
+	<div class="textAlignCenter">
+		<form action="http://apps.facebook.com/{$app_name}/" id="searchForm" method="post">
+			Search friend: <fb:friend-selector uid="#request.userID#" name="uid" idname="friend_sel" />
+			<input type="submit" value="Go!" />
+		</form>
 	</div>
 {/if}
 
@@ -39,15 +39,17 @@
 		</div></div></td>
 		
 		{if not $dest_airport_exists}
+			<td>
 			<div class="textAlignCenter">
 				<span class="warning">Flight information is unavailable!</span> 
 				<span>&nbsp; Unable to find the destination airport at  <fb:name uid="{$uid2}" />'s current location: {$targetCity}, {$targetState}, {$targetCountry}.</span>
 			</div>
+			</td>
 		{elseif $targetLocation == NULL}
-			<div class="textAlignCenter">
+			<td><div class="textAlignCenter">
 				<span class="warning">Flight information is unavailable!</span>
 				<span>&nbsp; <fb:name uid="{$uid2}" />'s profile does not have current location set.</span>
-			</div>
+			</div></td>
 		{elseif not $nearby}
 			<td>You can visit <fb:name uid="{$uid2}"/> in {$targetLocation} ({$targetAirportCode}) for...
 				<br/><font color="#00AA00">{$flight1_description}</font>
