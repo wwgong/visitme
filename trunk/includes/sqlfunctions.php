@@ -134,7 +134,7 @@ require_once("config.php");
 		return array($x, $y);
 	}
 	
-	function get_airport_codes($city, $state, $country, $radius)
+	function get_airport_codes($city, $state = "", $country = "", $radius = 1)
 	{
 		$sql	= 'SELECT code FROM airports WHERE city = "'.$city.'"';
 		$result	= sql_result($sql);
@@ -157,7 +157,10 @@ require_once("config.php");
 			{
 				$composite = $composite.",".$state;
 			}
-			$composite = $composite.",".$country;
+			if ($country != "")
+			{
+				$composite = $composite.",".$country;
+			}
 			
 			// Get lola of location
 			$lola = get_lola($composite);
@@ -169,9 +172,16 @@ require_once("config.php");
 			//echo "X:$x Y:$y<br/>";
 			
 			// SELECT a.code FROM airports a, country c WHERE a.country = c.code and c.name = 'India' and x between 71.8692711 and 73.8692711 and y between 18.1130192 and 20.1130192 
-			$sql = "SELECT a.code FROM airports a, country c WHERE a.country = c.code and c.name = '".$country.
-					"' and x != 0 and y != 0 and x between ".($lola[0] - $radius)." and ".($lola[0] + $radius)." and y between ".($lola[1] - $radius)." and ".($lola[1] + $radius);
-			
+			if ($country != "")
+			{
+				$sql = "SELECT a.code FROM airports a, country c WHERE a.country = c.code and c.name = '".$country.
+						"' and x != 0 and y != 0 and x between ".($lola[0] - $radius)." and ".($lola[0] + $radius)." and y between ".($lola[1] - $radius)." and ".($lola[1] + $radius);
+			}
+			else
+			{
+				$sql = "SELECT a.code FROM airports a".
+						" WHERE x != 0 and y != 0 and x between ".($lola[0] - $radius)." and ".($lola[0] + $radius)." and y between ".($lola[1] - $radius)." and ".($lola[1] + $radius);
+			}
 			//echo "<br/>X: $x Y: $y<br/>SQL: $sql<br/>";
 			
 			$result	= sql_result($sql);
