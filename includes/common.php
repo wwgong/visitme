@@ -30,9 +30,4 @@ function get_fares_code_to_city($origin_code, $dest_codes, $debug)
 	return $rss;
 }
 
-function get_fares_ip_to_city($ip, $destination, $debug)
-{
-
-}
-
 ?>

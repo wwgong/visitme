@@ -83,6 +83,7 @@ if ($targetedFriendId != NULL || $apptab != NULL)
 		{
 			$composite = $userLocation;
 		}
+		$xml = get_geocode_xml($composite);
 		$userLola = get_lola($composite);
 		
 		$smarty->assign('userHotel', str_replace(",", "/", $composite));
@@ -93,7 +94,7 @@ if ($targetedFriendId != NULL || $apptab != NULL)
 		}
 		
 		$composite = $targetLocation['city'];
-		if ($targetLocation['state'] != NULL)
+		if ($targetLocation['country'] == "USA" && $targetLocation['state'] != NULL)
 		{
 			$composite = $composite.",".$targetLocation['state'];
 		}
@@ -126,11 +127,18 @@ if ($targetedFriendId != NULL || $apptab != NULL)
 		$smarty->assign('targetLocation',$targetLocation['city']);
 		$smarty->assign('targetCity', $targetLocation['city']);
 		$smarty->assign('targetState', $targetLocation['state']);
+		if ($targetLocation['country'] == "United States")
+		{
+			$smarty->assign('targetStateCode', get_state_code($targetLocation['state']));
+		}
 		$smarty->assign('targetCountry', $targetLocation['country']);
-					
+		$smarty->assign('targetCountryCode', get_country_code($targetLocation['country']));
+							
 		$smarty->assign('userCity', $userLocation['city']);
 		$smarty->assign('userState', $userLocation['state']);
+		$smarty->assign('userStateCode',get_state_code($userLocation['state']));
 		$smarty->assign('userCountry', $userLocation['country']);
+		$smarty->assign('userCountryCode', get_country_code($userLocation['country']));
 		
 		if ($distance > 2 * $radius)
 		{
