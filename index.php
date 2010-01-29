@@ -1,24 +1,7 @@
 <?php
 /***********************************************************************************************
- *    Project's Name: VisitME
- *            School: University of Massachusetts Boston
- *        Department: Computer Science
- * Project's website: http://code.google.com/p/visitme/
- *             Class: CS682 - Software Development Laboratory I
- * ---------------------------------------------------------------------------------------------
- * Status    Date        Authors         Comments
- * ---------------------------------------------------------------------------------------------
- * Created   11/06/2009  Brian Moy       Successfully run on Facebook.
- * Modified  11/08/2009  Brian Moy       Able to extract users' info, query Kayak RSS Feeds,
- *                                       and print out info on canvas.
- * Modified  11/09/2009  Henrik Volckmer Merged code with application tab code format, RSS
- *                       Vasudev Gadge   handling, and database queries.
- * Modified  11/20/2009  Brian Moy       Added tabs, friends-invitation function, and detect
- *                                       and prompt unset user's current location msg on canvas.
- * Modified  11/24/2009  Henrik Volckmer Single result template.
- * Modified  11/26/2009  Henrik Volckmer Coding marathon, see
- *                       Weiwei Gong     http://code.google.com/p/visitme/wiki/DevelopmentHistory
- *                       Vasudev Gadge
+ *    Project Name: VisitME
+ *    Project website: http://code.google.com/p/visitme/
  * *********************************************************************************************/
 
 require_once('includes/common.php');
@@ -37,7 +20,11 @@ $smarty->assign('uid1',$user);
 // Logic
 $userDetails = $facebook->api_client->users_getInfo($user, 'last_name, first_name, current_location, hometown_location');
 $userLocation = $userDetails[0]['current_location'];
-if ($userLocation == NULL)
+if ($_POST['apptab_location'] != NULL)
+{
+	$userLocation = $_POST['apptab_location'];
+}
+else if ($userLocation == NULL)
 {
 	$userLocation = $userDetails[0]['hometown_location'];
 }
@@ -49,13 +36,21 @@ $facebook->api_client->profile_setFBML(NULL, $user, 'profile', NULL, NULL, 'depr
 // flag for whether user and friend are closeby.
 $nearby = -1;	// -1 = default, 0 = far, 1 = nearby
 
-$targetedFriendId = $_POST['friend_sel'];
-if ($targetedFriendId != NULL)
+$apptab = $_POST['apptab_location'];
+if ($apptab == NULL)
+{
+	$targetedFriendId = $_POST['friend_sel'];
+}
+else
+{
+	$targetedFriendId = $_POST['fb_sig_profile'];
+}
+if ($targetedFriendId != NULL || $apptab != NULL)
 {
 	$targetUserInfo		= $facebook->api_client->users_getInfo($targetedFriendId, 'last_name, first_name, current_location, hometown_location, work_history');
 	$targetFirstName	= $targetUserInfo[0]['first_name'];
 	$targetLastName		= $targetUserInfo[0]['last_name'];
-	
+
 	// Try to get the target's location
 	$targetLocation		= $targetUserInfo[0]['current_location'];
 	if ($targetLocation == NULL)
@@ -74,13 +69,23 @@ if ($targetedFriendId != NULL)
 	if ($targetLocation['city'] != NULL) 
 	{
 		// Check distance between user and friend
-		$composite = $userLocation['city'];
-		if ($userLocation['state'] != NULL)
+		$composite = "";
+		if ($_POST['apptab_location'] == NULL)
 		{
-			$composite = $composite.",".$userLocation['state'];
+			$composite = $userLocation['city'];
+			if ($userLocation['state'] != NULL)
+			{
+				$composite = $composite.",".$userLocation['state'];
+			}
+			$composite = $composite.",".$userLocation['country'];
 		}
-		$composite = $composite.",".$userLocation['country'];
+		else
+		{
+			$composite = $userLocation;
+		}
 		$userLola = get_lola($composite);
+		
+		$smarty->assign('userHotel', str_replace(",", "/", $composite));
 		
 		if ($debug)
 		{
@@ -93,7 +98,16 @@ if ($targetedFriendId != NULL)
 			$composite = $composite.",".$targetLocation['state'];
 		}
 		$composite = $composite.",".$targetLocation['country'];
+
+		$smarty->assign('targetHotel', str_replace(",", "/", $composite));
+
 		$targetLola = get_lola($composite);
+		
+		$smarty->assign('targetLong',$targetLola[0]);
+		$smarty->assign('targetLat',$targetLola[1]);
+		
+		$smarty->assign('userLong',$userLola[0]);
+		$smarty->assign('userLat',$userLola[1]);
 		
 		if ($debug)
 		{
@@ -109,10 +123,15 @@ if ($targetedFriendId != NULL)
 			print_r($targetLola);
 		}
 		
+		$smarty->assign('targetLocation',$targetLocation['city']);
 		$smarty->assign('targetCity', $targetLocation['city']);
 		$smarty->assign('targetState', $targetLocation['state']);
 		$smarty->assign('targetCountry', $targetLocation['country']);
-			
+					
+		$smarty->assign('userCity', $userLocation['city']);
+		$smarty->assign('userState', $userLocation['state']);
+		$smarty->assign('userCountry', $userLocation['country']);
+		
 		if ($distance > 2 * $radius)
 		{
 			$nearby = 0;
@@ -122,7 +141,14 @@ if ($targetedFriendId != NULL)
 			$orig_info = false;
 			if ($userLocation != NULL)
 			{
-				$orig_codes = get_airport_codes($userLocation['city'], $userLocation['state'], $userLocation['country'], $radius);
+				if ($_POST['apptab_location'] == NULL)
+				{
+					$orig_codes = get_airport_codes($userLocation['city'], $userLocation['state'], $userLocation['country'], $radius);
+				}
+				else
+				{
+					$orig_codes = get_airport_codes($userLocation);
+				}
 				$orig_info = true;
 			}
 			
@@ -175,7 +201,6 @@ if ($targetedFriendId != NULL)
 			$rss2	= fetch_rss($rssURL2);
 
 			//$smarty->assign('uid1Location',$rss2->items[0]['kyk']['originlocation']);
-			$smarty->assign('targetLocation',$targetLocation['city']);
 			$smarty->assign('targetAirportCode',$rss2->items[0]['kyk']['origincode']);
 			$smarty->assign('userLocation',$fares->items[0]['kyk']['originlocation']);
 			$smarty->assign('userAirportCode',$fares->items[0]['kyk']['origincode']);

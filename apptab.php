@@ -16,16 +16,20 @@
 // Includes
 require_once('includes/common.php');
 
+$smarty = new Smarty();
+$smarty->assign("host_url",$host_url);
+$smarty->assign("app_name",$app_name);
+$smarty->assign("zipcode",$_POST['zipcode']);
 $user = $_POST['fb_sig_profile_user'];
-
+$smarty->assign("uid",$user);
 $facebook = new Facebook($api_key, $secret);
 $user_details = $facebook->api_client->users_getInfo($user, 'first_name, last_name, current_location, hometown_location');
-$user_location = $user_details[0]['current_location'];
+//$user_location = $user_details[0]['current_location'];
 
 $visitor = $_POST['fb_sig_user'];
 if ($user_location = NULL)
 {
-	$user_location = $user_details[0]['hometown_location'];
+	//$user_location = $user_details[0]['hometown_location'];
 }
 
 if ($debug)
@@ -41,6 +45,5 @@ if ($debug)
 	echo "<br/>Visitor ip: $visitor_ip";
 }
 
-$smarty = new Smarty();
 $smarty->display("apptab.tpl");
 ?>
