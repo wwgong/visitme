@@ -20,12 +20,12 @@ WOC = Waiting on client
 || Revise invite description			||	|| ||02/12/10|| ||
 || Revise About tab				||	|| ||02/12/10|| ||
 || Buzz fare tracking				||	|| ||02/12/10|| ||
-|| <font color=#0000BB>*Code freeze for event presentations*</font>		|| || ||04/20/10|| ||
 
 == Project #2 ==
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
 || Gather specifications			|| ||02/12/10|| ||
 || Create and document architecture		|| ||02/19/10|| ||
+|| <font color=#0000BB>*Code freeze for event presentations*</font>		|| || ||04/20/10|| ||
 
 = Editing the schedule =
 
