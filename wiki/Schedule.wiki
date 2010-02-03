@@ -14,7 +14,7 @@ WOC = Waiting on client
 || Complete location coverage			||Vasudev, Brian, Weiwei, Henrik||12/04/09||12/15/09||<font color="green">Done</font>||
 || Wall Posting					||Henrik||01/28/10||02/01/10||<font color="green">Done</font>||
 || Change "contact developer" link		||Vasudev, Weiwei, Henrik||02/03/10||02/05/10||<font color="green">Done</font>||
-|| Hotels link					||Vasudev, Weiwei, Henrik|| ||02/05/10|| ||
+|| Hotels link					||Vasudev, Weiwei, Henrik|| 02/03/10 ||02/05/10||<font color="green">Done</font>||
 || VisitMe in the tiles				||Vasudev, Weiwei, Henrik|| ||02/12/10|| ||
 || Wallpost link as attachment			||Vasudev, Weiwei, Henrik|| ||02/12/10|| ||
 || Revise invite description			||Vasudev, Weiwei, Henrik|| ||02/12/10|| ||
