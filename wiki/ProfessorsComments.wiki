@@ -1,4 +1,10 @@
 #summary Space for Professor Bolker to inform the team of how awesome it is.
+ 
+February 4
+
+Excellent start on first sprint. I look forward to new requirements from Joelle. I note that you're fixing bugs even though that's not on your first sprint schedule.
+
+----
 
 December 22
 
