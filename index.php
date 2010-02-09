@@ -20,8 +20,14 @@ $smarty->assign('google_map_api_key', $google_map_api_key);
 $smarty->assign('uid1',$user);
 
 // Logic
-$userDetails = $facebook->api_client->users_getInfo($user, 'last_name, first_name, current_location, hometown_location');
-$userLocation = $userDetails[0]['current_location'];
+$userDetails = array();
+$userLocation = array();
+while ($userDetails == NULL)
+{
+	$userDetails = $facebook->api_client->users_getInfo($user, 'last_name, first_name, current_location, hometown_location');
+	$userLocation = $userDetails[0]['current_location'];
+	usleep(50000); // Wait 50ms if $userDetails doesn't initialize
+}
 if ($_POST['apptab_location'] != NULL)
 {
 	$userLocation = $_POST['apptab_location'];
@@ -53,6 +59,9 @@ if ($targetedFriendId != NULL || $apptab != NULL)
 	$targetFirstName	= $targetUserInfo[0]['first_name'];
 	$targetLastName		= $targetUserInfo[0]['last_name'];
 
+	$smarty->assign("userFirstName",$userDetails[0]['first_name']);
+	$smarty->assign("targetFirstName",$targetUserDetails[0]['first_name']);
+	
 	// Try to get the target's location
 	$targetLocation		= $targetUserInfo[0]['current_location'];
 	if ($targetLocation == NULL)
@@ -136,14 +145,25 @@ if ($targetedFriendId != NULL || $apptab != NULL)
 		}
 		$smarty->assign('targetCountry', $targetLocation['country']);
 		$smarty->assign('targetCountryCode', get_country_code($targetLocation['country']));
-		
-		$smarty->assign('userCity', $userLocation['city']);
-		$smarty->assign('userState', $userLocation['state']);
-               
-		$smarty->assign('userStateCode',get_state_code($userLocation['state']));
-		$smarty->assign('userCountry', $userLocation['country']);
-		$smarty->assign('userCountryCode', get_country_code($userLocation['country']));
 
+
+		if ($_POST['apptab_location'] == NULL)
+		{
+			$smarty->assign('userCity', $userLocation['city']);
+			$smarty->assign('userState', $userLocation['state']);
+			$smarty->assign('userStateCode',get_state_code($userLocation['state']));
+			$smarty->assign('userCountry', $userLocation['country']);
+			$smarty->assign('userCountryCode', get_country_code($userLocation['country']));
+		}
+		else
+		{
+			$smarty->assign('userCity', $userLola[2]);
+			$smarty->assign('userState', $userLocation['state']);
+			$smarty->assign('userStateCode',$userLola[3]);
+			$smarty->assign('userCountry', $userLola[4]);
+			$smarty->assign('userCountryCode', get_country_code($userLola[4]));
+		}
+		
 		if ($distance > 2 * $radius)
 		{
 			$nearby = 0;
