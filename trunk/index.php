@@ -1,3 +1,4 @@
+
 <?php
 /***********************************************************************************************
  *    Project Name: VisitME
@@ -15,6 +16,7 @@ $smarty = new Smarty();
 $smarty->assign('app_name',$app_name);
 $smarty->assign('host_url',$host_url);
 $smarty->assign('version', $version);
+$smarty->assign('google_map_api_key', $google_map_api_key);
 $smarty->assign('uid1',$user);
 
 // Logic
@@ -127,19 +129,21 @@ if ($targetedFriendId != NULL || $apptab != NULL)
 		$smarty->assign('targetLocation',$targetLocation['city']);
 		$smarty->assign('targetCity', $targetLocation['city']);
 		$smarty->assign('targetState', $targetLocation['state']);
+                
 		if ($targetLocation['country'] == "United States")
 		{
 			$smarty->assign('targetStateCode', get_state_code($targetLocation['state']));
 		}
 		$smarty->assign('targetCountry', $targetLocation['country']);
 		$smarty->assign('targetCountryCode', get_country_code($targetLocation['country']));
-							
+		
 		$smarty->assign('userCity', $userLocation['city']);
 		$smarty->assign('userState', $userLocation['state']);
+               
 		$smarty->assign('userStateCode',get_state_code($userLocation['state']));
 		$smarty->assign('userCountry', $userLocation['country']);
 		$smarty->assign('userCountryCode', get_country_code($userLocation['country']));
-		
+
 		if ($distance > 2 * $radius)
 		{
 			$nearby = 0;
@@ -209,7 +213,7 @@ if ($targetedFriendId != NULL || $apptab != NULL)
 			$rss2	= fetch_rss($rssURL2);
 
 			//$smarty->assign('uid1Location',$rss2->items[0]['kyk']['originlocation']);
-			$smarty->assign('targetAirportCode',$rss2->items[0]['kyk']['origincode']);
+			$smarty->assign('targetAirportCode',$fares->items[0]['kyk']['destcode']);
 			$smarty->assign('userLocation',$fares->items[0]['kyk']['originlocation']);
 			$smarty->assign('userAirportCode',$fares->items[0]['kyk']['origincode']);
 
@@ -226,6 +230,7 @@ if ($targetedFriendId != NULL || $apptab != NULL)
 			$smarty->assign('flight2_airline',100);
 			$smarty->assign('flight2_description',$rss2->items[0]['description']);
 			$smarty->assign('flight2_buzz',$rss2->items[0]['guid']);
+
 		}
 		else	// User is within 2x the radius
 		{

@@ -1,6 +1,8 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <link rel="stylesheet" type="text/css" href="http://www.umbcs.org/gopandas/visitme/style/styleMsg.css" />
 <br /><br /><br /><br />
 
+<center>
 <div class="textAlignCenter">
     <fb:tabs>
         <fb:tab-item href='index.php' title='Home' selected='true'/>
@@ -9,7 +11,8 @@
     </fb:tabs>
 
     <br />
-    <img src="{$host_url}images/logo.jpg" alt="logo" />
+    <img src="{$host_url}images/visitme_logo.jpg" alt="visitme_logo" />
+    <br /><br />
 </div>
 
 {if $search}
@@ -28,55 +31,129 @@
 	</div>
 {/if}
 
+</center>
 <br /><br />
  
 {if $uid2 != null}
 	<center>
 	<table>
-	<tr>
-		<td rowspan="2"><div style="height:100px;overflow:hidden;"><div style="clip:rect(0px 100px 100px 0px);">
-			<fb:profile-pic uid="{$uid2}" linked="true" size="small" />
-		</div></div></td>
-		
-		{if not $dest_airport_exists}
-			<td>
+        <tr>
+                 <div style="width:524px; height:92px; margin:0px; padding:0px;">
+                    <img src="http://maps.google.com/maps/api/staticmap?size=524x92&markers=color:blue|label:O|{$userLat},{$userLong}&markers=color:green|label:D|{$targetLat},{$targetLong}&path=color:orange|weight:3|{$userLat},{$userLong}|{$targetLat},{$targetLong}&sensor=false&key={$google_map_api_key}"/>
+                </div>
+	</tr>
+       <br /><br />
+        <tr>
+            <table style="border-width:1px;border-style:solid;border-color:#e2e1e1;"  width="520"  height="92">
+            <caption style="text-align:left;font-weight:bold">You can visit <fb:name uid="{$uid2}"/> in {$targetLocation} for...</caption>
+            <tr>
+            <td>
+                <fb:profile-pic uid="{$uid1}" linked="true" size="normal" width="90" height="90" />
+            </td>
+            <td>
+                {if not $dest_airport_exists}
+			
 			<div class="textAlignCenter">
-				<span class="warning">Flight information is unavailable!</span> 
+				<span class="warning">Flight information is unavailable!</span>
 				<span>&nbsp; Unable to find the destination airport at  <fb:name uid="{$uid2}" />'s current location: {$targetCity}, {$targetState}, {$targetCountry}.</span>
 			</div>
-			</td>
-		{elseif $targetLocation == NULL}
-			<td><div class="textAlignCenter">
+			
+                {elseif $targetLocation == NULL}
+			<div class="textAlignCenter">
 				<span class="warning">Flight information is unavailable!</span>
 				<span>&nbsp; <fb:name uid="{$uid2}" />'s profile does not have current location set.</span>
-			</div></td>
+			</div>
 		{elseif not $nearby}
-			<td>You can visit <fb:name uid="{$uid2}"/> in {$targetLocation} ({$targetAirportCode}) for...
-				<br/><font color="#00AA00">{$flight1_description}</font>
-			</td>
-			<td><a style="font-size:26px" href="{$flight1_buzz}" target="_blank"><b>${$flight1_cost}*</b></a>
-			</td>
+			
+                             <table width="418" height="90" cellpadding="2" style="border-collapse:collapse;border:0px;">
+                               <tr>
+                                 <td width="120">&nbsp; &nbsp;<a style="font-size:26px" href="{$flight1_buzz}" target="_blank"><b>${$flight1_cost}*</b></a> </td>
+                                 <td width="150"><span style="font-size:14px;font-weight:bold">{$userAirportCode} <img src="{$host_url}images/airplane.jpg" alt="airplane" /> {$targetAirportCode} <br />  {$targetAirportCode} <img src="{$host_url}images/airplane.jpg" alt="airplane" /> {$userAirportCode} </span></td>
+                                 <td><img src="{$host_url}images/hotel.jpg" alt="hotel" /> <a href="http://www.kayak.com/s/search/hotel?crc={$targetCity},{if $targetStateCode != NULL}{$targetStateCode},{/if}{$targetCountryCode}&do=y" style="font-family:tahoma;font-size:12px;" target="_blank">Hotels in {$targetCity}</a></td>
+                               </tr>
+                               <tr>
+                                 <td colspan="3" height="8" style="padding:5px;border:0px;background-color:#e2e1e1;">{$flight1_description}</td>
+                               </tr>
+                               <tr>
+                                 <td colspan="3" style="padding-top:5px">
+                                      <fb:share-button class='meta'>
+                                        <meta name='title' content='Round-trip fare from {$userAirportCode} to {$targetAirportCode} is ${$flight1_cost}.'/>
+                                        <meta name='description' content="{$app_name} is a Facebook application that helps you to find the lowest fare to fly to/from your friend's city." />
+                                        <link rel='target_url' href='http://apps.facebook.com/{$app_name}/'/>
+                                      </fb:share-button>
+                                 </td>
+                               </tr>
+                             </table>
+			
+			
+			
 		{else}
-			<td>You are close enough to drive to <fb:name uid="{$uid2}"/>. Would you like to <a href="http://www.kayak.com/cars">rent a car</a>?</td>
+			You are close enough to drive to <fb:name uid="{$uid2}"/>. Would you like to <a href="http://www.kayak.com/cars">rent a car</a>?
 		{/if}
-	</tr>
+                    
+             </td>
+             </tr>
+             </table>
+         </tr>
 
-	<tr>
-		{if not $dest_airport_exists}
-			<td></td>
+         <tr height="15"></tr>
+
+         <tr>
+            <table style="border-width:1px;border-style:solid;border-color:#e2e1e1;"  width="520"  height="92">
+            <caption style="text-align:left;font-weight:bold"><fb:name uid="{$uid2}"/> can visit you in {$userLocation} for...</caption>
+            <tr>
+             <td>
+                <fb:profile-pic uid="{$uid2}" linked="true" size="normal" width="90" height="90" />
+             </td>
+             <td>
+                {if not $dest_airport_exists}
+			<div class="textAlignCenter">
+				<span class="warning">Flight information is unavailable!</span>
+				<span>&nbsp; Unable to find the destination airport at  <fb:name uid="{$uid2}" />'s current location: {$targetCity}, {$targetState}, {$targetCountry}.</span>
+			</div>
 		{elseif $targetLocation == NULL}
-			<td></td>
+			<div class="textAlignCenter">
+				<span class="warning">Flight information is unavailable!</span>
+				<span>&nbsp; <fb:name uid="{$uid2}" />'s profile does not have current location set.</span>
+			</div>
 		{elseif not $nearby}
-			<td><fb:name uid="{$uid2}"/> can visit you in {$userLocation} ({$userAirportCode}) for...
-				<br/><font color="#00AA00">{$flight2_description}</font>
-			</td>
-			<td><a style="font-size:26px" href="{$flight2_buzz}" target="_blank"><b>${$flight2_cost}*</b></a>
-			</td>
+			<table width="418" height="90" cellpadding="2" style="border-collapse:collapse;border:0px;">
+                               <tr>
+                                 <td width="120">&nbsp; &nbsp;<a style="font-size:26px" href="{$flight1_buzz}" target="_blank"><b>${$flight2_cost}*</b></a> </td>
+                                 <td width="150"><span style="font-size:14px;font-weight:bold">{$targetAirportCode} <img src="{$host_url}images/airplane.jpg" alt="airplane" /> {$userAirportCode} <br /> {$userAirportCode} <img src="{$host_url}images/airplane.jpg" alt="airplane" /> {$targetAirportCode} </span></td>
+                                 <td><img src="{$host_url}images/hotel.jpg" alt="hotel" /> <a href="http://www.kayak.com/s/search/hotel?crc={$userCity},{if $userStateCode != NULL}{$userStateCode},{/if}{$userCountryCode}&do=y" style="font-family:tahoma;font-size:12px;" target="_blank">Hotels in {$userCity}</a></td>
+                               </tr>
+                               <tr>
+                                 <td colspan="3" height="8" style="padding:5px;margin:0px;border:0px;background-color:#e2e1e1;">{$flight2_description}</td>
+                               </tr>
+                               <tr>
+
+                               </tr>
+                               <tr>
+                                 <td colspan="3" style="padding-top:5px;">
+                                     <fb:share-button class='meta'>
+                                        <meta name='title' content='Round-trip fare from {$targetAirportCode} to {$userAirportCode} is ${$flight2_cost}.'/>
+                                        <meta name='description' content="{$app_name} is a Facebook application that helps you to find the lowest fare to fly to/from your friend's city." />
+                                        <link rel='target_url' href='http://apps.facebook.com/{$app_name}/'/>
+                                     </fb:share-button>
+                                </td>
+                               </tr>
+                         </table>
+                              
 		{else}
-			<td></td>
+			
 		{/if}
-	</tr>
+       
+             </td>
+            </tr>
+            </table>
+        </tr>
+	
+
+       
 	</table></center>
+
+        <br /><br />
 
 	{if not $nearby}
 		<p align="center"/>
