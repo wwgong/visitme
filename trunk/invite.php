@@ -1,6 +1,6 @@
 <?php
 	require_once('includes/config.php');
-    $facebook = new Facebook($api_key, $secret);
+        $facebook = new Facebook($api_key, $secret);
 	$facebook = new Facebook($api_key, $secret);
 	$facebook->require_frame();
 	$user = $facebook->require_login();
@@ -26,6 +26,7 @@
     $smarty = new Smarty();
     $smarty->assign('excludeFriendList', $excludeFriendList);
     $smarty->assign('link', $link);
+    $smarty->assign('host_url',$host_url);
     $smarty->display('invite.tpl');
 ?>
 

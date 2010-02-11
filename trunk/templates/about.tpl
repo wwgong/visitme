@@ -1,5 +1,5 @@
 <div style="text-align:right;">
-     <img src="http://www.kayak.com/v283/images/logos/kayak-175px-static.png" id="logo" />
+     <img src="{$host_url}/images/visitme_logo_s.jpg" id="logo" />
 </div>
 
 <div style="text-align:center;font-weight:bold">
