@@ -94,13 +94,10 @@
             </td>
             <td>
                 {if not $dest_airport_exists}
-			<span class="warning">Unable to find flight information from {$userCity}, {$userState}, {$userCountry} to {$targetCity}, {$targetState}, {$targetCountry}.</span>
+			<span class="warning">Unable to find flight information from {$targetCity}, {$targetState}, {$targetCountry} to {$userCity}, {$userState}, {$userCountry}.</span>
 
 		{elseif $targetLocation == NULL}
-			<div class="center">
-				<span class="warning">Flight information is unavailable!</span> <br />
-				<span>&nbsp; <fb:name uid="{$uid2}" />'s profile does not have current location or hometown set.</span>
-			</div>
+                        <div></div>
 
 		{elseif not $nearby}
 			<table class="flightInfoBox">
@@ -124,7 +121,7 @@
                          </table>
                               
 		{else}
-                        <div class="center">You are close enough to drive to <fb:name uid="{$uid2}"/>. Would you like to <a href="http://www.kayak.com/cars" target="_blank">rent a car</a>?</div>
+                        <div></div>
 		{/if}
              </td>
         </tr>
