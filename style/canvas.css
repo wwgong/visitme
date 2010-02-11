@@ -1,0 +1,77 @@
+.center
+{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.warning
+{
+    color:red;
+    font-weight:bold;
+}
+
+.googleMapBox
+{
+    width: 520px;
+    height: 92px;
+}
+
+.userBox
+{
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e2e1e1;
+    width: 520px;
+    height: 92px;
+}
+
+.userBoxTitle
+{
+    text-align: left;
+    font-weight:bold;
+}
+
+.flightInfoBox
+{
+    width: 418px;
+    height: 90px;
+    padding: 2px;
+    border-collapse: collapse;
+    border:0px;
+}
+
+.flightCost
+{
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.flightPath
+{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.hotelLink
+{
+    font-family: tahoma;
+    font-size: 12px;
+}
+
+.flightDescription
+{
+    padding: 5px;
+    border: 0px;
+    background-color: #e2e1e1;
+}
+
+.shareBox
+{
+    padding-top: 5px;
+}
+
+.disclaimer
+{
+    font-size:10px;
+}
