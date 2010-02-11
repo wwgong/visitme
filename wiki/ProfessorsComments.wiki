@@ -1,5 +1,12 @@
 #summary Space for Professor Bolker to inform the team of how awesome it is.
  
+ 
+February 11
+
+I enjoyed hearing in class about the ideas for your second application. I expect specs on the wiki soon. Your schedule promises that and other things for tomorrow. (I won't be able to look until Sunday at the earliest, but of course you will meet your deadline anyway.)
+
+----
+
 February 4
 
 Excellent start on first sprint. I look forward to new requirements from Joelle. I note that you're fixing bugs even though that's not on your first sprint schedule.
