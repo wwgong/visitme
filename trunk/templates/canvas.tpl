@@ -35,7 +35,7 @@
  
 {if $uid2 != null}
     <div class="center">
-         <img src="http://maps.google.com/maps/api/staticmap?size=520x92&markers=color:blue|label:O|{$userLat},{$userLong}&markers=color:green|label:D|{$targetLat},{$targetLong}&path=color:orange|weight:3|{$userLat},{$userLong}|{$targetLat},{$targetLong}&sensor=false&key={$google_map_api_key}" />
+         <img src="http://maps.google.com/maps/api/staticmap?size=520x92&markers=color:blue|label:O|{$userLat},{$userLong}&markers=color:green|label:D|{$targetLat},{$targetLong}&path=color:orange|weight:3|{$userLat},{$userLong}|{$targetLat},{$targetLong}&sensor=false" />
     </div>
 
     <br /><br />
