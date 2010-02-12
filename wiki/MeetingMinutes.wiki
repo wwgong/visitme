@@ -2,13 +2,14 @@
 #labels Featured
 
 = Future meetings =  
-  * [Meeting15 11/24/2009] _(in class)_
+  * [Meeting27 02/16/2010] _(in class)_
+
   
 = Past Meetings =
   * [Meeting1 09/29/2009] _(in class)_
   * [Meeting2 10/01/2009] _(in class)_
   * [Meeting3 10/05/2009] _(2:30pm, in the UNIX lab)_
-  * [ClientMeeting1 10/07/2009] _(3pm, Kayak)_
+  * [ClientMeeting1 10/07/2009] _(3:00pm, Kayak)_
   * [Meeting4 10/07/2009] _(6pm, Blue Fin)_
   * [Meeting5 10/08/2009] _(in class)_
   * [Meeting6 10/13/2009] _(in class)_
@@ -21,3 +22,7 @@
   * [Meeting12 11/03/2009] _(in class)_
   * [Meeting13 11/10/2009] _(in the NIS lab)_
   * [Meeting14 11/19/2009] _(in class)_
+  * [Meeting15 11/24/2009] _(in class)_
+
+  * [ClientMeeting4 02/05/2010] _(11:00am, Kayak)_
+  * [Meeting26 02/11/2010] _(in class)_
