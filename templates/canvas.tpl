@@ -34,8 +34,8 @@
 <br /><br />
  
 {if $uid2 != null}
-    <div class="googleMapBox center">
-         <img src="http://maps.google.com/maps/api/staticmap?size=524x92&markers=color:blue|label:O|{$userLat},{$userLong}&markers=color:green|label:D|{$targetLat},{$targetLong}&path=color:orange|weight:3|{$userLat},{$userLong}|{$targetLat},{$targetLong}&sensor=false&key={$google_map_api_key}" />
+    <div class="center">
+         <img src="http://maps.google.com/maps/api/staticmap?size=520x92&markers=color:blue|label:O|{$userLat},{$userLong}&markers=color:green|label:D|{$targetLat},{$targetLong}&path=color:orange|weight:3|{$userLat},{$userLong}|{$targetLat},{$targetLong}&sensor=false&key={$google_map_api_key}" />
     </div>
 
     <br /><br />
@@ -48,7 +48,7 @@
             </td>
             <td>
                 {if not $dest_airport_exists}
-			<span class="warning">Unable to find flight information from {$userCity}, {$userState}, {$userCountry} to {$targetCity}, {$targetState}, {$targetCountry}.</span>
+			<span class="warning">Flight information from {$userCity}, {$userState}, {$userCountry} to {$targetCity}, {$targetState}, {$targetCountry} is unavailable.</span>
 
                 {elseif $targetLocation == NULL}
 			<div class="center">
@@ -94,7 +94,7 @@
             </td>
             <td>
                 {if not $dest_airport_exists}
-			<span class="warning">Unable to find flight information from {$targetCity}, {$targetState}, {$targetCountry} to {$userCity}, {$userState}, {$userCountry}.</span>
+			<span class="warning">Flight information from {$targetCity}, {$targetState}, {$targetCountry} to {$userCity}, {$userState}, {$userCountry} is unavailable.</span>
 
 		{elseif $targetLocation == NULL}
                         <div></div>
