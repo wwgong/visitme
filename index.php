@@ -16,7 +16,6 @@ $smarty = new Smarty();
 $smarty->assign('app_name',$app_name);
 $smarty->assign('host_url',$host_url);
 $smarty->assign('version', $version);
-$smarty->assign('google_map_api_key', $google_map_api_key);
 $smarty->assign('uid1',$user);
 
 // Logic

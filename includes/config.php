@@ -7,9 +7,6 @@ require_once('smarty/libs/Smarty.class.php');
 $api_key = 'your_api_key';
 $secret = 'your_secret';
 
-// Google Map API Key
-$google_map_api_key = 'your_google_map_api_key';
-
 // Database stuff
 define("DATABASE", "mysql"); // or "odbc"
 
