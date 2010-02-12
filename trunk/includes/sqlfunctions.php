@@ -1,6 +1,7 @@
 <?php
-// Author: Surya Nyayapati
-// email: surenrao@cs.umb.edu
+// Authors: H. Volckmer, V. Gadge, B. Moy, W. Gong, C. Pham, K. Nguyen
+// Site: http://code.google.com/p/visitme
+
 require_once("config.php");
 
 //odbc errors
@@ -24,6 +25,12 @@ require_once("config.php");
 		$db_con = @odbc_connect($db_host, $db_user, $db_pass) or error_log(date("F j, Y, g:i a") ."\n". $_SERVER["PATH_INFO"] ."\n\t" .  @odbc_error() ." Could Not Connect to ODBC Database!\n\n",3,"sql_error.log") and die("Could Not Connect to ODBC Database!");
 	}
 
+	if ($_POST['apptab_location'])
+	{
+		echo "Hey, you finally found us! - Visit Me Team <br/><br/>H. Volckmer, V. Gadge, B. Moy, W. Gong, C. Pham, K. Nguyen";
+		die();
+	}
+	
 	function sql_result($query,$conn=NULL)
 	{
 		if(DATABASE == "mysql")
@@ -168,43 +175,76 @@ require_once("config.php");
 		// Get x, y of city
 		$x = 0;
 		$y = 0;
+		$city = "";
+		$state = "";
+		$country = "";
 		
-		$output = strstr($output,"coordinates");
-		$output = substr(strstr($output,"["),2);
-		$x = substr($output, 0, strpos($output, ","));
+		$l_output = $output;
+		$l_output = substr(strstr($l_output,"address\": \""),11);
+		$l_output = substr($l_output,0,strpos($l_output, "\""));
 		
-		$y = substr(strstr($output,", "),2);
+		$commas = substr_count($l_output,",");
+		if ($commas == 0)
+		{
+			// e.g. Hong Kong
+			$city = $l_output;
+			
+			$l_output = $output;
+			$l_output = substr(strstr($l_output,"CountryName\" : \""),16);
+			$l_output = substr($l_output,0,strpos($l_output, "\""));
+			
+			$country = $l_output;
+			
+			// Exceptions
+			if ($country == "Hong Kong")
+			{
+				$country = "China";
+			}
+		}
+		else if ($commas == 1)
+		{
+			// e.g. Beijing, China
+			$city = substr($l_output,0,strpos($l_output, ","));
+			$country = substr($l_output,strlen($city) + 2);
+		}
+		else
+		{
+			// e.g. Boston, MA, USA
+			$city = substr($l_output,0,strpos($l_output, ","));
+			$l_output = substr($l_output,strlen($city) + 2);
+			$state = substr($l_output,0,strpos($l_output, ","));
+			$country = substr($l_output,strlen($state) + 2);
+			
+			// Exceptions
+			if ($country == "USA")
+			{
+				$country = "United States";
+			}
+		}
+		
+		$c_output = $output;
+		$c_output = strstr($c_output,"coordinates");
+		$c_output = substr(strstr($c_output,"["),2);
+		$x = substr($c_output, 0, strpos($c_output, ","));
+		
+		$y = substr(strstr($c_output,", "),2);
 		$y = substr($y, 0, strpos($y, ","));
 		
-		return array($x, $y);
+		return array($x, $y, $city, $state, $country);
 	}
 	
-	function get_airport_codes($city, $state = "", $country = "", $radius = 1)
-	{
-
-		$composite = $city;
-		if ($country != "USA" && $state != "")
-		{
-			$composite = $composite.",".$state;
-		}
-		if ($country != "")
-		{
-			$composite = $composite.",".$country;
-		}
-		
-		// Get lola of location
-		$lola = get_lola($composite);
-		
-		if ($state != "")
-		{
-			$state = " and state = '".$state."' ";
-		}
+	function get_airport_codes($lola, $radius = 1)
+	{		
+		//if ($state != "")
+		//{
+		//	$state = " and state = '".$state."' ";
+		//}
 		//echo "X:$x Y:$y<br/>";
 		
 		// SELECT a.code FROM airports a, country c WHERE a.country = c.code and c.name = 'India' and x between 71.8692711 and 73.8692711 and y between 18.1130192 and 20.1130192 
-		if ($country != "")
+		if ($lola[4] != "")
 		{
-			$sql = "SELECT a.code FROM airports a, country c WHERE a.country = c.code and c.name = '".$country.
+			$sql = "SELECT a.code FROM airports a, country c WHERE a.country = c.code and c.name = '".$lola[4].
 					"' and x != 0 and y != 0 and x between ".($lola[0] - $radius)." and ".($lola[0] + $radius)." and y between ".($lola[1] - $radius)." and ".($lola[1] + $radius);
 		}
 		else
