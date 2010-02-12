@@ -1,14 +1,11 @@
-#main
+.center
 {
-	text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
-#logo
+.bold
 {
-	
-}
-
-#price a
-{
-	font-size: 200px;
+    font-weight: bold;
 }
