@@ -17,9 +17,9 @@ WOC = Waiting on client
 || Hotels link					||Vasudev, Weiwei, Henrik||02/03/10||02/05/10||<font color="green">Done</font>||
 || VisitMe in the tiles				||Vasudev, Weiwei, Henrik||02/10/10||02/12/10||<font color="green">Done</font>||
 || Wallpost link as attachment			||Vasudev, Weiwei, Henrik||02/04/10||02/12/10||<font color="green">Done</font>||
-|| Revise invite description			||Vasudev, Weiwei, Henrik|| ||02/12/10|| ||
+|| Revise invite description			||Vasudev, Weiwei, Henrik||02/12/10||02/12/10||<font color="green">Done</font>||
 || Revise About tab				||Vasudev, Weiwei, Henrik|| ||02/12/10|| ||
-|| Buzz fare tracking				||Vasudev, Weiwei, Henrik|| ||02/12/10|| ||
+|| Buzz fare tracking				||Vasudev, Weiwei, Henrik|| ||02/12/10||<font color="green">Done</font>||
 || Open source front end			||Brian ||02/11/10 ||02/12/10||<font color="green">Done</font> ||
 || Consistency check for template requirements	||Brian ||02/11/10 ||02/12/10||<font color="green">Done</font> ||
 
