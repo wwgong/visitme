@@ -35,32 +35,34 @@
  
 {if $uid2 != null}
     <div class="center">
-         <img src="http://maps.google.com/maps/api/staticmap?size=520x92&markers=color:blue|label:O|{$userLat},{$userLong}&markers=color:green|label:D|{$targetLat},{$targetLong}&path=color:orange|weight:3|{$userLat},{$userLong}|{$targetLat},{$targetLong}&sensor=false" />
+         <img src="http://maps.google.com/maps/api/staticmap?size=520x92&markers=color:blue|label:O|{$userLat},{$userLong}&markers=color:green|label:D|{$targetLat},{$targetLong}&path=color:orange|weight:3|{$userLat},{$userLong}|{$targetLat},{$targetLong}&sensor=false&key={$google_map_api_key}" />
     </div>
 
     <br /><br />
 
     <table class="userBox center">
-        <caption class="userBoxTitle">You can visit <fb:name uid="{$uid2}"/> in {$targetLocation} for...</caption>
+        <caption class="userBoxTitle">You can visit <fb:name uid="{$uid2}"/> for...</caption>
         <tr>
             <td class="profilePicBox">
                 <fb:profile-pic uid="{$uid1}" linked="true" size="normal" width="90" height="90" />
             </td>
+            <td width="2">
+            </td>
             <td>
-                {if not $dest_airport_exists}
-			<span class="warning">Flight information from {$userCity}, {$userState}, {$userCountry} to {$targetCity}, {$targetState}, {$targetCountry} is unavailable.</span>
-
-                {elseif $targetLocation == NULL}
-			<div class="center">
-				<span class="warning">Flight information is unavailable!</span> <br />
-				<span>&nbsp; <fb:name uid="{$uid2}" />'s profile does not have current location or hometown set.</span>
+                {if $targetLocation == NULL}
+			<div>
+                            <span class="warning">Flight information is unavailable!</span> <br />
+                            <span><fb:name uid="{$uid2}" />'s profile does not have current location or hometown set.</span>
 			</div>
 
-		{elseif not $nearby}
+                {elseif $nearby}
+			<div>You are close enough to drive to <fb:name uid="{$uid2}"/>. Would you like to <a href="http://www.kayak.com/cars">rent a car</a>?</div>
+
+		{elseif $flight1_cost != NULL}
                         <table class="flightInfoBox">
                             <tr>
                                 <td width="130">&nbsp; &nbsp;<a class="flightCost" href="{$flight1_buzz}" target="_blank">${$flight1_cost}*</a> </td>
-                                <td width="140"><span class="flightPath">{$userAirportCode} <img src="{$host_url}images/airplane.jpg" alt="airplane" /> {$targetAirportCode} <br />  {$targetAirportCode} <img src="{$host_url}images/airplane.jpg" alt="airplane" /> {$userAirportCode}</span></td>
+                                <td width="120"><span class="flightPath">{$userAirportCode} <img src="{$host_url}images/airplane.jpg" alt="airplane" /> {$targetAirportCode} <br />  {$targetAirportCode} <img src="{$host_url}images/airplane.jpg" alt="airplane" /> {$userAirportCode}</span></td>
                                 <td><img src="{$host_url}images/hotel.jpg" alt="hotel" /> <a href="http://www.kayak.com/s/search/hotel?crc={$targetCity},{if $targetStateCode != NULL}{$targetStateCode},{/if}{$targetCountryCode}&do=y" class="hotelLink" target="_blank">Hotels in {$targetCity}</a></td>
                             </tr>
                             <tr>
@@ -77,8 +79,8 @@
                             </tr>
                         </table>
 
-		{else}
-			<div class="center">You are close enough to drive to <fb:name uid="{$uid2}"/>. Would you like to <a href="http://www.kayak.com/cars">rent a car</a>?</div>
+                {else}
+                        <span class="warning">Flight information from {$userCity}, {$userState}, {$userCountry} to {$targetCity}, {$targetState}, {$targetCountry} is unavailable.</span>
 		{/if}
              </td>
         </tr>
@@ -87,23 +89,25 @@
     <br /><br />
 	
     <table class="userBox center">
-        <caption class="userBoxTitle"><fb:name uid="{$uid2}"/> can visit you in {$userLocation} for...</caption>
+        <caption class="userBoxTitle"><fb:name uid="{$uid2}"/> can visit you for...</caption>
         <tr>
             <td>
                 <fb:profile-pic uid="{$uid2}" linked="true" size="normal" width="90" height="90" />
             </td>
+            <td width="2">
+            </td>
             <td>
-                {if not $dest_airport_exists}
-			<span class="warning">Flight information from {$targetCity}, {$targetState}, {$targetCountry} to {$userCity}, {$userState}, {$userCountry} is unavailable.</span>
-
-		{elseif $targetLocation == NULL}
+		{if $targetLocation == NULL}
                         <div></div>
 
-		{elseif not $nearby}
+                {elseif $nearby}
+                        <div></div>
+
+		{elseif $flight2_cost != NULL}
 			<table class="flightInfoBox">
                             <tr>
                                 <td width="130">&nbsp; &nbsp;<a class="flightCost" href="{$flight1_buzz}" target="_blank">${$flight2_cost}*</a> </td>
-                                <td width="140"><span class="flightPath">{$targetAirportCode} <img src="{$host_url}images/airplane.jpg" alt="airplane" /> {$userAirportCode} <br /> {$userAirportCode} <img src="{$host_url}images/airplane.jpg" alt="airplane" /> {$targetAirportCode} </span></td>
+                                <td width="120"><span class="flightPath">{$targetAirportCode} <img src="{$host_url}images/airplane.jpg" alt="airplane" /> {$userAirportCode} <br /> {$userAirportCode} <img src="{$host_url}images/airplane.jpg" alt="airplane" /> {$targetAirportCode} </span></td>
                                 <td><img src="{$host_url}images/hotel.jpg" alt="hotel" /> <a href="http://www.kayak.com/s/search/hotel?crc={$userCity},{if $userStateCode != NULL}{$userStateCode},{/if}{$userCountryCode}&do=y" style="font-family:tahoma;font-size:12px;" target="_blank">Hotels in {$userCity}</a></td>
                             </tr>
                             <tr>
@@ -119,9 +123,9 @@
                                 </td>
                             </tr>
                          </table>
-                              
-		{else}
-                        <div></div>
+
+                {else}
+                        <span class="warning">Flight information from {$targetCity}, {$targetState}, {$targetCountry} to {$userCity}, {$userState}, {$userCountry} is unavailable.</span>
 		{/if}
              </td>
         </tr>
