@@ -10,7 +10,7 @@
     </fb:tabs>
 
     <br />
-    <img src="{$host_url}images/visitme_logo.jpg" alt="visitme_logo" />
+    <img src="{$host_url}/images/visitme_logo.jpg" alt="visitme_logo" />
     <br /><br />
 </div>
 
