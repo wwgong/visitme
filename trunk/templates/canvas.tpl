@@ -46,8 +46,6 @@
             <td class="profilePicBox">
                 <fb:profile-pic uid="{$uid1}" linked="true" size="normal" width="90" height="90" />
             </td>
-            <td width="2">
-            </td>
             <td>
                 {if $targetLocation == NULL}
 			<div>
@@ -62,8 +60,8 @@
                         <table class="flightInfoBox">
                             <tr>
                                 <td width="130">&nbsp; &nbsp;<a class="flightCost" href="{$flight1_buzz}" target="_blank">${$flight1_cost}*</a> </td>
-                                <td width="120"><span class="flightPath">{$userAirportCode} <img src="{$host_url}images/airplane.jpg" alt="airplane" /> {$targetAirportCode} <br />  {$targetAirportCode} <img src="{$host_url}images/airplane.jpg" alt="airplane" /> {$userAirportCode}</span></td>
-                                <td><img src="{$host_url}images/hotel.jpg" alt="hotel" /> <a href="http://www.kayak.com/s/search/hotel?crc={$targetCity},{if $targetStateCode != NULL}{$targetStateCode},{/if}{$targetCountryCode}&do=y" class="hotelLink" target="_blank">Hotels in {$targetCity}</a></td>
+                                <td width="120"><span class="flightPath">{$userAirportCode} <img src="{$host_url}/images/airplane.jpg" alt="airplane" /> {$targetAirportCode} <br />  {$targetAirportCode} <img src="{$host_url}/images/airplane.jpg" alt="airplane" /> {$userAirportCode}</span></td>
+                                <td><img src="{$host_url}/images/hotel.jpg" alt="hotel" /> <a href="http://www.kayak.com/s/search/hotel?crc={$targetCity},{if $targetStateCode != NULL}{$targetStateCode},{/if}{$targetCountryCode}&do=y" class="hotelLink" target="_blank">Hotels in {$targetCity}</a></td>
                             </tr>
                             <tr>
                                 <td colspan="3" height="8" class="flightDescription">{$flight1_description}</td>
@@ -94,8 +92,6 @@
             <td>
                 <fb:profile-pic uid="{$uid2}" linked="true" size="normal" width="90" height="90" />
             </td>
-            <td width="2">
-            </td>
             <td>
 		{if $targetLocation == NULL}
                         <div></div>
@@ -107,8 +103,8 @@
 			<table class="flightInfoBox">
                             <tr>
                                 <td width="130">&nbsp; &nbsp;<a class="flightCost" href="{$flight1_buzz}" target="_blank">${$flight2_cost}*</a> </td>
-                                <td width="120"><span class="flightPath">{$targetAirportCode} <img src="{$host_url}images/airplane.jpg" alt="airplane" /> {$userAirportCode} <br /> {$userAirportCode} <img src="{$host_url}images/airplane.jpg" alt="airplane" /> {$targetAirportCode} </span></td>
-                                <td><img src="{$host_url}images/hotel.jpg" alt="hotel" /> <a href="http://www.kayak.com/s/search/hotel?crc={$userCity},{if $userStateCode != NULL}{$userStateCode},{/if}{$userCountryCode}&do=y" style="font-family:tahoma;font-size:12px;" target="_blank">Hotels in {$userCity}</a></td>
+                                <td width="120"><span class="flightPath">{$targetAirportCode} <img src="{$host_url}/images/airplane.jpg" alt="airplane" /> {$userAirportCode} <br /> {$userAirportCode} <img src="{$host_url}/images/airplane.jpg" alt="airplane" /> {$targetAirportCode} </span></td>
+                                <td><img src="{$host_url}/images/hotel.jpg" alt="hotel" /> <a href="http://www.kayak.com/s/search/hotel?crc={$userCity},{if $userStateCode != NULL}{$userStateCode},{/if}{$userCountryCode}&do=y" style="font-family:tahoma;font-size:12px;" target="_blank">Hotels in {$userCity}</a></td>
                             </tr>
                             <tr>
                                 <td colspan="3" height="8" class="flightDescription">{$flight2_description}</td>
