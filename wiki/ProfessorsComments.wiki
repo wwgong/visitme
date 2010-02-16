@@ -1,5 +1,14 @@
 #summary Space for Professor Bolker to inform the team of how awesome it is.
  
+February 16
+
+No specs yet for the second deliverable - your schedule promises them this week, so you're not late. But I am curious.
+
+No minutes from your last (important) meeting with Joelle. If the specs you're writing will contain the important information from that meeting, so you shouldn't spend time going back to fill in the minutes.
+
+I see bug fixes and code improvements checked into svn. That's good.
+
+----
  
 February 11
 
