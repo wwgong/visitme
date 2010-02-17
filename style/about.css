@@ -1,0 +1,24 @@
+.center
+{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.param
+{
+    font-weight: bold;
+}
+
+.designBox
+{
+    width: 420px;
+    height: 90px;
+}
+
+.visitMe
+{
+    font-size: 45px;
+    font-weight: bold;
+    color: #305E9C;
+}
