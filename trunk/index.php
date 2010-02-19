@@ -5,6 +5,8 @@
  *    Project website: http://code.google.com/p/visitme/
  * *********************************************************************************************/
 
+$time		= microtime(true);
+$time_query	= 0;
 require_once('includes/common.php');
 
 $facebook = new Facebook($api_key, $secret);
@@ -16,6 +18,7 @@ $smarty = new Smarty();
 $smarty->assign('app_name',$app_name);
 $smarty->assign('host_url',$host_url);
 $smarty->assign('version', $version);
+$smarty->assign('google_map_api_key', $google_map_api_key);
 $smarty->assign('uid1',$user);
 
 // Logic
@@ -24,12 +27,13 @@ $userLocation = array();
 while ($userDetails == NULL)
 {
 	$userDetails = $facebook->api_client->users_getInfo($user, 'last_name, first_name, current_location, hometown_location');
-	$userLocation = $userDetails[0]['current_location'];
 	usleep(50000); // Wait 50ms if $userDetails doesn't initialize
 }
+$userLocation = $userDetails[0]['current_location'];
+	
 if ($_POST['apptab_location'] != NULL)
 {
-	$userLocation = $_POST['apptab_location'];
+	$userLocation = mysql_real_escape_string($_POST['apptab_location']);
 }
 else if ($userLocation == NULL)
 {
@@ -54,7 +58,12 @@ else
 }
 if ($targetedFriendId != NULL || $apptab != NULL)
 {
-	$targetUserInfo		= $facebook->api_client->users_getInfo($targetedFriendId, 'last_name, first_name, current_location, hometown_location, work_history');
+	$targetUserInfo = array();
+	while ($targetUserInfo == NULL)
+	{
+		$targetUserInfo		= $facebook->api_client->users_getInfo($targetedFriendId, 'last_name, first_name, current_location, hometown_location, work_history');
+		usleep(50000); // Wait 50ms if $targetUserInfo doesn't initialize
+	}
 	$targetFirstName	= $targetUserInfo[0]['first_name'];
 	$targetLastName		= $targetUserInfo[0]['last_name'];
 
@@ -174,23 +183,25 @@ if ($targetedFriendId != NULL || $apptab != NULL)
 			{
 				if ($_POST['apptab_location'] == NULL)
 				{
-					$orig_codes = get_airport_codes($userLocation['city'], $userLocation['state'], $userLocation['country'], $radius);
+					$orig_codes = get_airport_codes($userLola, $radius);
 				}
 				else
 				{
-					$orig_codes = get_airport_codes($userLocation);
+					$orig_codes = get_airport_codes($userLola);
 				}
 				$orig_info = true;
 			}
 			
 			// Get destination codes
-			$dest_codes = get_airport_codes($targetLocation['city'], $targetLocation['state'], $targetLocation['country'], $radius);
+			$dest_codes = get_airport_codes($targetLola, $radius);
 	
+			$time_queries = 0;
 			$fares = array();
 			if (sizeof($orig_codes) > 0)
 			{
 				foreach ($orig_codes as $code)
 				{
+					$time_delta = microtime(true);
 					$rss = get_fares_code_to_city($code,$dest_codes,$debug);
 					if ($debug)
 					{
@@ -204,8 +215,15 @@ if ($targetedFriendId != NULL || $apptab != NULL)
 							$fares = $rss;
 						}
 					}
+					$time_delta = microtime(true) - $time_delta;
+					$time_queries += $time_delta;
+					if ($time_queries >= 8)
+					{
+						break;
+					}
 				}
 			}
+
 			if ($debug)
 			{
 				echo "RSS values: ".sizeof($fares);
@@ -278,4 +296,6 @@ $smarty->assign('dest_airport_exists', $dest_airport_exists);
 
 $smarty->display('canvas.tpl');
 
+$time = (microtime(true) - $time);
+//echo "<br/><span style='padding-left:120px;'>Generated in ".substr($time,0,5)."s. Queries in ".substr($time_queries,0,5)."s.</span>";
 ?>
