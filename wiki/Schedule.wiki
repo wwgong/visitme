@@ -8,7 +8,7 @@ _For completed batches, [ScheduleOld click here]._
 
 WOC = Waiting on client
 
-== VisitME ==
+== Project #1 - VisitME ==
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
 || Invite friends (function deprecated; will re-implement)||Brian||11/20/09 || 11/30/09||<font color="green">Done</font> ||
 || Complete location coverage			||Vasudev, Brian, Weiwei, Henrik||12/04/09||12/15/09||<font color="green">Done</font>||
@@ -23,10 +23,21 @@ WOC = Waiting on client
 || Open source front end			||Brian ||02/11/10 ||02/12/10||<font color="green">Done</font> ||
 || Consistency check for template requirements	||Brian ||02/11/10 ||02/12/10||<font color="green">Done</font> ||
 
-== Project #2 ==
+== Project #2 - Meet me half way ==
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
-|| Gather specifications			|| || ||02/12/10|| ||
-|| Create and document architecture		|| || ||02/19/10|| ||
+|| Gather specifications			|| ||02/12/10||02/12/10||<font color="green">Done</font>||
+|| Document specifications			|| || ||02/26/10|| ||
+|| Get flight RSS feeds				|| ||02/19/10||02/19/10||<font color="green">Done</font>||
+|| Create SVN branch				|| ||02/19/10||02/19/10||<font color="green">Done</font>||
+|| UI Mockup					|| ||02/19/10||02/19/10||<font color="green">Done</font>||
+|| Assign location on webhost			|| ||02/19/10||02/19/10||<font color="green">Done</font>||
+|| Implement midpoint algorithm			|| ||02/19/10||02/19/10||<font color="green">Done</font>||
+|| Import misc. code from Visit Me		|| ||02/19/10||02/19/10||<font color="green">Done</font>||
+|| Integrate with Visit Me (Open Source / Beta)	|| ||02/19/10||02/19/10||<font color="green">Done</font>||
+|| Integrate feed results with user interface	|| || ||02/26/10|| ||
+|| Get client feedback on basic working version	|| || ||02/26/10|| ||
+|| AJAX dropdown boxes				|| || ||02/26/10|| ||
+|| Create and document architecture		|| || ||02/26/10|| ||
 || <font color=#0000BB>*Code freeze for event presentations*</font>		|| || ||04/20/10|| ||
 
 = Editing the schedule =
