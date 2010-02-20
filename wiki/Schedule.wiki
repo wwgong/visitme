@@ -26,7 +26,6 @@ WOC = Waiting on client
 == Project #2 - Meet me half way ==
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
 || Gather specifications			|| ||02/12/10||02/12/10||<font color="green">Done</font>||
-|| Document specifications			|| || ||02/26/10|| ||
 || Get flight RSS feeds				|| ||02/19/10||02/19/10||<font color="green">Done</font>||
 || Create SVN branch				|| ||02/19/10||02/19/10||<font color="green">Done</font>||
 || UI Mockup					|| ||02/19/10||02/19/10||<font color="green">Done</font>||
@@ -34,6 +33,7 @@ WOC = Waiting on client
 || Implement midpoint algorithm			|| ||02/19/10||02/19/10||<font color="green">Done</font>||
 || Import misc. code from Visit Me		|| ||02/19/10||02/19/10||<font color="green">Done</font>||
 || Integrate with Visit Me (Open Source / Beta)	|| ||02/19/10||02/19/10||<font color="green">Done</font>||
+|| Document specifications			|| || ||02/26/10|| ||
 || Integrate feed results with user interface	|| || ||02/26/10|| ||
 || Get client feedback on basic working version	|| || ||02/26/10|| ||
 || AJAX dropdown boxes				|| || ||02/26/10|| ||
