@@ -18,26 +18,27 @@ WOC = Waiting on client
 || VisitMe in the tiles				||Vasudev, Weiwei, Henrik||02/10/10||02/12/10||<font color="green">Done</font>||
 || Wallpost link as attachment			||Vasudev, Weiwei, Henrik||02/04/10||02/12/10||<font color="green">Done</font>||
 || Revise invite description			||Vasudev, Weiwei, Henrik||02/12/10||02/12/10||<font color="green">Done</font>||
-|| Revise About tab				||Vasudev, Weiwei, Henrik|| ||02/12/10|| ||
-|| Buzz fare tracking				||Vasudev, Weiwei, Henrik||WOC||02/12/10|| ||
+|| ~~Revise About tab~~				|| || ||02/12/10||Deprecated||
 || Open source front end			||Brian ||02/11/10 ||02/12/10||<font color="green">Done</font> ||
 || Consistency check for template requirements	||Brian ||02/11/10 ||02/12/10||<font color="green">Done</font> ||
+|| Buzz fare tracking				||Vasudev, Weiwei, Henrik||02/19/10||02/19/10||<font color="green">Done</font>||
+|| Upload database to google code		||Vasudev||02/19/10||02/19/10||<font color="green">Done</font>||
 
 == Project #2 - Meet me half way ==
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
-|| Gather specifications			|| ||02/12/10||02/12/10||<font color="green">Done</font>||
-|| Get flight RSS feeds				|| ||02/19/10||02/19/10||<font color="green">Done</font>||
-|| Create SVN branch				|| ||02/19/10||02/19/10||<font color="green">Done</font>||
-|| UI Mockup					|| ||02/19/10||02/19/10||<font color="green">Done</font>||
-|| Assign location on webhost			|| ||02/19/10||02/19/10||<font color="green">Done</font>||
-|| Implement midpoint algorithm			|| ||02/19/10||02/19/10||<font color="green">Done</font>||
-|| Import misc. code from Visit Me		|| ||02/19/10||02/19/10||<font color="green">Done</font>||
-|| Integrate with Visit Me (Open Source / Beta)	|| ||02/19/10||02/19/10||<font color="green">Done</font>||
-|| Document specifications			|| || ||02/26/10|| ||
-|| Integrate feed results with user interface	|| || ||02/26/10|| ||
-|| Get client feedback on basic working version	|| || ||02/26/10|| ||
-|| AJAX dropdown boxes				|| || ||02/26/10|| ||
-|| Create and document architecture		|| || ||02/26/10|| ||
+|| Gather specifications			||Vasudev, Brian, Charlie, Henrik||02/12/10||02/12/10||<font color="green">Done</font>||
+|| Get flight RSS feeds				||Vasudev, Brian, Charlie, Henrik||02/19/10||02/19/10||<font color="green">Done</font>||
+|| Create SVN branch				||Vasudev, Brian, Charlie, Henrik||02/19/10||02/19/10||<font color="green">Done</font>||
+|| UI Mockup					||Vasudev, Brian, Charlie, Henrik||02/19/10||02/19/10||<font color="green">Done</font>||
+|| Assign location on webhost			||Vasudev, Brian, Charlie, Henrik||02/19/10||02/19/10||<font color="green">Done</font>||
+|| Implement midpoint algorithm			||Vasudev, Brian, Charlie, Henrik||02/19/10||02/19/10||<font color="green">Done</font>||
+|| Import misc. code from Visit Me		||Vasudev, Brian, Charlie, Henrik||02/19/10||02/19/10||<font color="green">Done</font>||
+|| Integrate with Visit Me (Open Source / Beta)	||Vasudev, Brian, Charlie, Henrik||02/19/10||02/19/10||<font color="green">Done</font>||
+|| Document specifications			||Vasudev, Brian, Charlie, Henrik|| ||02/26/10|| ||
+|| Integrate feed results with user interface	||Vasudev, Brian, Charlie, Henrik|| ||02/26/10|| ||
+|| Get client feedback on basic working version	||Vasudev, Brian, Charlie, Henrik|| ||02/26/10|| ||
+|| AJAX dropdown boxes				||Vasudev, Brian, Charlie, Henrik|| ||02/26/10|| ||
+|| Create and document architecture		||Vasudev, Brian, Charlie, Henrik|| ||02/26/10|| ||
 || <font color=#0000BB>*Code freeze for event presentations*</font>		|| || ||04/20/10|| ||
 
 = Editing the schedule =
