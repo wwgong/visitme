@@ -17,34 +17,19 @@ function sharePrompt(message,farelink,origin,destination)
 </script>
 <br /><br /><br /><br />
 
-<div class="textAlignCenter">
-    <fb:tabs>
-        <fb:tab-item href='index.php' title='Home' selected='true'/>
-        <fb:tab-item href='invite.php' title='Invite Friends' selected='false'/>
-    </fb:tabs>
-	<br/><br/>
-</div>
-
 <div style="margin-left:auto;margin-right:auto;width:628px;height:116px;background-repeat:no-repeat;background-image:url('{$host_url}images/header.jpg');"></div>
 
 <div style="margin-left:auto;margin-right:auto;margin-bottom:0px;width:600px;border-style:solid;border-width: 0px 14px 0px 14px;border-color:#000000;">
 	<center>
-	<div style="padding-top:{if $uid2 == null}160px{else}40px{/if};width:520px;{if $uid2 == null}height:200px;{/if}">
-	{if $search}
+	<div style="padding-top:{if $result == null}160px{else}40px{/if};width:520px;{if $result == null}height:200px;{/if}">
+
 		<div class="textAlignCenter">
-			<span class="warning">Your current location or hometown is not set yet. Your friend(s) will not be able to find you.</span> <br />
-			<a href="http://www.facebook.com/profile.php?ref=profile&id={$uid1}#/profile.php?v=info&ref=profile&id={$uid1}" target="showframe">
-				Please set your current location or hometown under "Info" tab, "Contact Information" section...
-			</a>
-		</div>
-	{else}
-		<div class="textAlignCenter">
-			<form action="http://apps.facebook.com/{$app_name}/" id="searchForm" method="post">
-				Search friend: <fb:friend-selector uid="#request.userID#" name="uid" idname="friend_sel" />
+			<form action="{$host_url}" id="searchForm" method="post">
+				One:<input type="text" name="origin_code"/><br/>
+				Two:<input type="text" name="dest_code"/><br/>
 				<input type="submit" value="Go!" />
 			</form>
 		</div>
-	{/if}
 	</div>
 	</center>
 	<br /><br />

@@ -134,6 +134,35 @@ require_once("config.php");
 		return array($x, $y);
 	}
 	
+	function get_lola_airport($code)
+	{
+		$sql = "SELECT * FROM airports WHERE code = '".$code."';";
+		echo "<br/>$sql";
+		$result = sql_result($sql);
+		
+		$r = sql_fetch_obj($result);
+		$x = $r->x;
+		$y = $r->y;
+		
+		return array($x, $y);
+	}
+	
+	function get_airport_codes_by_lola($lola, $radius)
+	{
+		$sql	= 'SELECT * FROM airports WHERE x between '.($lola[0] - $radius).' and '.($lola[0] + $radius).' and y between '.($lola[1] - $radius).' and '.($lola[1] + $radius).';';
+		$result = sql_result($sql);
+		
+		$codes = array();
+		$count = 0;
+		while ($dest = sql_fetch_obj($result))
+		{
+			$codes[$count] = $dest->code;
+			$count++;
+		}
+		
+		return $codes;
+	}
+	
 	function get_airport_codes($city, $state, $country, $radius)
 	{
 		$sql	= 'SELECT code FROM airports WHERE city = "'.$city.'"';

@@ -23,25 +23,45 @@ $smarty->assign('search',$userLocation == NULL);
 // flag for whether user and friend are closeby.
 $nearby = -1;	// -1 = default, 0 = far, 1 = nearby
 
+
 if ($_POST['origin_code'] != NULL && $_POST['dest_code'] != NULL)
 {
+	// Form data
+	$origin_code = mysql_real_escape_string($_POST['origin_code']);
+	$dest_code = mysql_real_escape_string($_POST['dest_code']);
+
+	echo "$origin_code $dest_code<br/>";
+	
+	$origin_lola = get_lola_airport($origin_code);
+	$dest_lola = get_lola_airport($dest_code);
+	
+	echo "$origin_lola[0] $origin_lola[1] | $dest_lola[0] $dest_lola[1]<br/>";
+	
+	if (!(is_array($origin_lola) && is_array($dest_lola)))	 // If either origin or destination lola isn't available
+	{
+		die();
+	}
+
+	$midpoint = array(($dest_lola[0] + $origin_lola[0]) / 2, ($dest_lola[1] + $origin_lola[1])/2);
+	$midpoint2 = array(360 % ($midpoint[0] + 180), $midpoint[1]);
+	
+	$dest_codes = get_airport_codes_by_lola($midpoint, $radius);
+
+	$rss = get_fares_code_to_city($origin_code,$dest_codes,$debug);
+	echo $rss->items[0]['description']."<br/>";
+	
+	$rss2 = get_fares_code_to_city($dest_code,array($rss->items[0][kyk]['destcode']),$debug);
+	echo $rss2->items[0]['description']."<br/>";
+	
+	$rss3 = get_fares_code_to_city($origin_code,array($dest_code),$debug);
+	echo $rss3->items[0]['description']."<br/>";
+	
+	$rss4 = get_fares_code_to_city($dest_code,array($origin_code),$debug);
+	echo $rss4->items[0]['description']."<br/>";
+
 	if ($targetLocation['city'] != NULL) 
 	{
-		// Check distance between user and friend
-		$composite = "";
-		if ($_POST['apptab_location'] == NULL)
-		{
-			$composite = $userLocation['city'];
-			if ($userLocation['state'] != NULL)
-			{
-				$composite = $composite.",".$userLocation['state'];
-			}
-			$composite = $composite.",".$userLocation['country'];
-		}
-		else
-		{
-			$composite = $userLocation;
-		}
+	
 		$xml = get_geocode_xml($composite);
 		$userLola = get_lola($composite);
 		
@@ -234,7 +254,7 @@ $smarty->assign('nearby', $nearby);
 
 $smarty->assign('dest_airport_exists', $dest_airport_exists);
 
-$smarty->display('canvas.tpl');
+$smarty->display('index.tpl');
 
 $time = (microtime(true) - $time);
 //echo "<br/><span style='padding-left:120px;'>Generated in ".substr($time,0,5)."s. Queries in ".substr($time_queries,0,5)."s.</span>";
