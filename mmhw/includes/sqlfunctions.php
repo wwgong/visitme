@@ -137,7 +137,6 @@ require_once("config.php");
 	function get_lola_airport($code)
 	{
 		$sql = "SELECT * FROM airports WHERE code = '".$code."';";
-		echo "<br/>$sql";
 		$result = sql_result($sql);
 		
 		$r = sql_fetch_obj($result);

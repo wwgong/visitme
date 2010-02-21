@@ -47,18 +47,36 @@ if ($_POST['origin_code'] != NULL && $_POST['dest_code'] != NULL)
 	
 	$dest_codes = get_airport_codes_by_lola($midpoint, $radius);
 
-	$rss = get_fares_code_to_city($origin_code,$dest_codes,$debug);
-	echo $rss->items[0]['description']."<br/>";
+	$rss_a_to_c = get_fares_code_to_city($origin_code,$dest_codes,$debug);
+	echo $rss_a_to_c->items[0]['description']."<br/>";
 	
-	$rss2 = get_fares_code_to_city($dest_code,array($rss->items[0][kyk]['destcode']),$debug);
-	echo $rss2->items[0]['description']."<br/>";
+	$rss_b_to_c = get_fares_code_to_city($dest_code,array($rss_a_to_c->items[0][kyk]['destcode']),$debug);
+	echo $rss_b_to_c->items[0]['description']."<br/>";
 	
-	$rss3 = get_fares_code_to_city($origin_code,array($dest_code),$debug);
-	echo $rss3->items[0]['description']."<br/>";
+	$rss_a_to_b = get_fares_code_to_city($origin_code,array($dest_code),$debug);
+	echo $rss_a_to_b->items[0]['description']."<br/>";
 	
-	$rss4 = get_fares_code_to_city($dest_code,array($origin_code),$debug);
-	echo $rss4->items[0]['description']."<br/>";
+	$rss_b_to_a = get_fares_code_to_city($dest_code,array($origin_code),$debug);
+	echo $rss_b_to_a->items[0]['description']."<br/>";
 
+	$smarty->assign('origin_code',strtoupper($origin_code));
+	$smarty->assign('origin_city',$rss_a_to_c->items[0]['kyk']['originlocation']);
+
+	$smarty->assign('dest_code',strtoupper($dest_code));
+	$smarty->assign('dest_city',$rss_a_to_b->items[0]['kyk']['destlocation']);
+	
+	$smarty->assign('midpoint_code',strtoupper($rss_a_to_c->items[0]['kyk']['destcode']));
+	$smarty->assign('midpoint_city',strtoupper($rss_a_to_c->items[0]['kyk']['destlocation']));
+	
+	
+	$smarty->assign('flight1_cost',$rss_a_to_c->items[0]['kyk']['price']);
+	$smarty->assign('flight2_cost',$rss_b_to_c->items[0]['kyk']['price']);
+	$smarty->assign('flight3_cost',$rss_a_to_b->items[0]['kyk']['price']);
+	$smarty->assign('flight4_cost',$rss_b_to_a->items[0]['kyk']['price']);
+	
+	
+	$smarty->assign('result',TRUE);
+	
 	if ($targetLocation['city'] != NULL) 
 	{
 	
@@ -257,5 +275,5 @@ $smarty->assign('dest_airport_exists', $dest_airport_exists);
 $smarty->display('index.tpl');
 
 $time = (microtime(true) - $time);
-//echo "<br/><span style='padding-left:120px;'>Generated in ".substr($time,0,5)."s. Queries in ".substr($time_queries,0,5)."s.</span>";
+echo "<center><span style='font-size:9px;'>Generated in ".substr($time,0,5)."s.</center>";
 ?>
