@@ -34,8 +34,8 @@ WOC = Waiting on client
 || Implement midpoint algorithm			||Vasudev, Brian, Charlie, Henrik||02/19/10||02/19/10||<font color="green">Done</font>||
 || Import misc. code from Visit Me		||Vasudev, Brian, Charlie, Henrik||02/19/10||02/19/10||<font color="green">Done</font>||
 || Integrate with Visit Me (Open Source / Beta)	||Vasudev, Brian, Charlie, Henrik||02/19/10||02/19/10||<font color="green">Done</font>||
-|| Document specifications			||Vasudev|| ||03/05/10|| ||
 || Integrate feed results with user interface (open source UI)	||Brian|||03/03/10 ||03/05/10|| <font color="green">Done</font>||
+|| Document specifications			||Vasudev|| ||03/05/10|| ||
 || Get client feedback on basic working version	||Charlie|| ||03/10/10|| ||
 || AJAX dropdown boxes				||Weiwei|| ||03/12/10|| ||
 || Find 10 bugs				||Khanh|| ||03/12/10|| ||
