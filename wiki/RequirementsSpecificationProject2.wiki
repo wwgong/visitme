@@ -7,10 +7,6 @@ The requirements specification details the functional requirements of the web pa
 
 Andre, in Boston, want to have some fun in approaching summer vacation. One day talking to his girl friend Tina on the phone who is in Washington DC, they realize that it's been a long time they have actually met each other. They talk about meeting each other in summer vacation but they don't really want to go to each others place. So they decide to meet somewhere in the middle. He goes to "Meet Me in Half Way" (MMHW)web page and enters their current location. MMHW looks for the some place in the middle of them, that is New York, accessible by airplanes, and then displays air fares, collected from kayak, to New York from Boston and from Washington DC. Andre and his girl friend think about meeting in New York and actually find it is easy to get accommodation in NY and they can have fun too. So they follow the link to kayak.com and books tickets to NY. 
 
-
-= Short Story =
-
-
 = Use case =
 
 *Description*: Book air ticket via Meet Me in Half Way 
