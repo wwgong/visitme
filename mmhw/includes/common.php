@@ -21,20 +21,16 @@ function get_fares_code_to_city($origin_code, $dest_codes, $debug)
 
 	// Get RSS feed
 	$rss	= fetch_rss($rssURL);
-	
+
 	if($debug)
 	{
 		//echo "<br/>Fares url: $rssURL<br/>";
 		//print_r($rss);
 		//echo "<br/><br/>";
 	}
-	
+
 	return $rss;
 }
 
-function get_fares_ip_to_city($ip, $destination, $debug)
-{
-
-}
 
 ?>
