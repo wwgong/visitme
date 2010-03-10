@@ -145,7 +145,6 @@
                     }
 		}
 
-                // Find lowest fare to go to a mid airport from among many mid airports if there is any
                 foreach ($rss_1_list as $rss1)
                 {
                     foreach($rss_2_list as $rss2)
@@ -157,6 +156,13 @@
                         {
                             $fares = array($rss1, $rss2);
                         }
+                        // Give priority if two people can fly to the same airport...then, return immediately...
+                        else if($rss1->items[0]['kyk']['destcode'] == $rss2->items[0]['kyk']['destcode'])
+                        {
+                             $fares = array($rss1, $rss2);
+                             return ($fares);
+                        }
+                        // Otherwise, find the lowest fare combination...
                         else
                         {
                             $curr_total_lowest_fares = $fares[0]->items[0]['kyk']['price'] + $fares[1]->items[0]['kyk']['price'];
