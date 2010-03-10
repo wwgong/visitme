@@ -19,7 +19,6 @@ function get_fares_code_to_city($origin_code, $dest_codes, $debug)
 
 	$rssURL = $rssURL.'&tm=201008';
 
-	echo $rssURL;
 	// Get RSS feed
 	$rss	= fetch_rss($rssURL);
 	

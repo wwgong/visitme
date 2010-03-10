@@ -1,0 +1,136 @@
+
+.center
+{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.mapBox
+{
+    border-style: solid;
+    border-color: #e2e1e1;
+}
+
+.midpoint
+{
+    font-size: 14px;
+    font-weight: bold;
+    color: green;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+
+.locationTitle
+{
+    font-size: 27px;
+    font-weight: bold;
+    margin-right: 2px;
+}
+
+.flightInfoBox
+{
+    width: 418px;
+    height: 90px;
+    padding: 2px;
+    border-collapse: collapse;
+    border:0px;
+}
+
+.flightCost
+{
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.flightPath
+{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.flightDescription
+{
+    font-size: 10px;
+    padding: 5px;
+    border: 0px;
+    background-color: #e2e1e1;
+}
+
+.disclaimer
+{
+    font-size:10px;
+    width: 640px;
+}
+
+.hotelLink
+{
+    font-family: tahoma;
+    font-size: 12px;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+.blockCenter
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 640px;
+}
+
+
+
+/*
+================================================
+styling for autosuggest begins here
+================================================
+*/
+
+body
+{
+	position: relative;
+}
+
+
+ul.autosuggest
+{
+	position: absolute;
+	list-style: none;
+        margin: 0;
+	padding: 0;
+	overflow-y: auto;
+}
+
+ul.autosuggest li
+{
+	text-align: left;
+	border-bottom: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+
+ul.autosuggest li a:link,
+ul.autosuggest li a:visited
+{
+	display: block;
+	padding: 2px;
+	text-decoration: none;
+	background-color: #eee;
+}
+
+ul.autosuggest li a:hover,
+ul.autosuggest li a:active
+{
+	color: #fff;
+	background-color: #f30;
+}
+
+ul.autosuggest li.highlight a:link,
+ul.autosuggest li.highlight a:visited
+{
+	color: #fff;
+	background-color: #f30;
+}
