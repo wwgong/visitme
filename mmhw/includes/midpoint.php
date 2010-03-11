@@ -55,7 +55,7 @@
 			$lam = atan2( $zm , $hyp);
 			
 			$this->latitude = rad2deg($lam);
-			echo $this->latitude;
+			//echo $this->latitude;
         }
 
         abstract public function set_longitude($lola_1, $lola_2);
@@ -98,7 +98,7 @@
 			$lam = atan2( $zm , $hyp);
 			
 			$this->longitude = rad2deg($lom);
-			echo $this->longitude;
+			//echo $this->longitude;
 			
         }
     }
