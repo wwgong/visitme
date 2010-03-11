@@ -1,5 +1,13 @@
 #summary Space for Professor Bolker to inform the team of how awesome it is.
  
+March 11
+
+Good work on the first sprint. That's the good news. 
+
+The bad news is that I don't see a good enough plan for the second sprint. In particular, who will do the team-switch work (both preparing your instructions and working on other teams')? Where is your schedule entry for dealing with Issue 26, which I have explicitly made part of my specifications for this sprint? I don't really like "find 10 bugs" on your schedule.
+
+I suspect that, as usual, you will do excellent work without properly documenting the process. I don't want to interfere with your smooth functioning, but do want to see more visible indications of how the work gets done. If necessary, add to the schedule some  retrospective entries - when a particular task is completed, put it on the schedule with the completion date and programmer. (If you do that, please flag those entries as after-the-fact.) 
+
 February 16
 
 No specs yet for the second deliverable - your schedule promises them this week, so you're not late. But I am curious.
