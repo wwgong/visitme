@@ -54,7 +54,7 @@ _bsn.AutoSuggest = function (fldID, param)
 	if (!this.oP.method)		this.oP.meth = "get";
 	if (!this.oP.varname)		this.oP.varname = "input";
 	if (!this.oP.className)		this.oP.className = "autosuggest";
-	if (!this.oP.timeout)		this.oP.timeout = 2500;
+	if (!this.oP.timeout)		this.oP.timeout = 25000;
 	if (!this.oP.delay)			this.oP.delay = 500;
 	if (!this.oP.maxheight && this.oP.maxheight !== 0)		this.oP.maxheight = 250;
 	if (!this.oP.cache)			this.oP.cache = true;
