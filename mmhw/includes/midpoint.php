@@ -32,7 +32,30 @@
 
         public function set_latitude($lola_1, $lola_2)
         {
-            $this->latitude = ($lola_1[1] + $lola_2[1]) / 2;
+            //$this->latitude = ($lola_1[1] + $lola_2[1]) / 2;
+			$lola_1[1] = deg2rad($lola_1[1]);
+			$lola_1[0] = deg2rad($lola_1[0]);
+			$lola_2[1] = deg2rad($lola_2[1]);
+			$lola_2[0] = deg2rad($lola_2[0]);
+			
+			$x1 = cos($lola_1[1]) * cos($lola_1[0]);
+			$y1 = cos($lola_1[1]) * sin($lola_1[0]);
+			$z1 = sin($lola_1[1]);
+			
+			$x2 = cos($lola_2[1]) * cos($lola_2[0]);
+			$y2 = cos($lola_2[1]) * sin($lola_2[0]);
+			$z2 = sin($lola_2[1]);
+			
+			$xm = ( $x1 + $x2 )/2; 
+			$ym = ( $y1 + $y2 )/2; 
+			$zm = ( $z1 + $z2 )/2; 
+			
+			$lom = atan2($ym , $xm);
+			$hyp = sqrt($xm * $xm + $ym * $ym);
+			$lam = atan2( $zm , $hyp);
+			
+			$this->latitude = rad2deg($lam);
+			echo $this->latitude;
         }
 
         abstract public function set_longitude($lola_1, $lola_2);
@@ -51,7 +74,32 @@
 
         public function set_longitude($lola_1, $lola_2)
         {
-            $this->longitude = ($lola_1[0] + $lola_2[0]) / 2;
+            //$this->longitude = ($lola_1[0] + $lola_2[0]) / 2;
+			
+			$lola_1[1] = deg2rad($lola_1[1]);
+			$lola_1[0] = deg2rad($lola_1[0]);
+			$lola_2[1] = deg2rad($lola_2[1]);
+			$lola_2[0] = deg2rad($lola_2[0]);
+			
+			$x1 = cos($lola_1[1]) * cos($lola_1[0]);
+			$y1 = cos($lola_1[1]) * sin($lola_1[0]);
+			$z1 = sin($lola_1[1]);
+			
+			$x2 = cos($lola_2[1]) * cos($lola_2[0]);
+			$y2 = cos($lola_2[1]) * sin($lola_2[0]);
+			$z2 = sin($lola_2[1]);
+			
+			$xm = ( $x1 + $x2 )/2; 
+			$ym = ( $y1 + $y2 )/2; 
+			$zm = ( $z1 + $z2 )/2; 
+			
+			$lom = atan2($ym , $xm);
+			$hyp = sqrt($xm * $xm + $ym * $ym);
+			$lam = atan2( $zm , $hyp);
+			
+			$this->longitude = rad2deg($lom);
+			echo $this->longitude;
+			
         }
     }
 
