@@ -2,9 +2,9 @@
     require_once('common.php');
 
    /***********************************************
-    *               MidPoint Class
+    *               MidPoint_1 Class
     ***********************************************/
-    abstract class MidPoint
+    class MidPoint_1
     {
         protected  $longitude = NULL;
         protected  $latitude = NULL;
@@ -58,21 +58,9 @@
     }
 
    /***********************************************
-    *              MidPoint_1 Class
-    ***********************************************/
-
-    class MidPoint_1 extends MidPoint
-    {
-        function __construct($lola_1, $lola_2)
-        {
-            parent::__construct($lola_1, $lola_2);
-        }
-    }
-
-   /***********************************************
     *              MidPoint_2 Class
     ***********************************************/
-    class MidPoint_2 extends MidPoint
+    class MidPoint_2 extends MidPoint_1
     {
         function __construct($lola_1, $lola_2)
         {
