@@ -39,7 +39,6 @@ WOC = Waiting on client
 || AJAX dropdown boxes				||Weiwei||03/12/10 ||03/12/10|| <font color="green">Done</font> ||
 || Find 10 bugs				||Khanh|| ||03/12/10|| ||
 || Get client feedback on basic working version	||Charlie|| ||03/16/10||WOC ||
-
 || <font color=#0000BB>*Code freeze for event presentations*</font>		||  || ||04/20/10||  ||
 
 = Editing the schedule =
