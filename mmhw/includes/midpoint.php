@@ -28,7 +28,8 @@
         {
             return (array($this->get_longitude(), $this->get_latitude()));
         }
-
+		
+		/* sets longitude and latitude for the midpoint */
         public function set_lola($lola_1, $lola_2)
         {
             $lola_1[1] = deg2rad($lola_1[1]);
