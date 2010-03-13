@@ -37,8 +37,9 @@ WOC = Waiting on client
 || Integrate feed results with user interface (open source UI)	||Brian|||03/03/10 ||03/05/10|| <font color="green">Done</font>||
 || [RequirementsSpecificationProject2 Document specifications]			||Vasudev||03/09/10||03/09/10||<font color="green">Done</font>||
 || AJAX dropdown boxes				||Weiwei||03/12/10 ||03/12/10|| <font color="green">Done</font> ||
-|| Get client feedback on basic working version	||Charlie|| ||03/16/10||WOC ||
 || Find 10 bugs				||Khanh|| ||03/12/10|| ||
+|| Get client feedback on basic working version	||Charlie|| ||03/16/10||WOC ||
+
 || <font color=#0000BB>*Code freeze for event presentations*</font>		|| || ||04/20/10|| ||
 
 = Editing the schedule =
