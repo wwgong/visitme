@@ -39,6 +39,7 @@ WOC = Waiting on client
 || AJAX dropdown boxes				||Weiwei||03/12/10 ||03/12/10|| <font color="green">Done</font> ||
 || AJAX results					||Group|| ||03/26/10|| ||
 || New algorithm for computing midpoint		||Group|| ||03/26/10|| ||
+|| Instructions for deploying MMHW		||Khanh|| ||03/26/10|| ||
 || <font color=#0000BB>*Code freeze for event presentations*</font>		||  || ||04/20/10||  ||
 
 = Editing the schedule =
