@@ -23,7 +23,7 @@ WOC = Waiting on client
 || Consistency check for template requirements	||Brian ||02/11/10 ||02/12/10||<font color="green">Done</font> ||
 || Buzz fare tracking				||Vasudev, Weiwei, Henrik||02/19/10||02/19/10||<font color="green">Done</font>||
 || Upload database to google code		||Vasudev||02/19/10||02/19/10||<font color="green">Done</font>||
-|| License Info 					||Henrik, Vasudev|| ||03/26/10|| ||
+|| License Info 					||Henrik, Vasudev||03/23/10||03/23/10||<font color="green">Done</font>||
 
 == Project #2 - Meet me half way ==
 || *Item* || *Assigned to* || *Completed* || *Due* || *Status* ||
