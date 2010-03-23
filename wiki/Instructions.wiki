@@ -1,14 +1,22 @@
-#summary How to use VisitME
+#summary How to use VisitME and MMHW
 #labels Phase-Support
 
-= Facebook Users =
+= VisitME =
+== Facebook Users ==
 If you want to try out VisitME, click [http://apps.facebook.com/visitme/ here]. (You must have a [http://www.facebook.com Facebook account] to use VisitME.)
 
-= Developers =
+== Developers ==
 
 While VisitME is an open source project, we currently offer no support for application developers who want to use our code. This is because our architecture is constantly changing during the course of development and as such will only cause confusion and misery for third parties using it. Once we reach a stable state we will provide a downloadable package, complete with source code and an API for developers to customize the way their application looks and performs.
 
-== Instructions ==
+=== Instructions ===
 
   * Download the source code, and upload it to your host.
   * Register a facebook application and follow Facebook's instruction here (http://developers.facebook.com/get_started.php) in order to get your application visible to Facebook
+
+= Meet Me Halfway =
+== Users ==
+To give MMHW a try simply go to http://www.umbcs.org/gopandas/mmhwbeta/
+
+== Developers ==
+To deploy MMHW all you need to do is get the latest revision off SVN, upload the files to your webhost. Then run the SQL query in the .sql file included and edit the config.php file to match your server configuration.
