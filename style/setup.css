@@ -1,0 +1,45 @@
+.center
+{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+root { 
+    display: block;
+}
+
+#loginBg
+{
+	background-color:#FFF;
+	margin:0 auto;
+	min-height:450px;
+	padding:10px 50px 20px 50px;
+	width:100%;
+        overflow: hidden;
+}
+input.login
+{
+    font-family: sans-serif;
+}
+#loginPos
+{
+    margin-top: 12%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px;
+    height: 350px;
+}
+.blockCenter
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+.textCenter
+{
+    text-align: center;
+}
+.bold
+{
+    font-weight: bold;
+}
