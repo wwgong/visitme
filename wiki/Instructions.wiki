@@ -12,8 +12,7 @@ While VisitME is an open source project, we currently offer no support for appli
 === Instructions ===
 
   * Download the source code, and upload it to your host.
-  * Register a Facebook application and follow Facebook's instruction here (http://developers.facebook.com/get_started.php) in order to get your application visible to Facebook.
-Note: During the setup process, check "FBML" for "Render Method" under "Canvas Settings". 
+  * Register a Facebook application and follow Facebook's instruction here (http://developers.facebook.com/get_started.php) in order to get your application visible to Facebook. Note: During the setup process, check "FBML" for "Render Method" under "Canvas Settings". Default settings can be used for the rest of them.
 
 
 = Meet Me Halfway =
