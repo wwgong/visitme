@@ -16,7 +16,6 @@ for more details.
 You should have received a copy of the GNU General Public License
 along with VisitME. If not, see http://www.gnu.org/licenses/.
 -->
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -24,8 +23,8 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
 	<link rel="stylesheet" type="text/css" href="{$host_url}/style/setup.css" />
 </head>
 <body id="loginBg">
+     {if $verify_credential}
 	<div class="blockCenter textCenter" id="loginPos">
-          {if $prompt_input}
             <img src="images/visitme_logo.jpg" alt="VisitME Logo" />
             <br /><br />
             <div class="bold">DATABASE SETUP</div>
@@ -48,7 +47,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
                      <input type="submit" value="Submit" name="submit"  />
                 </div>
             </form>
-         {/if}
 	</div>
+      {/if}
 </body>
 </html>

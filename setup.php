@@ -19,7 +19,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
     require_once('includes/config.php');
     require_once('includes/dbsetup.php');
 
-    $prompt_input = true;
+    $verify_credential = true;
     // Create Smarty object
     $smarty = new Smarty();
     $smarty->assign('host_url', $host_url);
@@ -29,12 +29,12 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
 
     if(($user_name == $db_user) && ($password == $db_pass))
     {
-        $prompt_input = false;
-        echo "<br /><br />Populating ".$db_db." database... ";
-        $dbsetup_obj = new DB_SETUP($db_db, $db_user, $db_pass);
+        $verify_credential = false;
+        echo "<br /><br /><strong>Populating ".$db_db." database... </strong><br /><br />";
+        $dbsetup_obj = new DB_SETUP();
         echo "<strong>Success!</strong><br />";
     }
 
-    $smarty->assign('prompt_input', $prompt_input);
+    $smarty->assign('verify_credential', $verify_credential);
     $smarty->display('setup.tpl');
 ?>
