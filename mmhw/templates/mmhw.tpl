@@ -1,35 +1,123 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
 <link rel="stylesheet" type="text/css" href="{$host_url}/style/mmhwStyle.css" />
-<br />
+<link type="text/css" href="{$host_url}/style/jquery.ui.datepicker.css" rel="stylesheet" />
+<link type="text/css" href="{$host_url}/style/jquery.ui.theme.css" rel="stylesheet" />
+<link type="text/css" href="{$host_url}/style/jquery.ui.core.css" rel="stylesheet" />
 
-<div class="center">
+<script type="text/javascript" src="{$host_url}/includes/scripts/jquery.js"></script>
+<script type="text/javascript" src="{$host_url}/includes/scripts/jquery.ui.core.js"></script>
+<script type="text/javascript" src="{$host_url}/includes/scripts/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="{$host_url}/includes/scripts/jquery.ui.datepicker.js"></script>
+
+<!-- Include Ajax scripts -->
+<script type="text/javascript" src="includes/scripts/bsn.Ajax.js"></script>
+<script type="text/javascript" src="includes/scripts/bsn.DOM.js"></script>
+<script type="text/javascript" src="includes/scripts/bsn.AutoSuggest.js"></script>
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+{literal}
+  function initialize() {
+    var latlng = new google.maps.LatLng({/literal} {$midpoint_latitude} {literal},{/literal} {$midpoint_longitude} {literal});
+    var myOptions = {
+      zoom: 1,
+      center: latlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    var location1 = new google.maps.LatLng({/literal} {$location_1_latitude} {literal},{/literal} {$location_1_longitude} {literal});
+    var location2 = new google.maps.LatLng({/literal} {$location_2_latitude} {literal},{/literal} {$location_2_longitude} {literal});
+    var midpoint = new google.maps.LatLng({/literal} {$midpoint_latitude} {literal},{/literal} {$midpoint_longitude} {literal});
+    var bounds = new google.maps.LatLngBounds();
+    bounds.extend(location1);
+    bounds.extend(location2);
+    bounds.extend(midpoint);
+    map.fitBounds(bounds);
+
+    var marker_1_icon = '{/literal}{$host_url}{literal}/images/marker_1.png';
+    var marker_2_icon = '{/literal}{$host_url}{literal}/images/marker_2.png';
+    var marker_mid_icon = '{/literal}{$host_url}{literal}/images/marker_mid.png';
+
+    <!-- Creating a marker and positioning it on the map  -->
+    var loc1_marker = new google.maps.Marker({
+    position: location1,
+    title: 'Location 1',
+    icon: marker_1_icon,
+    map: map
+    });
+    var loc2_marker = new google.maps.Marker({
+    position: location2,
+    title: 'Location 2',
+    icon: marker_2_icon,
+    map: map
+    });
+    var mid_marker = new google.maps.Marker({
+    position: midpoint,
+    title: 'Midpoint',
+    icon: marker_mid_icon,
+    map: map
+    });
+  }
+{/literal} 
+</script>
+
+<script type="text/javascript">
+{literal}
+	$(function() {
+            $('#datepicker').datepicker({
+                dateFormat: "mm/yy",
+                minDate: '+0D',
+                maxDate: '+1Y',
+		changeMonth: true,
+		changeYear: true
+            });
+	});
+{/literal}
+</script>
+</head>
+<body onload="initialize()">
+<br />
+<center>
+
+<div style="margin-left:auto;margin-right:auto;text-align:center;">
     <h1>Meet Me Half Way</h1>
     <br />
-    <div class="center"><span class="bold">Format:&nbsp;</span>airport code</div>
-    <br /><br />
     <form name="input" action="index.php" method="get">
-        Location 1: <input type="text" name="loc1" id="ajxloc_1" />
-        Location 2: <input type="text" name="loc2" id="ajxloc_2" />
+        <table border="0" cellpadding="1" cellspacing="1" width="410px" class="center">
+            <tr>
+                <td align="right">Airport 1:&nbsp;</td>
+                <td><input type="text" name="loc1" size="45" id="ajxloc_1" /></td>
+            </tr>
+            <tr>
+                <td align="right">Airport 2:&nbsp;</td>
+                <td><input type="text" name="loc2" size="45" id="ajxloc_2" /></td>
+            </tr>
+            <tr>
+                <td align="right">Travel Month:&nbsp;</td>
+                <td><input type="text" name="tm" size="45" id="datepicker" /></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td align="left">&nbsp;&nbsp;mm/yyyy</td>
+            </tr>
+        </table>
+        <br />
         <input type="submit" value="Submit" />
     </form>
 </div>
-<br /><br /><br />
+<br />
 
 {if $search}
-    <div class="center">
-        {if $midpoint_1_sel}
-            <img style="background-color:green;padding:5px;" src="{$map_1_url}" />
-            <img style="padding:5px;" src="{$map_2_url}" />
-        {elseif $midpoint_2_sel}
-            <img style="padding:5px;" src="{$map_1_url}" />
-            <img style="background-color:green;padding:5px;" src="{$map_2_url}" />
-        {else}
-            <img style="padding:5px;" src="{$map_1_url}" />
-            <img style="padding:5px;" src="{$map_2_url}" />
-        {/if}
+    <center>
+    <div style="height:0px;width:665px;padding:0px;border-top:2px solid #999;" ></div>
+    <br />
+    <div style="width:660px;height:150px;padding:3px;border:1px solid #999;" >
+         <div id="map_canvas" style="width:100%; height:100%" ></div>
     </div>
-
+    </center>
     <br />
 
     {if ($flight1_cost!=NULL) && ($flight2_cost!=NULL)}
@@ -57,16 +145,19 @@
         <div style="text-align:center;">The two locations are close enough to drive to. Would you like to <a href="http://www.kayak.com/cars" target="showframe">rent a car</a>?</div>
 
      {else}
-        
+        <div class="center">
         <div style="text-align:left;font-size:14px;font-weight:bold;width:640px;margin-left:auto;margin-right:auto;">
              <span style="float:left;font-weight:bold;">Status:</span> &nbsp;
              <div style="float:left;color:red;padding-left:10px;width:580px;"> Nearby airport(s) / flight information to nearby airport(s) of the selected mid point at (longitude: {$midpoint_longitude}, latitude: {$midpoint_latitude}) were not found.</div>
         </div>
+        </div>
         <br /><br />
         {if ($flightA_cost!=NULL) || ($flightB_cost!=NULL)}
+            <div class="center">
             <p style="text-align:center;color:green;font-size:14px;font-weight:bold;width:640px;margin-left:auto;margin-right:auto;">
                 Would you like to fly to your friend's city instead?
             </p>
+            </div>
             <table align="center">
                 <tr>
                     <th colspan="3"  style="border-bottom: solid;border-color: #e2e1e1;font-size: 18px; padding: 5px;"><div style="padding-bottom:0px;float:left;"><img src="{$host_url}/images/1.gif" /></div><div style="margin-top:27px;float:left;">{$location_1}</div></th>
@@ -103,7 +194,7 @@
 
      {if (($flight1_cost!=NULL) && ($flight2_cost!=NULL)) || ($flightA_cost!=NULL) || ($flightB_cost!=NULL)}
         <br />
-        <p style="font-size:10px;width: 640px;margin-left:auto; margin-right:auto;">
+        <p style="font-size:10px;width: 640px;">
             *The fares displayed include all taxes and fees for economy class
             travel and were found by Kayak users in the last 48 hours. Seats are
             limited and may not be available on all flights and days. Fares are
@@ -111,7 +202,30 @@
             travel. Some carriers charged additional fees for extra checked bags.
             Please check the carriers' sites.
         </p>
+        </div>
      {/if}
 
 {/if}
+</center>
 
+<!-- For Ajax -->
+<script type="text/javascript">
+{literal}
+	var options1 = {
+		script:"includes/autocomplete.php?",
+		varname:"input",
+		minchars:3
+	};
+	var as1 = new AutoSuggest('ajxloc_1', options1);
+
+	var options2 = {
+		script:"includes/autocomplete.php?",
+		varname:"input",
+		minchars:3
+	};
+	var as2 = new AutoSuggest('ajxloc_2', options2);
+{/literal}
+</script>
+
+</body>
+</html>

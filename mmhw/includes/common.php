@@ -6,7 +6,7 @@ require_once("sqlfunctions.php");
  *
  *	This function provides 1->N location fares
  */
-function get_fares_code_to_city($origin_code, $dest_codes, $debug)
+function get_fares_code_to_city($origin_code, $dest_codes, $travel_month)
 {
 	// Create URL string
 	$rssURL = 'http://www.kayak.com/h/rss/fare?dest=';
@@ -17,7 +17,11 @@ function get_fares_code_to_city($origin_code, $dest_codes, $debug)
 	$rssURL = $rssURL.$dest_codes[sizeof($dest_codes) - 1];
 	$rssURL = $rssURL.'&code='.$origin_code;
 
-	$rssURL = $rssURL.'&tm=201008';
+	//$rssURL = $rssURL.'&tm=201008';
+        if($travel_month != NULL)
+        {
+            $rssURL = $rssURL.'&tm='.$travel_month;
+        }
 
 	// Get RSS feed
 	$rss	= fetch_rss($rssURL);

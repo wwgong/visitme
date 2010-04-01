@@ -1,7 +1,3 @@
-<!-- Include Ajax scripts -->
-<script type="text/javascript" src="includes/scripts/bsn.Ajax.js"></script>
-<script type="text/javascript" src="includes/scripts/bsn.DOM.js"></script>
-<script type="text/javascript" src="includes/scripts/bsn.AutoSuggest.js"></script>
 
 <?php
    /***********************************************************************************************
@@ -10,36 +6,42 @@
     ***********************************************************************************************/
     require_once('includes/common.php');
     require_once('includes/midpoint.php');
-    require_once('includes/map.php');
-    require_once('includes/markers.php');
     require_once('includes/point.php');
     require_once('includes/distance.php');
+    require_once('includes/util.php');
     require_once('includes/result.php');
 
     $smarty = new Smarty();
     $smarty->assign('host_url', $host_url);
     $smarty->assign('version', $version);
 
-    $input_1 = $_GET['loc1'];
-    $input_2 = $_GET['loc2'];
-    $midpoint_1_sel = false;
-    $midpoint_2_sel = false;
+    $location1_input = $_GET['loc1'];
+    $location2_input = $_GET['loc2'];
+    $travel_month_input = $_GET['tm'];
+    
     $search = false;
     $nearby = true; // By default
+    $travel_month = null;
 
-    if(($input_1 != NULL) && ($input_2 != NULL))
+    if(($location1_input != NULL) && ($location2_input != NULL) && ($travel_month_input != NULL))
     {
         //Form data
-        $input_1 = mysql_real_escape_string($input_1);
-        $input_2 = mysql_real_escape_string($input_2);
+        $location1_input = mysql_real_escape_string($location1_input);
+        $location2_input = mysql_real_escape_string($location2_input);
+        $travel_month_input = mysql_real_escape_string($travel_month_input);
+
+        $util_obj = new Util();
+        $location1_airport_code = $util_obj->parse_airport_code($location1_input);
+        $location2_airport_code = $util_obj->parse_airport_code($location2_input);
+        $travel_month = $util_obj->format_travel_month_input($travel_month_input);
 
         if($debug)
         {
-            echo "<br />Location 1: ".$input_1."; Location 2: ".$input_2."<br />";
+            echo "<br />Location1 code: ".$location1_airport_code."; Location2 code: ".$location2_airport_code."; Travel month: ".$travel_month_input."<br />";
         }
 
-        $location_1_lola = get_lola_airport($input_1);
-	$location_2_lola = get_lola_airport($input_2);
+        $location_1_lola = get_lola_airport($location1_airport_code);
+	$location_2_lola = get_lola_airport($location2_airport_code);
 
         // If either origin or destination lola isn't available
         if (!(is_array($location_1_lola) && is_array($location_2_lola)))	 
@@ -67,28 +69,6 @@
         $smarty->assign('mid_1_latitude', $mid_1_obj->get_latitude());
         $smarty->assign('mid_2_longitude', $mid_2_obj->get_longitude());
         $smarty->assign('mid_2_latitude', $mid_2_obj->get_latitude());
-
-       /******************************************************************
-        * Google Static Map
-        ******************************************************************/
-        $map_size = '315x90';
-        // Map 1
-        $markers_obj1 = new Markers();
-        $markers_obj1->add_marker("orange", "M", $mid_1_obj->get_longitude(), $mid_1_obj->get_latitude());
-        $markers_obj1->add_marker("blue", "1", $loc_1_obj->get_longitude(),$loc_1_obj->get_latitude());
-        $markers_obj1->add_marker("green", "2", $loc_2_obj->get_longitude(), $loc_2_obj->get_latitude());
-    
-        $map_1_obj = new Map();
-        $smarty->assign('map_1_url', $map_1_obj->get_static_markers_map_url($map_size, $markers_obj1->get_markers()));
-
-        // Map 2
-        $markers_obj2 = new Markers();
-        $markers_obj2->add_marker("orange", "M", $mid_2_obj->get_longitude(), $mid_2_obj->get_latitude());
-        $markers_obj2->add_marker("blue", "1", $loc_1_obj->get_longitude(),$loc_1_obj->get_latitude());
-        $markers_obj2->add_marker("green", "2", $loc_2_obj->get_longitude(), $loc_2_obj->get_latitude());
-
-        $map_2_obj = new Map();
-        $smarty->assign('map_2_url', $map_2_obj->get_static_markers_map_url($map_size, $markers_obj2->get_markers()));
        
        /******************************************************************
         * Distance between location 1 and location 2
@@ -107,8 +87,8 @@
         
         if (!$nearby)
 	{   
-            $location_1_codes = $input_1;
-            $location_2_codes = $input_2;
+            $location_1_codes = $location1_airport_code;
+            $location_2_codes = $location2_airport_code;
            
             $mid_sel_obj = new MidPointSelect($location_1_lola, $location_2_lola, $radius);
 
@@ -117,8 +97,8 @@
              ******************************************************************/
             
             $dest_codes = $mid_sel_obj->get_midpoint_airport_codes();
- 
-            $result_obj = new Result($location_1_codes, $location_2_codes, $dest_codes);
+       
+            $result_obj = new Result($location_1_codes, $location_2_codes, $dest_codes, $travel_month);
             $loc1_to_mid_rss = $result_obj->get_loc1_to_mid_rss();
             
             if($debug)
@@ -136,17 +116,6 @@
             $midpoint_lola = $mid_sel_obj->get_midpoint_lola();
             $smarty->assign('midpoint_longitude',$mid_sel_obj->get_midpoint_longitude());
 	    $smarty->assign('midpoint_latitude',$mid_sel_obj->get_midpoint_latitude());
-
-            if($midpoint_lola == $mid_1_obj->get_lola())
-            {
-                $midpoint_1_sel = true;
-            }
-            elseif($midpoint_lola == $mid_2_obj->get_lola())
-            {
-                $midpoint_2_sel = true;
-            }
-            $smarty->assign('midpoint_1_sel',$midpoint_1_sel);
-            $smarty->assign('midpoint_2_sel',$midpoint_2_sel);
 
 	    $smarty->assign('location_1',$loc1_to_mid_rss->items[0]['kyk']['originlocation']);
 	    $smarty->assign('location1AirportCode',$loc1_to_mid_rss->items[0]['kyk']['origincode']);
@@ -191,7 +160,7 @@
                 $orig_codes = $location_1_codes;
                 $dest_codes = $location_2_codes;
 
-                $result_obj = new Result($orig_codes, $dest_codes);
+                $result_obj = new Result($orig_codes, $dest_codes, $travel_month);
                 $origin_to_dest_rss = $result_obj->get_origin_to_dest_rss();
 
                 if($debug)
@@ -226,7 +195,7 @@
                $orig_codes = $location_2_codes;
                $dest_codes = $location_1_codes;
 
-               $result_obj = new Result($orig_codes, $dest_codes);
+               $result_obj = new Result($orig_codes, $dest_codes, $travel_month);
                $origin_to_dest_rss = NULL;
                $origin_to_dest_rss = $result_obj->get_origin_to_dest_rss();
 
@@ -263,22 +232,4 @@
     $smarty->display('mmhw.tpl');
 
 ?>
-
-<!-- For Ajax -->
-<script type="text/javascript">
-	var options1 = {
-		script:"includes/autocomplete.php?",
-		varname:"input",
-		minchars:1
-	};
-	var as1 = new AutoSuggest('ajxloc_1', options1);
-
-	var options2 = {
-		script:"includes/autocomplete.php?",
-		varname:"input",
-		minchars:1
-	};
-	var as2 = new AutoSuggest('ajxloc_2', options2);
-
-</script>
 

@@ -82,7 +82,6 @@
 }
 
 
-
 /*
 ================================================
 styling for autosuggest begins here
@@ -125,12 +124,14 @@ ul.autosuggest li a:hover,
 ul.autosuggest li a:active
 {
 	color: #fff;
-	background-color: #f30;
+	/* background-color: #f30; */
+         background-color: #ffa500;
 }
 
 ul.autosuggest li.highlight a:link,
 ul.autosuggest li.highlight a:visited
 {
 	color: #fff;
-	background-color: #f30;
+        /* background-color: #f30; */
+         background-color: #ffa500;
 }

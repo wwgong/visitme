@@ -15,10 +15,10 @@
             $args = func_get_args();
             switch($num)
             {
-                case 2:  
+                case 3:
                     $this->__call('__construct0', $args);
                     break;
-                case 3:
+                case 4:
                     $this->__call('__construct1', $args);
                     break;
                 default:
@@ -31,14 +31,14 @@
             return (call_user_func_array(array($this,$name), $arg));
         }
         
-        private function __construct0($origin_airport_codes, $dest_airport_codes)
+        private function __construct0($origin_airport_codes, $dest_airport_codes, $travel_month)
         {
-            $this->origin_to_dest_rss = $this->orig_to_dest($origin_airport_codes, $dest_airport_codes);
+            $this->origin_to_dest_rss = $this->orig_to_dest($origin_airport_codes, $dest_airport_codes, $travel_month);
         }
 
-        private function __construct1($loc1_airport_codes, $loc2_airport_codes, $mid_airport_codes)
-        {
-            $this->two_points_to_mid_rss = $this->orig_to_dest_3pointscheck($loc1_airport_codes, $loc2_airport_codes, $mid_airport_codes);
+        private function __construct1($loc1_airport_codes, $loc2_airport_codes, $mid_airport_codes, $travel_month)
+        { 
+            $this->two_points_to_mid_rss = $this->orig_to_dest_3pointscheck($loc1_airport_codes, $loc2_airport_codes, $mid_airport_codes, $travel_month);
 
             $this->loc1_to_mid_rss = $this->two_points_to_mid_rss[0];
             $this->loc2_to_mid_rss = $this->two_points_to_mid_rss[1];
@@ -59,10 +59,10 @@
             return ($this->loc2_to_mid_rss);
         }
 
-        private function orig_to_dest($origCodes, $destCodes)
+        private function orig_to_dest($origCodes, $destCodes, $travel_month)
         {
 	    $fares = array();
-            if (($origCodes != NULL) && ($destCodes != NULL))
+            if (($origCodes != NULL) && ($destCodes != NULL) && ($travel_month != NULL))
             {
                 $orig_codes = array();
                 $dest_codes = array();
@@ -71,7 +71,7 @@
 
 		foreach ($orig_codes as $code)
 		{
-                    $rss = get_fares_code_to_city($code,$dest_codes,$debug=false);
+                    $rss = get_fares_code_to_city($code, $dest_codes, $travel_month);
                    
                     if (sizeof($rss->items) > 0)
                     {
@@ -105,14 +105,14 @@
          * Multiple airport codes scenario: Input two locations where each location may
          *                                  have many surrounding airports
          */
-        private function orig_to_dest_3pointscheck($loc1_codes, $loc2_codes, $mid_codes)
+        private function orig_to_dest_3pointscheck($loc1_codes, $loc2_codes, $mid_codes, $travel_month)
         {
             $fares = array();
             $rss_1_list = array();
             $rss_2_list = array();
             $index = 0;
 
-            if (($loc1_codes != NULL) && ($loc2_codes != NULL) && ($mid_codes != NULL))
+            if (($loc1_codes != NULL) && ($loc2_codes != NULL) && ($mid_codes != NULL) && ($travel_month != NULL))
             {
                 $loc1_airport_codes = array();
                 $loc2_airport_codes = array();
@@ -122,9 +122,9 @@
                 $mid_airport_codes  = $this->format_input($mid_codes);
                 
 		foreach ($loc1_airport_codes as $loc1_code)
-		{   
-                    $rss_1 = get_fares_code_to_city($loc1_code, $mid_airport_codes,$debug=false);
-
+		{       
+                    $rss_1 = get_fares_code_to_city($loc1_code, $mid_airport_codes, $travel_month);
+                    
                     if (sizeof($rss_1->items) > 0)
                     {
 			$rss_1_list[$index] = $rss_1;
@@ -136,7 +136,7 @@
 
                 foreach ($loc2_airport_codes as $loc2_code)
 		{
-                    $rss_2 = get_fares_code_to_city($loc2_code, $mid_airport_codes,$debug=false);
+                    $rss_2 = get_fares_code_to_city($loc2_code, $mid_airport_codes, $travel_month);
 
                     if (sizeof($rss_2->items) > 0)
                     {
@@ -145,6 +145,11 @@
                     }
 		}
 
+                /*echo "RSS 1 List <br />";
+                print_r($rss_1_list);
+                echo "<br />RSS 2 List <br />";
+                print_r($rss_2_list); */
+                
                 foreach ($rss_1_list as $rss1)
                 {
                     foreach($rss_2_list as $rss2)
