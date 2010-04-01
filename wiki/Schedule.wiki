@@ -38,7 +38,7 @@ WOC = Waiting on client
 || Integrate feed results with user interface (open source UI)	||Brian|||03/03/10 ||03/05/10|| <font color="green">Done</font>||
 || [RequirementsSpecificationProject2 Document specifications]			||Vasudev||03/09/10||03/09/10||<font color="green">Done</font>||
 || AJAX dropdown boxes				||Weiwei||03/12/10 ||03/12/10|| <font color="green">Done</font> ||
-|| Update using Google Maps Javascript API V3   ||Brian || 03/31/10 || 04/01/10 ||<font color="green">Done</font> ||
+|| Upgrade to use Google Maps Javascript API V3   ||Brian || 03/31/10 || 04/01/10 ||<font color="green">Done</font> ||
 || License Info 					||Henrik, Vasudev|| ||04/02/10|| ||
 || AJAX results					||Group|| ||04/02/10|| ||
 || New algorithm for computing midpoint		||Group|| ||04/02/10|| ||
