@@ -132,7 +132,7 @@
                 $mid_lola = $mid_1->get_lola();
                 $mid_airport_codes = $midpoint_1_airport_codes;
             }
-            else
+            else if(($midpoint_1_airport_codes != NULL) &&($midpoint_2_airport_codes != NULL))
             {
                 $distance_1 = sqrt(pow($location_1_lola[0] - $mid_1->get_longitude(), 2) + pow($location_1_lola[1] - $mid_1->get_latitude(), 2));
                 $distance_2 = sqrt(pow($location_1_lola[0] - $mid_2->get_longitude(), 2) + pow($location_1_lola[1] - $mid_2->get_latitude(), 2));
@@ -140,13 +140,18 @@
                 if($distance_1 <= $distance_2)
                 {
                     $mid_lola = $mid_1->get_lola();
-                    $mid_airport_codes = $midpoint_1_airport_codes; // Both midpoint_1 and midpoint_2 airport codes may be either NULL or not NULL
+                    $mid_airport_codes = $midpoint_1_airport_codes; 
                 }
                 else
                 {
                     $mid_lola = $mid_2->get_lola();
-                    $mid_airport_codes = $midpoint_2_airport_codes; // Both midpoint_1 and midpoint_2 airport codes may be either NULL or not NULL
+                    $mid_airport_codes = $midpoint_2_airport_codes; 
                 }
+            }
+            else
+            {   
+                $mid_lola = $mid_1->get_lola();
+                $mid_airport_codes = $midpoint_1_airport_codes;
             }
 
             return (array($mid_lola, $mid_airport_codes));
