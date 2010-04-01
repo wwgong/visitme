@@ -114,6 +114,7 @@
             }
           
             $midpoint_lola = $mid_sel_obj->get_midpoint_lola();
+            
             $smarty->assign('midpoint_longitude',$mid_sel_obj->get_midpoint_longitude());
 	    $smarty->assign('midpoint_latitude',$mid_sel_obj->get_midpoint_latitude());
 
@@ -226,6 +227,11 @@
                    $smarty->assign('flightB_buzz',$origin_to_dest_rss->items[0]['guid']);
                }
            }
+       }
+       else
+       {
+           $smarty->assign('midpoint_longitude',$mid_1_obj->get_longitude());
+           $smarty->assign('midpoint_latitude',$mid_1_obj->get_latitude());
        }
     }
     
