@@ -44,7 +44,7 @@ WOC = Waiting on client
 || AJAX results					||Group|| ||04/02/10|| ||
 || New algorithm for computing midpoint		||Group|| ||04/02/10|| ||
 || Instructions for deploying MMHW		||Khanh|| ||04/02/10|| ||
-|| Inputs Validations		                ||Group|| ||04/09/10|| ||
+|| Inputs Validation		                ||Group|| ||04/09/10|| ||
 || Dynamic search radius		        ||Group|| ||04/09/10|| ||
 || GUI setup		                        ||Group|| ||04/09/10|| ||
 || <font color=#0000BB>*Code freeze for event presentations*</font>		||  || ||04/20/10||  ||
