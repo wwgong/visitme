@@ -1,4 +1,7 @@
 <?php
+    require_once("distance.php");
+    require_once("sqlfunctions.php");
+    
    /***********************************************
     *              Result Class
     ***********************************************/
@@ -8,6 +11,7 @@
         private $two_points_to_mid_rss = NULL;
         private $loc1_to_mid_rss = NULL;
         private $loc2_to_mid_rss = NULL;
+        const MAX_DIST_BTW_TWO_MID_NEARBY_AIRPORTS = 1;
 
         public function __construct()
         {  
@@ -145,38 +149,46 @@
                     }
 		}
 
-                /*echo "RSS 1 List <br />";
-                print_r($rss_1_list);
-                echo "<br />RSS 2 List <br />";
-                print_r($rss_2_list); */
                 
                 foreach ($rss_1_list as $rss1)
                 {
                     foreach($rss_2_list as $rss2)
                     {
-                        /*** Filter out the lowest fare among common flight destinations... ***/
-
-                        // If $fares empty (initially)
-                        if((sizeof($fares[0]->items) < 1) && (sizeof($fares[1]->items) < 1))
-                        {
-                            $fares = array($rss1, $rss2);
-                        }
                         // Give priority if two people can fly to the same airport...then, return immediately...
-                        else if($rss1->items[0]['kyk']['destcode'] == $rss2->items[0]['kyk']['destcode'])
+                        if($rss1->items[0]['kyk']['destcode'] == $rss2->items[0]['kyk']['destcode'])
                         {
                              $fares = array($rss1, $rss2);
                              return ($fares);
                         }
-                        // Otherwise, find the lowest fare combination...
+                        // If two different nearby airports
                         else
                         {
-                            $curr_total_lowest_fares = $fares[0]->items[0]['kyk']['price'] + $fares[1]->items[0]['kyk']['price'];
-                            $curr_total = $rss1->items[0]['kyk']['price'] + $rss2->items[0]['kyk']['price'];
-                            if($curr_total < $curr_total_lowest_fares)
+                            // Find distance between two nearby airports of midpoint
+                            $location_1_lola = get_lola_airport($rss1->items[0]['kyk']['destcode']);
+                            $location_2_lola = get_lola_airport($rss2->items[0]['kyk']['destcode']);
+                            $dist_obj = new Distance($location_1_lola, $location_2_lola);
+                            $distance = $dist_obj->get_distance();
+                            
+                            if($distance <= Result::MAX_DIST_BTW_TWO_MID_NEARBY_AIRPORTS)
                             {
-                                $fares = array($rss1, $rss2);
-                            }
+                              // If $fares empty (initially)
+                                if((sizeof($fares[0]->items) < 1) && (sizeof($fares[1]->items) < 1))
+                                {
+                                    $fares = array($rss1, $rss2);
+                                }                        
+                                // Otherwise, find the lowest fare combination...
+                                else
+                                {
+                                    $curr_total_lowest_fares = $fares[0]->items[0]['kyk']['price'] + $fares[1]->items[0]['kyk']['price'];
+                                    $curr_total = $rss1->items[0]['kyk']['price'] + $rss2->items[0]['kyk']['price'];
+                                    if($curr_total < $curr_total_lowest_fares)
+                                    {
+                                        $fares = array($rss1, $rss2);
+                                    }
+                                }
+                            }     
                         }
+
                     }
                 }
 
