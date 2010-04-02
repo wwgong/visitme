@@ -8,33 +8,40 @@ require_once("sqlfunctions.php");
  */
 function get_fares_code_to_city($origin_code, $dest_codes, $travel_month)
 {
-	// Create URL string
-	$rssURL = 'http://www.kayak.com/h/rss/fare?dest=';
-	for ($i = 0; $i < sizeof($dest_codes) - 1; $i++)
+    // Create URL string
+    $rssURL = 'http://www.kayak.com/h/rss/fare?dest=';
+
+    if(sizeof($dest_codes) == 1)
+    {
+        $rssURL = $rssURL.$dest_codes;
+    }
+    else
+    {
+        for ($i = 0; $i < sizeof($dest_codes); $i++)
 	{
-		$rssURL = $rssURL.$dest_codes[$i].",";
+            $rssURL = $rssURL.$dest_codes[$i].",";
 	}
-	$rssURL = $rssURL.$dest_codes[sizeof($dest_codes) - 1];
-	$rssURL = $rssURL.'&code='.$origin_code;
+        $rssURL = substr($rssURL, 0, -1);
+    }
+   
+    $rssURL = $rssURL.'&code='.$origin_code;
 
-	//$rssURL = $rssURL.'&tm=201008';
-        if($travel_month != NULL)
-        {
-            $rssURL = $rssURL.'&tm='.$travel_month;
-        }
+    if($travel_month != NULL)
+    {
+        $rssURL = $rssURL.'&tm='.$travel_month;
+    }
+  
+    // Get RSS feed
+    $rss = fetch_rss($rssURL);
 
-	// Get RSS feed
-	$rss	= fetch_rss($rssURL);
+    if($debug)
+    {
+	echo "<br/>Fares url: $rssURL<br/>";
+	print_r($rss);
+	echo "<br/><br/>";
+    }
 
-	if($debug)
-	{
-		//echo "<br/>Fares url: $rssURL<br/>";
-		//print_r($rss);
-		//echo "<br/><br/>";
-	}
-
-	return $rss;
+    return $rss;
 }
-
 
 ?>

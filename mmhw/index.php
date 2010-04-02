@@ -10,6 +10,7 @@
     require_once('includes/distance.php');
     require_once('includes/util.php');
     require_once('includes/result.php');
+    require_once('includes/rssparser.php');
 
     $smarty = new Smarty();
     $smarty->assign('host_url', $host_url);
@@ -97,9 +98,10 @@
              ******************************************************************/
             
             $dest_codes = $mid_sel_obj->get_midpoint_airport_codes();
-       
+
             $result_obj = new Result($location_1_codes, $location_2_codes, $dest_codes, $travel_month);
-            $loc1_to_mid_rss = $result_obj->get_loc1_to_mid_rss();
+            $loc1_to_mid_rss_item = $result_obj->get_loc1_to_mid_rss_item();
+            $loc1_to_mid_obj = new MagpieRSS_Item($loc1_to_mid_rss_item);
             
             if($debug)
             {
@@ -109,8 +111,6 @@
                 print_r($location_2_codes);
                 echo "<br />Dest Codes: ";
                 print_r($dest_codes);
-                echo "<br />RSS: ";
-                print_r($loc1_to_mid_rss);
             }
           
             $midpoint_lola = $mid_sel_obj->get_midpoint_lola();
@@ -118,40 +118,36 @@
             $smarty->assign('midpoint_longitude',$mid_sel_obj->get_midpoint_longitude());
 	    $smarty->assign('midpoint_latitude',$mid_sel_obj->get_midpoint_latitude());
 
-	    $smarty->assign('location_1',$loc1_to_mid_rss->items[0]['kyk']['originlocation']);
-	    $smarty->assign('location1AirportCode',$loc1_to_mid_rss->items[0]['kyk']['origincode']);
-            $smarty->assign('location_mid_1',$loc1_to_mid_rss->items[0]['kyk']['destlocation']);
-            $smarty->assign('mid1AirportCode',$loc1_to_mid_rss->items[0]['kyk']['destcode']);
-
-            $flight1_cost = $loc1_to_mid_rss->items[0]['kyk']['price'];
+	    $smarty->assign('location_1',$loc1_to_mid_obj->get_originlocation());
+	    $smarty->assign('location1AirportCode',$loc1_to_mid_obj->get_origincode());
+            $smarty->assign('location_mid_1',$loc1_to_mid_obj->get_destlocation());
+            $smarty->assign('mid1AirportCode',$loc1_to_mid_obj->get_destcode());
          
-            $smarty->assign('flight1_cost',$flight1_cost);
+            $smarty->assign('flight1_cost',$loc1_to_mid_obj->get_price());
             $smarty->assign('flight1_departure',100);
             $smarty->assign('flight1_arrival',100);
-            $smarty->assign('flight1_airline',100);
-            $smarty->assign('flight1_description',$loc1_to_mid_rss->items[0]['description']);
-            $smarty->assign('flight1_buzz',$loc1_to_mid_rss->items[0]['guid']);
+            $smarty->assign('flight1_airline',$loc1_to_mid_obj->get_airline());
+            $smarty->assign('flight1_description',$loc1_to_mid_obj->get_description());
+            $smarty->assign('flight1_buzz',$loc1_to_mid_obj->get_guid());
 
 
           /******************************************************************
            * Location 2 to mid point
            ******************************************************************/
-           $loc2_to_mid_rss = $result_obj->get_loc2_to_mid_rss();
+           $loc2_to_mid_rss_item = $result_obj->get_loc2_to_mid_rss_item();
+           $loc2_to_mid_obj = new MagpieRSS_Item($loc2_to_mid_rss_item);
 
-           $smarty->assign('location_2',$loc2_to_mid_rss->items[0]['kyk']['originlocation']);
-           $smarty->assign('location2AirportCode',$loc2_to_mid_rss->items[0]['kyk']['origincode']);
-           $smarty->assign('location_mid_2',$loc2_to_mid_rss->items[0]['kyk']['destlocation']);
-           $smarty->assign('mid2AirportCode',$loc2_to_mid_rss->items[0]['kyk']['destcode']);
-	  
-
-           $flight2_cost = $loc2_to_mid_rss->items[0]['kyk']['price'];
+           $smarty->assign('location_2',$loc2_to_mid_obj->get_originlocation());
+           $smarty->assign('location2AirportCode',$loc2_to_mid_obj->get_origincode());
+           $smarty->assign('location_mid_2',$loc2_to_mid_obj->get_destlocation());
+           $smarty->assign('mid2AirportCode',$loc2_to_mid_obj->get_destcode());
          
-           $smarty->assign('flight2_cost',$flight2_cost);
+           $smarty->assign('flight2_cost',$loc2_to_mid_obj->get_price());
            $smarty->assign('flight2_departure',100);
            $smarty->assign('flight2_arrival',100);
-           $smarty->assign('flight2_airline',100);
-           $smarty->assign('flight2_description',$loc2_to_mid_rss->items[0]['description']);
-           $smarty->assign('flight2_buzz',$loc2_to_mid_rss->items[0]['guid']);
+           $smarty->assign('flight2_airline',$loc2_to_mid_obj->get_airline());
+           $smarty->assign('flight2_description',$loc2_to_mid_obj->get_description());
+           $smarty->assign('flight2_buzz',$loc2_to_mid_obj->get_guid());
 
            if(($flight1_cost==NULL) || ($flight2_cost==NULL))
            {
@@ -162,7 +158,8 @@
                 $dest_codes = $location_2_codes;
 
                 $result_obj = new Result($orig_codes, $dest_codes, $travel_month);
-                $origin_to_dest_rss = $result_obj->get_origin_to_dest_rss();
+                $origin_to_dest_rss_item = $result_obj->get_orig_to_dest_rss_item();
+                $origin_to_dest_obj = new MagpieRSS_Item($origin_to_dest_rss_item);
 
                 if($debug)
                 {
@@ -170,24 +167,22 @@
                     print_r($orig_codes);
                     echo "<br />Dest Codes: ";
                     print_r($dest_codes);
-                    echo "<br />RSS: ";
-                    print_r($origin_to_dest_rss);
                 }
              
-                $flightA_cost = $origin_to_dest_rss->items[0]['kyk']['price'];
+                $flightA_cost = $origin_to_dest_obj->get_price();
                 if($flightA_cost != NULL)
                 {
-                    $smarty->assign('location2AirportCode',$origin_to_dest_rss->items[0]['kyk']['destcode']);
-                    $smarty->assign('location_1',$origin_to_dest_rss->items[0]['kyk']['originlocation']);
-                    $smarty->assign('location_2',$origin_to_dest_rss->items[0]['kyk']['destlocation']);
-                    $smarty->assign('location1AirportCode',$origin_to_dest_rss->items[0]['kyk']['origincode']);
+                    $smarty->assign('location2AirportCode',$origin_to_dest_obj->get_destcode());
+                    $smarty->assign('location_1',$origin_to_dest_obj->get_originlocation());
+                    $smarty->assign('location_2',$origin_to_dest_obj->get_destlocation());
+                    $smarty->assign('location1AirportCode',$origin_to_dest_obj->get_origincode());
 
                     $smarty->assign('flightA_cost',$flightA_cost);
                     $smarty->assign('flightA_departure',100);
                     $smarty->assign('flightA_arrival',100);
-                    $smarty->assign('flightA_airline',100);
-                    $smarty->assign('flightA_description',$origin_to_dest_rss->items[0]['description']);
-                    $smarty->assign('flightA_buzz',$origin_to_dest_rss->items[0]['guid']);
+                    $smarty->assign('flightA_airline',$origin_to_dest_obj->get_airline());
+                    $smarty->assign('flightA_description',$origin_to_dest_obj->get_description());
+                    $smarty->assign('flightA_buzz',$origin_to_dest_obj->get_guid());
                 }
 
               /******************************************************************
@@ -197,8 +192,8 @@
                $dest_codes = $location_1_codes;
 
                $result_obj = new Result($orig_codes, $dest_codes, $travel_month);
-               $origin_to_dest_rss = NULL;
-               $origin_to_dest_rss = $result_obj->get_origin_to_dest_rss();
+               $origin_to_dest_rss_item = $result_obj->get_orig_to_dest_rss_item();
+               $origin_to_dest_obj = new MagpieRSS_Item($origin_to_dest_rss_item);
 
                if($debug)
                {
@@ -207,24 +202,22 @@
                     print_r($orig_codes);
                     echo "<br />Dest Codes: ";
                     print_r($dest_codes);
-                    echo "<br />RSS: ";
-                    print_r($origin_to_dest_rss);
                }
 
-               $flightB_cost = $origin_to_dest_rss->items[0]['kyk']['price'];
+               $flightB_cost = $origin_to_dest_obj->get_price();
                if($flightB_cost != NULL)
                {
-                   $smarty->assign('location1AirportCode',$origin_to_dest_rss->items[0]['kyk']['destcode']);
-                   $smarty->assign('location_2',$origin_to_dest_rss->items[0]['kyk']['originlocation']);
-                   $smarty->assign('location_1',$origin_to_dest_rss->items[0]['kyk']['destlocation']);
-                   $smarty->assign('location2AirportCode',$origin_to_dest_rss->items[0]['kyk']['origincode']);
+                   $smarty->assign('location1AirportCode',$origin_to_dest_obj->get_destcode());
+                   $smarty->assign('location_2',$origin_to_dest_obj->get_originlocation());
+                   $smarty->assign('location_1',$origin_to_dest_obj->get_destlocation());
+                   $smarty->assign('location2AirportCode',$origin_to_dest_obj->get_origincode());
 
                    $smarty->assign('flightB_cost',$flightB_cost);
                    $smarty->assign('flightB_departure',100);
                    $smarty->assign('flightB_arrival',100);
-                   $smarty->assign('flightB_airline',100);
-                   $smarty->assign('flightB_description',$origin_to_dest_rss->items[0]['description']);
-                   $smarty->assign('flightB_buzz',$origin_to_dest_rss->items[0]['guid']);
+                   $smarty->assign('flightB_airline',$origin_to_dest_obj->get_airline());
+                   $smarty->assign('flightB_description',$origin_to_dest_obj->get_description());
+                   $smarty->assign('flightB_buzz',$origin_to_dest_obj->get_guid());
                }
            }
        }
