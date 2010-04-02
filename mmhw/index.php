@@ -121,8 +121,8 @@
             $smarty->assign('mid1AirportCode',$loc1_to_mid_obj->get_destcode());
 
             $smarty->assign('flight1_cost',$loc1_to_mid_obj->get_price());
-            $smarty->assign('flight1_departure',100);
-            $smarty->assign('flight1_arrival',100);
+            $smarty->assign('flight1_departdate',$loc1_to_mid_obj->get_departdate());
+            $smarty->assign('flight1_returndate',$loc1_to_mid_obj->get_returndate());
             $smarty->assign('flight1_airline',$loc1_to_mid_obj->get_airline());
             $smarty->assign('flight1_description',$loc1_to_mid_obj->get_description());
             $smarty->assign('flight1_buzz',$loc1_to_mid_obj->get_guid());
@@ -140,8 +140,8 @@
            $smarty->assign('mid2AirportCode',$loc2_to_mid_obj->get_destcode());
 
            $smarty->assign('flight2_cost',$loc2_to_mid_obj->get_price());
-           $smarty->assign('flight2_departure',100);
-           $smarty->assign('flight2_arrival',100);
+           $smarty->assign('flight2_departdate',$loc2_to_mid_obj->get_departdate());
+           $smarty->assign('flight2_returndate',$loc2_to_mid_obj->get_returndate());
            $smarty->assign('flight2_airline',$loc2_to_mid_obj->get_airline());
            $smarty->assign('flight2_description',$loc2_to_mid_obj->get_description());
            $smarty->assign('flight2_buzz',$loc2_to_mid_obj->get_guid());
@@ -175,8 +175,8 @@
                     $smarty->assign('location1AirportCode',$origin_to_dest_obj->get_origincode());
 
                     $smarty->assign('flightA_cost',$flightA_cost);
-                    $smarty->assign('flightA_departure',100);
-                    $smarty->assign('flightA_arrival',100);
+                    $smarty->assign('flightA_departdate',$origin_to_dest_obj->get_departdate());
+                    $smarty->assign('flightA_returndate',$origin_to_dest_obj->get_returndate());
                     $smarty->assign('flightA_airline',$origin_to_dest_obj->get_airline());
                     $smarty->assign('flightA_description',$origin_to_dest_obj->get_description());
                     $smarty->assign('flightA_buzz',$origin_to_dest_obj->get_guid());
@@ -210,8 +210,8 @@
                    $smarty->assign('location2AirportCode',$origin_to_dest_obj->get_origincode());
 
                    $smarty->assign('flightB_cost',$flightB_cost);
-                   $smarty->assign('flightB_departure',100);
-                   $smarty->assign('flightB_arrival',100);
+                   $smarty->assign('flightB_departdate',$origin_to_dest_obj->get_departdate());
+                   $smarty->assign('flightB_returndate',$origin_to_dest_obj->get_returndate());
                    $smarty->assign('flightB_airline',$origin_to_dest_obj->get_airline());
                    $smarty->assign('flightB_description',$origin_to_dest_obj->get_description());
                    $smarty->assign('flightB_buzz',$origin_to_dest_obj->get_guid());
