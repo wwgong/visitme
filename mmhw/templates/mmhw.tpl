@@ -2,21 +2,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="{$host_url}/style/mmhwStyle.css" />
-<link type="text/css" href="{$host_url}/style/jquery.ui.datepicker.css" rel="stylesheet" />
-<link type="text/css" href="{$host_url}/style/jquery.ui.theme.css" rel="stylesheet" />
-<link type="text/css" href="{$host_url}/style/jquery.ui.core.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="style/mmhwStyle.css" />
+<link type="text/css" href="style/jquery.ui.datepicker.css" rel="stylesheet" />
+<link type="text/css" href="style/jquery.ui.theme.css" rel="stylesheet" />
+<link type="text/css" href="style/jquery.ui.core.css" rel="stylesheet" />
+<link type="text/css" href="style/jquery.autocomplete.css"  rel="stylesheet" />
 
-<script type="text/javascript" src="{$host_url}/includes/scripts/jquery.js"></script>
-<script type="text/javascript" src="{$host_url}/includes/scripts/jquery.ui.core.js"></script>
-<script type="text/javascript" src="{$host_url}/includes/scripts/jquery.ui.widget.js"></script>
-<script type="text/javascript" src="{$host_url}/includes/scripts/jquery.ui.datepicker.js"></script>
+<script type="text/javascript" src="includes/scripts/jquery.js"></script>
+<script type="text/javascript" src="includes/scripts/jquery.ui.core.js"></script>
+<script type="text/javascript" src="includes/scripts/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="includes/scripts/jquery.ui.datepicker.js"></script>
+<script type="text/javascript" src="includes/scripts/jquery.autocomplete.js"></script>
 
-<!-- Include Ajax scripts -->
-<script type="text/javascript" src="includes/scripts/bsn.Ajax.js"></script>
-<script type="text/javascript" src="includes/scripts/bsn.DOM.js"></script>
-<script type="text/javascript" src="includes/scripts/bsn.AutoSuggest.js"></script>
-
+<!-- Google Maps API Javascript V3 -->
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">
 {literal}
@@ -37,7 +35,7 @@
     bounds.extend(midpoint);
     map.fitBounds(bounds);
 
-    var marker_1_icon = '{/literal}{$host_url}{literal}/images/marker_1.png';
+    var marker_1_icon = 'images/marker_1.png';
     var marker_2_icon = '{/literal}{$host_url}{literal}/images/marker_2.png';
     var marker_mid_icon = '{/literal}{$host_url}{literal}/images/marker_mid.png';
 
@@ -64,6 +62,7 @@
 {/literal} 
 </script>
 
+<!-- JQuery Datepicker -->
 <script type="text/javascript">
 {literal}
 	$(function() {
@@ -77,6 +76,31 @@
 	});
 {/literal}
 </script>
+
+<!-- AJAX Autocomplete -->
+<script type="text/javascript">
+{literal}
+    $().ready(function() {
+
+	$(".airportAutocomplete").autocomplete("includes/autocomplete.php", {
+		selectFirst: false,
+		<!-- mustMatch: true,    Note: Having issue with some valid values get cleared out-->
+                minChars: 3,
+                delay: 700,
+
+	});
+
+	$(".airportAutocomplete").result(function(event, data, formatted) {
+		if (data)
+                    $(this).parent().next().find("input").val(data[1]);
+	});
+
+	$("#clear").click(function() {
+		$(":input").unautocomplete();
+	});
+    });
+{/literal}
+</script>
 </head>
 <body onload="initialize()">
 <br />
@@ -85,15 +109,15 @@
 <div style="margin-left:auto;margin-right:auto;text-align:center;">
     <h1>Meet Me Half Way</h1>
     <br />
-    <form name="input" action="index.php" method="get">
+    <form autocomplete="on" name="input" action="index.php" method="get" >
         <table border="0" cellpadding="1" cellspacing="1" width="410px" class="center">
             <tr>
                 <td align="right">Airport 1:&nbsp;</td>
-                <td><input type="text" name="loc1" size="45" id="ajxloc_1" /></td>
+                <td><input type="text" class="airportAutocomplete" name="loc1" size="45"  /></td>
             </tr>
             <tr>
                 <td align="right">Airport 2:&nbsp;</td>
-                <td><input type="text" name="loc2" size="45" id="ajxloc_2" /></td>
+                <td><input type="text" class="airportAutocomplete" name="loc2" size="45"  /></td>
             </tr>
             <tr>
                 <td align="right">Travel Month:&nbsp;</td>
@@ -207,25 +231,6 @@
 
 {/if}
 </center>
-
-<!-- For Ajax -->
-<script type="text/javascript">
-{literal}
-	var options1 = {
-		script:"includes/autocomplete.php?",
-		varname:"input",
-		minchars:3
-	};
-	var as1 = new AutoSuggest('ajxloc_1', options1);
-
-	var options2 = {
-		script:"includes/autocomplete.php?",
-		varname:"input",
-		minchars:3
-	};
-	var as2 = new AutoSuggest('ajxloc_2', options2);
-{/literal}
-</script>
 
 </body>
 </html>
