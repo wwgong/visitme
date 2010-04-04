@@ -40,10 +40,10 @@ WOC = Waiting on client
 || AJAX dropdown boxes				||Weiwei||03/12/10 ||03/12/10|| <font color="green">Done</font> ||
 || Upgrade to use Google Maps Javascript API V3   ||Brian || 03/31/10 || 04/01/10 ||<font color="green">Done</font> ||
 || Implement travel-time input feature   ||Brian || 03/31/10 || 04/01/10 ||<font color="green">Done</font> ||
+|| AJAX results					||Group||04/04/10||04/06/10||<font color="green">Done</font>||
 || License Info 					||Henrik, Vasudev|| ||04/06/10|| ||
 || New algorithm for computing midpoint		||Group|| ||04/06/10|| ||
 || Instructions for deploying MMHW		||Khanh|| ||04/06/10|| ||
-|| AJAX results					||Group||04/04/10||04/06/10||<font color="green">Done</font>||
 || Inputs Validation		                ||Group|| ||04/09/10|| ||
 || Dynamic search radius		        ||Group|| ||04/09/10|| ||
 || GUI setup		                        ||Group|| ||04/09/10|| ||
