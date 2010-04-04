@@ -120,7 +120,9 @@
             $smarty->assign('location_mid_1',$loc1_to_mid_obj->get_destlocation());
             $smarty->assign('mid1AirportCode',$loc1_to_mid_obj->get_destcode());
 
-            $smarty->assign('flight1_cost',$loc1_to_mid_obj->get_price());
+            $flight1_cost = $loc1_to_mid_obj->get_price();
+
+            $smarty->assign('flight1_cost',$flight1_cost);
             $smarty->assign('flight1_departdate',$loc1_to_mid_obj->get_departdate());
             $smarty->assign('flight1_returndate',$loc1_to_mid_obj->get_returndate());
             $smarty->assign('flight1_airline',$loc1_to_mid_obj->get_airline());
@@ -139,7 +141,9 @@
            $smarty->assign('location_mid_2',$loc2_to_mid_obj->get_destlocation());
            $smarty->assign('mid2AirportCode',$loc2_to_mid_obj->get_destcode());
 
-           $smarty->assign('flight2_cost',$loc2_to_mid_obj->get_price());
+           $flight2_cost = $loc2_to_mid_obj->get_price();
+
+           $smarty->assign('flight2_cost',$flight2_cost);
            $smarty->assign('flight2_departdate',$loc2_to_mid_obj->get_departdate());
            $smarty->assign('flight2_returndate',$loc2_to_mid_obj->get_returndate());
            $smarty->assign('flight2_airline',$loc2_to_mid_obj->get_airline());
