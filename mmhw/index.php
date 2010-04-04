@@ -10,7 +10,7 @@
     require_once('includes/distance.php');
     require_once('includes/util.php');
     require_once('includes/result.php');
-    require_once('includes/rssparser.php');
+    require_once('includes/rss.php');
 
     $smarty = new Smarty();
     $smarty->assign('host_url', $host_url);
@@ -98,7 +98,7 @@
 
             $result_obj = new Result($location1_airport_code, $location2_airport_code, $dest_codes, $travel_month);
             $loc1_to_mid_rss_item = $result_obj->get_loc1_to_mid_rss_item();
-            $loc1_to_mid_obj = new MagpieRSS_Item($loc1_to_mid_rss_item);
+            $loc1_to_mid_obj = new RSSItem($loc1_to_mid_rss_item);
 
             if($debug)
             {
@@ -132,7 +132,7 @@
            * Location 2 to mid point
            ******************************************************************/
            $loc2_to_mid_rss_item = $result_obj->get_loc2_to_mid_rss_item();
-           $loc2_to_mid_obj = new MagpieRSS_Item($loc2_to_mid_rss_item);
+           $loc2_to_mid_obj = new RSSItem($loc2_to_mid_rss_item);
 
            $smarty->assign('location_2',$loc2_to_mid_obj->get_originlocation());
            $smarty->assign('location2AirportCode',$loc2_to_mid_obj->get_origincode());
@@ -156,7 +156,7 @@
 
                 $result_obj = new Result($orig_code, $dest_code, $travel_month);
                 $origin_to_dest_rss_item = $result_obj->get_orig_to_dest_rss_item();
-                $origin_to_dest_obj = new MagpieRSS_Item($origin_to_dest_rss_item);
+                $origin_to_dest_obj = new RSSItem($origin_to_dest_rss_item);
 
                 if($debug)
                 {
@@ -190,7 +190,7 @@
 
                $result_obj = new Result($orig_code, $dest_code, $travel_month);
                $origin_to_dest_rss_item = $result_obj->get_orig_to_dest_rss_item();
-               $origin_to_dest_obj = new MagpieRSS_Item($origin_to_dest_rss_item);
+               $origin_to_dest_obj = new RSSItem($origin_to_dest_rss_item);
 
                if($debug)
                {

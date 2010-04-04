@@ -1,6 +1,6 @@
 <?php
     require_once("sqlfunctions.php");
-    require_once("rssparser.php");
+    require_once("rss.php");
     
    /***********************************************
     *              Result Class
@@ -68,7 +68,7 @@
             if (($orig_code != NULL) && ($dest_code != NULL) && ($travel_month != NULL))
             {   
                 $rss = get_fares_code_to_city($orig_code, $dest_code, $travel_month);
-                $rss_obj = new MagpieRSS_Parser($rss);
+                $rss_obj = new RSSItemParser($rss);
                 $rss_item = $rss_obj->get_item(0);
             }
             return ($rss_item);
@@ -83,17 +83,17 @@
                 $rss_1 = get_fares_code_to_city($loc1_code, $mid_codes, $travel_month);
                 $rss_2 = get_fares_code_to_city($loc2_code, $mid_codes, $travel_month);
 
-                $rss_1_obj = new MagpieRSS_Parser($rss_1);
+                $rss_1_obj = new RSSItemParser($rss_1);
                 $rss_1_items = $rss_1_obj->get_all_items();
-                $rss_2_obj = new MagpieRSS_Parser($rss_2);
+                $rss_2_obj = new RSSItemParser($rss_2);
                 $rss_2_items = $rss_2_obj->get_all_items();
                 
                 foreach($rss_1_items as $rss_1_item)
                 {
                     foreach($rss_2_items as $rss_2_item)
                     {
-                        $rss_1_item_obj = new MagpieRSS_Item($rss_1_item);
-                        $rss_2_item_obj = new MagpieRSS_Item($rss_2_item);
+                        $rss_1_item_obj = new RSSItem($rss_1_item);
+                        $rss_2_item_obj = new RSSItem($rss_2_item);
 
                         if($rss_1_item_obj->get_destcode() == $rss_2_item_obj->get_destcode())
                         {
@@ -105,8 +105,8 @@
                             // Find lowest combined fares
                             else
                             {
-                                $fare_obj1 = new MagpieRSS_Item($fares[0]);
-                                $fare_obj2 = new MagpieRSS_Item($fares[1]);
+                                $fare_obj1 = new RSSItem($fares[0]);
+                                $fare_obj2 = new RSSItem($fares[1]);
                                 
                                 $curr_total_lowest_fares = $fare_obj1->get_price() + $fare_obj2->get_price();
                                 $curr_total = $rss_1_item_obj->get_price() + $rss_2_item_obj->get_price();
