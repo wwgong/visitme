@@ -84,10 +84,10 @@
 
 	$(".airportAutocomplete").autocomplete("includes/autocomplete.php", {
 		selectFirst: false,
+                matchSubset: false,
 		<!-- mustMatch: true,    Note: Having issue with some valid values get cleared out-->
                 minChars: 3,
                 delay: 700,
-
 	});
 
 	$(".airportAutocomplete").result(function(event, data, formatted) {
@@ -101,6 +101,7 @@
     });
 {/literal}
 </script>
+
 </head>
 <body onload="initialize()">
 <br />
@@ -110,18 +111,18 @@
     <h1>Meet Me Half Way</h1>
     <br />
     <form autocomplete="on" name="input" action="index.php" method="get" >
-        <table border="0" cellpadding="1" cellspacing="1" width="410px" class="center">
+        <table border="0" cellpadding="1" cellspacing="1" width="500px" class="center">
             <tr>
                 <td align="right">Airport 1:&nbsp;</td>
-                <td><input type="text" class="airportAutocomplete" name="loc1" size="45"  /></td>
+                <td align="left"><input type="text" class="airportAutocomplete" name="loc1" size="50" /></td>
             </tr>
             <tr>
                 <td align="right">Airport 2:&nbsp;</td>
-                <td><input type="text" class="airportAutocomplete" name="loc2" size="45"  /></td>
+                <td align="left"><input type="text" class="airportAutocomplete" name="loc2" size="50"  /></td>
             </tr>
             <tr>
                 <td align="right">Travel Month:&nbsp;</td>
-                <td><input type="text" name="tm" size="45" id="datepicker" /></td>
+                <td align="left"><input type="text" name="tm" id="datepicker" size="50" /></td>
             </tr>
             <tr>
                 <td>&nbsp;</td>
