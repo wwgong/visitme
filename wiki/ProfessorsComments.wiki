@@ -1,5 +1,17 @@
 #summary Space for Professor Bolker to inform the team of how awesome it is.
  
+April 5.
+
+I haven't been here in a while. 
+Several things to schedule for the last sprint:
+
+On page 
+http://code.google.com/p/visitme/wiki/Instructions
+
+there's a promise to provide a clean downloadable package of code when development is complete. When will that happen?
+
+Provide dates and responsibilities for the April presentation and for the poster for May.
+
 March 11
 
 Good work on the first sprint. That's the good news. 
