@@ -45,7 +45,7 @@ WOC = Waiting on client
 || New algorithm for computing midpoint		||Group|| ||04/06/10|| ||
 || Instructions for deploying MMHW		||Khanh|| ||04/06/10|| ||
 || Inputs Validation		                ||Group|| ||04/09/10|| ||
-|| Dynamic search radius		        ||Group|| ||04/09/10|| ||
+|| Dynamic search radius		        ||Brian||04/06/10 ||04/09/10||<font color="green">Done</font> ||
 || GUI setup		                        ||Group|| ||04/09/10|| ||
 || <font color=#0000BB>*Code freeze for event presentations*</font>		||  || ||04/20/10||  ||
 
