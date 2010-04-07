@@ -11,6 +11,8 @@
     require_once('includes/util.php');
     require_once('includes/result.php');
     require_once('includes/rss.php');
+    require_once('includes/dynamicsearch.php');
+    require_once('includes/print.php');
 
     $smarty = new Smarty();
     $smarty->assign('host_url', $host_url);
@@ -24,13 +26,23 @@
     $nearby = true; // By default
     $travel_month = null;
 
+    // Symbols used for distinguishing Smarty variables
+    $location_1_symbol = '1';
+    $location_2_symbol = '2';
+    $location_mid_symbol = 'mid';
+    $location_A_symbol = 'A';
+    $location_B_symbol = 'B';
+    
+    $print_obj = new PrintRSS();
+
     if(($location1_input != NULL) && ($location2_input != NULL) && ($travel_month_input != NULL))
     {
-        //Form data
+        // Form data
         $location1_input = mysql_real_escape_string($location1_input);
         $location2_input = mysql_real_escape_string($location2_input);
         $travel_month_input = mysql_real_escape_string($travel_month_input);
 
+        // Parse airport codes from input strings
         $util_obj = new Util();
         $location1_airport_code = $util_obj->parse_airport_code($location1_input);
         $location2_airport_code = $util_obj->parse_airport_code($location2_input);
@@ -85,73 +97,74 @@
 
         $nearby = $dist_obj->is_nearby($radius);
         $smarty->assign('nearby',$nearby);
-
+ 
         if (!$nearby)
 	{
             $mid_sel_obj = new MidPointSelect($location_1_lola, $location_2_lola, $radius);
-
-            /******************************************************************
-             * Location 1 to mid point
-             ******************************************************************/
-
-            $dest_codes = $mid_sel_obj->get_midpoint_airport_codes();
-
-            $result_obj = new Result($location1_airport_code, $location2_airport_code, $dest_codes, $travel_month);
-            $loc1_to_mid_rss_item = $result_obj->get_loc1_to_mid_rss_item();
-            $loc1_to_mid_obj = new RSSItem($loc1_to_mid_rss_item);
-
-            if($debug)
-            {
-                echo "<br />Location 1 Code: ";
-                print_r($location1_airport_code);
-                 echo "<br />Location 2 Code: ";
-                print_r($location2_airport_code);
-                echo "<br />Dest Codes: ";
-                print_r($dest_codes);
-            }
-
             $midpoint_lola = $mid_sel_obj->get_midpoint_lola();
 
             $smarty->assign('midpoint_longitude',$mid_sel_obj->get_midpoint_longitude());
 	    $smarty->assign('midpoint_latitude',$mid_sel_obj->get_midpoint_latitude());
 
-	    $smarty->assign('location_1',$loc1_to_mid_obj->get_originlocation());
-	    $smarty->assign('location1AirportCode',$loc1_to_mid_obj->get_origincode());
-            $smarty->assign('location_mid_1',$loc1_to_mid_obj->get_destlocation());
-            $smarty->assign('mid1AirportCode',$loc1_to_mid_obj->get_destcode());
+           /******************************************************************
+            * Location 1 to mid point
+            ******************************************************************/
 
+            $dest_codes = $mid_sel_obj->get_midpoint_airport_codes();
+
+            $result_obj = new Result($location1_airport_code, $location2_airport_code, $dest_codes, $travel_month);
+            $loc1_to_mid_rss_item = $result_obj->get_loc1_to_mid_rss_item();
+
+            $smarty = $print_obj->print_rss_item($smarty, $loc1_to_mid_rss_item, $location_1_symbol, $location_mid_symbol);
+
+            $loc1_to_mid_obj = new RSSItem($loc1_to_mid_rss_item);
             $flight1_cost = $loc1_to_mid_obj->get_price();
-
-            $smarty->assign('flight1_cost',$flight1_cost);
-            $smarty->assign('flight1_departdate',$loc1_to_mid_obj->get_departdate());
-            $smarty->assign('flight1_returndate',$loc1_to_mid_obj->get_returndate());
-            $smarty->assign('flight1_airline',$loc1_to_mid_obj->get_airline());
-            $smarty->assign('flight1_description',$loc1_to_mid_obj->get_description());
-            $smarty->assign('flight1_buzz',$loc1_to_mid_obj->get_guid());
-
 
           /******************************************************************
            * Location 2 to mid point
            ******************************************************************/
            $loc2_to_mid_rss_item = $result_obj->get_loc2_to_mid_rss_item();
+
+           $smarty = $print_obj->print_rss_item($smarty, $loc2_to_mid_rss_item, $location_2_symbol, $location_mid_symbol);
+
            $loc2_to_mid_obj = new RSSItem($loc2_to_mid_rss_item);
-
-           $smarty->assign('location_2',$loc2_to_mid_obj->get_originlocation());
-           $smarty->assign('location2AirportCode',$loc2_to_mid_obj->get_origincode());
-           $smarty->assign('location_mid_2',$loc2_to_mid_obj->get_destlocation());
-           $smarty->assign('mid2AirportCode',$loc2_to_mid_obj->get_destcode());
-
            $flight2_cost = $loc2_to_mid_obj->get_price();
 
-           $smarty->assign('flight2_cost',$flight2_cost);
-           $smarty->assign('flight2_departdate',$loc2_to_mid_obj->get_departdate());
-           $smarty->assign('flight2_returndate',$loc2_to_mid_obj->get_returndate());
-           $smarty->assign('flight2_airline',$loc2_to_mid_obj->get_airline());
-           $smarty->assign('flight2_description',$loc2_to_mid_obj->get_description());
-           $smarty->assign('flight2_buzz',$loc2_to_mid_obj->get_guid());
+           /***************** Meeting point lola *****************/
+           if(($flight1_cost!=NULL) && ($flight2_cost!=NULL))
+           {
+               $meeting_point_lola = get_lola_airport($loc2_to_mid_obj->get_destcode());
+               $meeting_point_obj = new Point($meeting_point_lola);
+               $smarty->assign('meeting_point_longitude',$meeting_point_obj->get_longitude());
+               $smarty->assign('meeting_point_latitude',$meeting_point_obj->get_latitude());
+           }
 
            if(($flight1_cost==NULL) || ($flight2_cost==NULL))
            {
+               // Increase radius to search for flight info to common destination dynamically...
+               $dynamic_search_obj = new DynamicSearch($location_1_lola, 
+                                                       $location_2_lola,
+                                                       $midpoint_lola,
+                                                       $location1_airport_code,
+                                                       $location2_airport_code,
+                                                       $mid_sel_obj->get_midpoint_airport_codes(),
+                                                       $travel_month,
+                                                       $radius);
+
+               if($dynamic_search_obj->found_meeting_location())
+               {
+                    $smarty = $print_obj->print_rss_item($smarty, $dynamic_search_obj->get_loc1_to_mid_rss_item(), $location_1_symbol, $location_mid_symbol);
+                    $smarty = $print_obj->print_rss_item($smarty, $dynamic_search_obj->get_loc2_to_mid_rss_item(), $location_2_symbol, $location_mid_symbol);
+
+                    // Get lola of meeting point
+                    $new_dest_code_obj = new RSSItem($dynamic_search_obj->get_loc1_to_mid_rss_item());
+                    $meeting_point_lola = get_lola_airport($new_dest_code_obj->get_destcode());
+                    $meeting_point_obj = new Point($meeting_point_lola);
+                    
+                    $smarty->assign('meeting_point_longitude',$meeting_point_obj->get_longitude());
+                    $smarty->assign('meeting_point_latitude',$meeting_point_obj->get_latitude());
+               }
+               
                /******************************************************************
                 * Location 1 to Location 2
                 ******************************************************************/
@@ -160,30 +173,13 @@
 
                 $result_obj = new Result($orig_code, $dest_code, $travel_month);
                 $origin_to_dest_rss_item = $result_obj->get_orig_to_dest_rss_item();
+                
                 $origin_to_dest_obj = new RSSItem($origin_to_dest_rss_item);
-
-                if($debug)
-                {
-                    echo "<br />Origin Codes: ";
-                    print_r($orig_code);
-                    echo "<br />Dest Codes: ";
-                    print_r($dest_code);
-                }
-
                 $flightA_cost = $origin_to_dest_obj->get_price();
+          
                 if($flightA_cost != NULL)
                 {
-                    $smarty->assign('location2AirportCode',$origin_to_dest_obj->get_destcode());
-                    $smarty->assign('location_1',$origin_to_dest_obj->get_originlocation());
-                    $smarty->assign('location_2',$origin_to_dest_obj->get_destlocation());
-                    $smarty->assign('location1AirportCode',$origin_to_dest_obj->get_origincode());
-
-                    $smarty->assign('flightA_cost',$flightA_cost);
-                    $smarty->assign('flightA_departdate',$origin_to_dest_obj->get_departdate());
-                    $smarty->assign('flightA_returndate',$origin_to_dest_obj->get_returndate());
-                    $smarty->assign('flightA_airline',$origin_to_dest_obj->get_airline());
-                    $smarty->assign('flightA_description',$origin_to_dest_obj->get_description());
-                    $smarty->assign('flightA_buzz',$origin_to_dest_obj->get_guid());
+                    $smarty = $print_obj->print_rss_item($smarty, $origin_to_dest_rss_item, $location_A_symbol, $location_B_symbol);
                 }
 
               /******************************************************************
@@ -194,31 +190,12 @@
 
                $result_obj = new Result($orig_code, $dest_code, $travel_month);
                $origin_to_dest_rss_item = $result_obj->get_orig_to_dest_rss_item();
+
                $origin_to_dest_obj = new RSSItem($origin_to_dest_rss_item);
-
-               if($debug)
-               {
-                    echo "<br /><hr />";
-                    echo "<br />Origin Codes: ";
-                    print_r($orig_code);
-                    echo "<br />Dest Codes: ";
-                    print_r($dest_code);
-               }
-
                $flightB_cost = $origin_to_dest_obj->get_price();
                if($flightB_cost != NULL)
                {
-                   $smarty->assign('location1AirportCode',$origin_to_dest_obj->get_destcode());
-                   $smarty->assign('location_2',$origin_to_dest_obj->get_originlocation());
-                   $smarty->assign('location_1',$origin_to_dest_obj->get_destlocation());
-                   $smarty->assign('location2AirportCode',$origin_to_dest_obj->get_origincode());
-
-                   $smarty->assign('flightB_cost',$flightB_cost);
-                   $smarty->assign('flightB_departdate',$origin_to_dest_obj->get_departdate());
-                   $smarty->assign('flightB_returndate',$origin_to_dest_obj->get_returndate());
-                   $smarty->assign('flightB_airline',$origin_to_dest_obj->get_airline());
-                   $smarty->assign('flightB_description',$origin_to_dest_obj->get_description());
-                   $smarty->assign('flightB_buzz',$origin_to_dest_obj->get_guid());
+                   $smarty = $print_obj->print_rss_item($smarty, $origin_to_dest_rss_item, $location_B_symbol, $location_A_symbol);
                }
            }
        }

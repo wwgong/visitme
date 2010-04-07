@@ -28,36 +28,50 @@
     var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
     var location1 = new google.maps.LatLng({/literal} {$location_1_latitude} {literal},{/literal} {$location_1_longitude} {literal});
     var location2 = new google.maps.LatLng({/literal} {$location_2_latitude} {literal},{/literal} {$location_2_longitude} {literal});
-    var midpoint = new google.maps.LatLng({/literal} {$midpoint_latitude} {literal},{/literal} {$midpoint_longitude} {literal});
+    var geoMidpoint = new google.maps.LatLng({/literal} {$midpoint_latitude} {literal},{/literal} {$midpoint_longitude} {literal});
+
     var bounds = new google.maps.LatLngBounds();
     bounds.extend(location1);
     bounds.extend(location2);
-    bounds.extend(midpoint);
+    bounds.extend(geoMidpoint);
+    {/literal}{if ($meeting_point_longitude != NULL) && ($meeting_point_latitude != NULL)}{literal}
+        var meetingPoint = new google.maps.LatLng({/literal} {$meeting_point_latitude} {literal},{/literal} {$meeting_point_longitude} {literal});
+        bounds.extend(meetingPoint);
+    {/literal}{/if}{literal}
     map.fitBounds(bounds);
 
-    var marker_1_icon = 'images/marker_1.png';
-    var marker_2_icon = '{/literal}{$host_url}{literal}/images/marker_2.png';
-    var marker_mid_icon = '{/literal}{$host_url}{literal}/images/marker_mid.png';
+    var marker1Icon = 'images/marker_1.png';
+    var marker2Icon = '{/literal}{$host_url}{literal}/images/marker_2.png';
+    var markerGeoMidIcon = '{/literal}{$host_url}{literal}/images/geomid.png';
+    var markerMeetIcon = '{/literal}{$host_url}{literal}/images/marker_meet.png';
 
     <!-- Creating a marker and positioning it on the map  -->
     var loc1_marker = new google.maps.Marker({
     position: location1,
     title: 'Location 1',
-    icon: marker_1_icon,
+    icon: marker1Icon,
     map: map
     });
     var loc2_marker = new google.maps.Marker({
     position: location2,
     title: 'Location 2',
-    icon: marker_2_icon,
+    icon: marker2Icon,
     map: map
     });
     var mid_marker = new google.maps.Marker({
-    position: midpoint,
-    title: 'Midpoint',
-    icon: marker_mid_icon,
+    position: geoMidpoint,
+    title: 'Geographical Midpoint',
+    icon: markerGeoMidIcon,
     map: map
     });
+    {/literal}{if ($meeting_point_longitude != NULL) && ($meeting_point_latitude != NULL)}{literal}
+        var meet_marker = new google.maps.Marker({
+        position: meetingPoint,
+        title: 'Meeting Place',
+        icon: markerMeetIcon,
+        map: map
+        });
+    {/literal}{/if}{literal}
   }
 {/literal} 
 </script>
@@ -83,7 +97,7 @@
     $().ready(function() {
 
 	$(".airportAutocomplete").autocomplete("includes/autocomplete.php", {
-		selectFirst: false,
+		selectFirst: true,
                 matchSubset: false,
 		<!-- mustMatch: true,    Note: Having issue with some valid values get cleared out-->
                 minChars: 3,
@@ -122,7 +136,7 @@
             </tr>
             <tr>
                 <td align="right">Travel Month:&nbsp;</td>
-                <td align="left"><input type="text" name="tm" id="datepicker" size="50" /></td>
+                <td align="left"><input type="text" name="tm" id="datepicker" size="50" maxlength=7 /></td>
             </tr>
             <tr>
                 <td>&nbsp;</td>
@@ -137,7 +151,7 @@
 
 {if $search}
     <center>
-    <div style="height:0px;width:665px;padding:0px;border-top:2px solid #999;" ></div>
+    <div style="height:0px;width:665px;padding:0px;border-top:1px solid #999;" ></div>
     <br />
     <div style="width:660px;height:150px;padding:3px;border:1px solid #999;" >
          <div id="map_canvas" style="width:100%; height:100%" ></div>
@@ -148,18 +162,18 @@
     {if ($flight1_cost!=NULL) && ($flight2_cost!=NULL)}
 
         <table align="center" border="0">
-            <caption align="center"><img src="{$host_url}/images/m.gif" /><span style="font-size:29px;font-weight:bold;margin-top:0px;">{$location_mid_1}</span></caption>
+            <caption align="center"><img src="{$host_url}/images/m.gif" /><span style="font-size:29px;font-weight:bold;margin-top:0px;">{$location_mid}</span></caption>
             <tr>
                 <th colspan="3" style="border-bottom: solid;border-color: #e2e1e1;font-size: 18px; padding: 5px;"><div style="padding-bottom:0px;float:left;"><img src="{$host_url}/images/1.gif" /></div><div style="margin-top:27px;float:left;">{$location_1}</div></th>
                 <th colspan="3"  style="border-bottom: solid;border-color: #e2e1e1;font-size: 18px; padding: 5px;"><div style="padding-bottom:0px;float:left;"><img src="{$host_url}/images/2.gif" /></div><div style="margin-top:27px;float:left;">{$location_2}</div></th>
             </tr>
             <tr>
                 <td align="center" width="100"><a style="font-size: 32px;font-weight: bold;text-decoration:none;" href="{$flight1_buzz}" target="_blank">${$flight1_cost}*</a></td>
-                <td align="center" width="120"><span style="font-size: 12px;font-weight: bold;">{$location1AirportCode} <img src="{$host_url}/images/airplane.jpg" alt="airplane" /> {$mid1AirportCode} <br />  {$mid1AirportCode} <img src="{$host_url}/images/airplane.jpg" alt="airplane" /> {$location1AirportCode}</span></td>
-                <td align="center" width="100"><img src="{$host_url}/images/hotel.jpg" alt="hotel" /> <a style="font-family:tahoma;font-size:12px;text-decoration:none;" href="http://www.kayak.com/s/search/hotel?crc={$location_mid_1}&do=y" target="_blank">Hotels</a></td>
+                <td align="center" width="120"><span style="font-size: 12px;font-weight: bold;">{$location_1_airportCode} <img src="{$host_url}/images/airplane.jpg" alt="airplane" /> {$location_mid_airportCode} <br />  {$location_mid_airportCode} <img src="{$host_url}/images/airplane.jpg" alt="airplane" /> {$location_1_airportCode}</span></td>
+                <td align="center" width="100"><img src="{$host_url}/images/hotel.jpg" alt="hotel" /> <a style="font-family:tahoma;font-size:12px;text-decoration:none;" href="http://www.kayak.com/s/search/hotel?crc={$location_mid}&do=y" target="_blank">Hotels</a></td>
                 <td align="center" width="100"><a style="font-size: 32px;font-weight: bold;text-decoration:none;" href="{$flight2_buzz}" target="_blank">${$flight2_cost}*</a></td>
-                <td align="center" width="120"><span style="font-size: 12px;font-weight: bold;">{$location2AirportCode} <img src="{$host_url}/images/airplane.jpg" alt="airplane" /> {$mid2AirportCode} <br />  {$mid2AirportCode} <img src="{$host_url}/images/airplane.jpg" alt="airplane" /> {$location2AirportCode}</span></td>
-                <td align="center" width="100"><img src="{$host_url}/images/hotel.jpg" alt="hotel" /> <a style="font-family:tahoma;font-size:12px;text-decoration:none;" href="http://www.kayak.com/s/search/hotel?crc={$location_mid_2}&do=y" target="_blank">Hotels</a></td>
+                <td align="center" width="120"><span style="font-size: 12px;font-weight: bold;">{$location_2_airportCode} <img src="{$host_url}/images/airplane.jpg" alt="airplane" /> {$location_mid_airportCode} <br />  {$location_mid_airportCode} <img src="{$host_url}/images/airplane.jpg" alt="airplane" /> {$location_2_airportCode}</span></td>
+                <td align="center" width="100"><img src="{$host_url}/images/hotel.jpg" alt="hotel" /> <a style="font-family:tahoma;font-size:12px;text-decoration:none;" href="http://www.kayak.com/s/search/hotel?crc={$location_mid}&do=y" target="_blank">Hotels</a></td>
             </tr>
             <tr>
                 <td colspan="3" height="8" style=" font-size: 10px;padding: 5px;background-color: #e2e1e1;">{$flight1_description}</td>
@@ -185,14 +199,14 @@
             </div>
             <table align="center">
                 <tr>
-                    <th colspan="3"  style="border-bottom: solid;border-color: #e2e1e1;font-size: 18px; padding: 5px;"><div style="padding-bottom:0px;float:left;"><img src="{$host_url}/images/1.gif" /></div><div style="margin-top:27px;float:left;">{$location_1}</div></th>
-                    <th colspan="3"  style="border-bottom: solid;border-color: #e2e1e1;font-size: 18px; padding: 5px;"><div style="padding-bottom:0px;float:left;"><img src="{$host_url}/images/2.gif" /></div><div style="margin-top:27px;float:left;">{$location_2}</div></th>
+                    <th colspan="3"  style="border-bottom: solid;border-color: #e2e1e1;font-size: 18px; padding: 5px;"><div style="padding-bottom:0px;float:left;"><img src="{$host_url}/images/1.gif" /></div><div style="margin-top:27px;float:left;">{$location_A}</div></th>
+                    <th colspan="3"  style="border-bottom: solid;border-color: #e2e1e1;font-size: 18px; padding: 5px;"><div style="padding-bottom:0px;float:left;"><img src="{$host_url}/images/2.gif" /></div><div style="margin-top:27px;float:left;">{$location_B}</div></th>
                 </tr>
                 <tr>
                     {if $flightA_cost!= NULL}
                         <td align="center" width="100"><a style="font-size: 32px;font-weight: bold;text-decoration:none;" href="{$flightA_buzz}" target="_blank">${$flightA_cost}*</a></td>
-                        <td align="center" width="120"><span style="font-size: 12px;font-weight: bold;">{$location1AirportCode} <img src="{$host_url}/images/airplane.jpg" alt="airplane" /> {$location2AirportCode} <br />  {$location2AirportCode} <img src="{$host_url}/images/airplane.jpg" alt="airplane" /> {$location1AirportCode}</span></td>
-                        <td align="center" width="100"><img src="{$host_url}/images/hotel.jpg" alt="hotel" /> <a style="font-family:tahoma;font-size:12px;text-decoration:none;" href="http://www.kayak.com/s/search/hotel?crc={$location_2}&do=y" target="_blank">Hotels</a></td>
+                        <td align="center" width="120"><span style="font-size: 12px;font-weight: bold;">{$location_A_airportCode} <img src="{$host_url}/images/airplane.jpg" alt="airplane" /> {$location_B_airportCode} <br />  {$location_B_airportCode} <img src="{$host_url}/images/airplane.jpg" alt="airplane" /> {$location_A_airportCode}</span></td>
+                        <td align="center" width="100"><img src="{$host_url}/images/hotel.jpg" alt="hotel" /> <a style="font-family:tahoma;font-size:12px;text-decoration:none;" href="http://www.kayak.com/s/search/hotel?crc={$location_B}&do=y" target="_blank">Hotels</a></td>
                     {else}
                         <td width="10"></td>
                         <td width="300" align="center">No flights were found.</td>
@@ -200,8 +214,8 @@
                     {/if}
                     {if $flightB_cost!= NULL}
                         <td align="center" width="100"><a style="font-size: 32px;font-weight: bold;text-decoration:none;" href="{$flightB_buzz}" target="_blank">${$flightB_cost}*</a></td>
-                        <td align="center" width="120"><span style="font-size: 12px;font-weight: bold;">{$location2AirportCode} <img src="{$host_url}/images/airplane.jpg" alt="airplane" /> {$location1AirportCode} <br />  {$location1AirportCode} <img src="{$host_url}/images/airplane.jpg" alt="airplane" /> {$location2AirportCode}</span></td>
-                        <td align="center" width="100"><img src="{$host_url}/images/hotel.jpg" alt="hotel" /> <a style="font-family:tahoma;font-size:12px;text-decoration:none;" href="http://www.kayak.com/s/search/hotel?crc={$location_1}&do=y" target="_blank">Hotels</a></td>
+                        <td align="center" width="120"><span style="font-size: 12px;font-weight: bold;">{$location_B_airportCode} <img src="{$host_url}/images/airplane.jpg" alt="airplane" /> {$location_A_airportCode} <br />  {$location_A_airportCode} <img src="{$host_url}/images/airplane.jpg" alt="airplane" /> {$location_B_airportCode}</span></td>
+                        <td align="center" width="100"><img src="{$host_url}/images/hotel.jpg" alt="hotel" /> <a style="font-family:tahoma;font-size:12px;text-decoration:none;" href="http://www.kayak.com/s/search/hotel?crc={$location_A}&do=y" target="_blank">Hotels</a></td>
                     {else}
                         <td width="10"></td>
                         <td width="300" align="center">No flights were found.</td>
