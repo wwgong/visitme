@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!--
 Copyright 2010 GoPandas
-This file is part of VisitME.
+This file is part of Meet Me Half Way ( an extension of VisitME ).
 
 VisitME is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the
@@ -16,6 +16,7 @@ for more details.
 You should have received a copy of the GNU General Public License
 along with VisitME. If not, see http://www.gnu.org/licenses/.
 -->
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
