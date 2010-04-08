@@ -32,7 +32,6 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
     require_once('includes/dynamicsearch.php');
     require_once('includes/print.php');
     require_once('includes/calendar.php');
-    require_once('includes/progressbar.php');
 
     $smarty = new Smarty();
     $smarty->assign('host_url', $host_url);
