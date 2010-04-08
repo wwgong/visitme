@@ -17,6 +17,11 @@ for more details.
 You should have received a copy of the GNU General Public License
 along with VisitME. If not, see http://www.gnu.org/licenses/.
 */
+
+   /***********************************************************************************************
+    *    Project Name: Meet Me Halfway
+    *    Project website: http://code.google.com/p/visitme/
+    ***********************************************************************************************/
     require_once('includes/common.php');
     require_once('includes/midpoint.php');
     require_once('includes/point.php');
@@ -26,6 +31,8 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
     require_once('includes/rss.php');
     require_once('includes/dynamicsearch.php');
     require_once('includes/print.php');
+    require_once('includes/calendar.php');
+    require_once('includes/progressbar.php');
 
     $smarty = new Smarty();
     $smarty->assign('host_url', $host_url);
@@ -33,7 +40,8 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
 
     $location1_input = $_GET['loc1'];
     $location2_input = $_GET['loc2'];
-    $travel_month_input = $_GET['tm'];
+    $month_input = $_GET['tmonth'];
+    $year_input = $_GET['tyear'];
 
     $search = false;
     $nearby = true; // By default
@@ -47,32 +55,44 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
     $location_B_symbol = 'B';
     
     $print_obj = new PrintRSS();
+    $calendar_obj = new Calendar();
+    $smarty = $calendar_obj->travel_time($smarty);
 
-    if(($location1_input != NULL) && ($location2_input != NULL) && ($travel_month_input != NULL))
+    if(($location1_input != NULL) && ($location2_input != NULL) && ($month_input != NULL) && ($year_input != NULL))
     {
         // Form data
         $location1_input = mysql_real_escape_string($location1_input);
         $location2_input = mysql_real_escape_string($location2_input);
-        $travel_month_input = mysql_real_escape_string($travel_month_input);
+        $month_input = mysql_real_escape_string($month_input);
+        $year_input = mysql_real_escape_string($year_input);
 
-        // Parse airport codes from input strings
+        // validate and parse airport codes, month, and year from input strings
         $util_obj = new Util();
-        $location1_airport_code = $util_obj->parse_airport_code($location1_input);
-        $location2_airport_code = $util_obj->parse_airport_code($location2_input);
-        $travel_month = $util_obj->format_travel_month_input($travel_month_input);
+        $location1_airport_code = $util_obj->val_n_parse_airport_code($location1_input);
+        $location2_airport_code = $util_obj->val_n_parse_airport_code($location2_input);
+        $travel_month = $util_obj->val_n_format_time_inputs($month_input, $year_input);
 
-        if($debug)
+        // Prompt error pop-up message
+        if($location1_airport_code == null)
         {
-            echo "<br />Location1 code: ".$location1_airport_code."; Location2 code: ".$location2_airport_code."; Travel month: ".$travel_month_input."<br />";
+            exit("Invalid airport 1: ".$location1_input);
         }
-
+        if($location2_airport_code == null)
+        {
+             exit("Invalid airport 2: ".$location2_input);
+        }
+        if($travel_month == null)
+        {
+            exit("Invalid travel month/year: ".$month_input.'/'.$year_input);
+        }
+        
         $location_1_lola = get_lola_airport($location1_airport_code);
 	$location_2_lola = get_lola_airport($location2_airport_code);
 
         // If either origin or destination lola isn't available
         if (!(is_array($location_1_lola) && is_array($location_2_lola)))
         {
-            die();
+            exit("Unable to find longitude/latitude of airport-1/airport-2");
         }
 
         $search = true;
@@ -110,7 +130,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
 
         $nearby = $dist_obj->is_nearby($radius);
         $smarty->assign('nearby',$nearby);
- 
+        
         if (!$nearby)
 	{
             $mid_sel_obj = new MidPointSelect($location_1_lola, $location_2_lola, $radius);

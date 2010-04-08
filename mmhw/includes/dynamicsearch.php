@@ -16,7 +16,6 @@ for more details.
 You should have received a copy of the GNU General Public License
 along with VisitME. If not, see http://www.gnu.org/licenses/.
 */
-
     require_once('distance.php');
     require_once('sqlfunctions.php');
 
@@ -25,7 +24,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
     ***********************************************/
     class DynamicSearch {
         const MAX_RADIUS = 100;
-        const RADIUS_INCREMENTAL_VALUE = 0.5;
+        const RADIUS_INCREMENTAL_VALUE = 5.0;
         private $curr_radius = null;
         private $new_mid_codes = null;
         private $index;

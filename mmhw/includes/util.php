@@ -23,30 +23,117 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
     class Util
     {
         /* Ex: 03/2010 to 201003 */
-        public function format_travel_month_input($input)
+        public function val_n_format_time_inputs($month_input, $year_input)
         {
-            $month = substr($input, 0, 2);
-            $year = substr($input, -4);
+            $month = "";
+            $year = "";
+            $tm = "";
+            $today = getdate();
+            $curr_year = $today['year'];
+            $curr_mon = $today['mon'];
+
+            /****** Validate month and year inputs *****/
+            // Validate month input
+            if((is_numeric($month_input)) && (($month_input > 0) && ($month_input <= 12)))
+            {
+                if(($year_input == $curr_year) && ($month_input < $curr_mon))
+                {
+                    return (null);
+                }
+                if(($year_input == $curr_year+1) && ($month_input > $curr_mon))
+                {
+                    return (null);
+                }
+            }
+            else
+            {
+                return (null);
+            }
+
+            // Validate year input
+            if((!is_numeric($year_input)) || ($year_input < $curr_year) || ($year_input > $curr_year+1))
+            {
+                return (null);
+            }
+
+            /***** If passed validation, format them *****/
+            // Format month input
+            if(($month_input>0) && ($month_input<10))
+            {
+                $month = "0".$month_input;
+            }
+            else
+            {
+                $month = $month_input;
+            }
+
+            $year = $year_input;
             $tm = $year.$month;
 
             return ($tm);
         }
 
-        public function parse_airport_code($input)
+        public function val_n_parse_airport_code($input)
         {
+            $city = null;
+            $state = null;
+            $country = null;
+            $airport_name = null;
             $airport_code = null;
+            $is_airport_code_only = false;
+            $input_length = strlen($input);
 
-            if(strlen($input) == 3)
+            // Validate & format airport code input
+            if($input_length == 3) // 3-alphabets airportcode
             {
                 $airport_code = $input;
+                $is_airport_code_only = true;
+            }
+            elseif($input_length > 3)
+            {
+                // strpos starts from index 0
+                $comma_pos = strpos($input, ",");
+                $city = substr($input, 0, $comma_pos);
+
+                $dash_pos = strpos($input, "-");
+                $temp = substr($input, $comma_pos+2, $dash_pos-1-($comma_pos+2));
+                if(strlen($temp) == 2)
+                {
+                    $state = $temp;
+                }
+                else if(strlen($temp) > 2)
+                {
+                    $country = $temp;
+                }
+          
+                $open_bracket_pos = strpos($input, "(");
+                $airport_name = substr($input, $dash_pos+2, $open_bracket_pos-1-($dash_pos+2));
+
+                $closed_bracket_pos = strpos($input, ")");
+                $airport_code = substr($input, $open_bracket_pos+1, $closed_bracket_pos-($open_bracket_pos+1));
+       
+                $airport_code_len = strlen($airport_code);
+                if($airport_code_len != 3)
+                {
+                    return (null);
+                }
+               
+                if(($input_length - ($closed_bracket_pos+1)) != 0)
+                {
+                    return (null);
+                }
             }
             else
             {
-                $startSymbol = "(";
-                $pos = strpos($input, $startSymbol);
-                $airport_code = substr($input, $pos+1, 3);
+                return (null);
             }
-
+            
+            $validate = is_valid_airport_code($city, $state, $country, $airport_name, $airport_code, $is_airport_code_only);
+            if(!$validate)
+            {
+                return (null);
+            }
+            
             return ($airport_code);
         }
     }

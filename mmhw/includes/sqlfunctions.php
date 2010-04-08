@@ -17,8 +17,7 @@ You should have received a copy of the GNU General Public License
 along with VisitME. If not, see http://www.gnu.org/licenses/.
 */
 
-
-// Authors: H. Volckmer, V. Gadge, B. Moy, W. Gong
+// Authors: H. Volckmer, V. Gadge, B. Moy, W. Gong, C. Pham, K. Nguyen
 // Site: http://code.google.com/p/visitme
 
 require_once("config.php");
@@ -315,4 +314,41 @@ require_once("config.php");
 
 		return array($x, $y);
 	}
+        function is_valid_airport_code($city, $state, $country, $airport_name, $airport_code, $is_airport_code_only)
+        {
+            $sql = null;
+            if($is_airport_code_only)
+            {
+                $sql = "SELECT * FROM airports a WHERE a.code = '".$airport_code."';";
+            }
+            else
+            {    // city + state for US;  city + country name for the rest of the countries...
+                if(($state != null) && ($country == null))
+                {
+                    $sql = "SELECT * FROM airports a WHERE a.city = '".$city."' AND a.state = '".$state."' AND
+                                                           a.name = '".$airport_name."' AND a.code = '".$airport_code."'";
+                }
+                else if(($state == null) && ($country != null))
+                {
+                    $sql = "SELECT a.*, c.* FROM airports a, country c WHERE a.city = '".$city."' AND
+                                      a.name = '".$airport_name."' AND a.code = '".$airport_code."' AND
+                                      a.country = c.code AND c.name = '".$country."'";
+                }
+                else
+                {
+                    return (false);
+                }
+            }
+            $result = sql_result($sql);
+            $row = sql_fetch_obj($result);
+            if($row == null)
+            {
+                return (false);
+            }
+            else
+            {
+                return (true);
+            }
+        }
+
 ?>

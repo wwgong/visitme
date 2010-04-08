@@ -96,5 +96,13 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
     margin-right: auto;
     width: 640px;
 }
+.activeSection
+{
+    display: block;
+}
+.inactiveSection
+{
+    display: none;
+}
 
 

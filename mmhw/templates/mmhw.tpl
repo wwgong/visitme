@@ -1,4 +1,3 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!--
 Copyright 2010 GoPandas
@@ -17,20 +16,23 @@ for more details.
 You should have received a copy of the GNU General Public License
 along with VisitME. If not, see http://www.gnu.org/licenses/.
 -->
-
 <html>
-<head>
+<head style="margin:0px;padding:0px;">
 <link rel="stylesheet" type="text/css" href="style/mmhwStyle.css" />
 <link type="text/css" href="style/jquery.ui.datepicker.css" rel="stylesheet" />
 <link type="text/css" href="style/jquery.ui.theme.css" rel="stylesheet" />
 <link type="text/css" href="style/jquery.ui.core.css" rel="stylesheet" />
 <link type="text/css" href="style/jquery.autocomplete.css"  rel="stylesheet" />
+<link type="text/css" href="style/jquery.ui.progressbar.css"  rel="stylesheet" />
 
 <script type="text/javascript" src="includes/scripts/jquery.js"></script>
 <script type="text/javascript" src="includes/scripts/jquery.ui.core.js"></script>
 <script type="text/javascript" src="includes/scripts/jquery.ui.widget.js"></script>
 <script type="text/javascript" src="includes/scripts/jquery.ui.datepicker.js"></script>
 <script type="text/javascript" src="includes/scripts/jquery.autocomplete.js"></script>
+<script type="text/javascript" src="includes/scripts/jquery.ui.progressbar.js"></script>
+<script type="text/javascript" src="includes/scripts/calendar.js"></script>
+<script type="text/javascript" src="includes/scripts/section.js"></script>
 
 <!-- Google Maps API Javascript V3 -->
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
@@ -39,7 +41,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
   function initialize() {
     var latlng = new google.maps.LatLng({/literal} {$midpoint_latitude} {literal},{/literal} {$midpoint_longitude} {literal});
     var myOptions = {
-      zoom: 1,
+      zoom: 12,
       center: latlng,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
@@ -51,10 +53,25 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
     var bounds = new google.maps.LatLngBounds();
     bounds.extend(location1);
     bounds.extend(location2);
-    bounds.extend(geoMidpoint);
+    <!-- bounds.extend(geoMidpoint); -->
     {/literal}{if ($meeting_point_longitude != NULL) && ($meeting_point_latitude != NULL)}{literal}
         var meetingPoint = new google.maps.LatLng({/literal} {$meeting_point_latitude} {literal},{/literal} {$meeting_point_longitude} {literal});
         bounds.extend(meetingPoint);
+
+        <!-- Polylines -->
+        var flightPlanCoordinates = [
+        location1,
+        meetingPoint,
+        location2
+        ];
+
+        var flightPath = new google.maps.Polyline({
+        path: flightPlanCoordinates,
+        strokeColor: "#ffa500",
+        strokeOpacity: 1.0,
+        strokeWeight: 2
+        });
+        flightPath.setMap(map);
     {/literal}{/if}{literal}
     map.fitBounds(bounds);
 
@@ -63,50 +80,39 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
     var markerGeoMidIcon = '{/literal}{$host_url}{literal}/images/geomid.png';
     var markerMeetIcon = '{/literal}{$host_url}{literal}/images/marker_meet.png';
 
-    <!-- Creating a marker and positioning it on the map  -->
+    <!-- Creating markers and positioning them on the map  -->
     var loc1_marker = new google.maps.Marker({
     position: location1,
     title: 'Location 1',
     icon: marker1Icon,
-    map: map
+    map: map,
+    zIndex: 3
     });
     var loc2_marker = new google.maps.Marker({
     position: location2,
     title: 'Location 2',
     icon: marker2Icon,
-    map: map
+    map: map,
+    zIndex: 2
     });
     var mid_marker = new google.maps.Marker({
     position: geoMidpoint,
     title: 'Geographical Midpoint',
     icon: markerGeoMidIcon,
-    map: map
+    map: map,
+    zIndex: 1
     });
     {/literal}{if ($meeting_point_longitude != NULL) && ($meeting_point_latitude != NULL)}{literal}
         var meet_marker = new google.maps.Marker({
         position: meetingPoint,
         title: 'Meeting Place',
         icon: markerMeetIcon,
-        map: map
+        map: map,
+        zIndex: 4
         });
     {/literal}{/if}{literal}
   }
 {/literal} 
-</script>
-
-<!-- JQuery Datepicker -->
-<script type="text/javascript">
-{literal}
-	$(function() {
-            $('#datepicker').datepicker({
-                dateFormat: "mm/yy",
-                minDate: '+0D',
-                maxDate: '+1Y',
-		changeMonth: true,
-		changeYear: true
-            });
-	});
-{/literal}
 </script>
 
 <!-- AJAX Autocomplete -->
@@ -134,13 +140,33 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
 {/literal}
 </script>
 
+<!-- Progress Bar -->
+<script type="text/javascript">
+{literal}
+ $(function() {
+         $("#progressbar").progressbar({
+             value: 3
+          });
+      }); 
+{/literal}
+</script>
 </head>
-<body onload="initialize()">
-<br />
+<body onload="initialize(); travel_month();">
+<div style="position:absolute;top:0px;width:100%;height:25px;margin-left:-9px;border-bottom:1px solid #ffa500;">
+    <div style="float:left;padding-left:10px;">
+        <a href="http://code.google.com/p/visitme/" target="_blank">Project's Website</a>  |
+        <a href="http://gopandas.com/" target="_blank">Team's Website</a>
+    </div>
+    <div style="float:right;padding:0px 10px 0px 5px;">
+        <a name="fb_share" type="button_count" href="http://www.facebook.com/sharer.php?u={$host_url}&t=Meet Me Half Way">Share</a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script> |
+        <a href="http://apps.facebook.com/visitme/" target="_blank">VisitME</a>
+    </div>
+</div>
 <center>
 
+<br />
 <div style="margin-left:auto;margin-right:auto;text-align:center;">
-    <h1>Meet Me Half Way</h1>
+    <img src="images/mmhw.png" alt="Meet Me Half Way" />
     <br />
     <form autocomplete="on" name="input" action="index.php" method="get" >
         <table border="0" cellpadding="1" cellspacing="1" width="500px" class="center">
@@ -154,19 +180,21 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
             </tr>
             <tr>
                 <td align="right">Travel Month:&nbsp;</td>
-                <td align="left"><input type="text" name="tm" id="datepicker" size="50" maxlength=7 /></td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td align="left">&nbsp;&nbsp;mm/yyyy</td>
+                <td align="left">{$month_selection} &nbsp;&nbsp; Year: &nbsp; {$year_selection}</td>
             </tr>
         </table>
         <br />
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Search" onclick="changeSection('searchProgress');" />
     </form>
 </div>
 <br />
 
+<div class="inactiveSection" id="searchProgress">
+    <div style="margin-top:50px;width:300px;">
+        Searching... (Note: progress bar is under implementation. Stay tune...) <br /><div id="progressbar"></div>
+    </div>
+</div>
+<div class="inactiveSection" id="contents">
 {if $search}
     <center>
     <div style="height:0px;width:665px;padding:0px;border-top:1px solid #999;" ></div>
@@ -261,9 +289,17 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
         </p>
         </div>
      {/if}
+     </center>
 
+     <SCRIPT LANGUAGE="JavaScript" TYPE="TEXT/JAVASCRIPT">
+     {literal}
+     <!--
+        changeSection('contents');
+     //-->
+    {/literal}
+    </SCRIPT>
 {/if}
-</center>
+</div>
 
 </body>
 </html>
