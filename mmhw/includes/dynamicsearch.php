@@ -24,7 +24,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
     ***********************************************/
     class DynamicSearch {
         const MAX_RADIUS = 100;
-        const RADIUS_INCREMENTAL_VALUE = 5.0;
+        const RADIUS_INCREMENTAL_VALUE = 1.0;
         private $curr_radius = null;
         private $new_mid_codes = null;
         private $index;
