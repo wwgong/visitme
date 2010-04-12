@@ -17,7 +17,11 @@ You should have received a copy of the GNU General Public License
 along with VisitME. If not, see http://www.gnu.org/licenses/.
 -->
 <html>
-<head style="margin:0px;padding:0px;">
+<head>
+<title>Meet Me Half Way</title>
+<meta name="description" content="Can't think of an interesting place to meet with someone? 'Meet Me Half Way' can help you." />
+<meta name="keywords" content="meet me half way, mmhw, lets meet, flight, fly, kayak, pandas, gopandas, visitme, class 2010, umb, umass, umass boston, umb computer science" />
+
 <link rel="stylesheet" type="text/css" href="style/mmhwStyle.css" />
 <link type="text/css" href="style/jquery.ui.datepicker.css" rel="stylesheet" />
 <link type="text/css" href="style/jquery.ui.theme.css" rel="stylesheet" />
@@ -33,6 +37,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
 <script type="text/javascript" src="includes/scripts/jquery.ui.progressbar.js"></script>
 <script type="text/javascript" src="includes/scripts/calendar.js"></script>
 <script type="text/javascript" src="includes/scripts/section.js"></script>
+<script type="text/javascript" src="includes/scripts/search.progressbar.js"></script>
 
 <!-- Google Maps API Javascript V3 -->
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
@@ -53,7 +58,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
     var bounds = new google.maps.LatLngBounds();
     bounds.extend(location1);
     bounds.extend(location2);
-    <!-- bounds.extend(geoMidpoint); -->
+    bounds.extend(geoMidpoint); 
     {/literal}{if ($meeting_point_longitude != NULL) && ($meeting_point_latitude != NULL)}{literal}
         var meetingPoint = new google.maps.LatLng({/literal} {$meeting_point_latitude} {literal},{/literal} {$meeting_point_longitude} {literal});
         bounds.extend(meetingPoint);
@@ -105,7 +110,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
     {/literal}{if ($meeting_point_longitude != NULL) && ($meeting_point_latitude != NULL)}{literal}
         var meet_marker = new google.maps.Marker({
         position: meetingPoint,
-        title: 'Meeting Place',
+        title: 'Location to Meet',
         icon: markerMeetIcon,
         map: map,
         zIndex: 4
@@ -141,23 +146,30 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
 </script>
 
 <!-- Progress Bar -->
+<!--
 <script type="text/javascript">
 {literal}
  $(function() {
-         $("#progressbar").progressbar({
-             value: 3
-          });
-      }); 
+        $("#progressbar").progressbar({
+             value: 0
+          }); 
+        }); 
+
+$(document).ready(function() {
+    $('#test').load('includes/progressmonitor.php');
+});
 {/literal}
 </script>
+-->
+
 </head>
 <body onload="initialize(); travel_month();">
 <div style="position:absolute;top:0px;width:100%;height:25px;margin-left:-9px;border-bottom:1px solid #ffa500;">
-    <div style="float:left;padding-left:10px;">
-        <a href="http://code.google.com/p/visitme/" target="_blank">Project's Website</a>  |
+    <div style="float:left;padding-left:20px;">
+        <a href="http://code.google.com/p/visitme/" target="_blank">Project's Website</a> |
         <a href="http://gopandas.com/" target="_blank">Team's Website</a>
     </div>
-    <div style="float:right;padding:0px 10px 0px 5px;">
+    <div style="float:right;padding:0px 20px 0px 0px;">
         <a name="fb_share" type="button_count" href="http://www.facebook.com/sharer.php?u={$host_url}&t=Meet Me Half Way">Share</a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script> |
         <a href="http://apps.facebook.com/visitme/" target="_blank">VisitME</a>
     </div>
@@ -169,7 +181,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
     <img src="images/mmhw.png" alt="Meet Me Half Way" />
     <br />
     <form autocomplete="on" name="input" action="index.php" method="get" >
-        <table border="0" cellpadding="1" cellspacing="1" width="500px" class="center">
+        <table border="0" cellpadding="1" cellspacing="2" width="500px" class="center">
             <tr>
                 <td align="right">Airport 1:&nbsp;</td>
                 <td align="left"><input type="text" class="airportAutocomplete" name="loc1" size="50" /></td>
@@ -180,7 +192,17 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
             </tr>
             <tr>
                 <td align="right">Travel Month:&nbsp;</td>
-                <td align="left">{$month_selection} &nbsp;&nbsp; Year: &nbsp; {$year_selection}</td>
+                <td align="left">{$month_selection} &nbsp; Year:&nbsp;{$year_selection}</td>
+            </tr>
+            <tr>
+                <td align="right">Filter:&nbsp;</td>
+                <td align="left">
+                                <SELECT NAME="filter">
+                                    <OPTION VALUE="0" SELECTED>Best Matched Dates</OPTION>
+                                    <OPTION VALUE="1" >Lowest Combined Fares</OPTION>
+                                    <OPTION VALUE="2" >Closest to Geographical Midpoint</OPTION>
+                                 </SELECT></td>
+
             </tr>
         </table>
         <br />
@@ -189,10 +211,12 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
 </div>
 <br />
 
+
 <div class="inactiveSection" id="searchProgress">
-    <div style="margin-top:50px;width:300px;">
-        Searching... (Note: progress bar is under implementation. Stay tune...) <br /><div id="progressbar"></div>
+    <div style="margin-top:20px;width:500px;">
+        <img src="images/indicator.gif" /> Searching, please wait...</img>
     </div>
+   
 </div>
 <div class="inactiveSection" id="contents">
 {if $search}
@@ -279,7 +303,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
 
      {if (($flight1_cost!=NULL) && ($flight2_cost!=NULL)) || ($flightA_cost!=NULL) || ($flightB_cost!=NULL)}
         <br />
-        <p style="font-size:10px;width: 640px;">
+        <p style="font-size:10px;width: 640px;text-align:left;">
             *The fares displayed include all taxes and fees for economy class
             travel and were found by Kayak users in the last 48 hours. Seats are
             limited and may not be available on all flights and days. Fares are

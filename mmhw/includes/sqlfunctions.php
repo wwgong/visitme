@@ -21,6 +21,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
 // Site: http://code.google.com/p/visitme
 
 require_once("config.php");
+require_once("searchedarea.php");
 
 //odbc errors
 //http://msdn.microsoft.com/library/default.asp?url=/library/en-us/trblsql/tr_err_odbc_5stz.asp
@@ -351,4 +352,40 @@ require_once("config.php");
             }
         }
 
+        function get_airport_codes_dynsearch($searched_area_obj, $new_dist)
+        {
+            $sql = NULL;
+            $airport_codes = array();
+            $index = 0;
+
+            $min_posX = $searched_area_obj->get_posX();
+            $max_posX = $min_posX + $new_dist;
+            $min_negX = $searched_area_obj->get_negX();
+            $max_negX = $min_negX - $new_dist;
+
+            $min_posY = $searched_area_obj->get_posY();
+            $max_posY = $min_posY + $new_dist;
+            $min_negY = $searched_area_obj->get_negY();
+            $max_negY = $min_negY - $new_dist;
+
+          /*echo $min_posX." ".$max_posX.", ".$max_negY." ".$max_posY."<br />";
+            echo $min_negX." ".$max_negX.", ".$max_negY." ".$max_posY."<br />";
+            echo $min_negX." ".$min_posX.", ".$min_posY." ".$max_posY."<br />";
+            echo $min_negX." ".$min_posX.", ".$min_negY." ".$max_negY."<br />";*/
+
+            $sql = "SELECT a.code FROM airports a WHERE (a.x != 0) AND (a.y != 0) AND
+                           ((a.x >= ".$min_posX." AND a.x <= ".$max_posX.") AND (a.y >= ".$max_negY." AND a.y <= ".$max_posY.")) OR
+                           ((a.x <= ".$min_negX." AND a.x >= ".$max_negX.") AND (a.y >= ".$max_negY." AND a.y <= ".$max_posY.")) OR
+                           ((a.x >= ".$min_negX." AND a.x <= ".$min_posX.") AND (a.y >= ".$min_posY." AND a.y <= ".$max_posY.")) OR
+                           ((a.x >= ".$min_negX." AND a.x <= ".$min_posX.") AND (a.y <= ".$min_negY." AND a.y >= ".$max_negY."))";
+            $result = sql_result($sql);
+            while($code = sql_fetch_obj($result))
+            {
+                $airport_codes[$index] = $code->code;
+                $index++;
+            }
+          
+            return ($airport_codes);
+        }
+              
 ?>

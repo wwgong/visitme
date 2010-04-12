@@ -16,12 +16,27 @@ for more details.
 You should have received a copy of the GNU General Public License
 along with VisitME. If not, see http://www.gnu.org/licenses/.
 */
-
+    require_once ("constants.php");
    /***********************************************
     *                 Util Class
     ***********************************************/
     class Util
     {
+        public function val_filter_opt($input)
+        {
+            $const_obj = new Constants();
+            $num_of_filters = sizeof($const_obj->get_filters());
+
+            if((!is_numeric($input)) || ($input < 0) || ($input > $num_of_filters-1))
+            {
+                return (null);
+            }
+            else
+            {
+                return ($input);
+            }
+        }
+        
         /* Ex: 03/2010 to 201003 */
         public function val_n_format_time_inputs($month_input, $year_input)
         {

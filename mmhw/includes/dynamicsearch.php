@@ -18,29 +18,35 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
 */
     require_once('distance.php');
     require_once('sqlfunctions.php');
+    require_once('constants.php');
+    require_once('searchedarea.php');
+    require_once('point.php');
 
    /***********************************************
     *              DynamicSearch Class
     ***********************************************/
     class DynamicSearch {
-        const MAX_RADIUS = 100;
-        const RADIUS_INCREMENTAL_VALUE = 1.0;
-        private $curr_radius = null;
-        private $new_mid_codes = null;
-        private $index;
+        private $curr_radius = 0;
+        private $max_radius = 0;
 
-        private $loc1_to_mid_rss_item = null;
-        private $loc2_to_mid_rss_item = null;
-        private $found_meeting_location = null;
+        private $loc1_to_mid_rss_item = NULL;
+        private $loc2_to_mid_rss_item = NULL;
+        private $found_meeting_location = false;
+        private $searched_area_obj = NULL;
 
-        //put your code here
-        public function  __construct($lola_1, $lola_2, $lola_mid, $loc1_code, $loc2_code, $mid_codes, $travel_month, $radius)
+        public function  __construct($lola_1, $lola_2, $lola_mid, $loc1_code, $loc2_code, $travel_month, $radius, $filter_opt)
         { 
             $this->curr_radius = $radius;
-            $this->new_mid_codes = array();
-            $this->index = 0;
+            $this->max_radius = Constants::EVENT_HORIZON - $radius; // Additional radius to search
             $this->found_meeting_location = false;
-            $this->search($lola_1, $lola_2, $lola_mid, $loc1_code, $loc2_code, $mid_codes, $travel_month);
+
+            $mid_obj = new Point($lola_mid);
+            // Initially, posX = negX and posY = negY
+            $this->searched_area_obj = new SearchedArea($mid_obj->get_longitude(), $mid_obj->get_longitude(), $mid_obj->get_latitude(), $mid_obj->get_latitude());
+            // Add radius value to the searched area since the area within radius is already searched before dynamic search begins...
+            $this->searched_area_obj->setXY($radius);
+           
+            $this->search($lola_1, $lola_2, $lola_mid, $loc1_code, $loc2_code, $travel_month, $filter_opt);
         }
 
         public function get_loc1_to_mid_rss_item()
@@ -58,76 +64,49 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
             return ($this->found_meeting_location);
         }
 
-        private function search($lola_1, $lola_2, $lola_mid, $loc1_code, $loc2_code, $mid_codes, $travel_month)
+        public function get_curr_radius()
         {
-            $dist_obj = new Distance($lola_1, $lola_2);
-            $this->curr_radius = $this->curr_radius + DynamicSearch::RADIUS_INCREMENTAL_VALUE;
-            $nearby = $dist_obj->is_nearby($this->curr_radius);
-            $old_codes = $mid_codes;
-            
-            if((!$nearby) && ($this->curr_radius <= DynamicSearch::MAX_RADIUS)) 
-            {
-                $new_codes = get_airport_codes($lola_mid, $this->curr_radius);
+            return ($this->curr_radius);
+        }
 
-                if($old_codes == null)
-                {
-                    if($new_codes == null)
-                    {
-                        $this->search($lola_1, $lola_2, $lola_mid, $loc1_code, $loc2_code, $old_codes, $travel_month);
-                    }
-                    else
-                    {
-                        $this->new_mid_codes = $new_codes;
-                    }
-                }
-                else
-                {
-                    if(sizeof($new_codes) <= sizeof($old_codes))
-                    {
-                        $this->search($lola_1, $lola_2, $lola_mid, $loc1_code, $loc2_code, $old_codes, $travel_month);
-                    }
-                    else
-                    {
-                        foreach($new_codes as $new_code)
-                        {
-                            $found = false;
-                            foreach($old_codes as $old_code)
-                            {
-                                if($old_code == $new_code)
-                                {
-                                    $found = true;
-                                    break;
-                                }
-                            }
-                            if(!$found)
-                            {
-                                $this->new_mid_codes[$this->index] = $new_code;
-                                $this->index++;
-                            }
-                        }
-                    }
-                }
+        public function search($lola_1, $lola_2, $lola_mid, $loc1_code, $loc2_code, $travel_month, $filter_opt)
+        {
+             $index = 0;
+             $new_mid_codes = array();
+  
+            $dist_obj = new Distance($lola_1, $lola_2);
+            $this->curr_radius = $this->curr_radius + Constants::RADIUS_INCREMENTAL_VALUE;
+            $nearby = $dist_obj->is_nearby($this->curr_radius);
+ 
+            if((!$nearby) && ($this->curr_radius < $this->max_radius))
+            {
+                $new_mid_codes = get_airport_codes_dynsearch($this->searched_area_obj, Constants::RADIUS_INCREMENTAL_VALUE);
+                // Add RADIUS_INCREMENTAL_VALUE value to the already searched area...
+                $this->searched_area_obj->setXY(Constants::RADIUS_INCREMENTAL_VALUE);
                 
-                if(sizeof($this->new_mid_codes) > 0)
+                if(sizeof($new_mid_codes) > 0)
                 {    
-                    $result_obj = new Result($loc1_code, $loc2_code, $this->new_mid_codes, $travel_month);
+                    $result_obj = new Result($loc1_code, $loc2_code, $new_mid_codes, $lola_mid, $travel_month, $filter_opt);
                     $loc1_to_mid_rss_item = $result_obj->get_loc1_to_mid_rss_item();
                     $loc1_to_mid_obj = new RSSItem($loc1_to_mid_rss_item);
                     $loc2_to_mid_rss_item = $result_obj->get_loc2_to_mid_rss_item();
                     $loc2_to_mid_obj = new RSSItem($loc2_to_mid_rss_item);
 
-                    if(($loc1_to_mid_obj->get_price() == null) || ($loc2_to_mid_obj->get_price() == null))
+                    if(($loc1_to_mid_obj->get_price() == NULL) || ($loc2_to_mid_obj->get_price() == NULL))
                     {
-                        $this->index = 0;
-                        $this->new_mid_codes = array();
-                        $this->search($lola_1, $lola_2, $lola_mid, $loc1_code, $loc2_code, $new_codes, $travel_month);
+                        $this->search($lola_1, $lola_2, $lola_mid, $loc1_code, $loc2_code, $travel_month);
                     }
                     else
                     {
                         $this->loc1_to_mid_rss_item = $loc1_to_mid_rss_item;
                         $this->loc2_to_mid_rss_item = $loc2_to_mid_rss_item;
-                        $this->found_meeting_location = true;
+                        $this->found_meeting_location = TRUE;
+                        return;
                     }
+                }
+                else
+                {
+                   $this->search($lola_1, $lola_2, $lola_mid, $loc1_code, $loc2_code, $travel_month, $filter_opt);
                 }
             }
             return;

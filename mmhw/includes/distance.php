@@ -1,7 +1,7 @@
 <?php
 /*
 Copyright 2010 GoPandas
-This file is part of Meet Me Half Way ( an extension of VisitME ).
+This file is part of VisitME.
 
 VisitME is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the
@@ -16,10 +16,14 @@ for more details.
 You should have received a copy of the GNU General Public License
 along with VisitME. If not, see http://www.gnu.org/licenses/.
 */
+    require_once ('constants.php');
+    require_once ('point.php');
 
+   /***********************************************
+    *              Distance Class
+    ***********************************************/
     class Distance {
         private $distance = 0;
-        const DISTANCE_MULTIPLIER = 2;
 
         public function __construct($lola_1, $lola_2)
         {
@@ -30,15 +34,21 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
         {
             return ($this->distance);
         }
-
+        
         private function set_distance($lola_1, $lola_2)
         {
-            $this->distance = sqrt(pow($lola_1[0] - $lola_2[0], 2) + pow($lola_1[1] - $lola_2[1], 2));
+            $point_1 = new Point($lola_1);
+            $point_2 = new Point($lola_2);
+            $this->distance = sqrt(pow($point_1->get_longitude() - $point_2->get_longitude(), 2) + pow($point_1->get_latitude() - $point_2->get_latitude(), 2));
+            if($this->distance > 180)
+            {
+                $this->distance = 360 - $this->distance;
+            }
         }
 
         public function is_nearby($radius)
         {
-            if($this->distance > (Distance::DISTANCE_MULTIPLIER * $radius))
+            if($this->distance > (Constants::DISTANCE_MULTIPLIER * $radius))
             { 
                 return (false);
             }
