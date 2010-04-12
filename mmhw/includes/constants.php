@@ -1,7 +1,7 @@
 <?php
 /*
 Copyright 2010 GoPandas
-This file is part of VisitME.
+This file is part of Meet Me Half Way ( an extension of VisitME ).
 
 VisitME is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the
@@ -31,7 +31,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
         const EVENT_HORIZON = 60; //  0 < EVENT_HORIZON < 90; Max distance (radius) from midpoint where airports will be searched
 
         const RADIUS_INCREMENTAL_VALUE = 0.7; // in degree
-     
+
         const DISTANCE_MULTIPLIER = 2;
 
         // Symbols used for distinguishing Smarty locations' variables
@@ -42,7 +42,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
         const LOCATION_B_SYMBOL = 'B';
 
         // Filter options
-        private $filters = array('BEST_MATCHED_DATES_FILTER'=>0, 
+        private $filters = array('BEST_MATCHED_DATES_FILTER'=>0,
                                  'LOWEST_COMBINED_FARES_FILTER'=>1,
                                  'CLOSET_TO_MIDPOINT_FILTER'=>2);
 

@@ -1,7 +1,7 @@
 <?php
 /*
 Copyright 2010 GoPandas
-This file is part of VisitME.
+This file is part of Meet Me Half Way ( an extension of VisitME ).
 
 VisitME is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the
@@ -34,7 +34,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
         {
             return ($this->distance);
         }
-        
+
         private function set_distance($lola_1, $lola_2)
         {
             $point_1 = new Point($lola_1);
@@ -53,7 +53,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
         public function is_nearby($radius)
         {
             if($this->distance > (Constants::DISTANCE_MULTIPLIER * $radius))
-            { 
+            {
                 return (false);
             }
             else
