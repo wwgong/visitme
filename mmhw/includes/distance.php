@@ -43,6 +43,10 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
             if($this->distance > 180)
             {
                 $this->distance = 360 - $this->distance;
+                if($this->distance < 0)
+                {
+                    $this->distance = $this->distance * (-1);
+                }
             }
         }
 

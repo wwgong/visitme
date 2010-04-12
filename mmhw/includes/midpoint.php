@@ -149,7 +149,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
 
             // Choose a midpoint which has a shorter distance to two locations
             $dist1_obj = new Distance($location_1_lola, $mid1_obj->get_lola());
-            $dist2_obj = new Distance($location_2_lola, $mid2_obj->get_lola());
+            $dist2_obj = new Distance($location_1_lola, $mid2_obj->get_lola());
             $distance_1 = $dist1_obj->get_distance();
             $distance_2 = $dist2_obj->get_distance();
  
