@@ -29,10 +29,11 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
 
         // Dynamic search values
         const EVENT_HORIZON = 60; //  0 < EVENT_HORIZON < 90; Max distance (radius) from midpoint where airports will be searched
-
         const RADIUS_INCREMENTAL_VALUE = 0.7; // in degree
-
         const DISTANCE_MULTIPLIER = 2;
+
+        const EARTH_RADIUS = 3959; // in miles
+        const DEG_2_MILE = 69.172; // in miles
 
         // Symbols used for distinguishing Smarty locations' variables
         const LOCATION_1_SYMBOL = '1';
