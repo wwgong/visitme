@@ -27,7 +27,6 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
     ***********************************************/
     class DynamicSearch {
         private $curr_radius = 0;
-        private $max_radius = 0;
 
         private $loc1_to_mid_rss_item = NULL;
         private $loc2_to_mid_rss_item = NULL;
@@ -37,14 +36,13 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
         public function  __construct($lola_1, $lola_2, $lola_mid, $loc1_code, $loc2_code, $travel_month, $radius, $filter_opt)
         { 
             $this->curr_radius = $radius;
-            $this->max_radius = Constants::EVENT_HORIZON - $radius; // Additional radius to search
             $this->found_meeting_location = false;
 
             $mid_obj = new Point($lola_mid);
             // Initially, posX = negX and posY = negY
             $this->searched_area_obj = new SearchedArea($mid_obj->get_longitude(), $mid_obj->get_longitude(), $mid_obj->get_latitude(), $mid_obj->get_latitude());
             // Add radius value to the searched area since the area within radius is already searched before dynamic search begins...
-            $this->searched_area_obj->setXY($radius);
+            $this->searched_area_obj->add_XY_val($radius);
            
             $this->search($lola_1, $lola_2, $lola_mid, $loc1_code, $loc2_code, $travel_month, $filter_opt);
         }
@@ -77,12 +75,12 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
             $dist_obj = new Distance($lola_1, $lola_2);
             $this->curr_radius = $this->curr_radius + Constants::RADIUS_INCREMENTAL_VALUE;
             $nearby = $dist_obj->is_nearby($this->curr_radius);
- 
-            if((!$nearby) && ($this->curr_radius < $this->max_radius))
+            ///////echo "<br /> Distance: ".$dist_obj->get_distance()." curr_radius: ".$this->curr_radius;///////////////////
+            if((!$nearby) && ($this->curr_radius < Constants::EVENT_HORIZON)) //
             {
                 $new_mid_codes = get_airport_codes_dynsearch($this->searched_area_obj, Constants::RADIUS_INCREMENTAL_VALUE);
                 // Add RADIUS_INCREMENTAL_VALUE value to the already searched area...
-                $this->searched_area_obj->setXY(Constants::RADIUS_INCREMENTAL_VALUE);
+                $this->searched_area_obj->add_XY_val(Constants::RADIUS_INCREMENTAL_VALUE);
                 
                 if(sizeof($new_mid_codes) > 0)
                 {    

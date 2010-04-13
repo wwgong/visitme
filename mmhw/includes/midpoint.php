@@ -93,7 +93,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
         function __construct($lola_1, $lola_2)
         {
             parent::__construct($lola_1, $lola_2);
-            $this->longitude = ($this->longitude + 180) % 360;
+            $this->longitude = ($this->longitude - 180) % 360;
         }
     }
 
@@ -145,24 +145,35 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
             $mid_airport_codes = array();
 
             $mid1_obj = new MidPoint_1($location_1_lola, $location_2_lola);
-            $mid2_obj = new MidPoint_2($location_1_lola, $location_2_lola);
+            //$mid2_obj = new MidPoint_2($location_1_lola, $location_2_lola);
 
+            //echo "<br /> "; var_dump($mid1_obj->get_lola()); echo "  "; var_dump($mid2_obj->get_lola());///////////////////////
+            
             // Choose a midpoint which has a shorter distance to two locations
-            $dist1_obj = new Distance($location_1_lola, $mid1_obj->get_lola());
+            /*$dist1_obj = new Distance($location_1_lola, $mid1_obj->get_lola());
             $dist2_obj = new Distance($location_1_lola, $mid2_obj->get_lola());
             $distance_1 = $dist1_obj->get_distance();
             $distance_2 = $dist2_obj->get_distance();
- 
-           if($distance_1 <= $distance_2)
-           {
+
+            echo "<br /> loc1 to mid1: ".$distance_1;///////////////////
+            $tt = new Distance($location_2_lola, $mid1_obj->get_lola());///////////////////////////
+            echo " loc2 to mid1: ".$tt->get_distance();////////////////
+            echo "<br /> loc1 to mid2: ".$distance_2;///////////////////
+            $t = new Distance($location_2_lola, $mid2_obj->get_lola());///////////////////////////
+            echo " loc2 to mid2: ".$t->get_distance();////////////////
+            echo "<br /> dist 1: ".$distance_1." dist 2: ".$distance_2;///////////////////////
+            */
+            
+           /*if($distance_1 <= $distance_2)
+           {*/
                $mid_lola = $mid1_obj->get_lola();
                $mid_airport_codes = get_airport_codes($mid1_obj->get_lola(), $radius);
-           }
+           /*}
            else
            {
                $mid_lola = $mid2_obj->get_lola();
                $mid_airport_codes = get_airport_codes($mid2_obj->get_lola(), $radius);
-           }
+           }*/
 
            return (array($mid_lola, $mid_airport_codes));
         }

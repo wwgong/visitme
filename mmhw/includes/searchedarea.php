@@ -34,7 +34,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
             $this->negY = $negY;
         }
 
-        public function setXY($value)
+        public function add_XY_val($value)
         {
             $this->posX = $this->posX + $value;
             $this->negX = $this->negX - $value;

@@ -18,9 +18,9 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
 -->
 <html>
 <head>
-<title>Meet Me Half Way</title>
-<meta name="description" content="Can't think of an interesting place to meet with someone? 'Meet Me Half Way' can help you." />
-<meta name="keywords" content="meet me half way, mmhw, lets meet, flight, fly, kayak, pandas, gopandas, visitme, class 2010, umb, umass, umass boston, umb computer science" />
+<title>Meet Me Halfway</title>
+<meta name="description" content="Can't think of an interesting place to meet with someone? 'Meet Me Halfway' can help you." />
+<meta name="keywords" content="meet me halfway, mmhw, lets meet, flight, fly, kayak, pandas, gopandas, visitme, class 2010, umb, umass, umass boston, umb computer science" />
 
 <link rel="stylesheet" type="text/css" href="style/mmhwStyle.css" />
 <link type="text/css" href="style/jquery.ui.datepicker.css" rel="stylesheet" />
@@ -102,7 +102,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
     });
     var mid_marker = new google.maps.Marker({
     position: geoMidpoint,
-    title: 'Geographical Midpoint',
+    title: 'Geographic Midpoint',
     icon: markerGeoMidIcon,
     map: map,
     zIndex: 1
@@ -170,7 +170,7 @@ $(document).ready(function() {
         <a href="http://gopandas.com/" target="_blank">Team's Website</a>
     </div>
     <div style="float:right;padding:0px 20px 0px 0px;">
-        <a name="fb_share" type="button_count" href="http://www.facebook.com/sharer.php?u={$host_url}&t=Meet Me Half Way">Share</a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script> |
+        <a name="fb_share" type="button_count" href="http://www.facebook.com/sharer.php?u={$host_url}&t=Meet Me Halfway">Share</a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script> |
         <a href="http://apps.facebook.com/visitme/" target="_blank">VisitME</a>
     </div>
 </div>
@@ -200,7 +200,7 @@ $(document).ready(function() {
                                 <SELECT NAME="filter">
                                     <OPTION VALUE="0" SELECTED>Best Matched Dates</OPTION>
                                     <OPTION VALUE="1" >Lowest Combined Fares</OPTION>
-                                    <OPTION VALUE="2" >Closest to Geographical Midpoint</OPTION>
+                                    <OPTION VALUE="2" >Closest to Geographic Midpoint</OPTION>
                                  </SELECT></td>
 
             </tr>
