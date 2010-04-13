@@ -46,8 +46,8 @@ WOC = Waiting on client
 || Instructions for deploying MMHW		||Henrik||04/06/10||04/06/10||<font color="green">Done</font>||
 || Inputs Validation		                ||Group||04/08/10 ||04/09/10||<font color="green">Done</font> ||
 || Dynamic search radius		        ||Brian||04/06/10 ||04/09/10||<font color="green">Done</font> ||
-|| GUI setup		                        ||Group|| ||04/09/10|| ||
-|| Revised architecture	for Visit Me and MMHW   ||Henrik|| ||04/09/10|| ||
+|| GUI setup		                        ||Group|| ||04/16/10|| ||
+|| Revised architecture	for Visit Me and MMHW   ||Henrik|| ||04/16/10|| ||
 || Collecting data for presentation || Group || ||04/13/10|| ||
 || Rough draft for the presentation || Brian, Charlie || ||04/14/10|| ||
 || Final draft ready for the presentation || Brian, Charlie || ||04/16/10|| ||
