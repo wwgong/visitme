@@ -51,7 +51,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
     $calendar_obj = new Calendar();
     $smarty = $calendar_obj->travel_time($smarty);
 
-    if(($location1_input != NULL) && ($location2_input != NULL) && ($month_input != NULL) && ($year_input != NULL))
+    if(($location1_input != NULL) && ($location2_input != NULL) && ($month_input != NULL) && ($year_input != NULL) && ($filter_opt_input != NULL))
     {
         // Form data
         $location1_input = mysql_real_escape_string($location1_input);
@@ -60,30 +60,30 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
         $year_input = mysql_real_escape_string($year_input);
         $filter_opt_input = mysql_real_escape_string($filter_opt_input);
 
-        // validate and parse airport codes, month, and year from input strings
+        // validate and parse airport codes, month, year, and filter options from input strings
         $util_obj = new Util();
         $location1_airport_code = $util_obj->val_n_parse_airport_code($location1_input);
         $location2_airport_code = $util_obj->val_n_parse_airport_code($location2_input);
         $travel_month = $util_obj->val_n_format_time_inputs($month_input, $year_input);
         $filter_opt = $util_obj->val_filter_opt($filter_opt_input);
- 
-        // Prompt error pop-up message
+        
         if($location1_airport_code == null)
         {
-            exit("Invalid airport 1: ".$location1_input);
+            $util_obj->add_err("Invalid airport 1: ".$location1_input);
         }
         if($location2_airport_code == null)
         {
-             exit("Invalid airport 2: ".$location2_input);
+            $util_obj->add_err("Invalid airport 2: ".$location2_input);
         }
         if($travel_month == null)
         {
-            exit("Invalid travel month/year: ".$month_input.'/'.$year_input);
+            $util_obj->add_err("Invalid travel month/year: ".$month_input.'/'.$year_input);
         }
         if($filter_opt == null)
         {
-            exit("Invalid filter option: ".$filter_opt_input);
+            $util_obj->add_err("Invalid filter option: ".$filter_opt_input);
         }
+        $util_obj->is_inputs_val_passed($host_url);
         
         $location_1_lola = get_lola_airport($location1_airport_code);
 	$location_2_lola = get_lola_airport($location2_airport_code);

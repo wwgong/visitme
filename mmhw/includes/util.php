@@ -22,6 +22,39 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
     ***********************************************/
     class Util
     {
+        private $err_buffer; // To store invalid input error message(s)
+        private $err_index;
+
+        public function  __construct()
+        {
+            $this->err_buffer = array();
+            $this->err_index = 0;
+        }
+
+        public function add_err($err_msg)
+        {
+            $this->err_buffer[$this->err_index] = $err_msg;
+            $this->err_index++;
+        }
+
+        public function is_inputs_val_passed($host_url)
+        {
+            if(count($this->err_buffer) > 0)
+            {
+                $errors = "";
+                foreach($this->err_buffer as $err)
+                {
+                    $errors = $errors.$err."<br />";
+                }
+                $errors = $errors."<br /><a href='".$host_url."' />Go Back</a>";
+                exit($errors);
+            }
+            else
+            {
+                return;
+            }
+        }
+
         public function val_filter_opt($input)
         {
             $const_obj = new Constants();
