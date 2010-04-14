@@ -92,7 +92,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
 
                     if(($loc1_to_mid_obj->get_price() == NULL) || ($loc2_to_mid_obj->get_price() == NULL))
                     {
-                        $this->search($lola_1, $lola_2, $lola_mid, $loc1_code, $loc2_code, $travel_month);
+                        $this->search($lola_1, $lola_2, $lola_mid, $loc1_code, $loc2_code, $travel_month, $filter_opt);
                     }
                     else
                     {
