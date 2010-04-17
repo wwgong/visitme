@@ -33,8 +33,14 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
         const DISTANCE_MULTIPLIER = 2;
 
         const EARTH_RADIUS = 3959; // in miles
-        const DEG_2_MILE = 69.172; // in miles
+        const DEG_2_MILE = 69.172; 
 
+        // Inputs
+        const NUM_OF_INPUTS = 5;
+
+        // Autosuggest
+        const MAX_NUM_OF_SUGGESTS = 9;
+        
         // Symbols used for distinguishing Smarty locations' variables
         const LOCATION_1_SYMBOL = '1';
         const LOCATION_2_SYMBOL = '2';
