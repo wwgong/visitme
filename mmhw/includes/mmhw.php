@@ -37,6 +37,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
         private $nearby = true; 
         private $radius = 0;
         private $debug = false;
+        private $host_url = null;
 
         private $smarty_obj = null;
         private $print_obj = null;
@@ -50,6 +51,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
 
             $this->radius = $radius;
             $this->debug = $debug;
+            $this->host_url = $host_url;
 
             $this->smarty_obj->assign('host_url', $host_url);
             $this->smarty_obj->assign('version', $version);
@@ -105,7 +107,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
             {
                 $util_obj->add_err("Invalid filter option: ".$filter_opt_input);
             }
-            $util_obj->is_inputs_val_passed($host_url);
+            $util_obj->is_inputs_val_passed($this->host_url);
 
             return (array($location1_airport_code, $location2_airport_code, $travel_month, $filter_opt));
         }
