@@ -86,52 +86,43 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
     }
 
    /***********************************************
-    *              MidPoint_2 Class
-    ***********************************************/
-    class MidPoint_2 extends MidPoint_1
-    {
-        function __construct($lola_1, $lola_2)
-        {
-            parent::__construct($lola_1, $lola_2);
-            $this->longitude = ($this->longitude - 180) % 360;
-        }
-    }
-
-   /***********************************************
     *             MidPointSelect Class
+    *
+    * Note: Currently, only consider 1 midpoint
+    * between great-circle distance
     ***********************************************/
     class MidPointSelect
     {
-        private $midpoint_lola = NULL;
-        private $midpoint_longitude = NULL;
-        private $midpoint_latitude = NULL;
-        private $midpoint_airport_codes = array();
+        private $lola = NULL;
+        private $longitude = NULL;
+        private $latitude = NULL;
+        private $airport_codes = array();
 
         public function __construct($location_1_lola, $location_2_lola, $radius)
         {
             $midpoint_info = $this->find_closest_midpoint($location_1_lola, $location_2_lola, $radius);
 
-            $this->midpoint_lola = $midpoint_info[0];
-            $this->midpoint_airport_codes = $midpoint_info[1];
+            $this->lola = $midpoint_info[0];
+            $this->airport_codes = $midpoint_info[1];
 
-            $mid_obj = new Point($this->midpoint_lola);
-            $this->midpoint_longitude = $mid_obj->get_longitude();
-            $this->midpoint_latitude = $mid_obj->get_latitude();
+            $mid_obj = new Point($this->lola);
+            $this->longitude = $mid_obj->get_longitude();
+            $this->latitude = $mid_obj->get_latitude();
         }
 
         public function get_midpoint_lola()
         {
-            return ($this->midpoint_lola);
+            return ($this->lola);
         }
 
         public function get_midpoint_longitude()
         {
-            return ($this->midpoint_longitude);
+            return ($this->longitude);
         }
 
         public function get_midpoint_latitude()
         {
-            return ($this->midpoint_latitude);
+            return ($this->latitude);
         }
 
         public function get_midpoint_airport_codes()
@@ -145,36 +136,10 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
             $mid_airport_codes = array();
 
             $mid1_obj = new MidPoint_1($location_1_lola, $location_2_lola);
-            //$mid2_obj = new MidPoint_2($location_1_lola, $location_2_lola);
 
-            //echo "<br /> "; var_dump($mid1_obj->get_lola()); echo "  "; var_dump($mid2_obj->get_lola());///////////////////////
-            
-            // Choose a midpoint which has a shorter distance to two locations
-            /*$dist1_obj = new Distance($location_1_lola, $mid1_obj->get_lola());
-            $dist2_obj = new Distance($location_1_lola, $mid2_obj->get_lola());
-            $distance_1 = $dist1_obj->get_distance();
-            $distance_2 = $dist2_obj->get_distance();
-
-            echo "<br /> loc1 to mid1: ".$distance_1;///////////////////
-            $tt = new Distance($location_2_lola, $mid1_obj->get_lola());///////////////////////////
-            echo " loc2 to mid1: ".$tt->get_distance();////////////////
-            echo "<br /> loc1 to mid2: ".$distance_2;///////////////////
-            $t = new Distance($location_2_lola, $mid2_obj->get_lola());///////////////////////////
-            echo " loc2 to mid2: ".$t->get_distance();////////////////
-            echo "<br /> dist 1: ".$distance_1." dist 2: ".$distance_2;///////////////////////
-            */
-            
-           /*if($distance_1 <= $distance_2)
-           {*/
-               $mid_lola = $mid1_obj->get_lola();
-               $mid_airport_codes = get_airport_codes($mid1_obj->get_lola(), $radius);
-           /*}
-           else
-           {
-               $mid_lola = $mid2_obj->get_lola();
-               $mid_airport_codes = get_airport_codes($mid2_obj->get_lola(), $radius);
-           }*/
-
+            $mid_lola = $mid1_obj->get_lola();
+            $mid_airport_codes = get_airport_codes($mid1_obj->get_lola(), $radius);
+   
            return (array($mid_lola, $mid_airport_codes));
         }
     }

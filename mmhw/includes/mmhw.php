@@ -205,15 +205,6 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
                 $this->smarty_obj->assign('location_2_longitude', $loc_2_obj->get_longitude());
                 $this->smarty_obj->assign('location_2_latitude', $loc_2_obj->get_latitude());
 
-                // Mid 1 & 2
-                $mid_1_obj = new MidPoint_1($location_1_lola, $location_2_lola);
-                $mid_2_obj = new MidPoint_2($location_1_lola, $location_2_lola);
-
-                $this->smarty_obj->assign('mid_1_longitude', $mid_1_obj->get_longitude());
-                $this->smarty_obj->assign('mid_1_latitude', $mid_1_obj->get_latitude());
-                $this->smarty_obj->assign('mid_2_longitude', $mid_2_obj->get_longitude());
-                $this->smarty_obj->assign('mid_2_latitude', $mid_2_obj->get_latitude());
-
                /******************************************************************
                 * Select midpoint with shorter distance
                 ******************************************************************/
