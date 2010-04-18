@@ -127,7 +127,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
 
         public function get_midpoint_airport_codes()
         {
-            return ($this->midpoint_airport_codes);
+            return ($this->airport_codes);
         }
 
         private function find_closest_midpoint($location_1_lola, $location_2_lola, $radius)
@@ -139,7 +139,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
 
             $mid_lola = $mid1_obj->get_lola();
             $mid_airport_codes = get_airport_codes($mid1_obj->get_lola(), $radius);
-   
+
            return (array($mid_lola, $mid_airport_codes));
         }
     }
