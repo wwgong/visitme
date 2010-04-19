@@ -32,11 +32,13 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
         private $loc2_to_mid_rss_item = NULL;
         private $found_meeting_location = false;
         private $searched_area_obj = NULL;
+        private $dist_obj = NULL;
 
         public function  __construct($lola_1, $lola_2, $lola_mid, $loc1_code, $loc2_code, $travel_month, $radius, $filter_opt)
         { 
             $this->curr_radius = $radius;
             $this->found_meeting_location = false;
+            $this->dist_obj = new Distance($lola_1, $lola_2);
 
             $mid_obj = new Point($lola_mid);
             // Initially, posX = negX and posY = negY
@@ -44,7 +46,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
             // Add radius value to the searched area since the area within radius is already searched before dynamic search begins...
             $this->searched_area_obj->add_XY_val($radius);
            
-            $this->search($lola_1, $lola_2, $lola_mid, $loc1_code, $loc2_code, $travel_month, $filter_opt);
+            $this->search($lola_mid, $loc1_code, $loc2_code, $travel_month, $filter_opt);
         }
 
         public function get_loc1_to_mid_rss_item()
@@ -67,14 +69,13 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
             return ($this->curr_radius);
         }
 
-        public function search($lola_1, $lola_2, $lola_mid, $loc1_code, $loc2_code, $travel_month, $filter_opt)
+        public function search($lola_mid, $loc1_code, $loc2_code, $travel_month, $filter_opt)
         {
              $index = 0;
              $new_mid_codes = array();
   
-            $dist_obj = new Distance($lola_1, $lola_2);
             $this->curr_radius = $this->curr_radius + Constants::RADIUS_INCREMENTAL_VALUE;
-            $nearby = $dist_obj->is_nearby($this->curr_radius);
+            $nearby = $this->dist_obj->is_nearby($this->curr_radius);
             ///////echo "<br /> Distance: ".$dist_obj->get_distance()." curr_radius: ".$this->curr_radius;///////////////////
             if((!$nearby) && ($this->curr_radius < Constants::EVENT_HORIZON)) //
             {
@@ -92,7 +93,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
 
                     if(($loc1_to_mid_obj->get_price() == NULL) || ($loc2_to_mid_obj->get_price() == NULL))
                     {
-                        $this->search($lola_1, $lola_2, $lola_mid, $loc1_code, $loc2_code, $travel_month, $filter_opt);
+                        $this->search($lola_mid, $loc1_code, $loc2_code, $travel_month, $filter_opt);
                     }
                     else
                     {
@@ -104,7 +105,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
                 }
                 else
                 {
-                   $this->search($lola_1, $lola_2, $lola_mid, $loc1_code, $loc2_code, $travel_month, $filter_opt);
+                   $this->search($lola_mid, $loc1_code, $loc2_code, $travel_month, $filter_opt);
                 }
             }
             return;
