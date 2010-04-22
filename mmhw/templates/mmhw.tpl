@@ -16,11 +16,26 @@ for more details.
 You should have received a copy of the GNU General Public License
 along with VisitME. If not, see http://www.gnu.org/licenses/.
 -->
-<html>
+<html xmlns:og="http://opengraphprotocol.org/schema/"
+      xmlns:fb="http://developers.facebook.com/schema/">
 <head>
 <title>Meet Me Halfway</title>
-<meta name="description" content="Can't think of an interesting place to meet with someone? 'Meet Me Halfway' can help you." />
-<meta name="keywords" content="meet me halfway, mmhw, lets meet, flight, fly, kayak, pandas, gopandas, visitme, class 2010, umb, umass, umass boston, umb computer science" />
+    <meta property="og:title" content="Meet Me Halfway" />
+    <meta property="og:type" content="city" />
+    <meta property="og:url" content="{$host_url}" />
+    <meta property="og:image" content="{$host_url}/mmhw.png" />
+    <meta property="fb:admins" content="" />
+    <meta property="og:site_name" content="GoPandas" />
+    <meta property="og:description" content="Can't think of an interesting place to meet with someone? 'Meet Me Halfway' can help you." />
+    <!--
+    <meta property="og:email" content="me@example.com" />
+    <meta property="og:phone_number" content="000-000-0000" />
+    <meta property="og:fax_number" content="+1-000-000-0000" />
+    -->
+
+
+    <meta name="description" content="Can't think of an interesting place to meet with someone? 'Meet Me Halfway' can help you." />
+    <meta name="keywords" content="meet me halfway, mmhw, lets meet, flight, fly, kayak, pandas, gopandas, visitme, class 2010, umb, umass, umass boston, umb computer science" />
 
 <link rel="stylesheet" type="text/css" href="style/mmhwStyle.css" />
 <link type="text/css" href="style/jquery.ui.datepicker.css" rel="stylesheet" />
@@ -81,9 +96,9 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
     map.fitBounds(bounds);
 
     var marker1Icon = 'images/marker_1.png';
-    var marker2Icon = '{/literal}{$host_url}{literal}/images/marker_2.png';
-    var markerGeoMidIcon = '{/literal}{$host_url}{literal}/images/geomid.png';
-    var markerMeetIcon = '{/literal}{$host_url}{literal}/images/marker_meet.png';
+    var marker2Icon = 'images/marker_2.png';
+    var markerGeoMidIcon = 'images/geomid.png';
+    var markerMeetIcon = 'images/marker_meet.png';
 
     <!-- Creating markers and positioning them on the map  -->
     var loc1_marker = new google.maps.Marker({
@@ -145,22 +160,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
 {/literal}
 </script>
 
-<!-- Progress Bar -->
-<!--
-<script type="text/javascript">
-{literal}
- $(function() {
-        $("#progressbar").progressbar({
-             value: 0
-          }); 
-        }); 
 
-$(document).ready(function() {
-    $('#test').load('includes/progressmonitor.php');
-});
-{/literal}
-</script>
--->
 
 </head>
 <body onload="initialize(); travel_month();">
@@ -170,8 +170,13 @@ $(document).ready(function() {
         <a href="http://gopandas.com/" target="_blank">Team's Website</a>
     </div>
     <div style="float:right;padding:0px 20px 0px 0px;">
-        <a name="fb_share" type="button_count" href="http://www.facebook.com/sharer.php?u={$host_url}&t=Meet Me Halfway">Share</a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script> |
+        | <a name="fb_share" type="button_count" href="http://www.facebook.com/sharer.php?u={$host_url}&t=Meet Me Halfway">Share</a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script> |
         <a href="http://apps.facebook.com/visitme/" target="_blank">VisitME</a>
+    </div>
+    <div style="float:right;padding:0px 20px 0px 0px;">
+        <iframe src="http://www.facebook.com/widgets/like.php?href={$host_url}"
+            scrolling="no" frameborder="0"
+            style="border:none; width:450px; height:23px; "></iframe>
     </div>
 </div>
 <center>
@@ -191,8 +196,8 @@ $(document).ready(function() {
                 <td align="left"><input type="text" class="airportAutocomplete" name="loc2" size="50"  /></td>
             </tr>
             <tr>
-                <td align="right">Travel Month:&nbsp;</td>
-                <td align="left">{$month_selection} &nbsp; Year:&nbsp;{$year_selection}</td>
+                <td align="right" >Travel Month:&nbsp;</td>
+                <td align="left" >{$month_selection}&nbsp; Year:&nbsp;{$year_selection}</td>
             </tr>
             <tr>
                 <td align="right">Filter:&nbsp;</td>
@@ -210,7 +215,6 @@ $(document).ready(function() {
     </form>
 </div>
 <br />
-
 
 <div class="inactiveSection" id="searchProgress">
     <div style="margin-top:20px;width:500px;">
@@ -257,7 +261,7 @@ $(document).ready(function() {
         <div class="center">
         <div style="text-align:left;font-size:14px;font-weight:bold;width:640px;margin-left:auto;margin-right:auto;">
              <span style="float:left;font-weight:bold;">Status:</span> &nbsp;
-             <div style="float:left;color:red;padding-left:10px;width:580px;"> Nearby airport(s) / flight information to nearby airport(s) of the selected mid point at (longitude: {$midpoint_longitude}, latitude: {$midpoint_latitude}) were not found.</div>
+             <div style="float:left;color:red;padding-left:10px;width:570px;"> Nearby airport(s) / flight information to nearby airport(s) of the selected mid point at (longitude: {$midpoint_longitude}, latitude: {$midpoint_latitude}) were not found.</div>
         </div>
         </div>
         <br /><br />
