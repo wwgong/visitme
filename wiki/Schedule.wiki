@@ -48,10 +48,10 @@ WOC = Waiting on client
 || Dynamic search radius		        ||Brian||04/06/10 ||04/09/10||<font color="green">Done</font> ||
 || Collecting data for presentation || Group ||04/13/10 ||04/13/10|| <font color="green">Done</font>||
 || Rough draft for the presentation || Brian, Charlie ||04/14/10||04/14/10||<font color="green">Done</font> ||
-|| Revised architecture	for Visit Me and MMHW   ||Henrik|| ||04/16/10|| ||
-|| Final draft ready for the presentation || Group || ||04/19/10|| ||
+|| Revised architecture	for Visit Me and MMHW   ||Henrik||04/16/10 ||04/16/10||<font color="green">Done</font> ||
+|| Final draft ready for the presentation || Group ||04/19/10 ||04/19/10||<font color="green">Done</font> ||
 || <font color=#0000BB>*Code freeze for event presentations*</font>		||  || ||04/20/10||  ||
-|| Presentation		                        || Group || ||04/20/10|| ||
+|| Presentation		                        || Group ||04/20/10 ||04/20/10|| <font color="green">Done</font>||
 || Poster Designing	                        || Weiwei, Khanh || ||05/10/10|| ||
 
 = Editing the schedule =
