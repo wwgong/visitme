@@ -23,12 +23,12 @@ require_once('smarty/libs/Smarty.class.php');
 // Database stuff
 define("DATABASE", "mysql"); // or "odbc"
 
-$db_host	= 'ebolker.fatcowmysql.com';
-$db_db		= 'visitme';
-$db_user	= 'gopandas';
-$db_pass	= 'UMBpandas';
+$db_host	= '';
+$db_db		= '';
+$db_user	= '';
+$db_pass	= '';
 
-$host_url	= 'http://www.gopandas.com/mmhwbeta';
+$host_url	= '';
 $version	= '1.0';
 
 // Facebook admin id for "Like" feature
