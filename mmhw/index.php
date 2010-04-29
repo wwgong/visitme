@@ -25,7 +25,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
     require_once('includes/config.php');
     require_once('includes/mmhw.php');
 
-    $mmhw_obj = new MMHW($host_url, $version, $radius, $debug);
+    $mmhw_obj = new MMHW($host_url, $version, $radius, $fb_admin_id, $debug);
     $mmhw_obj->run();
 
 ?>

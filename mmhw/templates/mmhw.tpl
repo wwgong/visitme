@@ -24,7 +24,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
     <meta property="og:type" content="city" />
     <meta property="og:url" content="{$host_url}" />
     <meta property="og:image" content="{$host_url}/mmhw.png" />
-    <meta property="fb:admins" content="" />
+    <meta property="fb:admins" content="{$fb_admin_id}" />
     <meta property="og:site_name" content="GoPandas" />
     <meta property="og:description" content="Can't think of an interesting place to meet with someone? 'Meet Me Halfway' can help you." />
     <!--
@@ -165,18 +165,18 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
 </head>
 <body onload="initialize(); travel_month();">
 <div style="position:absolute;top:0px;width:100%;height:25px;margin-left:-9px;border-bottom:1px solid #ffa500;">
-    <div style="float:left;padding-left:20px;">
-        <a href="http://code.google.com/p/visitme/" target="_blank">Project's Website</a> |
-        <a href="http://gopandas.com/" target="_blank">Team's Website</a>
+    <div style="float:left;padding:0px 0px 0px 20px;">
+        <a name="fb_share" type="button_count" href="http://www.facebook.com/sharer.php?u={$host_url}&t=Meet Me Halfway">Share</a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script> &nbsp;|&nbsp;&nbsp;
     </div>
-    <div style="float:right;padding:0px 20px 0px 0px;">
-        | <a name="fb_share" type="button_count" href="http://www.facebook.com/sharer.php?u={$host_url}&t=Meet Me Halfway">Share</a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script> |
-        <a href="http://apps.facebook.com/visitme/" target="_blank">VisitME</a>
-    </div>
-    <div style="float:right;padding:0px 20px 0px 0px;">
+    <div style="float:left;">
         <iframe src="http://www.facebook.com/widgets/like.php?href={$host_url}"
             scrolling="no" frameborder="0"
             style="border:none; width:450px; height:23px; "></iframe>
+    </div>
+    <div style="float:right;padding:0px 20px 0px 0px;">
+        <a href="http://apps.facebook.com/visitme/" target="_blank">VisitME</a> &nbsp;|&nbsp;
+        <a href="http://code.google.com/p/visitme/" target="_blank">Project's Website</a> &nbsp;|&nbsp;
+        <a href="http://gopandas.com/" target="_blank">Team's Website</a>
     </div>
 </div>
 <center>

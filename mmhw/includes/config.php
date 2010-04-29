@@ -1,5 +1,4 @@
 <?php
-
 /*
 Copyright 2010 GoPandas
 This file is part of Meet Me Half Way ( an extension of VisitME ).
@@ -24,13 +23,16 @@ require_once('smarty/libs/Smarty.class.php');
 // Database stuff
 define("DATABASE", "mysql"); // or "odbc"
 
-$db_host	= '';
-$db_db		= '';
-$db_user	= '';
-$db_pass	= '';
+$db_host	= 'ebolker.fatcowmysql.com';
+$db_db		= 'visitme';
+$db_user	= 'gopandas';
+$db_pass	= 'UMBpandas';
 
-$host_url	= '';
+$host_url	= 'http://www.gopandas.com/mmhwbeta';
 $version	= '1.0';
+
+// Facebook admin id for "Like" feature
+$fb_admin_id       = '';
 
 // Settings
 $debug	= false;

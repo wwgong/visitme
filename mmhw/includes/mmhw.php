@@ -17,16 +17,16 @@ for more details.
 You should have received a copy of the GNU General Public License
 along with VisitME. If not, see http://www.gnu.org/licenses/.
 */
-    require_once('includes/common.php');
-    require_once('includes/midpoint.php');
-    require_once('includes/point.php');
-    require_once('includes/distance.php');
-    require_once('includes/util.php');
-    require_once('includes/result.php');
-    require_once('includes/rss.php');
-    require_once('includes/dynamicsearch.php');
-    require_once('includes/print.php');
-    require_once('includes/calendar.php');
+    require_once('common.php');
+    require_once('midpoint.php');
+    require_once('point.php');
+    require_once('distance.php');
+    require_once('util.php');
+    require_once('result.php');
+    require_once('rss.php');
+    require_once('dynamicsearch.php');
+    require_once('print.php');
+    require_once('calendar.php');
 
    /***********************************************
     *                  MMHW Class
@@ -43,7 +43,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
         private $print_obj = null;
         private $calendar_obj = null;
 
-        public function __construct($host_url, $version, $radius, $debug)
+        public function __construct($host_url, $version, $radius, $fb_admin_id, $debug)
         {
             $this->smarty_obj = new Smarty();
             $this->print_obj = new PrintRSS();
@@ -55,6 +55,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
 
             $this->smarty_obj->assign('host_url', $host_url);
             $this->smarty_obj->assign('version', $version);
+            $this->smarty_obj->assign('fb_admin_id', $fb_admin_id);
             $this->smarty_obj = $this->calendar_obj->travel_time($this->smarty_obj);
         }
 
@@ -236,7 +237,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
                     ******************************************************************/
 
                     $dest_codes = $mid_sel_obj->get_midpoint_airport_codes();
-
+                      
                     $result_obj = new Result($location1_airport_code, $location2_airport_code, $dest_codes, $midpoint_lola, $travel_month, $filter_opt);
                     $loc1_to_mid_rss_item = $result_obj->get_loc1_to_mid_rss_item();
 
@@ -265,7 +266,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
                    }
 
                    if(($flight1_cost==NULL) || ($flight2_cost==NULL))
-                   {
+                   { 
                        /******************************************************************
                         * Dynamic Search:   Increase radius to search for flight info to
                         *                   common destination dynamically...
