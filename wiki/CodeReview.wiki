@@ -42,7 +42,7 @@ We have updated our template file. Also, the suggestion to check a wording at ru
 The proper solution: Kayak writes a script, when they take over the application, that pushes a new disclaimer as needed to all their apps when they have one.
 
 = Additional Comments =
-Certain parts of the feedback given regarding index.php seem to have been provided by someone from the distant past (1980's) who traveled to the future (2010) by going over 88 miles per hour in the DeLorean. While I congratulate that person on successfully engaging in time travel, here are some things, whomever it may concern, that may be of use:
+Certain parts of the feedback given regarding index.php seem to have been provided by someone other than the professor from the distant past (1980's) who traveled to the future (2010) by going over 88 miles per hour in the DeLorean. While I congratulate that person on successfully engaging in time travel, here are some things, whomever it may concern, that may be of use:
 
 * [http://www.google.com/search?hl=en&q=smarty+tpl+tutorial Google]
 
