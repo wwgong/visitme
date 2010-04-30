@@ -312,7 +312,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
             travel and were found by Kayak users in the last 48 hours. Seats are
             limited and may not be available on all flights and days. Fares are
             subject to change and may not be available on all flights or dates of
-            travel. Some carriers charged additional fees for extra checked bags.
+            travel. Some carriers charge additional fees for extra checked bags.
             Please check the carriers' sites.
         </p>
         </div>
