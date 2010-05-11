@@ -1,5 +1,4 @@
 #summary This page contains the current schedule for the project.
-#labels Featured
 
 <wiki:toc max_depth="2" />
 
