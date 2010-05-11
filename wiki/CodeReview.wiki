@@ -1,4 +1,5 @@
 #summary Team leader's response to the code review done by the professor.
+#labels Deprecated
 
 This page contains feedback from Henrik in response to the code review done by the professor.
 
