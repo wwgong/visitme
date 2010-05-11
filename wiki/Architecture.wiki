@@ -7,7 +7,7 @@
 
 Many different technologies go into the creation of a web application. For VisitME, the following diagram represents the underlying interaction between client and server technologies:
 
-<img src="http://img132.imageshack.us/img132/2165/codelf.png"/>
+<img src="http://img13.imageshack.us/img13/2327/architecturet.png"/>
 
 == HTML ==
 HTML 4 is the dominant version of the popular markup language being used today to describe how elements of webpages are layed out. Because HTML 5 is still in its infancy, we will not take advantage of any new features it provides.
