@@ -1,5 +1,5 @@
 #summary UI mockups and screenshots
-#labels Phase-Design,Phase-Implementation
+#labels Phase-Design,Phase-Implementation,Deprecated
 
 = Introduction =
 Since regular people will be using VisitME, it is important to make the UI as simple as possible.
