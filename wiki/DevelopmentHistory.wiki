@@ -1,5 +1,5 @@
 #summary Summary of challenges faced during the development of VisitME
-#labels Phase-Implementation
+#labels Phase-Implementation,Deprecated
 
 = Introduction =
 
