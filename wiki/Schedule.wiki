@@ -50,7 +50,7 @@ WOC = Waiting on client
 || Rough draft for the presentation || Brian, Charlie ||04/14/10||04/14/10||<font color="green">Done</font> ||
 || Revised architecture	for Visit Me and MMHW   ||Henrik||04/16/10 ||04/16/10||<font color="green">Done</font> ||
 || Final draft ready for the presentation || Group ||04/19/10 ||04/19/10||<font color="green">Done</font> ||
-|| <font color=#0000BB>*Code freeze for event presentations*</font>		||  || ||04/20/10||  ||
+|| <font color=#0000BB>*Code freeze for event presentations*</font>		||  ||04/20/10||04/20/10||<font color="green">Done</font>||
 || Presentation		                        || Group ||04/20/10 ||04/20/10|| <font color="green">Done</font>||
 || [http://code.google.com/p/visitme/downloads/detail?name=poster.pptx&can=2&q= Poster Designing] || Weiwei, Khanh ||05/10/10 ||05/10/10||<font color="green">Done</font> ||
 
