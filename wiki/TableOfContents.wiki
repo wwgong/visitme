@@ -8,7 +8,6 @@
         * [ShortStories Short Stories and Use Cases]
         * [RiskAnalysis Risk Analysis]
      * [Architecture]
-     * [UI]
      * [CodingGuidelines Coding Guidelines]
      * [Deployment]
         * [HelloWorld Hello World]
