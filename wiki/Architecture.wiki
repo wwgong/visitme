@@ -1,5 +1,5 @@
 #summary Overall software architecture of the application
-#labels Phase-Design,Phase-Implementation
+#labels Phase-Design,Phase-Implementation,Featured
 
 <wiki:toc max_depth="2" />
 
@@ -38,3 +38,6 @@ Because the separation of logic and UI is important in maintaining good code, th
 Any application that needs to keep track of its users will need some database for it. MySQL is free and easy to get working with PHP.
 
 [http://www.w3schools.com/sql/sql_intro.asp MySQL tutorial]
+
+== Google Maps ==
+To get the longtitude and latitudes of many locations on earth we use Google's geolocation API. For our maps we use the Google Maps API, of course.
