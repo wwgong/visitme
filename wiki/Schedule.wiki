@@ -52,7 +52,7 @@ WOC = Waiting on client
 || Final draft ready for the presentation || Group ||04/19/10 ||04/19/10||<font color="green">Done</font> ||
 || <font color=#0000BB>*Code freeze for event presentations*</font>		||  || ||04/20/10||  ||
 || Presentation		                        || Group ||04/20/10 ||04/20/10|| <font color="green">Done</font>||
-|| Poster Designing	                        || Weiwei, Khanh || ||05/10/10|| ||
+|| Poster Designing	                        || Weiwei, Khanh ||05/10/10 ||05/10/10||<font color="green">Done</font> ||
 
 = Editing the schedule =
 
