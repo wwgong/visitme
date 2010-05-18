@@ -22,10 +22,14 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
     text-align: center;
 }
 
-.mapBox
+#mapBox
 {
-    border-style: solid;
-    border-color: #e2e1e1;
+    margin-left: auto;
+    margin-right: auto;
+    width: 660px;
+    height: 150px;
+    padding: 3px;
+    border: 1px solid #999;
 }
 
 .midpoint
@@ -74,10 +78,13 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
     background-color: #e2e1e1;
 }
 
-.disclaimer
+#disclaimer
 {
+    margin-left: auto;
+    margin-right: auto;
     font-size:10px;
     width: 640px;
+    text-align:left;
 }
 
 .hotelLink
@@ -104,5 +111,140 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
 {
     display: none;
 }
+#topBar
+{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 25px;
+    margin-left: -9px;
+    border-bottom: 1px solid #ffa500;
+}
+#leftMostItem
+{
+    float: left;
+    padding: 0px 0px 0px 20px;
+}
+.floatLeft
+{
+    float: left;
+}
+.floatRight
+{
+    float: right;
+}
+#rightItems
+{
+    float: right;
+    padding: 0px 20px 0px 0px;
+}
+#likeBox
+{
+    border: none;
+    width: 450px;
+    height: 23px;
+}
+#searchingInfoBox
+{
+    margin-top: 30px;
+    width: 500px;
+}
+#separator
+{
+    margin-left: auto;
+    margin-right: auto;
+    height: 0px;
+    width: 665px;
+    padding: 0px;
+    border-top: 1px solid #999;
+}
+#waitMsg
+{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top:20px;
+    width:500px;
+}
 
-
+#locationMid
+{
+    font-size: 29px;
+    font-weight: bold;
+    margin-top: 0px;
+}
+.textCenter
+{
+    text-align: center;
+}
+.locationBx
+{
+    border-bottom: solid;
+    border-color: #e2e1e1;
+    font-size: 18px;
+    padding: 5px;
+}
+.locationImg
+{
+    padding-bottom:0px;
+    float:left;
+}
+.locationTxt
+{
+    margin-top:27px;
+    float:left;
+}
+.flightCost
+{
+    font-size: 32px;
+    font-weight: bold;
+    text-decoration:none;
+}
+.flightPath
+{
+    font-size: 12px;
+    font-weight: bold;
+}
+.hotel
+{
+    font-family:tahoma;
+    font-size:12px;
+    text-decoration:none;
+}
+.flightDescription
+{
+    font-size: 10px;
+    padding: 5px;
+    background-color: #e2e1e1;
+}
+.fullSize
+{
+     width:100%;
+     height:100%;
+}
+#statusBox
+{
+    text-align:left;
+    font-size:14px;
+    font-weight:bold;
+    width:640px;
+    margin-left:auto;
+    margin-right:auto;
+}
+#warningMsg
+{
+    float:left;
+    color:red;
+    padding-left:10px;
+    width:570px;
+}
+#qryMsg
+{
+    text-align:center;
+    color:green;
+    font-size:14px;
+    font-weight:bold;
+    width:640px;
+    margin-left:auto;
+    margin-right:auto;
+}
