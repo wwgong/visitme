@@ -121,7 +121,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
             return ($tm);
         }
 
-        public function val_n_parse_airport_code($input)
+        public function val_n_parse_airport_code($usr_input)
         {
             $city = null;
             $state = null;
@@ -129,6 +129,7 @@ along with VisitME. If not, see http://www.gnu.org/licenses/.
             $airport_name = null;
             $airport_code = null;
             $is_airport_code_only = false;
+            $input = trim($usr_input);
             $input_length = strlen($input);
 
             // Validate & format airport code input
