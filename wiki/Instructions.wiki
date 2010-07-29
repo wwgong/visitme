@@ -7,7 +7,7 @@ If you want to try out VisitME, click [http://apps.facebook.com/visitme/ here]. 
 
 == Developers ==
 
-While VisitME is an open source project, we currently offer no support for application developers who want to use our code. This is because our architecture is constantly changing during the course of development and as such will only cause confusion and misery for third parties using it. Once we reach a stable state we will provide a downloadable package, complete with source code and an API for developers to customize the way their application looks and performs.
+While VisitME is an open source project. We are currently not maintaining it.
 
 === Instructions ===
 
