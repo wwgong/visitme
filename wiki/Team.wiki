@@ -11,7 +11,7 @@ The following table contains general contact information for each team member.
 || Cuong (Charlie) || cpham@cs.umb.edu || hongcuong83 || 617-257-6868 || [http://www.cs.umb.edu/~cpham/ visitME ] ||
 || Henrik || hvolckm@cs.umb.edu || danorux || 620-332-6678 || [http://www.cs.umb.edu/~hvolckm/ visitME] ||
 || Khanh || knguyen@cs.umb.edu || N/A ||  || [http://www.cs.umb.edu/~knguyen/ visitME] ||
-|| Vasudev || vgadge@cs.umb.edu || vgadge  || || [http://www.cs.umb.edu/~vgadge/ visitME] ||
+|| Vasudev || vgadge@cs.umb.edu || vgadge  || 857-417-7212 || [http://www.cs.umb.edu/~vgadge/ visitME] ||
 || Weiwei || wwgong@cs.umb.edu || weiwei.gong || 617-320-4153 || [http://www.cs.umb.edu/~wwgong/ visitME] ||
 
 == Role distribution ==
